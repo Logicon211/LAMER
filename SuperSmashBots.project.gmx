@@ -90,6 +90,7 @@
       <object>objects\MapUIBar</object>
       <object>objects\MapCamera</object>
     </objects>
+    <object>objects\derpydone2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\OverMap</room>
