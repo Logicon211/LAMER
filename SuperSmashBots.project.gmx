@@ -30,6 +30,7 @@
     <sprite>sprites\PulsingEnterSprite</sprite>
     <sprite>sprites\InventoryUINameSprite</sprite>
     <sprite>sprites\InventoryUIItemSprite</sprite>
+    <sprite>sprites\derpydoo</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -42,7 +43,6 @@
     <script>scripts\destroyArray.gml</script>
     <script>scripts\unlockNodes.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\PulsingEnter</object>
     <objects name="Buttons">
