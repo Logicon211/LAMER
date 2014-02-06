@@ -41,14 +41,54 @@ radText = "";
 globalvar radFace;
 radFace = 0;
 
+//Players' Money
+//Will need to load this from save file at some point
+globalvar player1Money;
+player1Money = 1000;
+globalvar player2Money;
+player2Money = 0;
+globalvar player3Money;
+player3Money = 0;
+globalvar player4Money;
+player4Money = 0;
+
+
 //Player's current loadout
-globalvar playerLoadOut;
-playerLoadOut[0] = 0; //Head
-playerLoadOut[1] = 0; //Torso
-playerLoadOut[2] = 0; //Left Arm
-playerLoadOut[3] = 0; //Right Arm
-playerLoadOut[4] = 0; //Legs
-playerLoadOut[5] = 0; //BackPack
+//player1
+globalvar playerLoadOut1;
+playerLoadOut1[0] = 0; //Head
+playerLoadOut1[1] = 0; //Torso
+playerLoadOut1[2] = 0; //Left Arm
+playerLoadOut1[3] = 0; //Right Arm
+playerLoadOut1[4] = 0; //Legs
+playerLoadOut1[5] = 0; //BackPack
+
+//player2
+globalvar playerLoadOut2;
+playerLoadOut2[0] = 0; //Head
+playerLoadOut2[1] = 0; //Torso
+playerLoadOut2[2] = 0; //Left Arm
+playerLoadOut2[3] = 0; //Right Arm
+playerLoadOut2[4] = 0; //Legs
+playerLoadOut2[5] = 0; //BackPack
+
+//player1
+globalvar playerLoadOut3;
+playerLoadOut3[0] = 0; //Head
+playerLoadOut3[1] = 0; //Torso
+playerLoadOut3[2] = 0; //Left Arm
+playerLoadOut3[3] = 0; //Right Arm
+playerLoadOut3[4] = 0; //Legs
+playerLoadOut3[5] = 0; //BackPack
+
+//player1
+globalvar playerLoadOut4;
+playerLoadOut4[0] = 0; //Head
+playerLoadOut4[1] = 0; //Torso
+playerLoadOut4[2] = 0; //Left Arm
+playerLoadOut4[3] = 0; //Right Arm
+playerLoadOut4[4] = 0; //Legs
+playerLoadOut4[5] = 0; //BackPack
 
 //Inventory Lists
 globalvar HeadInventory;
@@ -76,8 +116,6 @@ ItemArray[3] = instance_create(0, 0, testRArmObject1);
 ItemArray[4] = instance_create(0, 0, testLegsObject1);
 ItemArray[5] = instance_create(0, 0, testBackPackObject1);
 
-//player_o creates
-instance_create(x,y,playerLoadout[1].part)
 
 //Will probably do something here to read a save file and load inventory, for now, test inventory
 
