@@ -106,6 +106,7 @@
     </scripts>
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
+    <script>scripts\create_part.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -159,9 +160,10 @@
       <object>objects\MapCamera</object>
     </objects>
     <objects name="BattleObjects">
+      <object>objects\player_o</object>
+      <object>objects\core_o</object>
       <object>objects\booster_o</object>
       <object>objects\booster_trail_o</object>
-      <object>objects\core_o</object>
       <object>objects\land_parent</object>
       <object>objects\hue_2_o</object>
       <object>objects\booster_trail_intense_o</object>
@@ -183,7 +185,6 @@
       <object>objects\val_2_o</object>
       <object>objects\val_glow_o</object>
       <object>objects\val_prime_o</object>
-      <object>objects\player_o</object>
       <object>objects\leg_o2</object>
       <object>objects\booster_trail_small_o</object>
       <object>objects\arm_o2</object>
@@ -191,10 +192,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
     <room>rooms\OverMap</room>
     <room>rooms\RadioRoom</room>
     <room>rooms\InventoryRoom</room>
+    <room>rooms\room0</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

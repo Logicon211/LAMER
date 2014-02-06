@@ -50,7 +50,6 @@ playerLoadOut[3] = 0; //Right Arm
 playerLoadOut[4] = 0; //Legs
 playerLoadOut[5] = 0; //BackPack
 
-
 //Inventory Lists
 globalvar HeadInventory;
 HeadInventory = ds_list_create();
@@ -77,6 +76,8 @@ ItemArray[3] = instance_create(0, 0, testRArmObject1);
 ItemArray[4] = instance_create(0, 0, testLegsObject1);
 ItemArray[5] = instance_create(0, 0, testBackPackObject1);
 
+//player_o creates
+instance_create(x,y,playerLoadout[1].part)
 
 //Will probably do something here to read a save file and load inventory, for now, test inventory
 
