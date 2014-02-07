@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\Music1</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
     <sprite>sprites\ShopMapNodeSprite</sprite>
@@ -88,7 +90,6 @@
       <script>scripts\arm2_follow_shield.gml</script>
       <script>scripts\arm1_follow_shield.gml</script>
       <script>scripts\boost_move_x.gml</script>
-      <script>scripts\attack_set_1.gml</script>
       <script>scripts\find_edge_left.gml</script>
       <script>scripts\find_edge_above.gml</script>
       <script>scripts\find_edge_below.gml</script>
@@ -108,6 +109,7 @@
       <script>scripts\angle_ease4.gml</script>
       <script>scripts\angle_ease.gml</script>
     </scripts>
+    <script>scripts\attack_set_1.gml</script>
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
     <script>scripts\create_part.gml</script>
@@ -167,12 +169,6 @@
       <object>objects\player_o</object>
       <object>objects\shield_o</object>
       <object>objects\start_fight_o</object>
-      <objects name="Boosters">
-        <object>objects\booster_o</object>
-        <object>objects\booster_trail_o</object>
-        <object>objects\booster_trail_small_o</object>
-        <object>objects\booster_trail_intense_o</object>
-      </objects>
       <objects name="LoadoutSets">
         <objects name="Torsos">
           <objects name="Prototype">
@@ -207,6 +203,12 @@
             </objects>
           </objects>
         </objects>
+      </objects>
+      <objects name="Boosters">
+        <object>objects\booster_o</object>
+        <object>objects\booster_trail_o</object>
+        <object>objects\booster_trail_small_o</object>
+        <object>objects\booster_trail_intense_o</object>
       </objects>
       <objects name="Land and Platforms">
         <object>objects\land_parent</object>

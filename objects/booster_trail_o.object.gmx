@@ -83,6 +83,7 @@ scale2=scale1/2;
 draw_sprite_ext(sprite_index,0,x,y,scale1,scale1,0,make_color_hsv(hue_glow,sat_glow,val_glow),image_alpha);
 draw_sprite_ext(sprite_index,0,x,y,scale2,scale2,0,c_white,image_alpha);
 draw_set_blend_mode(bm_normal);
+draw_sprite_ext(sprite_index,1,x,y,scale2,scale2,0,c_white,image_alpha);
 </string>
           </argument>
         </arguments>

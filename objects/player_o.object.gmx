@@ -372,11 +372,25 @@ if(vspeed&gt;0)
     //check bottom left
     if(find_edge_below(x,y,-core.lefthalf,140,vspeed,land_parent))
     {
+        if(state=string('shield'))
+        {
+            core.gun_aim = 0;
+            with(shield_obj){instance_destroy()}
+            state = string('tonorm');
+            shield_counter = 0;
+        }
         state = string('land');
     }
     //check bottom right
     else if(find_edge_below(x,y,core.righthalf,140,vspeed,land_parent))
     {
+        if(state=string('shield'))
+        {
+            core.gun_aim = 0;
+            with(shield_obj){instance_destroy()}
+            state = string('tonorm');
+            shield_counter = 0;
+        }
         state = string('land');
     }
 }

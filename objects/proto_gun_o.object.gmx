@@ -112,14 +112,14 @@ else if(player.state=string('kneel'))
 //Jump State
 else if(player.state=string('jump'))
 {
-    lowerarm.image_angle = angle_ease(lowerarm.image_angle,85*image_xscale,8);
+    lowerarm.image_angle = angle_ease(lowerarm.image_angle,70*image_xscale,6);
 }
 //END Jump State
 
 //Land State
 else if(player.state=string('land'))
 {
-    lowerarm.image_angle = angle_ease(lowerarm.image_angle,85*image_xscale,8);
+    lowerarm.image_angle = angle_ease(lowerarm.image_angle,70*image_xscale,6);
 }
 //END Land State
 
