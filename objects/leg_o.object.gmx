@@ -33,7 +33,7 @@ lower_leg = instance_create(x,y,leg_o2);
 lower_leg.depth = depth-1;
 vspeedvar = 0;
 hspeedvar = 0;
-lower_angle = 0;//used during attack animations to set lower leg position
+lower_angle = 1000;//used during attack animations to set lower leg position
 </string>
           </argument>
         </arguments>
@@ -62,11 +62,25 @@ limb_anchor(lower_leg,joint[0],joint[1],hspeed,vspeed,image_xscale)
 /***************************************************
   Angled States
  ***************************************************/
+
+//Jump State
+if(player.state = string('jump'))
+{
+    lower_leg.image_angle = angle_ease(lower_leg.image_angle, lower_angle, 4);
+}
+//END Jump State
+
+//Land State
+if(player.state = string('land'))
+{
+    lower_leg.image_angle = angle_ease(lower_leg.image_angle, lower_angle, 2);
+}
+//END Land State
+
 //Normal State 
-if(player.state=string('normal'))
+else if(player.state=string('normal'))
 {
     lower_leg.image_angle = image_angle-15*image_xscale;
-    if(lower_leg.image_angle&gt;5){lower_leg.image_angle=angle_ease(lower_leg.image_angle,image_angle*image_xscale*-2,2)}
 }
 //END Normal State 
 

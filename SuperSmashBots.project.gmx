@@ -199,7 +199,6 @@
               <object>objects\sword1_trail</object>
             </objects>
           </objects>
-          <objects name="Big Swords"/>
           <objects name="Small Guns">
             <objects name="Prototype">
               <object>objects\proto_gun_o</object>
@@ -207,7 +206,6 @@
               <object>objects\proto_gun_trail_o</object>
             </objects>
           </objects>
-          <objects name="Big Guns"/>
         </objects>
       </objects>
       <objects name="Land and Platforms">

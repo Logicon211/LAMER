@@ -115,7 +115,7 @@ attack2_type = arm2.attack_type;
             <string>/***************************************************
   Anchor Limbs
  ***************************************************/
- 
+
 //legs
 joint = rotation_tracker(x,y,image_angle,x-1,y+35);
 limb_anchor(leg1,joint[0],joint[1],hspeed,vspeed,image_xscale);
@@ -131,6 +131,8 @@ if(legnums = 4)
 joint = rotation_tracker(x,y,image_angle,x-9,y+4);
 limb_anchor(arm1,joint[0],joint[1],hspeed,vspeed,image_xscale);
 limb_anchor(arm2,joint[0],joint[1],hspeed,vspeed,image_xscale);
+arm1.depth = depth+10*image_xscale;
+arm2.depth = depth+10*-image_xscale;
 //END arms
 
 //head
@@ -139,24 +141,181 @@ limb_anchor(head,joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END head
 
 //boosters
-joint = rotation_tracker(x,y,image_angle,x-60,y);
+joint = rotation_tracker(x,y,image_angle,x-60,y-10);
 limb_anchor(booster1,joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-60,y+35);
+joint = rotation_tracker(x,y,image_angle,x-57,y+36);
 limb_anchor(booster2,joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-65,y-35);
+joint = rotation_tracker(x,y,image_angle,x-56,y-45);
 limb_anchor(booster3,joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END boosters
 
 /***************************************************
   END Anchor Limbs
  ***************************************************/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string> 
+/***************************************************
+  Jump State
+ ***************************************************/
 
-leg_var = 30*sin(degtorad(1.5*x));
-leg1.image_angle = leg_var + image_angle/2;
-leg2.image_angle = -leg_var + image_angle/2;
-arm1.image_angle = image_angle*2.2;
-arm2.image_angle = abs(image_angle*1.8)*image_xscale;
-head.image_angle = image_angle*1.2;
+if(player.state = string('jump'))
+{
+    head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 4);
+    arm1.image_angle = angle_ease(arm1.image_angle, 50*image_xscale, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, 60*image_xscale, 4);
+    leg1.image_angle = angle_ease(leg1.image_angle, 0*image_xscale, 4);
+    leg2.image_angle = angle_ease(leg2.image_angle, 60*image_xscale, 4);
+    leg1.lower_angle = -80*image_xscale;
+    leg2.lower_angle = 10*image_xscale;
+}
+
+/***************************************************
+  END Jump State
+ ***************************************************/
+
+/***************************************************
+  Normal State
+ ***************************************************/
+
+if(player.state = string('normal'))
+{
+    arm1.image_angle = image_angle*2.2;
+    arm2.image_angle = abs(image_angle*1.8)*image_xscale;
+    if(hspeed=0)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -5*image_xscale+image_angle/2, 8);
+        leg2.image_angle = angle_ease(leg2.image_angle, 20*image_xscale+image_angle/2, 8);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
+    else if(player.airborne || player.boosting)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -10+image_angle, 12);
+        leg2.image_angle = angle_ease(leg2.image_angle, 5+image_angle, 12);
+        head.image_angle = angle_ease(head.image_angle, image_angle/2, 8);
+    }
+    else
+    {
+        leg_var = 60*sin(degtorad(1.5*x));
+        leg1.image_angle = angle_ease(leg1.image_angle, leg_var+image_angle/2, 4);
+        leg2.image_angle = angle_ease(leg2.image_angle, -leg_var+image_angle/2, 4);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
+}
+
+/***************************************************
+  END Normal State
+ ***************************************************/
+
+/***************************************************
+  toNormal State
+ ***************************************************/
+
+if(player.state = string('tonorm'))
+{
+    leg_var = 25*sin(degtorad(1.5*x));
+    arm1.image_angle = angle_ease(arm1.image_angle, image_angle*2.2, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, abs(image_angle*1.8)*image_xscale, 4);
+    head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 4);
+    if(hspeed=0)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -5*image_xscale+image_angle/2, 8);
+        leg2.image_angle = angle_ease(leg2.image_angle, 20*image_xscale+image_angle/2, 8);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
+    else if(player.airborne || player.boosting)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -10+image_angle, 12);
+        leg2.image_angle = angle_ease(leg2.image_angle, 5+image_angle, 12);
+        head.image_angle = angle_ease(head.image_angle, image_angle/2, 8);
+    }
+    else
+    {
+        leg_var = 60*sin(degtorad(1.5*x));
+        leg1.image_angle = angle_ease(leg1.image_angle, leg_var+image_angle/2, 4);
+        leg2.image_angle = angle_ease(leg2.image_angle, -leg_var+image_angle/2, 4);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
+}
+
+/***************************************************
+  END toNormal State
+ ***************************************************/
+
+/***************************************************
+  Shield State
+ ***************************************************/
+
+if(player.state = string('shield'))
+{
+    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
+    leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
+    leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
+    //leg1.lower_angle = -90*image_xscale;
+    //leg2.lower_angle = -30*image_xscale;
+}
+
+/***************************************************
+  END Shield State
+ ***************************************************/
+
+/***************************************************
+  Kneel State
+ ***************************************************/
+
+if(player.state = string('kneel'))
+{
+    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
+    leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
+    leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
+    //leg1.lower_angle = -90*image_xscale;
+    //leg2.lower_angle = -30*image_xscale;
+}
+
+/***************************************************
+  END Kneel State
+ ***************************************************/
+
+/***************************************************
+  Land State
+ ***************************************************/
+
+if(player.state = string('land'))
+{
+    arm1.image_angle = angle_ease(arm1.image_angle, 30*image_xscale, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, -70*image_xscale, 4);
+    head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
+    leg1.image_angle = angle_ease(leg1.image_angle, player.landCounter*image_xscale*4, 2);
+    leg2.image_angle = angle_ease(leg2.image_angle, player.landCounter*image_xscale*10, 2);
+    leg1.lower_angle = player.landCounter*image_xscale*-14;
+    leg2.lower_angle = player.landCounter*image_xscale*4;
+}
+
+/***************************************************
+  END Land State
+ ***************************************************/
 </string>
           </argument>
         </arguments>
