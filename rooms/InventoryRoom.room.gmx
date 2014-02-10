@@ -59,6 +59,9 @@
     <instance objName="BackPackButton" x="64" y="544" name="inst_2FAF8BF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="InventoryUIBar" x="1280" y="0" name="inst_02893D16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="InventoryUIName" x="1280" y="0" name="inst_F1EFFEA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="PrimaryColorButton" x="896" y="96" name="inst_D6FC3872" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="SecondaryColorButton" x="1024" y="96" name="inst_572C495E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="EnergyColorButton" x="1152" y="96" name="inst_682FE016" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

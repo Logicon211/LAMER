@@ -45,12 +45,25 @@ buttonArray[2] = 0;
 buttonArray[3] = 0;
 buttonArray[4] = 0;
 buttonArray[5] = 0;
+buttonArray[6] = 0;
+buttonArray[7] = 0;
+buttonArray[8] = 0;
 
 globalvar selectedButton;
 selectedButton = 0;
 
+globalvar selectedColorButton;
+selectedColorButton = 0;
+
 globalvar selectedInventory;
 selectedInventory = -1;
+
+globalvar hueBar;
+hueBar = 0;
+globalvar valBar;
+valBar = 0;
+globalvar satBar;
+satBar = 0;
 </string>
           </argument>
         </arguments>
@@ -77,6 +90,10 @@ selectedInventory = -1;
 {
     buttonArray[selectedButton].state = 1;
 }
+/*if(colorButtonArray[selectedColorButton].state != 2)
+{
+    colorButtonArray[selectedColorButton].state = 1;
+}*/
 </string>
           </argument>
         </arguments>
@@ -102,9 +119,9 @@ selectedInventory = -1;
             <string>//Print current loadout stats on screen (Still need to add stat comparisons)
 //Need to figure out multiple players inventory screens
 draw_set_font(InventoryHeader);
-draw_text(965, 120, "Money:");
+draw_text(965, 600, "Money:");
 draw_set_font(InventoryContent);
-draw_text(965, 150, string(player1Money));
+draw_text(965, 625, string(player1Money));
 
 draw_set_font(InventoryHeader);
 draw_text(965, 380, "Current Stats:")
@@ -223,7 +240,7 @@ draw_text(965, 540, totalBonuses)
 {
     buttonArray[selectedButton].state = 0;
     
-    if(selectedButton == 5)
+    if(selectedButton &gt;= 8)
     {
         selectedButton = 0;
     }
@@ -232,7 +249,7 @@ draw_text(965, 540, totalBonuses)
         selectedButton++;
     }
 }
-else
+else // This is when you're picking an inventory item
 {
     unselectAllItems(inventoryArray);
     if(selectedInventory == -1)
@@ -277,14 +294,14 @@ else
     
     if(selectedButton == 0)
     {
-        selectedButton = 5;
+        selectedButton = 8;
     }
     else 
     {
         selectedButton--;
     }
 }
-else
+else  // This is when you're picking an inventory item
 {
     unselectAllItems(inventoryArray);
     if(selectedInventory == -1)

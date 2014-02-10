@@ -58,7 +58,7 @@ arrayLocation = 0;
 else if (state == 1)
 {
     //do code to confirm selection
-    playerLoadOut[categoryNumber] = inventoryItem
+    playerLoadOut1[categoryNumber] = inventoryItem
     if(view_visible[1])
     {
         view_visible[1] = false;

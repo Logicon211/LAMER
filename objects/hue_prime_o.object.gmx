@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>globalvar hue_prime;
-hue_prime = 0;
-xTrack = 0;
+//Player specific code. player 1 for now
+hue_prime = player1Colors[0];
+xTrack = hue_prime;//hue_prime*2.55;
 </string>
           </argument>
         </arguments>
@@ -50,8 +51,8 @@ xTrack = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x=view_xview+10;
-y=view_yview+10;
+            <string>//x=view_xview+10;
+//y=view_yview+10;
 
 if(mouse_x &gt;= x &amp;&amp; mouse_x &lt;= x + sprite_width)
 {
@@ -77,6 +78,9 @@ else
 if(change_color)
 {
     hue_prime = ((mouse_x-x)/sprite_width)*255;
+    
+    //player specific code. Player 1 for now
+    player1Colors[0] = ((mouse_x-x)/sprite_width)*255;
 }
 </string>
           </argument>
@@ -100,7 +104,7 @@ if(change_color)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,0,view_xview+10,view_yview+10,image_xscale,image_yscale,image_angle,c_white,image_alpha);
+            <string>draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 draw_set_blend_mode_ext(bm_src_alpha, bm_zero);
 draw_sprite_ext(rectangle_s,0,x+xTrack,y-7,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 draw_set_blend_mode(bm_normal);

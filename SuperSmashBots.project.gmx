@@ -46,6 +46,10 @@
       <sprite>sprites\RArmButtonSprite</sprite>
       <sprite>sprites\LegsButtonSprite</sprite>
       <sprite>sprites\BackPackButtonSprite</sprite>
+      <sprite>sprites\PrimaryColorButtonSprite</sprite>
+      <sprite>sprites\SecondaryColorButtonSprite</sprite>
+      <sprite>sprites\EnergyColorButtonSprite</sprite>
+      <sprite>sprites\ConfirmColorButtonSprite</sprite>
     </sprites>
     <sprite>sprites\PulsingEnterSprite</sprite>
     <sprite>sprites\InventoryUINameSprite</sprite>
@@ -124,12 +128,16 @@
     <object>objects\PulsingEnter</object>
     <objects name="Buttons">
       <object>objects\BaseButton</object>
+      <object>objects\BaseButton2</object>
       <object>objects\HeadButton</object>
       <object>objects\TorsoButton</object>
       <object>objects\LArmButton</object>
       <object>objects\RArmButton</object>
       <object>objects\LegsButton</object>
       <object>objects\BackPackButton</object>
+      <object>objects\PrimaryColorButton</object>
+      <object>objects\SecondaryColorButton</object>
+      <object>objects\EnergyColorButton</object>
     </objects>
     <objects name="Inventory">
       <object>objects\InventoryUIItem</object>
@@ -230,8 +238,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
     <room>rooms\OverMap</room>
+    <room>rooms\room0</room>
     <room>rooms\RadioRoom</room>
     <room>rooms\InventoryRoom</room>
   </rooms>
