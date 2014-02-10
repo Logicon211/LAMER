@@ -101,6 +101,28 @@ else if(player.state=string('shield'))
     lowerarm.image_angle = angle_ease(lowerarm.image_angle,180*image_xscale,4);
 }
 //END Shield State
+
+//Kneel State
+else if(player.state=string('kneel'))
+{
+    lowerarm.image_angle = angle_ease(lowerarm.image_angle,90*image_xscale,4);
+}
+//END Kneel State
+
+//Jump State
+else if(player.state=string('jump'))
+{
+    lowerarm.image_angle = angle_ease(lowerarm.image_angle,70*image_xscale,6);
+}
+//END Jump State
+
+//Land State
+else if(player.state=string('land'))
+{
+    lowerarm.image_angle = angle_ease(lowerarm.image_angle,70*image_xscale,6);
+}
+//END Land State
+
 </string>
           </argument>
         </arguments>

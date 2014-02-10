@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\Music1</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
     <sprite>sprites\ShopMapNodeSprite</sprite>
@@ -58,52 +60,56 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\unselectAllItems.gml</script>
-    <script>scripts\angle_ease.gml</script>
     <scripts name="BattleScripts">
-      <script>scripts\angle_ease8.gml</script>
-      <script>scripts\angle_ease20.gml</script>
+      <scripts name="Controls">
+        <scripts name="directions">
+          <script>scripts\left_check.gml</script>
+          <script>scripts\left_check_pressed.gml</script>
+          <script>scripts\right_check.gml</script>
+          <script>scripts\right_check_pressed.gml</script>
+          <script>scripts\up_check.gml</script>
+          <script>scripts\down_check.gml</script>
+        </scripts>
+        <scripts name="actions">
+          <script>scripts\jump_check.gml</script>
+          <script>scripts\jump_check_pressed.gml</script>
+          <script>scripts\attack1_check.gml</script>
+          <script>scripts\attack1_check_pressed.gml</script>
+          <script>scripts\attack2_check.gml</script>
+          <script>scripts\attack2_check_pressed.gml</script>
+          <script>scripts\shield_check.gml</script>
+          <script>scripts\shield_check_released.gml</script>
+          <script>scripts\boost_check.gml</script>
+        </scripts>
+        <script>scripts\restart_check.gml</script>
+        <script>scripts\quit_check.gml</script>
+      </scripts>
       <script>scripts\arm_follow.gml</script>
       <script>scripts\arm_follow_2.gml</script>
       <script>scripts\arm_follow_gun.gml</script>
       <script>scripts\arm2_follow_shield.gml</script>
       <script>scripts\arm1_follow_shield.gml</script>
-      <script>scripts\attack1_check.gml</script>
-      <script>scripts\attack1_check_pressed.gml</script>
       <script>scripts\boost_move_x.gml</script>
-      <script>scripts\boost_check.gml</script>
       <script>scripts\find_edge_left.gml</script>
-      <script>scripts\attack_set_1.gml</script>
       <script>scripts\find_edge_above.gml</script>
-      <script>scripts\down_check.gml</script>
       <script>scripts\find_edge_below.gml</script>
       <script>scripts\find_edge_right.gml</script>
-      <script>scripts\jump_check_pressed.gml</script>
-      <script>scripts\left_check.gml</script>
-      <script>scripts\attack2_check.gml</script>
-      <script>scripts\jump_check.gml</script>
       <script>scripts\leg_follow_universal.gml</script>
       <script>scripts\limb_anchor.gml</script>
       <script>scripts\perfect_trail.gml</script>
       <script>scripts\perfect_trail_angled.gml</script>
-      <script>scripts\restart_check.gml</script>
-      <script>scripts\left_check_pressed.gml</script>
       <script>scripts\attack_control.gml</script>
-      <script>scripts\right_check.gml</script>
-      <script>scripts\right_check_pressed.gml</script>
       <script>scripts\rotation_tracker.gml</script>
       <script>scripts\rotation_tracker_boost.gml</script>
       <script>scripts\rotation_tracker_leg.gml</script>
-      <script>scripts\shield_check.gml</script>
-      <script>scripts\shield_check_released.gml</script>
-      <script>scripts\special_check_pressed.gml</script>
-      <script>scripts\up_check.gml</script>
       <script>scripts\y_ease.gml</script>
-      <script>scripts\quit_check.gml</script>
       <script>scripts\y_ease8.gml</script>
       <script>scripts\x_ease8.gml</script>
       <script>scripts\x_ease.gml</script>
       <script>scripts\angle_ease4.gml</script>
+      <script>scripts\angle_ease.gml</script>
     </scripts>
+    <script>scripts\attack_set_1.gml</script>
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
     <script>scripts\create_part.gml</script>
@@ -163,41 +169,71 @@
     </objects>
     <objects name="BattleObjects">
       <object>objects\player_o</object>
-      <object>objects\core_o</object>
-      <object>objects\booster_o</object>
-      <object>objects\booster_trail_o</object>
-      <object>objects\land_parent</object>
-      <object>objects\hue_2_o</object>
-      <object>objects\booster_trail_intense_o</object>
-      <object>objects\leg_o</object>
-      <object>objects\land_o</object>
-      <object>objects\hue_glow_o</object>
-      <object>objects\head_trail_o</object>
-      <object>objects\hue_prime_o</object>
       <object>objects\shield_o</object>
-      <object>objects\proto_gun_o2</object>
-      <object>objects\proto_gun_o</object>
-      <object>objects\sat_prime_o</object>
-      <object>objects\proto_gun_trail_o</object>
-      <object>objects\sat_glow_o</object>
-      <object>objects\sat_2_o</object>
-      <object>objects\sword1_trail</object>
       <object>objects\start_fight_o</object>
-      <object>objects\head_o</object>
-      <object>objects\val_2_o</object>
-      <object>objects\val_glow_o</object>
-      <object>objects\val_prime_o</object>
-      <object>objects\leg_o2</object>
-      <object>objects\booster_trail_small_o</object>
-      <object>objects\arm_o2</object>
-      <object>objects\arm_o</object>
+      <objects name="LoadoutSets">
+        <objects name="Torsos">
+          <objects name="Prototype">
+            <object>objects\core_o</object>
+          </objects>
+        </objects>
+        <objects name="Heads">
+          <objects name="Prototype">
+            <object>objects\head_o</object>
+            <object>objects\head_trail_o</object>
+          </objects>
+        </objects>
+        <objects name="Legs">
+          <objects name="Prototype">
+            <object>objects\leg_o</object>
+            <object>objects\leg_o2</object>
+          </objects>
+        </objects>
+        <objects name="Arms">
+          <objects name="Small Swords">
+            <objects name="Prototype">
+              <object>objects\arm_o</object>
+              <object>objects\arm_o2</object>
+              <object>objects\sword1_trail</object>
+            </objects>
+          </objects>
+          <objects name="Small Guns">
+            <objects name="Prototype">
+              <object>objects\proto_gun_o</object>
+              <object>objects\proto_gun_o2</object>
+              <object>objects\proto_gun_trail_o</object>
+            </objects>
+          </objects>
+        </objects>
+      </objects>
+      <objects name="Boosters">
+        <object>objects\booster_o</object>
+        <object>objects\booster_trail_o</object>
+        <object>objects\booster_trail_small_o</object>
+        <object>objects\booster_trail_intense_o</object>
+      </objects>
+      <objects name="Land and Platforms">
+        <object>objects\land_parent</object>
+        <object>objects\land_o</object>
+      </objects>
+      <objects name="Color Adjusts">
+        <object>objects\hue_prime_o</object>
+        <object>objects\hue_2_o</object>
+        <object>objects\hue_glow_o</object>
+        <object>objects\val_prime_o</object>
+        <object>objects\val_2_o</object>
+        <object>objects\val_glow_o</object>
+        <object>objects\sat_prime_o</object>
+        <object>objects\sat_2_o</object>
+        <object>objects\sat_glow_o</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room0</room>
     <room>rooms\OverMap</room>
     <room>rooms\RadioRoom</room>
     <room>rooms\InventoryRoom</room>
-    <room>rooms\room0</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

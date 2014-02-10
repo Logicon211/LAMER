@@ -32,12 +32,15 @@ target_vspeed = 0;
 target_hspeed = 0;
 boosting = false;
 walking = false;
+
 counter = 0;
 shield_counter = 0;
+jumpCounter = 100;
+landCounter = 0;
+
 boost_power = 1;
 leg_speed = 1;
 weight = 1;
-
 attack1_type=0;
 attack2_type=0;
 
@@ -166,6 +169,10 @@ else
     {
         state=string('tonorm');
     }
+    else if(state=string('kneel'))
+    {
+        target_hspeed = 0;
+    }
     else
     {
         core.gun_aim = 0;
@@ -215,8 +222,9 @@ else
             {
                 if(!boosting)
                 {
-                    vspeed -= 28;
-                    airborne = true;
+                    state=string('jump');
+                    jumpCounter = 0;
+                    target_hspeed = 0;
                 }
             }
             else{}
@@ -362,9 +370,29 @@ if(vspeed &gt; 40)
 if(vspeed&gt;0)
 {
     //check bottom left
-    if(find_edge_below(x,y,-core.lefthalf,140,vspeed,land_parent)){}
+    if(find_edge_below(x,y,-core.lefthalf,140,vspeed,land_parent))
+    {
+        if(state=string('shield'))
+        {
+            core.gun_aim = 0;
+            with(shield_obj){instance_destroy()}
+            state = string('tonorm');
+            shield_counter = 0;
+        }
+        state = string('land');
+    }
     //check bottom right
-    else{find_edge_below(x,y,core.righthalf,140,vspeed,land_parent);}
+    else if(find_edge_below(x,y,core.righthalf,140,vspeed,land_parent))
+    {
+        if(state=string('shield'))
+        {
+            core.gun_aim = 0;
+            with(shield_obj){instance_destroy()}
+            state = string('tonorm');
+            shield_counter = 0;
+        }
+        state = string('land');
+    }
 }
 else if(vspeed&lt;0)
 {
@@ -452,7 +480,25 @@ core.vspeed = vspeed;
 core.hspeed = hspeed;
 //END Universal Positioning
 
-if(state = string('normal'))
+if(state = string('jump'))
+{
+    if(jumpCounter&lt;5)
+    {
+        jumpCounter += 1;
+        core.x = x;
+        core.y = y_ease(core.y,y+20,4);
+    }
+    else if(jumpCounter=5)
+    {
+        jumpCounter = 100;
+        core.x = x;
+        core.y = y_ease(core.y,y+20,4);
+        vspeed -= 28;
+        airborne = true;
+        state = string('tonorm');
+    }
+}
+else if(state = string('normal'))
 {
     core.x = x;
     core.y = y;
@@ -507,6 +553,19 @@ else if(state = string('slideR'))
     core.image_xscale = -1;
     core.image_angle = angle_ease(core.image_angle,hspeed,4);
     
+}
+else if(state = string('land'))
+{
+    if(landCounter&gt;0)
+    {
+        landCounter -= 1;
+        core.x = x;
+        core.y = y_ease(core.y,y+landCounter*6,2);
+    }
+    else
+    {
+        state = string('tonorm');
+    }
 }
 </string>
           </argument>

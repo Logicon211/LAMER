@@ -102,6 +102,20 @@ else if(player.state=string('shield'))
 }
 //END Shield State
 
+//Jump State
+else if(player.state=string('jump'))
+{
+    lowerarm.image_angle = angle_ease(lowerarm.image_angle,70*image_xscale,8);
+}
+//END Jump State
+
+//Land State
+else if(player.state=string('land'))
+{
+    lowerarm.image_angle = angle_ease(lowerarm.image_angle,70*image_xscale,8);
+}
+//END Land State
+
 if(isAttacking)
 {
     lowerarm.isAttacking = true;

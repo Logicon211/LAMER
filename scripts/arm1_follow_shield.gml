@@ -13,4 +13,4 @@ else
      arm.depth = depth-2;
 }
 
-arm.image_angle = angle_ease8(arm.image_angle,-70*arm.image_xscale);
+arm.image_angle = angle_ease(arm.image_angle,-70*arm.image_xscale,8);
