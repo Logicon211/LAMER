@@ -76,8 +76,9 @@ alarm[0] = true;
             <kind>1</kind>
             <string>state = 1;
 
-colorButtonArray[selectedColorButton].state = 0;
-//selecedButton = num;
+buttonArray[selectedButton].state = 0;
+selectedButton = num;
+
 </string>
           </argument>
         </arguments>
@@ -103,6 +104,12 @@ colorButtonArray[selectedColorButton].state = 0;
             <string>state = 0;
 
 alarm[1] = true;
+
+if(selectedColorButton != -1)
+{
+    buttonArray[selectedColorButton].state = 0;
+}
+selectedColorButton = num;
 </string>
           </argument>
         </arguments>
