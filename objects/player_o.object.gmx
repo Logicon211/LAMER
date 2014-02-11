@@ -3,7 +3,7 @@
   <spriteName>player_s</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1234567</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -62,6 +62,11 @@ legheight = core.legheight;
 
 attack1_type = core.attack1_type;
 attack2_type = core.attack2_type;
+
+
+//color blend test
+color_tst = 0;
+color_tst2 = 0;
 </string>
           </argument>
         </arguments>
@@ -451,6 +456,14 @@ if(state=string('tonorm'))
 /***************************************************
   END State Controll
  ***************************************************/
+ 
+ 
+//color code test
+if(keyboard_check(ord('O')))
+{
+    color_tst += 1;
+    color_tst2 = color_tst mod 5;
+}
 </string>
           </argument>
         </arguments>

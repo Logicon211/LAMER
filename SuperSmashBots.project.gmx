@@ -51,6 +51,7 @@
     <sprite>sprites\InventoryUINameSprite</sprite>
     <sprite>sprites\InventoryUIItemSprite</sprite>
     <sprite>sprites\derpydoo</sprite>
+    <sprite>sprites\derps</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -114,6 +115,12 @@
     <script>scripts\destroyArray.gml</script>
     <script>scripts\create_part.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shaderBloom.shader</shader>
+    <shader type="GLSLES">shaders\shaderNorm.shader</shader>
+    <shader type="GLSLES">shaders\shaderPass.shader</shader>
+    <shader type="GLSLES">shaders\shaderBoss.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\font0</font>
     <font>fonts\font1</font>
@@ -226,6 +233,7 @@
         <object>objects\sat_glow_o</object>
       </objects>
     </objects>
+    <object>objects\object61</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
