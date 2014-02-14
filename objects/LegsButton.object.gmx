@@ -30,6 +30,8 @@ view_visible[1] = true;
 categoryName = "Legs Pieces"
 categoryNumber = num;
 
+lookingAtItems = true;
+
 //Display the player's current Head Parts inventory
 for(var i = 0; i &lt; ds_list_size(LegsInventory); i++)
 {

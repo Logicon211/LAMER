@@ -130,6 +130,7 @@
     <font>fonts\font1</font>
     <font>fonts\InventoryHeader</font>
     <font>fonts\InventoryContent</font>
+    <font>fonts\InventoryContentSmall</font>
   </fonts>
   <objects name="objects">
     <object>objects\PulsingEnter</object>

@@ -54,6 +54,19 @@ arrayLocation = 0;
 {
     unselectAllItems(inventoryArray);
     state = 1;
+    
+    var selected = -1;
+    //figure out the array index of what was clicked
+    for(var i = 0; i&lt;array_length_1d(inventoryArray); i++)
+    {
+        if(inventoryArray[i].id == id)
+        {
+            selected = i;
+            break;
+        }   
+    }
+    
+    selectedInventory = selected;
 }
 else if (state == 1)
 {
@@ -62,6 +75,7 @@ else if (state == 1)
     if(view_visible[1])
     {
         view_visible[1] = false;
+        lookingAtItems = false;
         selectedInventory = -1;
         inventoryArray = destroyArray(inventoryArray);
     }

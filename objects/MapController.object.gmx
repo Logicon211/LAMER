@@ -255,6 +255,7 @@ alarm[10] = false;
     if(view_visible[1])
     {
         view_visible[1] = false;
+        lookingAtItems = false;
         selectedInventory = -1;
         inventoryArray = destroyArray(inventoryArray);
     }
