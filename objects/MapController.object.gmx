@@ -176,6 +176,45 @@ ds_list_add(LegsInventory, testLegsObject1);
 ds_list_add(LegsInventory, testLegsObject1);
 ds_list_add(BackPackInventory, testBackPackObject1);
 
+
+/***************************************************
+  Player Colors
+    Added by Elliot Coy - Feb 13 9PM
+ ***************************************************/
+
+globalvar hue_prime;
+globalvar sat_prime;
+globalvar val_prime;
+hue_prime = 100;
+sat_prime = 0;
+val_prime = 100;
+globalvar hue_2;
+globalvar sat_2;
+globalvar val_2;
+hue_2 = 100;
+sat_2 = 0;
+val_2 = 100;
+globalvar hue_glow;
+globalvar sat_glow;
+globalvar val_glow;
+hue_glow = 100;
+sat_glow = 0;
+val_glow = 100;
+
+//TODO - more for players, and maybe robots.
+
+//side note... 
+    //need a method of coloring players,
+    //computer palyers, and parts, from within
+    //part objects. Otherwise everyplayer will
+    //need their own armor objects...
+    //getPrimeColor(); for example, or locally
+    //stored color pallets within playerObjects
+    //for computer players.
+
+/***************************************************
+  END Player Colors
+ ***************************************************/
 </string>
           </argument>
         </arguments>

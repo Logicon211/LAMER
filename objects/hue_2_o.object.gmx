@@ -28,7 +28,7 @@
             <string>globalvar hue_2;
 //Player specific code. player 1 for now
 hue_2 = player1Colors[3];
-xTrack = hue_2;
+xTrack = hue_2/255*sprite_width;
 </string>
           </argument>
         </arguments>

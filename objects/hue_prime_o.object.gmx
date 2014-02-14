@@ -28,7 +28,7 @@
             <string>globalvar hue_prime;
 //Player specific code. player 1 for now
 hue_prime = player1Colors[0];
-xTrack = hue_prime;//hue_prime*2.55;
+xTrack = hue_prime/255*sprite_width;
 </string>
           </argument>
         </arguments>
