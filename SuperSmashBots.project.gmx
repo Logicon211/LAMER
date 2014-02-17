@@ -51,6 +51,9 @@
       <sprite>sprites\SecondaryColorButtonSprite</sprite>
       <sprite>sprites\EnergyColorButtonSprite</sprite>
       <sprite>sprites\ConfirmColorButtonSprite</sprite>
+      <sprite>sprites\MultiplayerButtonSprite</sprite>
+      <sprite>sprites\CampaignButtonSprite</sprite>
+      <sprite>sprites\TestMenuButtonSprite</sprite>
     </sprites>
     <sprite>sprites\PulsingEnterSprite</sprite>
     <sprite>sprites\InventoryUINameSprite</sprite>
@@ -60,6 +63,7 @@
   <backgrounds name="background">
     <background>background\MapBackground</background>
     <background>background\RadioTalkBackground</background>
+    <background>background\MenuBackground</background>
     <background>background\InventoryBackground</background>
   </backgrounds>
   <paths name="paths"/>
@@ -139,6 +143,7 @@
     <objects name="Buttons">
       <object>objects\BaseButton</object>
       <object>objects\BaseButton2</object>
+      <object>objects\BaseButton3</object>
       <object>objects\HeadButton</object>
       <object>objects\TorsoButton</object>
       <object>objects\LArmButton</object>
@@ -148,6 +153,9 @@
       <object>objects\PrimaryColorButton</object>
       <object>objects\SecondaryColorButton</object>
       <object>objects\EnergyColorButton</object>
+      <object>objects\MultiplayerButton</object>
+      <object>objects\CampaignButton</object>
+      <object>objects\TestButton</object>
     </objects>
     <objects name="Inventory">
       <object>objects\InventoryUIItem</object>
@@ -250,6 +258,7 @@
     <object>objects\ShaderTestObject</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
     <room>rooms\room0</room>
     <room>rooms\RadioRoom</room>
