@@ -67,6 +67,10 @@ globalvar valBar;
 valBar = 0;
 globalvar satBar;
 satBar = 0;
+globalvar ColorSelector;
+ColorSelector = 0;
+globalvar selectedBar;
+selectedBar = 0;
 </string>
           </argument>
         </arguments>
@@ -274,6 +278,11 @@ if(lookingAtItems)
         draw_set_font(InventoryContent);
     }
 }
+
+if(selectedBar != 0)
+{
+    draw_sprite(colorSelectorSprite,0,selectedBar.x - 6, selectedBar.y - 5);
+}
 </string>
           </argument>
         </arguments>
@@ -300,13 +309,40 @@ if(lookingAtItems)
 {
     buttonArray[selectedButton].state = 0;
     
-    if(selectedButton &gt;= 8)
+    //Color selector
+    if(selectedButton &gt; 5 and selectedButton &lt;= 8)
     {
-        selectedButton = 0;
+        if(selectedBar != 0)
+        {
+            with(ColorSelector) {
+                instance_destroy();
+            }
+            if(selectedBar.num == 1)
+            {
+                selectedBar = satBar;
+            }
+            else if(selectedBar.num == 2)
+            {
+                selectedBar = valBar;
+            }
+            else {
+                selectedBar = 0;
+            }
+        }
+        else {
+            selectedBar = hueBar;
+        }
+        
     }
-    else 
-    {
-        selectedButton++;
+    else {
+        if(selectedButton &gt;= 5)
+        {
+            selectedButton = 0;
+        }
+        else 
+        {
+            selectedButton++;
+        }
     }
 }
 else // This is when you're picking an inventory item
@@ -325,6 +361,45 @@ else // This is when you're picking an inventory item
         selectedInventory++;
     }
     inventoryArray[selectedInventory].state = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!view_visible[1])
+{
+    buttonArray[selectedButton].state = 0;
+    
+    if(selectedButton &gt;= 8)
+    {
+        selectedButton = 0;
+    }
+    else if(selectedButton &lt;= 5)
+    {
+        selectedButton = 6;
+    }
+    else
+    {
+        selectedButton++;
+    }
 }
 </string>
           </argument>
@@ -352,13 +427,40 @@ else // This is when you're picking an inventory item
 {
     buttonArray[selectedButton].state = 0;
     
-    if(selectedButton == 0)
+    //Color selector
+    if(selectedButton &gt; 5 and selectedButton &lt;= 8)
     {
-        selectedButton = 8;
+        if(selectedBar != 0)
+        {
+            with(ColorSelector) {
+                instance_destroy();
+            }
+            if(selectedBar.num == 3)
+            {
+                selectedBar = satBar;
+            }
+            else if(selectedBar.num == 2)
+            {
+                selectedBar = hueBar;
+            }
+            else {
+                selectedBar = 0;
+            }
+        }
+        else {
+            selectedBar = valBar;
+        }
+        
     }
-    else 
-    {
-        selectedButton--;
+    else {
+        if(selectedButton == 0)
+        {
+            selectedButton = 8;
+        }
+        else 
+        {
+            selectedButton--;
+        }
     }
 }
 else  // This is when you're picking an inventory item
@@ -377,6 +479,44 @@ else  // This is when you're picking an inventory item
         selectedInventory--;
     }
     inventoryArray[selectedInventory].state = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!view_visible[1])
+{
+    buttonArray[selectedButton].state = 0;
+    
+    if(selectedButton == 6)
+    {
+        selectedButton = 0;
+    }
+    else if(selectedButton &lt;= 5)
+    {
+        selectedButton = 8;
+    }
+    else {
+        selectedButton--;
+    }
 }
 </string>
           </argument>
@@ -405,16 +545,20 @@ else  // This is when you're picking an inventory item
     buttonArray[selectedButton].state = 0;
     
     buttonArray[selectedButton].alarm[1] = true;
+    
+    selectedBar = 0;
 }
 else
 {
     if(selectedInventory != -1)
     {
         //do code to confirm selection
-        playerLoadOut[categoryNumber] = inventoryArray[selectedInventory].inventoryItem;
+        //TODO Add a check to figure out which player to load the item slot into
+        playerLoadOut1[categoryNumber] = inventoryArray[selectedInventory].inventoryItem;
         if(view_visible[1])
         {
             view_visible[1] = false;
+            lookingAtItems = false;
             selectedInventory = -1;
             inventoryArray = destroyArray(inventoryArray);
         }

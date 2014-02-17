@@ -29,6 +29,7 @@
 //Player specific code. player 1 for now
 val_prime = player1Colors[2];
 xTrack = val_prime;
+num = 3;
 </string>
           </argument>
         </arguments>

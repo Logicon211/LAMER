@@ -14,6 +14,7 @@
     <sprite>sprites\VisitedMapNodeSprite</sprite>
     <sprites name="BattleSprites">
       <sprite>sprites\hue_s</sprite>
+      <sprite>sprites\colorSelectorSprite</sprite>
       <sprite>sprites\arm_s</sprite>
       <sprite>sprites\core_s</sprite>
       <sprite>sprites\arm_s2</sprite>
@@ -235,6 +236,7 @@
         <object>objects\sat_prime_o</object>
         <object>objects\sat_2_o</object>
         <object>objects\sat_glow_o</object>
+        <object>objects\colorSelector</object>
       </objects>
     </objects>
   </objects>

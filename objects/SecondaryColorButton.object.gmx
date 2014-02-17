@@ -29,7 +29,10 @@
 
 //Button hit code
 alarm[1] = 0;
-buttonArray[selectedColorButton].state = 0;
+if(selectedColorButton != -1) 
+{
+    buttonArray[selectedColorButton].state = 0;
+}
 selectedColorButton = num
 
 with(hueBar) {
