@@ -105,6 +105,213 @@ if(selectedColorButton != -1)
 {
     colorButtonArray[selectedColorButton].state = 1;
 }*/
+
+//LEFT
+if(left_check_pressed())
+{
+    if(!view_visible[1])
+    {
+        buttonArray[selectedButton].state = 0;
+        
+        if(selectedBar == 0)
+        {
+            if(selectedButton == 6)
+            {
+                selectedButton = 0;
+            }
+            else if(selectedButton &lt;= 5)
+            {
+                selectedButton = 8;
+            }
+            else {
+                selectedButton--;
+            }
+        }
+        /*else
+        {
+            selectedBar.xTrack-=5;
+            if(selectedBar.xTrack &lt; 0)
+            {
+                selectedBar.xTrack = 255;
+            }
+        }*/
+    }
+}
+
+//LEFT DOWN
+if(left_check())
+{
+    if(selectedBar != 0)
+    {
+        selectedBar.xTrack-=5;
+        if(selectedBar.xTrack &lt; 0)
+        {
+            selectedBar.xTrack = 255;
+        }
+    }
+}
+
+//RIGHT
+if(right_check_pressed())
+{
+    if(!view_visible[1])
+    {
+        buttonArray[selectedButton].state = 0;
+        
+        if(selectedBar == 0)
+        {
+            if(selectedButton &gt;= 8)
+            {
+                selectedButton = 0;
+            }
+            else if(selectedButton &lt;= 5)
+            {
+                selectedButton = 6;
+            }
+            else
+            {
+                selectedButton++;
+            }
+        }
+    }
+}
+
+//RIGHT DOWN
+if(right_check())
+{
+    if(selectedBar != 0)
+    {
+        selectedBar.xTrack+=5;
+        if(selectedBar.xTrack &gt; 255)
+        {
+            selectedBar.xTrack = 0;
+        }
+    }
+}
+
+//UP
+if(up_check_pressed())
+{
+    if(!view_visible[1])
+    {
+        buttonArray[selectedButton].state = 0;
+        
+        //Color selector
+        if(selectedButton &gt; 5 and selectedButton &lt;= 8)
+        {
+            if(selectedBar != 0)
+            {
+                with(ColorSelector) {
+                    instance_destroy();
+                }
+                if(selectedBar.num == 3)
+                {
+                    selectedBar = satBar;
+                }
+                else if(selectedBar.num == 2)
+                {
+                    selectedBar = hueBar;
+                }
+                else {
+                    selectedBar = 0;
+                }
+            }
+            else {
+                selectedBar = valBar;
+            }
+            
+        }
+        else {
+            if(selectedButton == 0)
+            {
+                selectedButton = 8;
+            }
+            else 
+            {
+                selectedButton--;
+            }
+        }
+    }
+    else  // This is when you're picking an inventory item
+    {
+        unselectAllItems(inventoryArray);
+        if(selectedInventory == -1)
+        {
+            selectedInventory = 0;
+        }
+        else if(selectedInventory == 0)
+        {
+            selectedInventory = array_length_1d(inventoryArray) - 1;
+        }
+        else
+        {
+            selectedInventory--;
+        }
+        inventoryArray[selectedInventory].state = 1;
+    }
+}
+
+//DOWN
+if(down_check_pressed())
+{
+    if(!view_visible[1])
+    {
+        buttonArray[selectedButton].state = 0;
+        
+        //Color selector
+        if(selectedButton &gt; 5 and selectedButton &lt;= 8)
+        {
+            if(selectedBar != 0)
+            {
+                with(ColorSelector) {
+                    instance_destroy();
+                }
+                if(selectedBar.num == 1)
+                {
+                    selectedBar = satBar;
+                }
+                else if(selectedBar.num == 2)
+                {
+                    selectedBar = valBar;
+                }
+                else {
+                    selectedBar = 0;
+                }
+            }
+            else {
+                selectedBar = hueBar;
+            }
+            
+        }
+        else {
+            if(selectedButton &gt;= 5)
+            {
+                selectedButton = 0;
+            }
+            else 
+            {
+                selectedButton++;
+            }
+        }
+    }
+    else // This is when you're picking an inventory item
+    {
+        unselectAllItems(inventoryArray);
+        if(selectedInventory == -1)
+        {
+            selectedInventory = 0;
+        }
+        else if(selectedInventory == array_length_1d(inventoryArray) - 1)
+        {
+            selectedInventory = 0;
+        }
+        else
+        {
+            selectedInventory++;
+        }
+        inventoryArray[selectedInventory].state = 1;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -305,7 +512,7 @@ if(selectedBar != 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!view_visible[1])
+            <string>/*if(!view_visible[1])
 {
     buttonArray[selectedButton].state = 0;
     
@@ -361,7 +568,7 @@ else // This is when you're picking an inventory item
         selectedInventory++;
     }
     inventoryArray[selectedInventory].state = 1;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -384,23 +591,34 @@ else // This is when you're picking an inventory item
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!view_visible[1])
+            <string>/*if(!view_visible[1])
 {
     buttonArray[selectedButton].state = 0;
     
-    if(selectedButton &gt;= 8)
+    if(selectedBar == 0)
     {
-        selectedButton = 0;
-    }
-    else if(selectedButton &lt;= 5)
-    {
-        selectedButton = 6;
+        if(selectedButton &gt;= 8)
+        {
+            selectedButton = 0;
+        }
+        else if(selectedButton &lt;= 5)
+        {
+            selectedButton = 6;
+        }
+        else
+        {
+            selectedButton++;
+        }
     }
     else
     {
-        selectedButton++;
+        selectedBar.xTrack+=5;
+        if(selectedBar.xTrack &gt; 255)
+        {
+            selectedBar.xTrack = 0;
+        }
     }
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -423,7 +641,7 @@ else // This is when you're picking an inventory item
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!view_visible[1])
+            <string>/*if(!view_visible[1])
 {
     buttonArray[selectedButton].state = 0;
     
@@ -479,7 +697,7 @@ else  // This is when you're picking an inventory item
         selectedInventory--;
     }
     inventoryArray[selectedInventory].state = 1;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -502,22 +720,33 @@ else  // This is when you're picking an inventory item
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!view_visible[1])
+            <string>/*if(!view_visible[1])
 {
     buttonArray[selectedButton].state = 0;
     
-    if(selectedButton == 6)
+    if(selectedBar == 0)
     {
-        selectedButton = 0;
+        if(selectedButton == 6)
+        {
+            selectedButton = 0;
+        }
+        else if(selectedButton &lt;= 5)
+        {
+            selectedButton = 8;
+        }
+        else {
+            selectedButton--;
+        }
     }
-    else if(selectedButton &lt;= 5)
+    else
     {
-        selectedButton = 8;
+        selectedBar.xTrack-=5;
+        if(selectedBar.xTrack &lt; 0)
+        {
+            selectedBar.xTrack = 255;
+        }
     }
-    else {
-        selectedButton--;
-    }
-}
+}*/
 </string>
           </argument>
         </arguments>

@@ -1,4 +1,4 @@
-if(keyboard_check(vk_right))
+if(keyboard_check_pressed(vk_right))
 {
     return true;
 }
