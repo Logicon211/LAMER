@@ -176,6 +176,39 @@ ds_list_add(LegsInventory, ProtoLegsObjectItem);
 ds_list_add(LegsInventory, ProtoLegsObjectItem);
 ds_list_add(BackPackInventory, testBackPackObject1);
 
+//Add in items to default inventory
+//PLAYER1 INVENTORY
+playerLoadOut1[0] = ds_list_find_value(HeadInventory, 0); //Head
+playerLoadOut1[1] = ds_list_find_value(TorsoInventory, 0); //Torso
+playerLoadOut1[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
+playerLoadOut1[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut1[4] = ds_list_find_value(LegsInventory, 0); //Legs
+playerLoadOut1[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
+
+//PLAYER2 INVENTORY
+playerLoadOut2[0] = ds_list_find_value(HeadInventory, 0); //Head
+playerLoadOut2[1] = ds_list_find_value(TorsoInventory, 0); //Torso
+playerLoadOut2[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
+playerLoadOut2[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut2[4] = ds_list_find_value(LegsInventory, 0); //Legs
+playerLoadOut2[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
+
+//PLAYER3 INVENTORY
+playerLoadOut3[0] = ds_list_find_value(HeadInventory, 0); //Head
+playerLoadOut3[1] = ds_list_find_value(TorsoInventory, 0); //Torso
+playerLoadOut3[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
+playerLoadOut3[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut3[4] = ds_list_find_value(LegsInventory, 0); //Legs
+playerLoadOut3[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
+
+//PLAYER4 INVENTORY
+playerLoadOut4[0] = ds_list_find_value(HeadInventory, 0); //Head
+playerLoadOut4[1] = ds_list_find_value(TorsoInventory, 0); //Torso
+playerLoadOut4[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
+playerLoadOut4[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut4[4] = ds_list_find_value(LegsInventory, 0); //Legs
+playerLoadOut4[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
+
 
 /***************************************************
   Player Colors
@@ -288,28 +321,26 @@ alarm[10] = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(room != MenuRoom)
+            <string>if(room == InventoryRoom)
 {
-    if(room == InventoryRoom)
+    //if in inventory screen and looking through items to select
+    if(view_visible[1])
     {
-        //if in inventory screen and looking through items to select
-        if(view_visible[1])
-        {
-            view_visible[1] = false;
-            lookingAtItems = false;
-            selectedInventory = -1;
-            inventoryArray = destroyArray(inventoryArray);
-        }
-        else 
-        {
-            room_goto(OverMap);
-        }
+        view_visible[1] = false;
+        lookingAtItems = false;
+        selectedInventory = -1;
+        inventoryArray = destroyArray(inventoryArray);
     }
     else 
     {
         room_goto(OverMap);
     }
 }
+/*else 
+{
+    room_goto(OverMap);
+}*/
+
 </string>
           </argument>
         </arguments>
