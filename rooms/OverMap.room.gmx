@@ -50,7 +50,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="MapController" x="0" y="0" name="inst_9BC68F66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MapNode0" x="19" y="385" name="inst_4F192A05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MapNode1" x="329" y="256" name="inst_1FB08ED9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MapNode2" x="824" y="305" name="inst_B5BB7A08" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

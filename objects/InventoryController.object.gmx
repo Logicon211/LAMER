@@ -224,7 +224,7 @@ if(up_check_pressed())
         else {
             if(selectedButton == 0)
             {
-                selectedButton = 8;
+                selectedButton = 5;
             }
             else 
             {

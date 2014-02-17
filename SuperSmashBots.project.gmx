@@ -139,6 +139,7 @@
     <font>fonts\InventoryContentSmall</font>
   </fonts>
   <objects name="objects">
+    <object>objects\GameController</object>
     <object>objects\PulsingEnter</object>
     <objects name="Buttons">
       <object>objects\BaseButton</object>
@@ -195,7 +196,6 @@
         <object>objects\MapNode6</object>
         <object>objects\MapNodeParent</object>
       </objects>
-      <object>objects\MapController</object>
       <object>objects\PlayerMarker</object>
       <object>objects\MapUIBar</object>
       <object>objects\MapCamera</object>

@@ -53,6 +53,7 @@
     <instance objName="MultiplayerButton" x="544" y="384" name="inst_2AD89541" locked="0" code="" scaleX="1.61344540119171" scaleY="1.6271185874939" colour="4294967295" rotation="0"/>
     <instance objName="CampaignButton" x="544" y="256" name="inst_93359006" locked="0" code="" scaleX="1.60000002384186" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
     <instance objName="TestButton" x="544" y="512" name="inst_C6D682D5" locked="0" code="" scaleX="1.60000002384186" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="GameController" x="32" y="32" name="inst_FC11C64A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
