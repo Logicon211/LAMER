@@ -28,9 +28,13 @@
             <string>globalvar hue_glow;
 //Player specific code. player 1 for now
 hue_glow = player1Colors[6];
-xTrack = hue_glow/255*sprite_width;
+<<<<<<< HEAD
+xTrack = hue_glow;
 num = 1;
 
+=======
+xTrack = hue_glow/255*sprite_width;
+>>>>>>> 24b6847a0f0127eda42189c756b3ed2ccf388f03
 </string>
           </argument>
         </arguments>

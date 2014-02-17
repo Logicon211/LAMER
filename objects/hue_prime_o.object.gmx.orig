@@ -25,12 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar hue_glow;
+            <string>globalvar hue_prime;
 //Player specific code. player 1 for now
-hue_glow = player1Colors[6];
-xTrack = hue_glow/255*sprite_width;
+hue_prime = player1Colors[0];
+<<<<<<< HEAD
+xTrack = hue_prime;//hue_prime*2.55;
 num = 1;
-
+=======
+xTrack = hue_prime/255*sprite_width;
+>>>>>>> 24b6847a0f0127eda42189c756b3ed2ccf388f03
 </string>
           </argument>
         </arguments>
@@ -53,7 +56,7 @@ num = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//x=view_xview+444;
+            <string>//x=view_xview+10;
 //y=view_yview+10;
 
 if(mouse_x &gt;= x &amp;&amp; mouse_x &lt;= x + sprite_width)
@@ -79,10 +82,10 @@ else
 
 if(change_color)
 {
-    hue_glow = ((mouse_x-x)/sprite_width)*255;
+    hue_prime = ((mouse_x-x)/sprite_width)*255;
     
-    //player specific code here, Player1 for now
-    player1Colors[6] = ((mouse_x-x)/sprite_width)*255;
+    //player specific code. Player 1 for now
+    player1Colors[0] = ((mouse_x-x)/sprite_width)*255;
 }
 </string>
           </argument>

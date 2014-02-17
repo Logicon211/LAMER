@@ -1,4 +1,4 @@
-if(keyboard_check(vk_lshift))
+if(keyboard_check(vk_lshift)||keyboard_check(ord('F')))
 {
     return true;
 }
