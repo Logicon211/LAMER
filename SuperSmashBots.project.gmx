@@ -173,6 +173,13 @@
       <objects name="TestItems">
         <object>objects\testHead</object>
       </objects>
+      <objects name="InventoryItems">
+        <object>objects\ProtoHeadObjectItem</object>
+        <object>objects\ProtoTorsoObjectItem</object>
+        <object>objects\ProtoSwordObjectItem</object>
+        <object>objects\ProtoGunObjectItem</object>
+        <object>objects\ProtoLegsObjectItem</object>
+      </objects>
     </objects>
     <objects name="Radio">
       <object>objects\RadioController</object>

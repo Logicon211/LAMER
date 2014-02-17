@@ -154,26 +154,26 @@ BackPackInventory = ds_list_create();
 //Testing the huge item array
 //Seems like the best way to do it, even though its crazy stupid
 globalvar ItemArray;
-ItemArray[0] = instance_create(0, 0, testHeadObject1);
-ItemArray[1] = instance_create(0, 0, testTorsoObject1);
-ItemArray[2] = instance_create(0, 0, testLArmObject1);
-ItemArray[3] = instance_create(0, 0, testRArmObject1);
-ItemArray[4] = instance_create(0, 0, testLegsObject1);
+ItemArray[0] = instance_create(0, 0, ProtoHeadObjectItem);
+ItemArray[1] = instance_create(0, 0, ProtoTorsoObjectItem);
+ItemArray[2] = instance_create(0, 0, ProtoSwordObjectItem);
+ItemArray[3] = instance_create(0, 0, ProtoGunObjectItem);
+ItemArray[4] = instance_create(0, 0, ProtoLegsObjectItem);
 ItemArray[5] = instance_create(0, 0, testBackPackObject1);
 
 
 //Will probably do something here to read a save file and load inventory, for now, test inventory
 
-ds_list_add(HeadInventory, testHeadObject1);
-ds_list_add(HeadInventory, testHeadObject1);
-ds_list_add(HeadInventory, testHeadObject1);
-ds_list_add(TorsoInventory, testTorsoObject1);
-ds_list_add(TorsoInventory, testTorsoObject1);
-ds_list_add(ArmInventory, testLArmObject1);
-ds_list_add(ArmInventory, testLArmObject1);
-ds_list_add(ArmInventory, testRArmObject1);
-ds_list_add(LegsInventory, testLegsObject1);
-ds_list_add(LegsInventory, testLegsObject1);
+ds_list_add(HeadInventory, ProtoHeadObjectItem);
+ds_list_add(HeadInventory, ProtoHeadObjectItem);
+ds_list_add(HeadInventory, ProtoHeadObjectItem);
+ds_list_add(TorsoInventory, ProtoTorsoObjectItem);
+ds_list_add(TorsoInventory, ProtoTorsoObjectItem);
+ds_list_add(ArmInventory, ProtoSwordObjectItem);
+ds_list_add(ArmInventory, ProtoSwordObjectItem);
+ds_list_add(ArmInventory, ProtoGunObjectItem);
+ds_list_add(LegsInventory, ProtoLegsObjectItem);
+ds_list_add(LegsInventory, ProtoLegsObjectItem);
 ds_list_add(BackPackInventory, testBackPackObject1);
 
 
