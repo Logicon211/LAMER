@@ -27,8 +27,12 @@
             <kind>1</kind>
             <string>//Button hit code
 alarm[1] = 0;
-buttonArray[selectedColorButton].state = 0;
-selectedColorButton = num
+selectedBar = 0;
+if(selectedColorButton != -1) 
+{
+    buttonArray[selectedColorButton].state = 0;
+}
+selectedColorButton = num;
 
 with(hueBar) {
     instance_destroy();

@@ -71,6 +71,7 @@ arrayLocation = 0;
 else if (state == 1)
 {
     //do code to confirm selection
+    //TODO Add a check to figure out which player to load the item slot into
     playerLoadOut1[categoryNumber] = inventoryItem
     if(view_visible[1])
     {

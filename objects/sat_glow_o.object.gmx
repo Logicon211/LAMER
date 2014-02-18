@@ -28,7 +28,8 @@
             <string>globalvar sat_glow;
 //Player specific code. player 1 for now
 sat_glow = player1Colors[7];
-xTrack = sat_glow/255*sprite_width;
+xTrack = sat_glow;
+num = 2;
 </string>
           </argument>
         </arguments>
@@ -54,34 +55,17 @@ xTrack = sat_glow/255*sprite_width;
             <string>//x=view_xview+444;
 //y=view_yview+50;
 
-if(mouse_x &gt;= x &amp;&amp; mouse_x &lt;= x + sprite_width)
+if(mouse_check_button(mb_left))
 {
-    if(mouse_y &gt;= y &amp;&amp; mouse_y &lt;= y+sprite_height)
+    if(instance_position(mouse_x,mouse_y,id))
     {
-        if (mouse_check_button(mb_left))
-        {
-            change_color = true;
-            xTrack = mouse_x-x;
-        }
-        else
-        {change_color = false;
-        }
-    }
-    else
-    {change_color = false;
+        xTrack = (mouse_x-x)/sprite_width*255;
     }
 }
-else
-{change_color = false;
-}
+sat_glow = xTrack;
 
-if(change_color)
-{
-    sat_glow = ((mouse_x-x)/sprite_width)*255;
-    
-    //player specific code here, Player1 for now
-    player1Colors[7] = ((mouse_x-x)/sprite_width)*255;
-}
+//player specific code here, Player1 for now
+player1Colors[7] = sat_glow;
 </string>
           </argument>
         </arguments>
@@ -107,7 +91,7 @@ if(change_color)
             <string>draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,make_color_hsv(hue_glow,255,255),image_alpha);
 draw_set_blend_mode_ext(bm_src_alpha, bm_normal);
-draw_sprite_ext(rectangle_s,0,x+xTrack,y-7,image_xscale,image_yscale,image_angle,c_white,image_alpha);
+draw_sprite_ext(rectangle_s,0,x+xTrack/255*sprite_width,y-7,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>
