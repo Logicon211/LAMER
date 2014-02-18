@@ -117,12 +117,16 @@
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
     <script>scripts\create_part.gml</script>
+    <script>scripts\smallswordattack.gml</script>
+    <script>scripts\swordAnimation1.gml</script>
+    <script>scripts\gunAnimation1.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
     <shader type="GLSLES">shaders\shaderNorm.shader</shader>
     <shader type="GLSLES">shaders\shaderPass.shader</shader>
     <shader type="GLSLES">shaders\shaderBoss.shader</shader>
+    <shader type="GLSLES">shaders\shader4.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -247,7 +251,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\OverMap</room>
-    <room>rooms\room0</room>
+    <room>rooms\testRange</room>
     <room>rooms\RadioRoom</room>
     <room>rooms\InventoryRoom</room>
   </rooms>

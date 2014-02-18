@@ -90,6 +90,9 @@ attack1 = false;
 attack2 = false;
 attack1_type = arm1.attack_type;
 attack2_type = arm2.attack_type;
+
+globalvar gunCount;
+gunCount = 0;
 </string>
           </argument>
         </arguments>
@@ -114,7 +117,14 @@ attack2_type = arm2.attack_type;
             <kind>1</kind>
             <string>/***************************************************
   Anchor Limbs
+    This code locks the different parts into place
+    on the torso.
  ***************************************************/
+
+//Torso
+vspeed = player.vspeed;
+hspeed = player.hspeed;
+//END Torso
 
 //legs
 joint = rotation_tracker(x,y,image_angle,x-1,y+35);
@@ -172,14 +182,28 @@ limb_anchor(booster3,joint[0],joint[1],hspeed,vspeed,image_xscale);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string> 
+            <string>/***************************************************
+  This script contains positioning code for
+  Titans. It is to be run by the torso object.
+  
+  --------------------------------------
+  !!TORSO POSITIONING MUST BE DICTATED!!
+  ------!!BY THE PLAYER OBBJECT!!-------
+  --------------------------------------
+  
+  By handling the positioning code for the torso
+  AND ligaments within this script will cause the
+  torso to remain one frame ahead due to GameMaker
+  Studio's draw method order.
+      
+ ***************************************************/ 
+  
 /***************************************************
   Jump State
  ***************************************************/
 
 if(player.state = string('jump'))
 {
-    image_angle = angle_ease(image_angle, -20*image_xscale, 4);
     head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 4);
     arm1.image_angle = angle_ease(arm1.image_angle, -70*image_xscale, 4);
     arm2.image_angle = angle_ease(arm2.image_angle, -20*image_xscale, 4);
@@ -305,7 +329,6 @@ if(player.state = string('kneel'))
 
 if(player.state = string('land'))
 {
-    image_angle = angle_ease(image_angle, -20*image_xscale, 4);
     arm1.image_angle = angle_ease(arm1.image_angle, player.landCounter*image_xscale*-8, 4);
     arm2.image_angle = angle_ease(arm2.image_angle, player.landCounter*image_xscale*-8, 4);
     head.image_angle = angle_ease(head.image_angle, player.landCounter*image_xscale*-8, 4);
@@ -323,10 +346,21 @@ if(player.state = string('land'))
   Attack 1 State
  ***************************************************/
 
-if(player.state = string('attack1'))
+if(player.state = string('attack'))
 {
-    if(attack1){ arm1.isAttacking = true; }
-    attack_set_1(arm1,arm1.attack_type,0,arm2,arm1.lowerarm);
+    if(attack1)
+    {
+        swordAnimation1();
+    }
+    else if(attack2)
+    {
+        gunAnimation1();
+    }
+    else
+    {
+        player.state = string("toNorm");
+    }
+    
     /***************************************************
     image_angle = angle_ease(image_angle, -20*image_xscale, 4);
     arm1.image_angle = angle_ease(arm1.image_angle, player.landCounter*image_xscale*-8, 4);
@@ -342,6 +376,60 @@ if(player.state = string('attack1'))
 /***************************************************
   END Attack 1 State
  ***************************************************/
+
+/***************************************************
+  Slide Left State
+ ***************************************************/
+
+if(player.state = string('slideL'))
+{
+    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
+    leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
+    leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
+}
+
+/***************************************************
+  END Slide Left State
+ ***************************************************/
+
+/***************************************************
+  Slide Right State
+ ***************************************************/
+
+if(player.state = string('slideR'))
+{
+    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
+    leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
+    leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
+}
+
+/***************************************************
+  END Slide Right State
+ ***************************************************/
+ 
+/***************************************************
+  Attack State
+ ***************************************************
+
+if(player.state = string('jump'))
+{
+    head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 4);
+    arm1.image_angle = angle_ease(arm1.image_angle, -70*image_xscale, 4);
+    arm2.image_angle = angle_ease(arm2.image_angle, -20*image_xscale, 4);
+    leg1.image_angle = angle_ease(leg1.image_angle, 0*image_xscale, 4);
+    leg2.image_angle = angle_ease(leg2.image_angle, 60*image_xscale, 4);
+    leg1.lower_angle = -80*image_xscale;
+    leg2.lower_angle = 10*image_xscale;
+}
+
+/***************************************************
+  END Attack State
+ ***************************************************/
+
 </string>
           </argument>
         </arguments>

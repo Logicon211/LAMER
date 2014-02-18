@@ -270,3 +270,12 @@ if(arm.isAttacking=false)
 /***************************************************
   END Attack Stopper
  ***************************************************/
+ 
+if(down_check())
+{
+    arm.isAttacking = false;
+    arm.animation_counter = 0;
+    arm.lower_angle = 1234;
+    other_arm.lower_angle = 1234;
+    player.state = string('tonorm');
+}
