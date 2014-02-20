@@ -37,25 +37,25 @@ booster3 = instance_create(x,y,booster_o);
 /***************************************************
   Create Legs
  ***************************************************/
-leg1=instance_create(x,y,leg_o);
-leg1.depth=depth+2
+leg1 = createPart(player.playerNum,4);
+leg1.depth = depth+2
 leg1.me = 1;
 if(leg1.legnums=2)
 {
-    leg2 = instance_create(x,y,leg_o);
+    leg2 = createPart(player.playerNum,4);
     leg2.depth = depth-1;
     leg2.me = 2;
     legnums = 2;
 }
 else if(leg1.legnums=4)
 {
-    leg2 = instance_create(x,y,leg_o);
+    leg2 = createPart(player.playerNum,4);
     leg2.depth = depth-1;
     leg2.me = 2;
-    leg3 = instance_create(x,y,leg_o);
+    leg3 = createPart(player.playerNum,4);
     leg3.depth = depth-2;
     leg3.me = 3;
-    leg4 = instance_create(x,y,leg_o);
+    leg4 = createPart(player.playerNum,4);
     leg4.depth = depth+3;
     leg4.me = 4;
     legnums = 4;
@@ -66,16 +66,16 @@ else if(leg1.legnums=4)
  ***************************************************/
 
 //Create Head
-head = instance_create(x,y,head_o);
+head = createPart(player.playerNum,0);
 //END Create Head
 
 //Create Arm1
-arm1 = instance_create(x,y,arm_o);
+arm1 = createPart(player.playerNum,2);
 arm1.depth = depth-2;
 //END Create Arm1
 
 //Create Arm2
-arm2 = instance_create(x,y,proto_gun_o);
+arm2 = createPart(player.playerNum,3);
 arm2.depth = depth+4;
 //END Create Arm2
 

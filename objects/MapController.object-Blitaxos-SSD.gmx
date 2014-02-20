@@ -154,60 +154,27 @@ BackPackInventory = ds_list_create();
 //Testing the huge item array
 //Seems like the best way to do it, even though its crazy stupid
 globalvar ItemArray;
-ItemArray[0] = instance_create(0, 0, ProtoHeadObjectItem);
-ItemArray[1] = instance_create(0, 0, ProtoTorsoObjectItem);
-ItemArray[2] = instance_create(0, 0, ProtoSwordObjectItem);
-ItemArray[3] = instance_create(0, 0, ProtoGunObjectItem);
-ItemArray[4] = instance_create(0, 0, ProtoLegsObjectItem);
+ItemArray[0] = instance_create(0, 0, testHeadObject1);
+ItemArray[1] = instance_create(0, 0, testTorsoObject1);
+ItemArray[2] = instance_create(0, 0, testLArmObject1);
+ItemArray[3] = instance_create(0, 0, testRArmObject1);
+ItemArray[4] = instance_create(0, 0, testLegsObject1);
 ItemArray[5] = instance_create(0, 0, testBackPackObject1);
 
 
 //Will probably do something here to read a save file and load inventory, for now, test inventory
 
-ds_list_add(HeadInventory, ProtoHeadObjectItem);
-ds_list_add(HeadInventory, ProtoHeadObjectItem);
-ds_list_add(HeadInventory, ProtoHeadObjectItem);
-ds_list_add(TorsoInventory, ProtoTorsoObjectItem);
-ds_list_add(TorsoInventory, ProtoTorsoObjectItem);
-ds_list_add(ArmInventory, ProtoSwordObjectItem);
-ds_list_add(ArmInventory, ProtoSwordObjectItem);
-ds_list_add(ArmInventory, ProtoGunObjectItem);
-ds_list_add(LegsInventory, ProtoLegsObjectItem);
-ds_list_add(LegsInventory, ProtoLegsObjectItem);
+ds_list_add(HeadInventory, testHeadObject1);
+ds_list_add(HeadInventory, testHeadObject1);
+ds_list_add(HeadInventory, testHeadObject1);
+ds_list_add(TorsoInventory, testTorsoObject1);
+ds_list_add(TorsoInventory, testTorsoObject1);
+ds_list_add(ArmInventory, testLArmObject1);
+ds_list_add(ArmInventory, testLArmObject1);
+ds_list_add(ArmInventory, testRArmObject1);
+ds_list_add(LegsInventory, testLegsObject1);
+ds_list_add(LegsInventory, testLegsObject1);
 ds_list_add(BackPackInventory, testBackPackObject1);
-
-//Add in items to default inventory
-//PLAYER1 INVENTORY
-playerLoadOut1[0] = ds_list_find_value(HeadInventory, 0); //Head
-playerLoadOut1[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut1[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut1[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
-playerLoadOut1[4] = ds_list_find_value(LegsInventory, 0); //Legs
-playerLoadOut1[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
-
-//PLAYER2 INVENTORY
-playerLoadOut2[0] = ds_list_find_value(HeadInventory, 0); //Head
-playerLoadOut2[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut2[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut2[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
-playerLoadOut2[4] = ds_list_find_value(LegsInventory, 0); //Legs
-playerLoadOut2[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
-
-//PLAYER3 INVENTORY
-playerLoadOut3[0] = ds_list_find_value(HeadInventory, 0); //Head
-playerLoadOut3[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut3[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut3[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
-playerLoadOut3[4] = ds_list_find_value(LegsInventory, 0); //Legs
-playerLoadOut3[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
-
-//PLAYER4 INVENTORY
-playerLoadOut4[0] = ds_list_find_value(HeadInventory, 0); //Head
-playerLoadOut4[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut4[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut4[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
-playerLoadOut4[4] = ds_list_find_value(LegsInventory, 0); //Legs
-playerLoadOut4[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
 
 /***************************************************
@@ -241,16 +208,13 @@ val_glow = 100;
     //computer palyers, and parts, from within
     //part objects. Otherwise everyplayer will
     //need their own armor objects...
+    //getPrimeColor(); for example, or locally
+    //stored color pallets within playerObjects
+    //for computer players.
 
 /***************************************************
   END Player Colors
  ***************************************************/
- 
-//used during playercreation. Resets every player
-//creation for use for new players.
-
-globalvar playerNumCreate;
-playerNumCreate = 0; //default value
 </string>
           </argument>
         </arguments>
@@ -339,11 +303,10 @@ alarm[10] = false;
         room_goto(OverMap);
     }
 }
-/*else 
+else 
 {
     room_goto(OverMap);
-}*/
-
+}
 </string>
           </argument>
         </arguments>

@@ -86,6 +86,10 @@ state = string('normal');
                 
  ***************************************************/
 
+var playerNum;//int
+playerNum = playerNumCreate;
+var playerType;//int
+ 
 image_alpha = 0;
 /***************************************************
   airborne - boolean
@@ -134,7 +138,7 @@ attack1_type=0;
 attack2_type=0;
 
 //Create Core
-core = instance_create(x,y,core_o)
+core = createPart(playerNum,1);
 //EDN Create Core
 
 height = sprite_height+core.height;

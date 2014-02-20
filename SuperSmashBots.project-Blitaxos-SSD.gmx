@@ -14,7 +14,6 @@
     <sprite>sprites\VisitedMapNodeSprite</sprite>
     <sprites name="BattleSprites">
       <sprite>sprites\hue_s</sprite>
-      <sprite>sprites\colorSelectorSprite</sprite>
       <sprite>sprites\arm_s</sprite>
       <sprite>sprites\core_s</sprite>
       <sprite>sprites\arm_s2</sprite>
@@ -51,9 +50,6 @@
       <sprite>sprites\SecondaryColorButtonSprite</sprite>
       <sprite>sprites\EnergyColorButtonSprite</sprite>
       <sprite>sprites\ConfirmColorButtonSprite</sprite>
-      <sprite>sprites\MultiplayerButtonSprite</sprite>
-      <sprite>sprites\CampaignButtonSprite</sprite>
-      <sprite>sprites\TestMenuButtonSprite</sprite>
     </sprites>
     <sprite>sprites\PulsingEnterSprite</sprite>
     <sprite>sprites\InventoryUINameSprite</sprite>
@@ -63,9 +59,7 @@
   <backgrounds name="background">
     <background>background\MapBackground</background>
     <background>background\RadioTalkBackground</background>
-    <background>background\MenuBackground</background>
     <background>background\InventoryBackground</background>
-    <background>background\stadiumBackgroundOne</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -79,8 +73,6 @@
           <script>scripts\right_check_pressed.gml</script>
           <script>scripts\up_check.gml</script>
           <script>scripts\down_check.gml</script>
-          <script>scripts\up_check_pressed.gml</script>
-          <script>scripts\down_check_pressed.gml</script>
         </scripts>
         <scripts name="actions">
           <script>scripts\jump_check.gml</script>
@@ -124,11 +116,10 @@
     <script>scripts\attack_set_1.gml</script>
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
+    <script>scripts\create_part.gml</script>
     <script>scripts\smallswordattack.gml</script>
     <script>scripts\swordAnimation1.gml</script>
     <script>scripts\gunAnimation1.gml</script>
-    <script>scripts\createPlayer.gml</script>
-    <script>scripts\createPart.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -145,12 +136,10 @@
     <font>fonts\InventoryContentSmall</font>
   </fonts>
   <objects name="objects">
-    <object>objects\GameController</object>
     <object>objects\PulsingEnter</object>
     <objects name="Buttons">
       <object>objects\BaseButton</object>
       <object>objects\BaseButton2</object>
-      <object>objects\BaseButton3</object>
       <object>objects\HeadButton</object>
       <object>objects\TorsoButton</object>
       <object>objects\LArmButton</object>
@@ -160,9 +149,6 @@
       <object>objects\PrimaryColorButton</object>
       <object>objects\SecondaryColorButton</object>
       <object>objects\EnergyColorButton</object>
-      <object>objects\MultiplayerButton</object>
-      <object>objects\CampaignButton</object>
-      <object>objects\TestButton</object>
     </objects>
     <objects name="Inventory">
       <object>objects\InventoryUIItem</object>
@@ -180,13 +166,6 @@
       <objects name="TestItems">
         <object>objects\testHead</object>
       </objects>
-      <objects name="InventoryItems">
-        <object>objects\ProtoHeadObjectItem</object>
-        <object>objects\ProtoTorsoObjectItem</object>
-        <object>objects\ProtoSwordObjectItem</object>
-        <object>objects\ProtoGunObjectItem</object>
-        <object>objects\ProtoLegsObjectItem</object>
-      </objects>
     </objects>
     <objects name="Radio">
       <object>objects\RadioController</object>
@@ -202,6 +181,7 @@
         <object>objects\MapNode6</object>
         <object>objects\MapNodeParent</object>
       </objects>
+      <object>objects\MapController</object>
       <object>objects\PlayerMarker</object>
       <object>objects\MapUIBar</object>
       <object>objects\MapCamera</object>
@@ -265,13 +245,11 @@
         <object>objects\sat_prime_o</object>
         <object>objects\sat_2_o</object>
         <object>objects\sat_glow_o</object>
-        <object>objects\colorSelector</object>
       </objects>
     </objects>
-    <object>objects\ShaderTestObject</object>
+    <object>objects\object61</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
     <room>rooms\testRange</room>
     <room>rooms\RadioRoom</room>
