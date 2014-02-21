@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>state = 0;
+//Which player is this for
+player = 0;
+
 inventoryItem = 0;
 arrayLocation = 0;
 </string>
@@ -79,6 +82,13 @@ else if (state == 1)
         lookingAtItems = false;
         selectedInventory = -1;
         inventoryArray = destroyArray(inventoryArray);
+        
+        //re display the player with new parts
+        //Need to check to see which player does this
+        with(displayPlayer) {
+            instance_destroy();
+        }
+        displayPlayer = createPlayer(0,1,600,250);
     }
 }
 </string>

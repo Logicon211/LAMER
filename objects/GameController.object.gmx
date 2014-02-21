@@ -343,7 +343,6 @@ alarm[10] = false;
 {
     room_goto(OverMap);
 }*/
-
 </string>
           </argument>
         </arguments>

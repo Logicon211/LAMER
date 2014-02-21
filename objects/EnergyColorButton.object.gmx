@@ -34,14 +34,23 @@ if(selectedColorButton != -1)
 }
 selectedColorButton = num
 
-with(hueBar) {
-    instance_destroy();
+if(hueBar != 0)
+{
+    with(hueBar) {
+        instance_destroy();
+    }
 }
-with(satBar) {
-    instance_destroy();
+if(satBar != 0)
+{
+    with(satBar) {
+        instance_destroy();
+    }
 }
-with(valBar) {
-    instance_destroy();
+if(valBar != 0)
+{
+    with(valBar) {
+        instance_destroy();
+    }
 }
 
 hueBar = instance_create(950, 200, hue_glow_o);
@@ -69,8 +78,8 @@ valBar = instance_create(950, 270, val_glow_o);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>num = 8;
-buttonArray[8] = id;
+            <string>num = 7;
+buttonArray[7] = id;
 alarm[0] = false;
 </string>
           </argument>
