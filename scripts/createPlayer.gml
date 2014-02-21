@@ -33,7 +33,7 @@ objPos[1] = argument3;
 if(playerType<3) //make player
 {
     newPlayer = instance_create(objPos[0],objPos[1],player_o);
-    newPlayer.playerNum = playerNum;
+    newPlayer.playerNum = playerNumCreate;
     newPlayer.playerType = playerType;
 }
 else //make player

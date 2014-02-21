@@ -71,6 +71,11 @@ globalvar ColorSelector;
 ColorSelector = 0;
 globalvar selectedBar;
 selectedBar = 0;
+
+globalvar displayPlayer;
+//Will need to add separate code to check to see which player is doing this
+//display doesn't work
+displayPlayer = createPlayer(0,1,600,250);
 </string>
           </argument>
         </arguments>
@@ -115,16 +120,18 @@ if(left_check_pressed())
         
         if(selectedBar == 0)
         {
-            if(selectedButton == 6)
+            if(selectedButton == 5)
             {
                 selectedButton = 0;
             }
-            else if(selectedButton &lt;= 5)
+            else if(selectedButton &lt;= 4)
             {
-                selectedButton = 8;
+                selectedButton = 7;
+                buttonArray[selectedButton].alarm[1] = true; //Confirms the color button so it displays the right values
             }
             else {
                 selectedButton--;
+                buttonArray[selectedButton].alarm[1] = true; //Confirms the color button so it displays the right values
             }
         }
         /*else
@@ -160,17 +167,19 @@ if(right_check_pressed())
         
         if(selectedBar == 0)
         {
-            if(selectedButton &gt;= 8)
+            if(selectedButton &gt;= 7)
             {
                 selectedButton = 0;
             }
-            else if(selectedButton &lt;= 5)
+            else if(selectedButton &lt;= 4)
             {
-                selectedButton = 6;
+                selectedButton = 5;
+                buttonArray[selectedButton].alarm[1] = true; //Confirms the color button so it displays the right values
             }
             else
             {
                 selectedButton++;
+                buttonArray[selectedButton].alarm[1] = true; //Confirms the color button so it displays the right values
             }
         }
     }
@@ -197,7 +206,7 @@ if(up_check_pressed())
         buttonArray[selectedButton].state = 0;
         
         //Color selector
-        if(selectedButton &gt; 5 and selectedButton &lt;= 8)
+        if(selectedButton &gt; 4 and selectedButton &lt;= 7)
         {
             if(selectedBar != 0)
             {
@@ -224,7 +233,7 @@ if(up_check_pressed())
         else {
             if(selectedButton == 0)
             {
-                selectedButton = 5;
+                selectedButton = 4;
             }
             else 
             {
@@ -259,7 +268,7 @@ if(down_check_pressed())
         buttonArray[selectedButton].state = 0;
         
         //Color selector
-        if(selectedButton &gt; 5 and selectedButton &lt;= 8)
+        if(selectedButton &gt; 4 and selectedButton &lt;= 7)
         {
             if(selectedBar != 0)
             {
@@ -284,7 +293,7 @@ if(down_check_pressed())
             
         }
         else {
-            if(selectedButton &gt;= 5)
+            if(selectedButton &gt;= 4)
             {
                 selectedButton = 0;
             }
