@@ -85,9 +85,14 @@ else if (state == 1)
         
         //re display the player with new parts
         //Need to check to see which player does this
-        with(displayPlayer) {
+        
+        //DOESN'T WORK YET
+        /*with(displayPlayer) {
+            show_debug_message("BEFORE");
             instance_destroy();
-        }
+            show_debug_message("AFTER");
+        }*/
+        
         displayPlayer = createPlayer(0,1,600,250);
     }
 }
