@@ -96,7 +96,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="65">
+    <event eventtype="10" enumb="84">
       <action>
         <libid>1</libid>
         <id>603</id>

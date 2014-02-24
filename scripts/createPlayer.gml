@@ -16,6 +16,7 @@
                 3 - AI mode easy
                 4 - AI mode medium
                 5 - AI mode hard
+                6 - instant delete
                 
   Input:    objPos[]
     Type:   int[]
@@ -36,7 +37,7 @@ if(playerType<3) //make player
     newPlayer.playerNum = playerNumCreate;
     newPlayer.playerType = playerType;
 }
-else //make player
+else //make AI player
 {
     
 }

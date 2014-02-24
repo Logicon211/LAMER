@@ -9,44 +9,27 @@ void main()
 {
     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;
-    
     v_color = in_Colour;
     v_texcoord = in_TextureCoord;
 }
 //######################_==_YOYO_SHADER_MARKER_==_######################@~varying vec2 v_texcoord;
 varying vec4 v_color;
-uniform sampler2D s_multitex;//values used for shading algorithm...
-uniform vec2 Resolution;      //resolution of screenuniform
-vec3 LightPos;        //light position, normalized
-uniform vec4 LightColor;      //light RGBA -- alpha is intensity
-uniform vec4 AmbientColor;    //ambient RGBA -- alpha is intensity
-uniform vec3 Falloff;         //attenuation coefficients
+uniform float Stripes;
+uniform vec4 Filter;
+uniform float Phase;
+
+vec4 HologramColor( vec4 colour, float stripes, vec4 filter, float phase )
+{
+colour.a *= abs( sin( radians( v_texcoord.y * 180.0 * stripes + phase * 180.0 ) ) );
+return( colour * filter );
+}
+
+vec4 FixedColor( sampler2D texture, vec4 col )
+{
+vec4 colour = texture2D( texture, v_texcoord.xy );return( colour * col );
+}
 
 void main()
-{    //RGBA of our diffuse color
-    vec4 DiffuseColor = texture2D(gm_BaseTexture, v_texcoord);
-    //RGB of our normal map
-    vec3 NormalMap = texture2D(s_multitex, v_texcoord).rgb;
-    //The delta position of light
-    vec3 LightDir = vec3(LightPos.xy - (v_texcoord.xy / Resolution.xy), LightPos.z);
-    //Correct for aspect ratio
-    LightDir.x *= Resolution.x / Resolution.y;
-    //Determine distance (used for attenuation) BEFORE we normalize our LightDir
-    float D = length(LightDir);
-
-    //normalize our vectors
-    vec3 N = normalize(NormalMap * 2.0 - 1.0);
-    vec3 L = normalize(LightDir);
-
-   //Pre-multiply light color with intensity
-   //Then perform "N dot L" to determine our diffuse term
-   vec3 Diffuse = (LightColor.rgb * LightColor.a) * max(dot(N, L), 0.0);
-   //pre-multiply ambient color with intensity
-   vec3 Ambient = AmbientColor.rgb * AmbientColor.a;
-   //calculate attenuation
-   float Attenuation = 1.0 / ( Falloff.x + (Falloff.y*D) + (Falloff.z*D*D) );
-   //the calculation which brings it all together
-   vec3 Intensity = Ambient + Diffuse * Attenuation;
-   vec3 FinalColor = DiffuseColor.rgb * Intensity;
-   gl_FragColor = v_color * vec4(FinalColor, DiffuseColor.a);
+{
+  gl_FragColor = HologramColor( FixedColor( gm_BaseTexture, v_color ), Stripes, Filter, Phase );
 }

@@ -34,6 +34,8 @@ isAttacking = false;
 attack_type = 0;
 animation_counter = 0;
 lower_angle = 1234;
+delete = false;
+dominance = 10;
 </string>
           </argument>
         </arguments>
@@ -56,7 +58,13 @@ lower_angle = 1234;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>joint = rotation_tracker(x,y,image_angle,x+1*-image_xscale,y+40);
+            <string>if(!instance_exists(player))
+{
+    with(lowerarm){instance_destroy();}
+    instance_destroy();
+}
+
+joint = rotation_tracker(x,y,image_angle,x+1*-image_xscale,y+40);
 limb_anchor(lowerarm,joint[0],joint[1],hspeed,vspeed,image_xscale);
 lowerarm.depth = depth-1;
 
