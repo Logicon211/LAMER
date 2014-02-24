@@ -34,6 +34,7 @@ lower_leg.depth = depth-1;
 vspeedvar = 0;
 hspeedvar = 0;
 lower_angle = 1000;//used during attack animations to set lower leg position
+delete = false;
 </string>
           </argument>
         </arguments>
@@ -56,7 +57,13 @@ lower_angle = 1000;//used during attack animations to set lower leg position
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>joint = rotation_tracker(x,y,image_angle,x-1,y+56)
+            <string>if(!instance_exists(player))
+{
+    with(lower_leg){instance_destroy();}
+    instance_destroy();
+}
+
+joint = rotation_tracker(x,y,image_angle,x-1,y+56)
 limb_anchor(lower_leg,joint[0],joint[1],hspeed,vspeed,image_xscale)
 
 /***************************************************

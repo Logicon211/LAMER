@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>oldX = x;
 oldY = y;
+
+delete = false;
 </string>
           </argument>
         </arguments>
@@ -49,7 +51,12 @@ oldY = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>perfect_trail_angled(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale);
+            <string>if(delete)
+{
+    instance_destroy();
+}
+
+perfect_trail_angled(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale);
 
 oldX = x+hspeed;
 oldY = y+vspeed;

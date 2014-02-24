@@ -2,7 +2,7 @@
 // Simple passthrough vertex shader
 //
 attribute vec3 in_Position;                  // (x,y,z)
-//attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.	
+//attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.
 attribute vec4 in_Colour;                    // (r,g,b,a)
 attribute vec2 in_TextureCoord;              // (u,v)
 
@@ -18,18 +18,28 @@ void main()
     v_vTexcoord = in_TextureCoord;
 }
 
-//######################_==_YOYO_SHADER_MARKER_==_######################@~varying vec2 v_vTexcoord;
-varying vec4 v_vColour;
+//######################_==_YOYO_SHADER_MARKER_==_######################@~/*
+
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 void main()
 {
-  vec2 onePixel = vec2(1.0 / 512.0, 1.0 / 512.0);
-  vec2 texCoord = v_vTexcoord;  vec4 colour;
-  colour.rgb = vec3(0.5);
-  colour -= texture2D(gm_BaseTexture, texCoord - onePixel) * 5.0;
-  colour += texture2D(gm_BaseTexture, texCoord + onePixel) * 5.0;
-  colour.rgb = vec3((colour.r + colour.g + colour.b) / 3.0);
-  gl_FragColor = vec4(colour.rgb, texture2D(gm_BaseTexture,v_vTexcoord).a);
+    gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+}
+
+*/
+
+varying vec2 v_vTexcoord;
+varying vec4 v_vColor;
+uniform float time;
+
+void main()
+{  
+      vec2 tc = v_vTexcoord.xy;
+      vec2 p = -1.0 + 2.0 * tc;
+      float len = length(p);
+      vec2 uv = tc + (p/len)*cos(len*12.0-time*4.0)*0.03;
+      vec3 col = texture2D(gm_BaseTexture,uv).xyz;
+      gl_FragColor = vec4(col,1.0);
 }

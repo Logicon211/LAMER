@@ -50,7 +50,7 @@ image_angle = 360;
           <argument>
             <kind>1</kind>
             <string>image_alpha = random_range(0.6,1);
-image_angle = angle_ease4(image_angle,0);
+image_angle = angle_ease(image_angle,0,4);
 if(scale&lt;1)
 {
     scale += 0.2;
@@ -79,11 +79,13 @@ if(scale&lt;1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_add);
+            <string>//shader_set(shader6);
+draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprite_index,0,x,y,image_xscale*scale,image_yscale*scale,image_angle,make_color_hsv(hue_glow,sat_glow,val_glow),image_alpha);
 draw_sprite_ext(sprite_index,0,x,y,image_xscale*scale,image_yscale*scale,image_angle,c_white,1);
 draw_sprite_ext(sprite_index,1,x,y,image_xscale*scale,image_yscale*scale,image_angle,make_color_hsv(hue_glow,sat_glow,val_glow),image_alpha/2);
 draw_set_blend_mode(bm_normal);
+//shader_reset();
 </string>
           </argument>
         </arguments>

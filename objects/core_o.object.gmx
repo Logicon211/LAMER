@@ -30,9 +30,11 @@ lefthalf = 62;
 righthalf = 66;
 
 //create boosters
-booster1 = instance_create(x,y,booster_o);
-booster2 = instance_create(x,y,booster_o);
-booster3 = instance_create(x,y,booster_o);
+booster[1] = instance_create(x,y,booster_o);
+booster[2] = instance_create(x,y,booster_o);
+booster[3] = instance_create(x,y,booster_o);
+
+boostNums = 3;
 
 /***************************************************
   Create Legs
@@ -93,6 +95,8 @@ attack2_type = arm2.attack_type;
 
 globalvar gunCount;
 gunCount = 0;
+
+delete = false;
 </string>
           </argument>
         </arguments>
@@ -115,7 +119,13 @@ gunCount = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/***************************************************
+            <string>if(!instance_exists(player))
+{
+    with(head){instance_destroy();}
+    instance_destroy();
+}
+
+/***************************************************
   Anchor Limbs
     This code locks the different parts into place
     on the torso.
@@ -152,11 +162,11 @@ limb_anchor(head,joint[0],joint[1],hspeed,vspeed,image_xscale);
 
 //boosters
 joint = rotation_tracker(x,y,image_angle,x-60,y-10);
-limb_anchor(booster1,joint[0],joint[1],hspeed,vspeed,image_xscale);
+limb_anchor(booster[1],joint[0],joint[1],hspeed,vspeed,image_xscale);
 joint = rotation_tracker(x,y,image_angle,x-57,y+36);
-limb_anchor(booster2,joint[0],joint[1],hspeed,vspeed,image_xscale);
+limb_anchor(booster[2],joint[0],joint[1],hspeed,vspeed,image_xscale);
 joint = rotation_tracker(x,y,image_angle,x-56,y-45);
-limb_anchor(booster3,joint[0],joint[1],hspeed,vspeed,image_xscale);
+limb_anchor(booster[3],joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END boosters
 
 /***************************************************

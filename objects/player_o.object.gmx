@@ -89,6 +89,7 @@ state = string('normal');
 var playerNum;//int
 playerNum = playerNumCreate;
 var playerType;//int
+playerType = 0;//default player user
  
 image_alpha = 0;
 /***************************************************
@@ -136,6 +137,8 @@ leg_speed = 1;
 weight = 1;
 attack1_type=0;
 attack2_type=0;
+attack1=0;
+attack2=0;
 
 //Create Core
 core = createPart(playerNum,1);
@@ -153,6 +156,26 @@ attack2_type = core.attack2_type;
 //color blend test
 color_tst = 0;
 color_tst2 = 0;
+
+delete = true;
+
+
+arm1 = core.arm1;
+arm2 = core.arm2;
+leg1 = core.leg1;
+leg2 = core.leg2;
+head = core.head;
+
+larm1 = arm1.lowerarm;
+larm2 = arm2.lowerarm;
+lleg1 = leg1.lower_leg;
+lleg2 = leg2.lower_leg;
+
+boostNums = core.boostNums;
+for(i=boostNums;i&gt;0;i--)
+{
+    booster[i] = core.booster[i];
+}
 </string>
           </argument>
         </arguments>
@@ -217,7 +240,21 @@ color_tst2 = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//quit game
+            <string>//***************************************************
+//room speed test
+if(gamepad_button_check(0,gp_shoulderrb))
+{
+    room_speed = 15;
+}
+else
+{
+    room_speed = 30;
+}
+//***************************************************
+
+
+
+//quit game
 if(quit_check())
 {
     game_end();
@@ -380,18 +417,20 @@ else
         
         if(attack1_check())
         {
-            core.attack1 = true;
+            attack1 = true;
         }
         if(attack2_check())
         {
-            core.attack2 = true;
+            attack2 = true;
         }
     }
 }
 //choose dominant attack
-attack_control(core.attack1,core.attack2);
-//adjust state if needed
-if(core.attack1)
+attackControl1(attack1,attack2,core.arm1,core.arm2);
+//state, attack1, attack2 are all set
+
+
+/*if(attack1)
 {
     if(core.attack1_type!=2)
     {
@@ -399,7 +438,7 @@ if(core.attack1)
         target_hspeed = 0;
     }
 }
-if(core.attack2)
+if(attack2)
 {
     if(core.attack2_type!=2)
     {
@@ -407,6 +446,7 @@ if(core.attack2)
         target_hspeed = 0;
     }
 }
+***************************************************/
 
 
 /***************************************************
@@ -798,17 +838,31 @@ else if(state = string('land'))
       </action>
       <action>
         <libid>1</libid>
-        <id>421</id>
-        <kind>3</kind>
+        <id>612</id>
+        <kind>0</kind>
         <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>playerType</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
       </action>
       <action>
         <libid>1</libid>
@@ -837,6 +891,48 @@ else if(state = string('land'))
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="10" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>refreshPlayer</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>id</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
