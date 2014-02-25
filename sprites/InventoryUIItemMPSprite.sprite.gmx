@@ -7,20 +7,19 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>89</bbox_right>
+  <bbox_right>239</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>44</bbox_bottom>
+  <bbox_bottom>49</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>90</width>
-  <height>45</height>
+  <width>240</width>
+  <height>50</height>
   <frames>
-    <frame index="0">images\BackMPButtonSprite_0.png</frame>
-    <frame index="1">images\BackMPButtonSprite_1.png</frame>
-    <frame index="2">images\BackMPButtonSprite_2.png</frame>
+    <frame index="0">images\InventoryUIItemMPSprite_0.png</frame>
+    <frame index="1">images\InventoryUIItemMPSprite_1.png</frame>
   </frames>
 </sprite>

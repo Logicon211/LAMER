@@ -80,6 +80,7 @@
     <sprite>sprites\PulsingEnterSprite</sprite>
     <sprite>sprites\InventoryUINameSprite</sprite>
     <sprite>sprites\InventoryUIItemSprite</sprite>
+    <sprite>sprites\InventoryUIItemMPSprite</sprite>
     <sprite>sprites\OnePixelSprite</sprite>
   </sprites>
   <backgrounds name="background">
@@ -185,8 +186,13 @@
       <object>objects\LArmMPButton</object>
       <object>objects\RArmMPButton</object>
       <object>objects\LegsMPButton</object>
-      <object>objects\NextMPButton</object>
       <object>objects\BackMPButton</object>
+      <object>objects\NextMPButton</object>
+      <object>objects\InventoryUIItemMP</object>
+      <object>objects\InventoryUINameP1</object>
+      <object>objects\InventoryUINameP2</object>
+      <object>objects\InventoryUINameP3</object>
+      <object>objects\InventoryUINameP4</object>
     </objects>
     <object>objects\GameController</object>
     <object>objects\MultiplayerInventoryController</object>
@@ -240,10 +246,6 @@
       <object>objects\InventoryUIItem</object>
       <object>objects\InventoryUIBar</object>
       <object>objects\InventoryUIName</object>
-      <object>objects\InventoryUINameP1</object>
-      <object>objects\InventoryUINameP2</object>
-      <object>objects\InventoryUINameP3</object>
-      <object>objects\InventoryUINameP4</object>
       <object>objects\InventoryController</object>
       <objects name="TestIInventoryItems">
         <object>objects\testHeadObject1</object>

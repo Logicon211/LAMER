@@ -26,22 +26,45 @@
           <argument>
             <kind>1</kind>
             <string>alarm[1] = false;
-//Need to define actions specifically for multiplayer Inventory
-/*
-view_visible[1] = true;
-categoryName = "Head Pieces"
-categoryNumber = num;
+//open inventory selection window
+view_visible[owningPlayer+1] = true;
+categoryName[owningPlayer] = "Head Pieces"
+categoryNumber[owningPlayer] = num;
 
-lookingAtItems = true;
+//lookingAtItems = true;
 
 //Display the player's current Head Parts inventory
-for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
+for(var i = 0; i &lt; ds_list_size(ArmInventory); i++)
 {
-    var invUIItem = instance_create(1280,100 + (100*i),InventoryUIItem);
-    invUIItem.inventoryItem = ds_list_find_value(HeadInventory, i);
-    inventoryArray[i] = invUIItem;
+    if(owningPlayer == 0)
+    {
+        var invUIItem = instance_create(1280,65 + (50*i),InventoryUIItemMP);
+        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.owningPlayer = owningPlayer;
+        inventoryArray1[i] = invUIItem;
+    }
+    else if(owningPlayer == 1)
+    {
+        var invUIItem = instance_create(1536,65 + (50*i),InventoryUIItemMP);
+        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.owningPlayer = owningPlayer;
+        inventoryArray2[i] = invUIItem;
+    }
+    else if(owningPlayer == 2)
+    {
+        var invUIItem = instance_create(1792,65 + (50*i),InventoryUIItemMP);
+        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.owningPlayer = owningPlayer;
+        inventoryArray3[i] = invUIItem;
+    }
+    else if(owningPlayer == 3)
+    {
+        var invUIItem = instance_create(2048,65 + (50*i),InventoryUIItemMP);
+        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.owningPlayer = owningPlayer;
+        inventoryArray4[i] = invUIItem;
+    }
 }
-*/
 </string>
           </argument>
         </arguments>

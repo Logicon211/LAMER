@@ -64,7 +64,7 @@ for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>num = 5;
+            <string>num = 6;
 //buttonArray[0] = id;
 alarm[0] = false;
 </string>
