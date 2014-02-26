@@ -46,11 +46,11 @@ radFace = 0;
 globalvar player1Money;
 player1Money = 1000;
 globalvar player2Money;
-player2Money = 0;
+player2Money = 1000;
 globalvar player3Money;
-player3Money = 0;
+player3Money = 1000;
 globalvar player4Money;
-player4Money = 0;
+player4Money = 1000;
 
 
 //Player's current loadout

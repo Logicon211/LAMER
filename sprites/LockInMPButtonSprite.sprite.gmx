@@ -19,8 +19,8 @@
   <width>90</width>
   <height>45</height>
   <frames>
-    <frame index="0">images\EnergyColorButtonSprite_0.png</frame>
-    <frame index="1">images\EnergyColorButtonSprite_1.png</frame>
-    <frame index="2">images\EnergyColorButtonSprite_2.png</frame>
+    <frame index="0">images\LockInMPButtonSprite_0.png</frame>
+    <frame index="1">images\LockInMPButtonSprite_1.png</frame>
+    <frame index="2">images\LockInMPButtonSprite_2.png</frame>
   </frames>
 </sprite>

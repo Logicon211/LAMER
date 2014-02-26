@@ -28,10 +28,10 @@
             <string>alarm[1] = false;
 //open inventory selection window
 view_visible[owningPlayer+1] = true;
-categoryName[owningPlayer] = "Head Pieces"
+categoryName[owningPlayer] = "Left Arm"
 categoryNumber[owningPlayer] = num;
 
-//lookingAtItems = true;
+lookingAtItems[owningPlayer] = true;
 
 //Display the player's current Head Parts inventory
 for(var i = 0; i &lt; ds_list_size(ArmInventory); i++)

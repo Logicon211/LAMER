@@ -56,6 +56,7 @@
       <sprite>sprites\TestMenuButtonSprite</sprite>
       <sprite>sprites\NextMPButtonSprite</sprite>
       <sprite>sprites\BackMPButtonSprite</sprite>
+      <sprite>sprites\LockInMPButtonSprite</sprite>
       <sprites name="SettingsButtons">
         <sprite>sprites\NoLimitButtonSprite</sprite>
         <sprite>sprites\NumPlayers0ButtonSprite</sprite>
@@ -181,13 +182,19 @@
   <objects name="objects">
     <objects name="MultiplayerGUI">
       <object>objects\BaseMultiplayerButton</object>
+      <object>objects\BaseMultiplayerColorButton</object>
       <object>objects\HeadMPButton</object>
       <object>objects\TorsoMPButton</object>
       <object>objects\LArmMPButton</object>
       <object>objects\RArmMPButton</object>
       <object>objects\LegsMPButton</object>
       <object>objects\BackMPButton</object>
+      <object>objects\Back2MPButton</object>
       <object>objects\NextMPButton</object>
+      <object>objects\LockInMPButton</object>
+      <object>objects\PrimaryColorMPButton</object>
+      <object>objects\SecondaryColorMPButton</object>
+      <object>objects\EnergyColorMPButton</object>
       <object>objects\InventoryUIItemMP</object>
       <object>objects\InventoryUINameP1</object>
       <object>objects\InventoryUINameP2</object>

@@ -37,29 +37,6 @@ alarm[0] = true;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>state = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="10">
       <action>
         <libid>1</libid>
@@ -77,10 +54,10 @@ alarm[0] = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state = 1;
+            <string>//state = 1;
 
 //buttonArray[selectedButton].state = 0;
-//selectedButton = num;
+selectedButton[owningPlayer] = num;
 </string>
           </argument>
         </arguments>

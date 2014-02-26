@@ -148,7 +148,7 @@ else if (state == 1)
     {
         view_visible[owningPlayer+1] = false;
         lookingAtItems[owningPlayer] = false;
-        selectedInventory = -1;
+        selectedInventory[owningPlayer] = -1;
         
         if(owningPlayer == 0)
         {
