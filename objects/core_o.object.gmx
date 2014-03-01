@@ -42,12 +42,14 @@ boostNums = 3;
 leg1 = createPart(player.playerNum,4);
 leg1.depth = depth+2
 leg1.me = 1;
+lleg1 = leg1.lower_leg;
 if(leg1.legnums=2)
 {
     leg2 = createPart(player.playerNum,4);
     leg2.depth = depth-1;
     leg2.me = 2;
     legnums = 2;
+    lleg2 = leg2.lower_leg;
 }
 else if(leg1.legnums=4)
 {
@@ -72,13 +74,13 @@ head = createPart(player.playerNum,0);
 //END Create Head
 
 //Create Arm1
-arm1 = createPart(player.playerNum,2);
-arm1.depth = depth-2;
+arm[1] = createPart(player.playerNum,2);
+arm[1].depth = depth-2;
 //END Create Arm1
 
 //Create Arm2
-arm2 = createPart(player.playerNum,3);
-arm2.depth = depth+4;
+arm[2] = createPart(player.playerNum,3);
+arm[2].depth = depth+4;
 //END Create Arm2
 
 /***************************************************
@@ -88,13 +90,16 @@ headheight = head.sprite_height;
 legheight = leg1.sprite_height;
 height = head.sprite_height+leg1.sprite_height+sprite_height;
 
-attack1 = false;
-attack2 = false;
-attack1_type = arm1.attack_type;
-attack2_type = arm2.attack_type;
+attack[1] = false;
+attack[2] = false;
+attackType[1] = arm[1].attack_type;
+attackType[2] = arm[2].attack_type;
 
 globalvar gunCount;
 gunCount = 0;
+
+canSetAttack = true;
+attackVar = 0;
 
 delete = false;
 </string>
@@ -149,10 +154,10 @@ if(legnums = 4)
 
 //arms
 joint = rotation_tracker(x,y,image_angle,x-9,y+4);
-limb_anchor(arm1,joint[0],joint[1],hspeed,vspeed,image_xscale);
-limb_anchor(arm2,joint[0],joint[1],hspeed,vspeed,image_xscale);
-arm1.depth = depth+10*image_xscale;
-arm2.depth = depth+10*-image_xscale;
+limb_anchor(arm[1],joint[0],joint[1],hspeed,vspeed,image_xscale);
+limb_anchor(arm[2],joint[0],joint[1],hspeed,vspeed,image_xscale);
+arm[1].depth = depth+10*image_xscale;
+arm[2].depth = depth+10*-image_xscale;
 //END arms
 
 //head
@@ -215,8 +220,8 @@ limb_anchor(booster[3],joint[0],joint[1],hspeed,vspeed,image_xscale);
 if(player.state = string('jump'))
 {
     head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 4);
-    arm1.image_angle = angle_ease(arm1.image_angle, -70*image_xscale, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, -20*image_xscale, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, -70*image_xscale, 4);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, -20*image_xscale, 4);
     leg1.image_angle = angle_ease(leg1.image_angle, 0*image_xscale, 4);
     leg2.image_angle = angle_ease(leg2.image_angle, 60*image_xscale, 4);
     leg1.lower_angle = -80*image_xscale;
@@ -233,8 +238,8 @@ if(player.state = string('jump'))
 
 if(player.state = string('normal'))
 {
-    arm1.image_angle = image_angle*2.2;
-    arm2.image_angle = abs(image_angle*1.8)*image_xscale;
+    arm[1].image_angle = image_angle*2.2;
+    arm[2].image_angle = abs(image_angle*1.8)*image_xscale;
     if(hspeed=0)
     {
         leg1.image_angle = angle_ease(leg1.image_angle, -5*image_xscale+image_angle/2, 8);
@@ -267,8 +272,8 @@ if(player.state = string('normal'))
 if(player.state = string('tonorm'))
 {
     leg_var = 25*sin(degtorad(1.5*x));
-    arm1.image_angle = angle_ease(arm1.image_angle, image_angle*2.2, 2);
-    arm2.image_angle = angle_ease(arm2.image_angle, abs(image_angle*1.8)*image_xscale, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, image_angle*2.2, 2);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, abs(image_angle*1.8)*image_xscale, 4);
     head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 2);
     if(hspeed=0)
     {
@@ -301,8 +306,8 @@ if(player.state = string('tonorm'))
 
 if(player.state = string('shield'))
 {
-    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, -80*image_xscale, 4);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, 70*image_xscale, 4);
     head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
     leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
     leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
@@ -320,8 +325,8 @@ if(player.state = string('shield'))
 
 if(player.state = string('kneel'))
 {
-    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, -80*image_xscale, 4);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, 70*image_xscale, 4);
     head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
     leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
     leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
@@ -339,8 +344,8 @@ if(player.state = string('kneel'))
 
 if(player.state = string('land'))
 {
-    arm1.image_angle = angle_ease(arm1.image_angle, player.landCounter*image_xscale*-8, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, player.landCounter*image_xscale*-8, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, player.landCounter*image_xscale*-8, 4);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, player.landCounter*image_xscale*-8, 4);
     head.image_angle = angle_ease(head.image_angle, player.landCounter*image_xscale*-8, 4);
     leg1.image_angle = angle_ease(leg1.image_angle, player.landCounter*image_xscale*4, 2);
     leg2.image_angle = angle_ease(leg2.image_angle, player.landCounter*image_xscale*14, 2);
@@ -373,8 +378,8 @@ if(player.state = string('attack'))
     
     /***************************************************
     image_angle = angle_ease(image_angle, -20*image_xscale, 4);
-    arm1.image_angle = angle_ease(arm1.image_angle, player.landCounter*image_xscale*-8, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, player.landCounter*image_xscale*-8, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, player.landCounter*image_xscale*-8, 4);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, player.landCounter*image_xscale*-8, 4);
     head.image_angle = angle_ease(head.image_angle, player.landCounter*image_xscale*-8, 4);
     leg1.image_angle = angle_ease(leg1.image_angle, player.landCounter*image_xscale*4, 2);
     leg2.image_angle = angle_ease(leg2.image_angle, player.landCounter*image_xscale*10, 2);
@@ -393,8 +398,8 @@ if(player.state = string('attack'))
 
 if(player.state = string('slideL'))
 {
-    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, -80*image_xscale, 4);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, 70*image_xscale, 4);
     head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
     leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
     leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
@@ -410,8 +415,8 @@ if(player.state = string('slideL'))
 
 if(player.state = string('slideR'))
 {
-    arm1.image_angle = angle_ease(arm1.image_angle, -80*image_xscale, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, 70*image_xscale, 4);
+    arm[1].image_angle = angle_ease(arm[1].image_angle, -80*image_xscale, 4);
+    arm[2].image_angle = angle_ease(arm[2].image_angle, 70*image_xscale, 4);
     head.image_angle = angle_ease(head.image_angle, -20*image_xscale, 4);
     leg1.image_angle = angle_ease(leg1.image_angle, -20*image_xscale, 4);
     leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
@@ -423,17 +428,11 @@ if(player.state = string('slideR'))
  
 /***************************************************
   Attack State
- ***************************************************
+ **************************************************/
 
-if(player.state = string('jump'))
+if(player.state = string('Attack'))
 {
-    head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 4);
-    arm1.image_angle = angle_ease(arm1.image_angle, -70*image_xscale, 4);
-    arm2.image_angle = angle_ease(arm2.image_angle, -20*image_xscale, 4);
-    leg1.image_angle = angle_ease(leg1.image_angle, 0*image_xscale, 4);
-    leg2.image_angle = angle_ease(leg2.image_angle, 60*image_xscale, 4);
-    leg1.lower_angle = -80*image_xscale;
-    leg2.lower_angle = 10*image_xscale;
+    attackControl2(arm[1],1,arm[2],2);
 }
 
 /***************************************************

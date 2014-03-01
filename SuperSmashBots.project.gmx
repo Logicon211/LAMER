@@ -70,17 +70,28 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Animation">
-      <script>scripts\x_ease.gml</script>
-      <script>scripts\y_ease.gml</script>
-      <script>scripts\angle_ease.gml</script>
-      <script>scripts\limb_anchor.gml</script>
-      <script>scripts\perfect_trail.gml</script>
-      <script>scripts\perfect_trail_angled.gml</script>
-      <script>scripts\rotation_tracker.gml</script>
+      <scripts name="Attack Animations">
+        <script>scripts\attackSet10.gml</script>
+        <script>scripts\yEase10.gml</script>
+        <script>scripts\xMove10.gml</script>
+        <script>scripts\xEase10.gml</script>
+      </scripts>
+      <scripts name="Easing">
+        <script>scripts\x_ease.gml</script>
+        <script>scripts\angle_ease.gml</script>
+        <script>scripts\y_ease.gml</script>
+      </scripts>
+      <scripts name="other">
+        <script>scripts\perfect_trail_angled.gml</script>
+        <script>scripts\perfectTrailEffect.gml</script>
+        <script>scripts\rotation_tracker.gml</script>
+        <script>scripts\perfect_trail.gml</script>
+        <script>scripts\limb_anchor.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Attack Controllers">
-      <script>scripts\attack_control.gml</script>
       <script>scripts\attackControl1.gml</script>
+      <script>scripts\attackControl2.gml</script>
     </scripts>
     <scripts name="BattleScripts">
       <scripts name="other">
@@ -136,6 +147,8 @@
     <script>scripts\unselectAllItems.gml</script>
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
+    <script>scripts\script55.gml</script>
+    <script>scripts\getPlayerColor.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>

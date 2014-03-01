@@ -27,13 +27,13 @@ pOut = createPlayer(pIn.playerNum,pIn.playerType,pIn.x-1000,pIn.y-1000)//recreat
 
 with(pIn.lleg1){instance_destroy();}
 with(pIn.lleg2){instance_destroy();}
-with(pIn.larm1){instance_destroy();}
-with(pIn.larm2){instance_destroy();}
+with(pIn.larm[1]){instance_destroy();}
+with(pIn.larm[2]){instance_destroy();}
 with(pIn.head){instance_destroy();}
 with(pIn.leg1){instance_destroy();}
 with(pIn.leg2){instance_destroy();}
-with(pIn.arm1){instance_destroy();}
-with(pIn.arm2){instance_destroy();}
+with(pIn.arm[1]){instance_destroy();}
+with(pIn.arm[2]){instance_destroy();}
 with(pIn.core){instance_destroy();}
 for(i=pIn.boostNums;i>0;i--){
     with(pIn.booster[i]){instance_destroy();}

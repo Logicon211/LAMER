@@ -135,10 +135,10 @@ landCounter = 0;
 boost_power = 1;
 leg_speed = 1;
 weight = 1;
-attack1_type=0;
-attack2_type=0;
-attack1=0;
-attack2=0;
+attackType[1]=0;
+attackType[2]=0;
+attack[1]=0;
+attack[2]=0;
 
 //Create Core
 core = createPart(playerNum,1);
@@ -149,8 +149,8 @@ headheight = core.headheight;
 coreheight = core.sprite_height;
 legheight = core.legheight;
 
-attack1_type = core.attack1_type;
-attack2_type = core.attack2_type;
+attackType[1] = core.attackType[1];
+attackType[2] = core.attackType[2];
 
 
 //color blend test
@@ -160,14 +160,14 @@ color_tst2 = 0;
 delete = true;
 
 
-arm1 = core.arm1;
-arm2 = core.arm2;
+arm[1] = core.arm[1];
+arm[2] = core.arm[2];
 leg1 = core.leg1;
 leg2 = core.leg2;
 head = core.head;
 
-larm1 = arm1.lowerarm;
-larm2 = arm2.lowerarm;
+larm[1] = arm[1].lowerarm;
+larm[2] = arm[2].lowerarm;
 lleg1 = leg1.lower_leg;
 lleg2 = leg2.lower_leg;
 
@@ -343,6 +343,10 @@ else
     {
         target_hspeed = 0;
     }
+    else if(state=string('Attack'))
+    {
+        target_hspeed = 0;
+    }
     else
     {
         core.gun_aim = 0;
@@ -417,16 +421,16 @@ else
         
         if(attack1_check())
         {
-            attack1 = true;
+            attack[1] = true;
         }
         if(attack2_check())
         {
-            attack2 = true;
+            attack[2] = true;
         }
     }
 }
 //choose dominant attack
-attackControl1(attack1,attack2,core.arm1,core.arm2);
+attackControl1(attack[1],attack[2],core.arm[1],core.arm[2]);
 //state, attack1, attack2 are all set
 
 

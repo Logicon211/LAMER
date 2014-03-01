@@ -32,11 +32,12 @@ hspeedvar = 0;
 player=instance_nearest(x,y,player_o);
 isAttacking = 0;
 attack_type = 2;
-animation_counter = 0;
+animationCounter = 0;
 lower_angle = 1234;
 delete = false;
 
 dominance = 0;
+number = 0;
 </string>
           </argument>
         </arguments>
