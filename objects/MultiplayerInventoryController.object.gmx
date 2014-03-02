@@ -30,8 +30,14 @@
 globalvar displayPlayers;
 displayPlayers[0] = createPlayer(0,1, 315,140);
 displayPlayers[1] = createPlayer(1,1, 950,140);
-displayPlayers[2] = createPlayer(2,1, 315,510);
-displayPlayers[3] = createPlayer(3,1, 950,510);
+if(numPlayersSetting &gt;= 3)
+{
+    displayPlayers[2] = createPlayer(2,1, 315,510);
+}
+if(numPlayersSetting &gt;= 4)
+{
+    displayPlayers[3] = createPlayer(3,1, 950,510);
+}
 
 //Selected button array, index is the player number
 globalvar selectedButton;
@@ -120,38 +126,50 @@ player2Buttons[6] = instance_create(655, 295, NextMPButton);
 player2Buttons[6].owningPlayer = 1;
 
 //Creating buttons for player3, putting them in his array
-player3Buttons[0] = instance_create(10, 370, HeadMPButton);
-player3Buttons[0].owningPlayer = 2;
-player3Buttons[1] = instance_create(10, 415, TorsoMPButton);
-player3Buttons[1].owningPlayer = 2;
-player3Buttons[2] = instance_create(10, 460, LArmMPButton);
-player3Buttons[2].owningPlayer = 2;
-player3Buttons[3] = instance_create(10, 505, RArmMPButton);
-player3Buttons[3].owningPlayer = 2;
-player3Buttons[4] = instance_create(10, 550, LegsMPButton);
-player3Buttons[4].owningPlayer = 2;
-player3Buttons[5] = instance_create(10, 610, BackMPButton);
-player3Buttons[5].owningPlayer = 2;
-player3Buttons[6] = instance_create(10, 655, NextMPButton);
-player3Buttons[6].owningPlayer = 2;
-
+if(numPlayersSetting &gt;= 3)
+{
+    player3Buttons[0] = instance_create(10, 370, HeadMPButton);
+    player3Buttons[0].owningPlayer = 2;
+    player3Buttons[1] = instance_create(10, 415, TorsoMPButton);
+    player3Buttons[1].owningPlayer = 2;
+    player3Buttons[2] = instance_create(10, 460, LArmMPButton);
+    player3Buttons[2].owningPlayer = 2;
+    player3Buttons[3] = instance_create(10, 505, RArmMPButton);
+    player3Buttons[3].owningPlayer = 2;
+    player3Buttons[4] = instance_create(10, 550, LegsMPButton);
+    player3Buttons[4].owningPlayer = 2;
+    player3Buttons[5] = instance_create(10, 610, BackMPButton);
+    player3Buttons[5].owningPlayer = 2;
+    player3Buttons[6] = instance_create(10, 655, NextMPButton);
+    player3Buttons[6].owningPlayer = 2;
+}
+else
+{
+    instance_create(232, 432, ClosedDoor);
+}
 
 //Creating buttons for player4, putting them in his array
-player4Buttons[0] = instance_create(655, 370, HeadMPButton);
-player4Buttons[0].owningPlayer = 3;
-player4Buttons[1] = instance_create(655, 415, TorsoMPButton);
-player4Buttons[1].owningPlayer = 3;
-player4Buttons[2] = instance_create(655, 460, LArmMPButton);
-player4Buttons[2].owningPlayer = 3;
-player4Buttons[3] = instance_create(655, 505, RArmMPButton);
-player4Buttons[3].owningPlayer = 3;
-player4Buttons[4] = instance_create(655, 550, LegsMPButton);
-player4Buttons[4].owningPlayer = 3;
-player4Buttons[5] = instance_create(655, 610, BackMPButton);
-player4Buttons[5].owningPlayer = 3;
-player4Buttons[6] = instance_create(655, 655, NextMPButton);
-player4Buttons[6].owningPlayer = 3;
-
+if(numPlayersSetting &gt;= 4)
+{
+    player4Buttons[0] = instance_create(655, 370, HeadMPButton);
+    player4Buttons[0].owningPlayer = 3;
+    player4Buttons[1] = instance_create(655, 415, TorsoMPButton);
+    player4Buttons[1].owningPlayer = 3;
+    player4Buttons[2] = instance_create(655, 460, LArmMPButton);
+    player4Buttons[2].owningPlayer = 3;
+    player4Buttons[3] = instance_create(655, 505, RArmMPButton);
+    player4Buttons[3].owningPlayer = 3;
+    player4Buttons[4] = instance_create(655, 550, LegsMPButton);
+    player4Buttons[4].owningPlayer = 3;
+    player4Buttons[5] = instance_create(655, 610, BackMPButton);
+    player4Buttons[5].owningPlayer = 3;
+    player4Buttons[6] = instance_create(655, 655, NextMPButton);
+    player4Buttons[6].owningPlayer = 3;
+}
+else
+{
+    instance_create(870, 432, ClosedDoor);
+}
 
 
 //Used to display category name when player looks through a selection of items
@@ -275,29 +293,35 @@ if(player2Buttons[selectedButton[1]].state != 2)
 }
 
 //PLAYER 3
-for(var i=0; i&lt;array_length_1d(player3Buttons);i++)
+if(numPlayersSetting &gt;= 3)
 {
-    if(player3Buttons[i].state != 2)
+    for(var i=0; i&lt;array_length_1d(player3Buttons);i++)
     {
-        player3Buttons[i].state = 0;
+        if(player3Buttons[i].state != 2)
+        {
+            player3Buttons[i].state = 0;
+        }
     }
-}
-if(player3Buttons[selectedButton[2]].state != 2)
-{
-    player3Buttons[selectedButton[2]].state = 1;
+    if(player3Buttons[selectedButton[2]].state != 2)
+    {
+        player3Buttons[selectedButton[2]].state = 1;
+    }
 }
 
 //PLAYER 4
-for(var i=0; i&lt;array_length_1d(player4Buttons);i++)
+if(numPlayersSetting &gt;= 4)
 {
-    if(player4Buttons[i].state != 2)
+    for(var i=0; i&lt;array_length_1d(player4Buttons);i++)
     {
-        player4Buttons[i].state = 0;
+        if(player4Buttons[i].state != 2)
+        {
+            player4Buttons[i].state = 0;
+        }
     }
-}
-if(player4Buttons[selectedButton[3]].state != 2)
-{
-    player4Buttons[selectedButton[3]].state = 1;
+    if(player4Buttons[selectedButton[3]].state != 2)
+    {
+        player4Buttons[selectedButton[3]].state = 1;
+    }
 }
 </string>
           </argument>
@@ -812,6 +836,9 @@ totalBonuses = "";
 /*******************************************************************************************************************
 //PLAYER 3 
 */
+
+if(numPlayersSetting &gt;= 3)
+{
 if(playerLoadOut3[0] != 0)
 {
     totalCost += playerLoadOut3[0].cost
@@ -1041,7 +1068,7 @@ else
         draw_set_color(c_black);
     }
 }
-
+}
 totalCost = 0;
 totalArmor = 0;
 totalWeight = 0;
@@ -1050,6 +1077,8 @@ totalBonuses = "";
 /*******************************************************************************************************************
 //PLAYER 4 
 */
+if(numPlayersSetting &gt;= 4)
+{
 if(playerLoadOut4[0] != 0)
 {
     totalCost += playerLoadOut4[0].cost
@@ -1279,7 +1308,7 @@ else
         draw_set_color(c_black);
     }
 }
-
+}
 
 //Bonuses
 //draw_text(465, 170, totalBonuses)

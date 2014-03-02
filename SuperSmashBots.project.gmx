@@ -83,6 +83,7 @@
     <sprite>sprites\InventoryUIItemSprite</sprite>
     <sprite>sprites\InventoryUIItemMPSprite</sprite>
     <sprite>sprites\OnePixelSprite</sprite>
+    <sprite>sprites\ClosedDoorSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -354,6 +355,7 @@
       </objects>
     </objects>
     <object>objects\ShaderTestObject</object>
+    <object>objects\ClosedDoor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
