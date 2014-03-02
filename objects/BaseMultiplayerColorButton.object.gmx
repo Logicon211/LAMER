@@ -132,6 +132,7 @@ alarm[1] = true;
           <argument>
             <kind>1</kind>
             <string>state = 2;
+alarm[2] = true;
 </string>
           </argument>
         </arguments>

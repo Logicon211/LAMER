@@ -8,6 +8,32 @@
   <parentName>BaseMultiplayerColorButton</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[2] = false;
+
+selectedBar[owningPlayer] = hueBar[owningPlayer];
+selectingColors[owningPlayer] = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -50,6 +76,9 @@ if(selectedColorButton[owningPlayer] != -1)
 
 selectedColorButton[owningPlayer] = num;
 selectedButton[owningPlayer] = num;
+
+selectingColors[owningPlayer] = false
+selectedBar[owningPlayer] = 0;
 
 if(hueBar[owningPlayer] != 0)
 {
@@ -168,6 +197,7 @@ else if(owningPlayer == 3)
             <string>num = 0;
 //buttonArray[0] = id;
 alarm[0] = false;
+alarm[1] = true;
 </string>
           </argument>
         </arguments>

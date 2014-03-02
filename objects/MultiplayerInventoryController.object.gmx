@@ -52,6 +52,19 @@ selectedColorButton[1] = -1;
 selectedColorButton[2] = -1;
 selectedColorButton[3] = -1;
 
+globalvar ColorSelector;
+ColorSelector[0] = 0;
+ColorSelector[1] = 0;
+ColorSelector[2] = 0;
+ColorSelector[3] = 0;
+
+//the selected bar a certain player is looking at
+globalvar selectedBar;
+selectedBar[0] = 0;
+selectedBar[1] = 0;
+selectedBar[2] = 0;
+selectedBar[3] = 0;
+
 //Selected inventory item for each player
 globalvar selectedInventory;
 selectedInventory[0] = -1;
@@ -65,6 +78,13 @@ viewingColors[0] = false;
 viewingColors[1] = false;
 viewingColors[2] = false;
 viewingColors[3] = false;
+
+//Which player is selecting colors
+globalvar selectingColors;
+selectingColors[0] = false;
+selectingColors[1] = false;
+selectingColors[2] = false;
+selectingColors[3] = false;
 
 //Button arrays for each
 globalvar player1Buttons;
@@ -323,6 +343,184 @@ if(numPlayersSetting &gt;= 4)
         player4Buttons[selectedButton[3]].state = 1;
     }
 }
+
+//CONTROLS N STUFF
+
+/*********************************************************************************************/
+//PLAYER 1
+
+//LEFT DOWN
+if(left_check())
+{
+    if(selectedBar[0] != 0)
+    {
+        selectedBar[0].xTrack-=5;
+        if(selectedBar[0].xTrack &lt; 0)
+        {
+            selectedBar[0].xTrack = 255;
+        }
+    }
+}
+
+//RIGHT DOWN
+if(right_check())
+{
+    if(selectedBar[0] != 0)
+    {
+        selectedBar[0].xTrack+=5;
+        if(selectedBar[0].xTrack &gt; 255)
+        {
+            selectedBar[0].xTrack = 0;
+        }
+    }
+}
+
+//UP
+if(up_check_pressed())
+{
+    if(!lookingAtItems[0])
+    {
+        player1Buttons[selectedButton[0]].state = 0;
+        
+        if(!selectingColors[0])
+        {
+            selectedButton[0]--;
+            if(selectedButton[0] &lt;= -1)
+            {
+                selectedButton[0] = array_length_1d(player1Buttons)-1;
+            }
+            player1Buttons[selectedButton[0]].alarm[0] = true;
+        }
+        else
+        {
+            if(selectedBar[0].num == 3)
+            {
+                selectedBar[0] = satBar[0];
+            }
+            else if(selectedBar[0].num == 2)
+            {
+                selectedBar[0] = hueBar[0];
+            }
+            else {
+                selectedBar[0] = valBar[0];
+            }
+        }
+    }
+    else  // This is when you're picking an inventory item
+    {
+        unselectAllItems(inventoryArray1);
+        if(selectedInventory[0] == -1)
+        {
+            selectedInventory[0] = 0;
+        }
+        else if(selectedInventory[0] == 0)
+        {
+            selectedInventory[0] = array_length_1d(inventoryArray1) - 1;
+        }
+        else
+        {
+            selectedInventory[0]--;
+        }
+        inventoryArray1[selectedInventory[0]].state = 1;
+    }
+}
+
+//DOWN
+if(down_check_pressed())
+{
+    if(!lookingAtItems[0])
+    {
+        player1Buttons[selectedButton[0]].state = 0;
+        
+        if(!selectingColors[0])
+        {
+        selectedButton[0]++;
+        if(selectedButton[0] &gt;= array_length_1d(player1Buttons))
+        {
+            selectedButton[0] = 0;
+        }
+        player1Buttons[selectedButton[0]].alarm[0] = true;
+        }
+        else
+        {
+            if(selectedBar[0].num == 1)
+            {
+                selectedBar[0] = satBar[0];
+            }
+            else if(selectedBar[0].num == 2)
+            {
+                selectedBar[0] = valBar[0];
+            }
+            else {
+                selectedBar[0] = hueBar[0];
+            }
+        }
+    }
+    else // This is when you're picking an inventory item
+    {
+        unselectAllItems(inventoryArray1);
+        if(selectedInventory[0] == -1)
+        {
+            selectedInventory[0] = 0;
+        }
+        else if(selectedInventory[0] == array_length_1d(inventoryArray1) - 1)
+        {
+            selectedInventory[0] = 0;
+        }
+        else
+        {
+            selectedInventory[0]++;
+        }
+        inventoryArray1[selectedInventory[0]].state = 1;
+    }
+}
+//CONFIRM (ENTER Or A)
+if(attack1_check_pressed())
+{
+    if(!lookingAtItems[0])
+    {
+        if(!selectingColors[0])
+        {
+            player1Buttons[selectedButton[0]].alarm[1] = true;
+            player1Buttons[selectedButton[0]].alarm[2] = true;
+        }
+        else
+        {
+            selectedBar[0] = 0;
+            selectingColors[0] = false;
+        }
+    }
+    else
+    {
+        if(selectedInventory[0] != -1)
+        {
+            //do code to confirm selection
+            //TODO Add a check to figure out which player to load the item slot into
+            playerLoadOut1[categoryNumber[0]] = inventoryArray1[selectedInventory[0]].inventoryItem;
+            if(lookingAtItems[0])
+            {
+                //View 1 is player 1
+                view_visible[1] = false;
+                lookingAtItems[0] = false;
+                selectedInventory[0] = -1;
+                inventoryArray1 = destroyArray(inventoryArray1);
+            }
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayers[0] = refreshPlayer(displayPlayers[0]);
+        }
+    }
+}
+
+//Need to figure out how to use multiple different controls
+/*********************************************************************************************/
+//PLAYER 2
+
+/*********************************************************************************************/
+//PLAYER 3
+
+/*********************************************************************************************/
+//PLAYER 4
 </string>
           </argument>
         </arguments>
@@ -1310,6 +1508,25 @@ else
 }
 }
 
+//Color Bars
+if(selectedBar[0] != 0)
+{   
+    show_debug_message(string(selectedBar[0]));
+    draw_sprite_ext(colorSelectorSprite,0,selectedBar[0].x - 6, selectedBar[0].y - 5,0.75,0.75,0,c_white,1);
+}
+if(selectedBar[1] != 0)
+{
+    draw_sprite_ext(colorSelectorSprite,0,selectedBar[1].x - 6, selectedBar[1].y - 5,0.75,0.75,0,c_white,1);
+}
+if(selectedBar[2] != 0)
+{
+    draw_sprite_ext(colorSelectorSprite,0,selectedBar[2].x - 6, selectedBar[2].y - 5,0.75,0.75,0,c_white,1);
+}
+if(selectedBar[3] != 0)
+{
+    draw_sprite_ext(colorSelectorSprite,0,selectedBar[3].x - 6, selectedBar[3].y - 5,0.75,0.75,0,c_white,1);
+}
+
 //Bonuses
 //draw_text(465, 170, totalBonuses)
 
@@ -1370,61 +1587,6 @@ if(selectedBar != 0)
 {
     draw_sprite(colorSelectorSprite,0,selectedBar.x - 6, selectedBar.y - 5);
 }*/
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>view_visible[1] = true;
-view_visible[2] = true;
-view_visible[3] = true;
-view_visible[4] = true;
-
-/*if(!view_visible[1])
-{
-    buttonArray[selectedButton].state = 0;
-    
-    buttonArray[selectedButton].alarm[1] = true;
-    
-    selectedBar = 0;
-}
-else
-{
-    if(selectedInventory != -1)
-    {
-        //do code to confirm selection
-        //TODO Add a check to figure out which player to load the item slot into
-        playerLoadOut1[categoryNumber] = inventoryArray[selectedInventory].inventoryItem;
-        if(view_visible[1])
-        {
-            view_visible[1] = false;
-            lookingAtItems = false;
-            selectedInventory = -1;
-            inventoryArray = destroyArray(inventoryArray);
-        }
-        
-        //Refresh the player so it shows the new stuff equipped
-        displayPlayer = refreshPlayer(displayPlayer);
-    }
-}*/
-
 </string>
           </argument>
         </arguments>
