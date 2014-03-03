@@ -43,6 +43,25 @@ for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
 }
 */
 
+if(hueBar[owningPlayer] != 0)
+{
+    with(hueBar[owningPlayer]) {
+        instance_destroy();
+    }
+}
+if(satBar[owningPlayer] != 0)
+{
+    with(satBar[owningPlayer]) {
+        instance_destroy();
+    }
+}
+if(valBar[owningPlayer] != 0)
+{
+    with(valBar[owningPlayer]) {
+        instance_destroy();
+    }
+}
+
 if(lockedIn[owningPlayer] == false)
 {
     lockedIn[owningPlayer] = true;

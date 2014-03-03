@@ -84,6 +84,7 @@
     <sprite>sprites\InventoryUIItemMPSprite</sprite>
     <sprite>sprites\OnePixelSprite</sprite>
     <sprite>sprites\ClosedDoorSprite</sprite>
+    <sprite>sprites\isAISprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>

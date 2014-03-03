@@ -42,6 +42,112 @@ for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
     inventoryArray[i] = invUIItem;
 }
 */
+
+viewingColors[owningPlayer] = false;
+selectedButton[owningPlayer] = 0;
+selectingColors[owningPlayer] = false;
+
+if(hueBar[owningPlayer] != 0)
+{
+    with(hueBar[owningPlayer]) {
+        instance_destroy();
+    }
+}
+if(satBar[owningPlayer] != 0)
+{
+    with(satBar[owningPlayer]) {
+        instance_destroy();
+    }
+}
+if(valBar[owningPlayer] != 0)
+{
+    with(valBar[owningPlayer]) {
+        instance_destroy();
+    }
+}
+
+//Player 1
+if(owningPlayer == 0)
+{
+    player1Buttons = destroyArray(player1Buttons);
+    
+    player1Buttons[0] = instance_create(10, 10, HeadMPButton);
+    player1Buttons[0].owningPlayer = 0;
+    player1Buttons[1] = instance_create(10, 55, TorsoMPButton);
+    player1Buttons[1].owningPlayer = 0;
+    player1Buttons[2] = instance_create(10, 100, LArmMPButton);
+    player1Buttons[2].owningPlayer = 0;
+    player1Buttons[3] = instance_create(10, 145, RArmMPButton);
+    player1Buttons[3].owningPlayer = 0;
+    player1Buttons[4] = instance_create(10, 190, LegsMPButton);
+    player1Buttons[4].owningPlayer = 0;
+    player1Buttons[5] = instance_create(10, 250, BackMPButton);
+    player1Buttons[5].owningPlayer = 0;
+    player1Buttons[6] = instance_create(10, 295, NextMPButton);
+    player1Buttons[6].owningPlayer = 0;
+}
+//Player 2
+else if(owningPlayer == 1)
+{
+    player2Buttons = destroyArray(player2Buttons);
+    
+    player2Buttons[0] = instance_create(655, 10, HeadMPButton);
+    player2Buttons[0].owningPlayer = 1;
+    player2Buttons[1] = instance_create(655, 55, TorsoMPButton);
+    player2Buttons[1].owningPlayer = 1;
+    player2Buttons[2] = instance_create(655, 100, LArmMPButton);
+    player2Buttons[2].owningPlayer = 1;
+    player2Buttons[3] = instance_create(655, 145, RArmMPButton);
+    player2Buttons[3].owningPlayer = 1;
+    player2Buttons[4] = instance_create(655, 190, LegsMPButton);
+    player2Buttons[4].owningPlayer = 1;
+    player2Buttons[5] = instance_create(655, 250, BackMPButton);
+    player2Buttons[5].owningPlayer = 1;
+    player2Buttons[6] = instance_create(655, 295, NextMPButton);
+    player2Buttons[6].owningPlayer = 1;
+}
+//Player 3
+else if(owningPlayer == 2)
+{
+    player3Buttons = destroyArray(player3Buttons);
+    
+    player3Buttons[0] = instance_create(10, 370, HeadMPButton);
+    player3Buttons[0].owningPlayer = 2;
+    player3Buttons[1] = instance_create(10, 415, TorsoMPButton);
+    player3Buttons[1].owningPlayer = 2;
+    player3Buttons[2] = instance_create(10, 460, LArmMPButton);
+    player3Buttons[2].owningPlayer = 2;
+    player3Buttons[3] = instance_create(10, 505, RArmMPButton);
+    player3Buttons[3].owningPlayer = 2;
+    player3Buttons[4] = instance_create(10, 550, LegsMPButton);
+    player3Buttons[4].owningPlayer = 2;
+    player3Buttons[5] = instance_create(10, 610, BackMPButton);
+    player3Buttons[5].owningPlayer = 2;
+    player3Buttons[6] = instance_create(10, 655, NextMPButton);
+    player3Buttons[6].owningPlayer = 2;
+}
+//Player 4
+else if(owningPlayer == 3)
+{
+    player4Buttons = destroyArray(player4Buttons);
+    
+    player4Buttons[0] = instance_create(655, 370, HeadMPButton);
+    player4Buttons[0].owningPlayer = 3;
+    player4Buttons[1] = instance_create(655, 415, TorsoMPButton);
+    player4Buttons[1].owningPlayer = 3;
+    player4Buttons[2] = instance_create(655, 460, LArmMPButton);
+    player4Buttons[2].owningPlayer = 3;
+    player4Buttons[3] = instance_create(655, 505, RArmMPButton);
+    player4Buttons[3].owningPlayer = 3;
+    player4Buttons[4] = instance_create(655, 550, LegsMPButton);
+    player4Buttons[4].owningPlayer = 3;
+    player4Buttons[5] = instance_create(655, 610, BackMPButton);
+    player4Buttons[5].owningPlayer = 3;
+    player4Buttons[6] = instance_create(655, 655, NextMPButton);
+    player4Buttons[6].owningPlayer = 3;
+}
+
+
 </string>
           </argument>
         </arguments>
