@@ -27,9 +27,50 @@
             <kind>1</kind>
             <string>globalvar sat_2;
 //Player specific code. player 1 for now
-sat_2 = playerColors[0,4];
+owningPlayer = 0;
+sat_2 = player1Colors[4];
 xTrack = sat_2;
 num = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Player specific code. 
+if(owningPlayer == 0)
+{
+    sat_2 = player1Colors[4];
+}
+else if(owningPlayer == 1)
+{
+    sat_2 = player2Colors[4];
+}
+else if(owningPlayer == 2)
+{
+    sat_2 = player3Colors[4];
+}
+else if(owningPlayer == 3)
+{
+    sat_2 = player4Colors[4];
+}
+xTrack = sat_2;
 </string>
           </argument>
         </arguments>
@@ -66,7 +107,22 @@ if(mouse_check_button(mb_left))
 sat_2 = xTrack;
 
 //player specific code here, Player1 for now
-playerColors[0,4] = sat_2;
+if(owningPlayer = 0)
+{
+    player1Colors[4] = xTrack;
+}
+else if(owningPlayer = 0)
+{
+    player2Colors[4] = xTrack;
+}
+else if(owningPlayer = 0)
+{
+    player3Colors[4] = xTrack;
+}
+else if(owningPlayer = 0)
+{
+    player4Colors[4] = xTrack;
+}
 </string>
           </argument>
         </arguments>

@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1280</width>
   <height>720</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>1</vsnap>
+  <hsnap>1</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -40,18 +40,17 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="" xview="0" yview="0" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="1280" yview="0" wview="240" hview="360" xport="0" yport="0" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="1536" yview="0" wview="240" hview="360" xport="645" yport="0" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="1792" yview="0" wview="240" hview="360" xport="0" yport="360" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="2048" yview="0" wview="240" hview="360" xport="645" yport="360" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="1280" yview="0" wview="240" hview="360" xport="0" yport="0" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="1536" yview="0" wview="240" hview="360" xport="645" yport="0" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="1792" yview="0" wview="240" hview="360" xport="0" yport="360" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="2048" yview="0" wview="240" hview="360" xport="645" yport="360" wport="240" hport="360" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_43B23299" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_528D8294" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
+    <instance objName="MultiplayerInventoryController" x="32" y="32" name="inst_EDAB2958" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="InventoryUIBar" x="1536" y="0" name="inst_52E0C55E" locked="0" code="" scaleX="0.639999985694885" scaleY="0.979137718677521" colour="4294967295" rotation="0"/>
     <instance objName="InventoryUIBar" x="2048" y="0" name="inst_64B78A98" locked="0" code="" scaleX="0.639999985694885" scaleY="0.979137718677521" colour="4294967295" rotation="0"/>
     <instance objName="InventoryUIBar" x="1792" y="0" name="inst_B84D95D4" locked="0" code="" scaleX="0.639999985694885" scaleY="0.979137718677521" colour="4294967295" rotation="0"/>
@@ -60,10 +59,6 @@
     <instance objName="InventoryUINameP3" x="1792" y="0" name="inst_7BDACE98" locked="0" code="" scaleX="0.639999985694885" scaleY="0.639999985694885" colour="4294967295" rotation="0"/>
     <instance objName="InventoryUINameP4" x="2048" y="0" name="inst_1F62E8AE" locked="0" code="" scaleX="0.639999985694885" scaleY="0.639999985694885" colour="4294967295" rotation="0"/>
     <instance objName="InventoryUIBar" x="1280" y="0" name="inst_2BDFD431" locked="0" code="" scaleX="0.639999985694885" scaleY="0.977777779102325" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_CB3A3D4F" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
-    <instance objName="MultiplayerInventoryController" x="32" y="32" name="inst_EDAB2958" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_4E01F03C" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_8F829D64" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

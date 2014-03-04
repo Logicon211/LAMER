@@ -77,9 +77,9 @@ face[1] = LoganFace;
             <string>//nodeConnections; //list or array of connecting nodes
 
 if(!hasRun) {
-    nodeConnections[0] = MapNodeList[3];
-    nodeConnections[1] = MapNodeList[2];
-    nodeConnections[1] = MapNodeList[5];
+    nodeConnections[0] = MapNodeList[1];
+    nodeConnections[1] = MapNodeList[3];
+    nodeConnections[2] = MapNodeList[5];
     hasRun = true;
 }
 </string>

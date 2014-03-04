@@ -36,6 +36,7 @@ if(playerType<3) //make player
     newPlayer = instance_create(objPos[0],objPos[1],player_o);
     newPlayer.playerNum = playerNumCreate;
     newPlayer.playerType = playerType;
+    return newPlayer;
 }
 else //make AI player
 {
