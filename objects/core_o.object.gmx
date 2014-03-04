@@ -438,6 +438,48 @@ if(player.state = string('Attack'))
 /***************************************************
   END Attack State
  ***************************************************/
+/***************************************************
+  mobileAttack State
+ **************************************************/
+
+if(player.state = string('mobileAttack'))
+{
+    if(player.attack1)
+    {   attackControl2(arm[1],1,arm[2],2);
+    }
+    else 
+    {   arm[1].image_angle = image_angle*2.2;
+    }
+    if(player.attack2)
+    {   attackControl2(arm[2],2,arm[1],1);
+    }
+    else
+    {   arm[2].image_angle = abs(image_angle*1.8)*image_xscale;
+    }
+    if(hspeed=0)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -5*image_xscale+image_angle/2, 8);
+        leg2.image_angle = angle_ease(leg2.image_angle, 20*image_xscale+image_angle/2, 8);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
+    else if(player.airborne || player.boosting)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -10+image_angle, 12);
+        leg2.image_angle = angle_ease(leg2.image_angle, 5+image_angle, 12);
+        head.image_angle = angle_ease(head.image_angle, image_angle/2, 8);
+    }
+    else
+    {
+        leg_var = 60*sin(degtorad(1.5*x));
+        leg1.image_angle = angle_ease(leg1.image_angle, leg_var+image_angle/2, 4);
+        leg2.image_angle = angle_ease(leg2.image_angle, -leg_var+image_angle/2, 4);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
+}
+
+/***************************************************
+  END mobileAttack State
+ ***************************************************/
 
 </string>
           </argument>

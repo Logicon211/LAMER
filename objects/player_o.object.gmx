@@ -133,6 +133,7 @@ jumpCounter = 100;
 landCounter = 0;
 
 boost_power = 1;
+boosterSize = 1;
 leg_speed = 1;
 weight = 1;
 attackType[1]=0;
@@ -252,8 +253,6 @@ else
 }
 //***************************************************
 
-
-
 //quit game
 if(quit_check())
 {
@@ -334,14 +333,18 @@ else
         }
         target_hspeed = 0;
         core.gun_aim = -1; // ** x&lt;0=down ** x=0=off ** x&gt;0=up
+        if(attack1_check())
+        {
+            attack[1] = true;
+        }
+        if(attack2_check())
+        {
+            attack[2] = true;
+        }
     }
     else if(state=string('kneel'))
     {
         state=string('tonorm');
-    }
-    else if(state=string('kneel'))
-    {
-        target_hspeed = 0;
     }
     else if(state=string('Attack'))
     {
@@ -629,6 +632,8 @@ if(state=string('tonorm'))
   END State Controll
  ***************************************************/
  
+//BoosterSize
+boosterSize = 1 + target_vspeed/10 + weight/1000;
  
 //color code test
 if(keyboard_check(ord('O')))

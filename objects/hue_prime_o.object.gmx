@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>globalvar hue_prime;
 //Player specific code. player 1 for now
-hue_prime = player1Colors[0];
+hue_prime = playerColors[1,0];
 xTrack = hue_prime;
 num = 1;
 </string>
@@ -65,7 +65,7 @@ if(mouse_check_button(mb_left))
 
 hue_prime = xTrack;
 //player specific code. Player 1 for now
-player1Colors[0] = hue_prime;
+playerColors[0,0] = hue_prime;
 </string>
           </argument>
         </arguments>

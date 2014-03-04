@@ -59,6 +59,8 @@
     <sprite>sprites\InventoryUINameSprite</sprite>
     <sprite>sprites\InventoryUIItemSprite</sprite>
     <sprite>sprites\OnePixelSprite</sprite>
+    <sprite>sprites\bullet_placeHolder</sprite>
+    <sprite>sprites\boxSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -72,9 +74,11 @@
     <scripts name="Animation">
       <scripts name="Attack Animations">
         <script>scripts\attackSet10.gml</script>
+        <script>scripts\attackSet1.gml</script>
         <script>scripts\yEase10.gml</script>
         <script>scripts\xMove10.gml</script>
         <script>scripts\xEase10.gml</script>
+        <script>scripts\attackSet0.gml</script>
       </scripts>
       <scripts name="Easing">
         <script>scripts\x_ease.gml</script>
@@ -84,6 +88,7 @@
       <scripts name="other">
         <script>scripts\perfect_trail_angled.gml</script>
         <script>scripts\perfectTrailEffect.gml</script>
+        <script>scripts\perfectTrailEffectWhite.gml</script>
         <script>scripts\rotation_tracker.gml</script>
         <script>scripts\perfect_trail.gml</script>
         <script>scripts\limb_anchor.gml</script>
@@ -276,20 +281,21 @@
         <object>objects\land_parent</object>
         <object>objects\land_o</object>
       </objects>
-      <objects name="Color Adjusts">
-        <object>objects\hue_prime_o</object>
-        <object>objects\hue_2_o</object>
-        <object>objects\hue_glow_o</object>
-        <object>objects\val_prime_o</object>
-        <object>objects\val_2_o</object>
-        <object>objects\val_glow_o</object>
-        <object>objects\sat_prime_o</object>
-        <object>objects\sat_2_o</object>
-        <object>objects\sat_glow_o</object>
-        <object>objects\colorSelector</object>
-      </objects>
+    </objects>
+    <objects name="Color Adjusts">
+      <object>objects\hue_prime_o</object>
+      <object>objects\hue_2_o</object>
+      <object>objects\hue_glow_o</object>
+      <object>objects\val_prime_o</object>
+      <object>objects\val_2_o</object>
+      <object>objects\val_glow_o</object>
+      <object>objects\sat_prime_o</object>
+      <object>objects\sat_2_o</object>
+      <object>objects\sat_glow_o</object>
+      <object>objects\colorSelector</object>
     </objects>
     <object>objects\ShaderTestObject</object>
+    <object>objects\BoxObject</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>

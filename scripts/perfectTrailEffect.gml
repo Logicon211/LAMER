@@ -12,11 +12,10 @@ x1 = argument0;
 y1 = argument1;
 x2 = argument2;
 y2 = argument3;
-effectIn = argument4;
-colorIn = argument5;
-pNum = argument6;
-colorLevel = 3;
-
+effect = argument4;
+pNum = argument5;
+colorLevel = 6;
+size = player.boosterSize/2
 a = x2-x1;
 b = y2-y1;
 if(a=0){a=1;}
@@ -32,8 +31,9 @@ if(a>0)
             {
                 r=a/b;
                 a-=1;
+                if(r=0){r=0.01}
                 b-=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
         else
@@ -42,8 +42,9 @@ if(a>0)
             {
                 r=b/a;
                 b-=1;
+                if(r=0){r=0.01}
                 a-=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
     }
@@ -55,8 +56,9 @@ if(a>0)
             {
                 r=abs(a/b);
                 a-=1;
+                if(r=0){r=0.01}
                 b+=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
         else
@@ -65,8 +67,9 @@ if(a>0)
             {
                 r=abs(b/a);
                 b+=1;
+                if(r=0){r=0.01}
                 a-=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
     }
@@ -74,7 +77,7 @@ if(a>0)
     {
         for(a=a;a>0;a--)
         {
-            instance_create(x1+a,y2,obj);
+            effect_create_above(effect,x1+a,y2,size,getPlayerColor(pNum,colorLevel));
         }
         
     }
@@ -89,8 +92,9 @@ else if(a<0)
             {
                 r=abs(a/b);
                 a+=1;
+                if(r=0){r=0.01}
                 b-=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
         else
@@ -99,8 +103,9 @@ else if(a<0)
             {
                 r=abs(b/a);
                 b-=1;
+                if(r=0){r=0.01}
                 a+=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
     }
@@ -112,8 +117,9 @@ else if(a<0)
             {
                 r=a/b;
                 a+=1;
+                if(r=0){r=0.01}
                 b+=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
         else
@@ -122,8 +128,9 @@ else if(a<0)
             {
                 r=abs(b/a);
                 b+=1;
+                if(r=0){r=0.01}
                 a+=(1/r);
-                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));;
+                effect_create_above(effect,x1+a,y1+b,size,getPlayerColor(pNum,colorLevel));
             }
         }
     }
@@ -131,7 +138,7 @@ else if(a<0)
     {
         for(a=a;a<0;a++)
         {
-            instance_create(x1+a,y2,obj);
+            effect_create_above(effect,x1+a,y2,size,getPlayerColor(pNum,colorLevel));
         }
         
     }
@@ -140,13 +147,13 @@ else if(b>0)
 {
     for(b=b;b>0;b--)
     {
-        instance_create(x2,y1+b,obj);
+        effect_create_above(effect,x2,y1+b,size,getPlayerColor(pNum,colorLevel));
     }
 }
 else if(b<0)
 {
     for(b=b;b<0;b++)
     {
-        instance_create(x2,y1+b,obj);
+        effect_create_above(effect,x2,y1+b,size,getPlayerColor(pNum,colorLevel));
     }
 }

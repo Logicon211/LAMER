@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>globalvar sat_2;
 //Player specific code. player 1 for now
-sat_2 = player1Colors[4];
+sat_2 = playerColors[0,4];
 xTrack = sat_2;
 num = 2;
 </string>
@@ -66,7 +66,7 @@ if(mouse_check_button(mb_left))
 sat_2 = xTrack;
 
 //player specific code here, Player1 for now
-player1Colors[4] = sat_2;
+playerColors[0,4] = sat_2;
 </string>
           </argument>
         </arguments>

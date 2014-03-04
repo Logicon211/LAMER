@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>globalvar hue_glow;
 //Player specific code. player 1 for now
-hue_glow = player1Colors[6];
+hue_glow = playerColors[0,6];
 xTrack = hue_glow;
 num = 1;
 

@@ -52,7 +52,9 @@ intense = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/***************************************************
+            <string>//perfectTrailEffectWhite(oldX,oldY,x+hspeed,y+vspeed,ef_flare);
+//perfectTrailEffect(oldX,oldY,x+hspeed,y+vspeed,ef_explosion,player.playerNum);
+
 if(intense&gt;0)
 {
     perfect_trail(oldX,oldY,x+hspeed,y+vspeed,booster_trail_intense_o);
@@ -79,10 +81,6 @@ else
     image_xscale=1;
     image_yscale=1;
 }
-
- ***************************************************/
-
-//perfectTrailEffect(oldX,oldY,x+hspeed,y+vspeed,ef_flare);
 
 oldX = x+hspeed;
 oldY = y+vspeed;
