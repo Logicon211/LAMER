@@ -71,8 +71,9 @@ face[0] = 0;
             <string>//nodeConnections; //list or array of connecting nodes
 
 if(!hasRun) {
-    nodeConnections[0] = MapNodeList[1];
+    nodeConnections[0] = MapNodeList[2];
     nodeConnections[1] = MapNodeList[4];
+    nodeConnections[2] = MapNodeList[5];
     hasRun = true;
 }
 </string>

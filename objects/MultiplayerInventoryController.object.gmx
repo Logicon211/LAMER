@@ -39,6 +39,12 @@ if(numPlayersSetting &gt;= 4)
     displayPlayers[3] = createPlayer(3,1, 950,510);
 }
 
+player1Money = creditLimitSetting;
+player2Money = creditLimitSetting;
+player3Money = creditLimitSetting;
+player4Money = creditLimitSetting;
+
+
 //Easy variable to store if a player is AI or not
 globalvar isAI;
 isAI[0] = false;
@@ -313,6 +319,22 @@ displayPlayer = createPlayer(0,1,600,250);*/
           <argument>
             <kind>1</kind>
             <string>
+
+//Check to see if all are locked in
+
+if(numPlayersSetting == 2 and lockedIn[0] and lockedIn[1])
+{
+    room_goto(MPMapSelect);
+}
+else if(numPlayersSetting == 3 and lockedIn[0] and lockedIn[1] and lockedIn[2]) 
+{
+    room_goto(MPMapSelect);
+}
+else if(numPlayersSetting == 4 and lockedIn[0] and lockedIn[1] and lockedIn[2] and lockedIn[3])
+{
+    room_goto(MPMapSelect);
+}
+
 //Keep selected Button highlighted for each player
 
 //PLAYER 1
@@ -378,9 +400,9 @@ if(numPlayersSetting &gt;= 4)
 /*********************************************************************************************/
 //PLAYER 1
 
-//LEFT DOWN
 if(!lockedIn[0])
 {
+    //LEFT DOWN
     if(left_check())
     {
         if(selectedBar[0] != 0)
@@ -542,10 +564,23 @@ if(!lockedIn[0])
             }
         }
     }
+    //BACK BUTTON CHECK
+    if(shield_check())
+    {
+        if(lookingAtItems[0])
+        {
+            //View 1 is player 1
+            view_visible[1] = false;
+            lookingAtItems[0] = false;
+            selectedInventory[0] = -1;
+            inventoryArray1 = destroyArray(inventoryArray1);
+        }
+    }
 }
 //control player 2 AI when locked in
 else if(lockedIn[0] and !lockedIn[1] and isAI[1])
 {
+    //LEFT DOWN
     if(left_check())
     {
         if(selectedBar[1] != 0)
@@ -707,10 +742,24 @@ else if(lockedIn[0] and !lockedIn[1] and isAI[1])
             }
         }
     }
+    
+    //BACK BUTTON CHECK
+    if(shield_check())
+    {
+        if(lookingAtItems[1])
+        {
+            //View 1 is player 1
+            view_visible[2] = false;
+            lookingAtItems[1] = false;
+            selectedInventory[1] = -1;
+            inventoryArray2 = destroyArray(inventoryArray2);
+        }
+    }
 }
 //Player 3 AI control if other 2 are locked in (or not AI)
 else if(lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or (lockedIn[0] and !lockedIn[2] and !isAI[1] and isAI[2]))
 {
+    //LEFT
     if(left_check())
     {
         if(selectedBar[2] != 0)
@@ -872,10 +921,24 @@ else if(lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or 
             }
         }
     }
+    
+    //BACK BUTTON CHECK
+    if(shield_check())
+    {
+        if(lookingAtItems[2])
+        {
+            //View 1 is player 1
+            view_visible[3] = false;
+            lookingAtItems[2] = false;
+            selectedInventory[2] = -1;
+            inventoryArray3 = destroyArray(inventoryArray3);
+        }
+    }
 }
 //Player 4 AI control if other 3 are locked in (or not AI)
 else if(lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1] and isAI[2] and isAI[3] or (lockedIn[0] and !lockedIn[3] and !isAI[1] and !isAI[2] and isAI[3]) or (lockedIn[0] and lockedIn[2] and !lockedIn[3] and isAI[2] and isAI[3]))
 {
+    //LEFT DOWN
     if(left_check())
     {
         if(selectedBar[3] != 0)
@@ -1037,6 +1100,18 @@ else if(lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1]
             }
         }
     }
+    //BACK BUTTON CHECK
+    if(shield_check())
+    {
+        if(lookingAtItems[3])
+        {
+            //View 1 is player 1
+            view_visible[4] = false;
+            lookingAtItems[3] = false;
+            selectedInventory[3] = -1;
+            inventoryArray4 = destroyArray(inventoryArray4);
+        }
+    }
 }
 //Need to figure out how to use multiple different controls
 /*********************************************************************************************/
@@ -1071,6 +1146,8 @@ else if(lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1]
             <kind>1</kind>
             <string>//Print current loadout stats on screen (Still need to add stat comparisons)
 //Need to figure out multiple players inventory screens
+
+draw_set_color(c_black);
 
 var totalCost = 0;
 var totalArmor = 0;

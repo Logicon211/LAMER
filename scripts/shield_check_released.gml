@@ -1,4 +1,4 @@
-if(keyboard_check_released(ord('D')) || keyboard_check_released(ord('C')))
+if(keyboard_check_released(ord('D')) or keyboard_check_released(ord('C')) or keyboard_check(ord('B')))
 {
     return true;
 }

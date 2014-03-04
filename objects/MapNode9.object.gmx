@@ -27,27 +27,21 @@
             <kind>1</kind>
             <string>
 //Node number, unique between nodes
-nodeNumber = 1;
+nodeNumber = 9;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Second Map Node";
-nodeDescription = "Some Fluff about the area in the Second node HAS RADIO"
+nodeName = "Seventh Map Node";
+nodeDescription = "Some Fluff about the area in the Seventh node"
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = true; //check to see if there's radio chat before the fight
+hasRadioText = false; //check to see if there's radio chat before the fight
 
-radioText[0] = "This is some test text for another NODE :O";
-radioText[1] = "This is another line wow";
-radioText[2] = "Cool CoolCool";
-radioText[3] = "Cool CoolCool Cool Cool wow wow";
-radioText[4] = "END TRANSMISSION";
+radioText[0] = "";
 
-face[0] = MitchFace;
-face[1] = EliotFace;
-
+face[0] = 0;
 //battleMap = The battlemap (or room) this node points to
 
 
@@ -76,8 +70,9 @@ face[1] = EliotFace;
             <string>//nodeConnections; //list or array of connecting nodes
 
 if(!hasRun) {
-    nodeConnections[0] = MapNodeList[0];
-    nodeConnections[1] = MapNodeList[4];
+    nodeConnections[0] = MapNodeList[7];
+    nodeConnections[1] = MapNodeList[10];
+    nodeConnections[2] = MapNodeList[11];
     hasRun = true;
 }
 </string>

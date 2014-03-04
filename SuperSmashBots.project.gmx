@@ -85,9 +85,11 @@
     <sprite>sprites\OnePixelSprite</sprite>
     <sprite>sprites\ClosedDoorSprite</sprite>
     <sprite>sprites\isAISprite</sprite>
+    <sprite>sprites\LEVELSELECTSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
+    <background>background\MPMapBackground</background>
     <background>background\RadioTalkBackground</background>
     <background>background\MenuBackground</background>
     <background>background\MultiplayerLoadoutBackground</background>
@@ -205,6 +207,7 @@
     </objects>
     <object>objects\GameController</object>
     <object>objects\MultiplayerInventoryController</object>
+    <object>objects\MainMenuController</object>
     <object>objects\SettingsController</object>
     <object>objects\PulsingEnter</object>
     <objects name="Buttons">
@@ -287,11 +290,33 @@
         <object>objects\MapNode4</object>
         <object>objects\MapNode5</object>
         <object>objects\MapNode6</object>
+        <object>objects\MapNode7</object>
+        <object>objects\MapNode8</object>
+        <object>objects\MapNode9</object>
+        <object>objects\MapNode10</object>
+        <object>objects\MapNode11</object>
+        <object>objects\MapNode12</object>
+        <object>objects\MapNode13</object>
+        <object>objects\MapNode14</object>
+        <object>objects\MapNode15</object>
+        <object>objects\MapNode16</object>
+        <object>objects\MapNode17</object>
+        <object>objects\MapNode18</object>
         <object>objects\MapNodeParent</object>
+        <objects name="MPMapNodes">
+          <object>objects\MPMapNode0</object>
+          <object>objects\MPMapNode1</object>
+          <object>objects\MPMapNode2</object>
+          <object>objects\MPMapNode3</object>
+          <object>objects\MPMapNode4</object>
+          <object>objects\MPMapNode5</object>
+        </objects>
       </objects>
       <object>objects\PlayerMarker</object>
+      <object>objects\MPPlayerMarker</object>
       <object>objects\MapUIBar</object>
       <object>objects\MapCamera</object>
+      <object>objects\LevelSelectObjectText</object>
     </objects>
     <objects name="BattleObjects">
       <object>objects\player_o</object>
@@ -361,6 +386,7 @@
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
+    <room>rooms\MPMapSelect</room>
     <room>rooms\testRange</room>
     <room>rooms\RadioRoom</room>
     <room>rooms\InventoryRoom</room>

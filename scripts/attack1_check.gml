@@ -1,4 +1,4 @@
-if(keyboard_check(ord('A')) || keyboard_check(ord('Z')))
+if(keyboard_check(ord('A')) or keyboard_check(ord('Z')) or keyboard_check_pressed(vk_enter))
 {
     return true;
 }

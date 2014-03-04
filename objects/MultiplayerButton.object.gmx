@@ -53,6 +53,9 @@ room_goto(SettingsRoom);
             <kind>1</kind>
             <string>//create code
 alarm[0] = false;
+
+num = 1;
+menuButtons[num] = id;
 </string>
           </argument>
         </arguments>
