@@ -1,6 +1,6 @@
 if(argument_count=1)
 {
-    controllerNum = argument0;
+    controllerNum = argument[0];
     if(keyboard_check(vk_space))
     {   return true;
     }
