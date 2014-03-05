@@ -30,6 +30,7 @@ oldY=y;
 boosting=false;
 player = instance_nearest(x,y,player_o);
 intense = 0;
+playerNum = player.playerNum;
 </string>
           </argument>
         </arguments>
@@ -108,7 +109,7 @@ oldY = y+vspeed;
             <kind>1</kind>
             <string>draw_set_blend_mode(bm_add);
 scale_var = random_range(0.75,1.25);
-draw_sprite_ext(sprite_index,0,x,y,scale_var,scale_var,image_angle,make_color_hsv(hue_glow,sat_glow,val_glow),1)
+draw_sprite_ext(sprite_index,0,x,y,scale_var,scale_var,image_angle,getPlayerColor(playerNum,2),1)
 draw_sprite_ext(sprite_index,0,x,y,scale_var*0.75,scale_var*0.75,image_angle,c_white,1)
 draw_set_blend_mode(bm_normal);
 
