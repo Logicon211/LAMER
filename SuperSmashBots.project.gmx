@@ -6,6 +6,9 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\Music1</sound>
+    <sound>sound\MainMenuMusic</sound>
+    <sound>sound\MultiplayerMenuMusic</sound>
+    <sound>sound\OvermapMusic</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -401,6 +404,7 @@
     <object>objects\ShaderTestObject</object>
     <object>objects\BoxObject</object>
     <object>objects\ClosedDoor</object>
+    <object>objects\MusicController</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>

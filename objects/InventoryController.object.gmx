@@ -75,7 +75,7 @@ selectedBar = 0;
 globalvar displayPlayer;
 //Will need to add separate code to check to see which player is doing this
 //display doesn't work
-displayPlayer = createPlayer(0,1,600,250);
+displayPlayer = createPlayer(0,1,640,300);
 </string>
           </argument>
         </arguments>
