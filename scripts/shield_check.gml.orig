@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+if(keyboard_check(ord('D')) || keyboard_check(ord('C')))
+{
+    return true;
+}
+else if(gamepad_button_check(0,gp_face2))
+{
+    return true;
+}
+else
+{
+    return false;
+}
+=======
+if(keyboard_check(ord('D')) or keyboard_check(ord('C')) or keyboard_check(ord('B')))
+{
+    return true;
+}
+else if(gamepad_button_check(0,gp_face2))
+{
+    return true;
+}
+else
+{
+    return false;
+}
+>>>>>>> b35d97a2b437c35325d8d9b77d0eaef6ff2f7c2f

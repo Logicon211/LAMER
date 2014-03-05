@@ -1,8 +1,12 @@
+controllerNum = argument_count;
+if(controllerNum>0)
+{   controllerNum = argument[0];
+}
 if(keyboard_check(vk_down))
 {
     return true;
 }
-else if(gamepad_axis_value(0,gp_axislv)>0.3)
+else if(gamepad_axis_value(controllerNum,gp_axislv)>0.3)
 {
     return true;
 }

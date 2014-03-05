@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>globalvar sat_prime;
 //Player specific code. player 1 for now
+sat_prime = playerColors[0,1];
 owningPlayer = 0;
-sat_prime = player1Colors[1];
 xTrack = sat_prime;
 num = 2;
 </string>
@@ -54,22 +54,7 @@ num = 2;
           <argument>
             <kind>1</kind>
             <string>//Player specific code. 
-if(owningPlayer == 0)
-{
-    sat_prime = player1Colors[1];
-}
-else if(owningPlayer == 1)
-{
-    sat_prime = player2Colors[1];
-}
-else if(owningPlayer == 2)
-{
-    sat_prime = player3Colors[1];
-}
-else if(owningPlayer == 3)
-{
-    sat_prime = player4Colors[1];
-}
+sat_prime = playerColors[owningPlayer, 1]; 
 xTrack = sat_prime;
 </string>
           </argument>
@@ -106,22 +91,7 @@ if(mouse_check_button(mb_left))
 sat_prime = xTrack;
 
 //player specific code here, Player1 for now
-if(owningPlayer = 0)
-{
-    player1Colors[1] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player2Colors[1] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player3Colors[1] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player4Colors[1] = xTrack;
-}
+playerColors[owningPlayer,1] = xTrack
 </string>
           </argument>
         </arguments>

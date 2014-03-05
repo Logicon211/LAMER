@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+if(keyboard_check(ord('A')) || keyboard_check(ord('Z')))
+{
+    return true;
+}
+else if(gamepad_button_check(0,gp_face1))
+{
+    return true;
+}
+else
+{
+    return false;
+}
+=======
+if(keyboard_check(ord('A')) or keyboard_check(ord('Z')) or keyboard_check_pressed(vk_enter))
+{
+    return true;
+}
+else if(gamepad_button_check(0,gp_face1))
+{
+    return true;
+}
+else
+{
+    return false;
+}
+>>>>>>> b35d97a2b437c35325d8d9b77d0eaef6ff2f7c2f

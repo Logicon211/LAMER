@@ -83,6 +83,8 @@
     <sprite>sprites\InventoryUIItemSprite</sprite>
     <sprite>sprites\InventoryUIItemMPSprite</sprite>
     <sprite>sprites\OnePixelSprite</sprite>
+    <sprite>sprites\bullet_placeHolder</sprite>
+    <sprite>sprites\boxSprite</sprite>
     <sprite>sprites\ClosedDoorSprite</sprite>
     <sprite>sprites\isAISprite</sprite>
     <sprite>sprites\LEVELSELECTSprite</sprite>
@@ -397,6 +399,7 @@
       <object>objects\colorSelector</object>
     </objects>
     <object>objects\ShaderTestObject</object>
+    <object>objects\BoxObject</object>
     <object>objects\ClosedDoor</object>
   </objects>
   <rooms name="rooms">

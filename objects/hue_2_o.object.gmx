@@ -28,7 +28,7 @@
             <string>globalvar hue_2;
 //Player specific code. player 1 for now
 owningPlayer = 0;
-hue_2 = player1Colors[3];
+hue_2 = playerColors[0,3];
 xTrack = hue_2;
 num = 1;
 </string>
@@ -54,22 +54,7 @@ num = 1;
           <argument>
             <kind>1</kind>
             <string>//Player specific code. 
-if(owningPlayer == 0)
-{
-    hue_2 = player1Colors[3];
-}
-else if(owningPlayer == 1)
-{
-    hue_2 = player2Colors[3];
-}
-else if(owningPlayer == 2)
-{
-    hue_2 = player3Colors[3];
-}
-else if(owningPlayer == 3)
-{
-    hue_2 = player4Colors[3];
-}
+hue_2 = playerColors[owningPlayer, 3]; 
 xTrack = hue_2;
 </string>
           </argument>
@@ -106,22 +91,7 @@ if(mouse_check_button(mb_left))
 hue_2 = xTrack;
 
 //player specific code here, Player1 for now
-if(owningPlayer = 0)
-{
-    player1Colors[3] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player2Colors[3] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player3Colors[3] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player4Colors[3] = xTrack;
-}
+playerColors[owningPlayer,3] = xTrack;
 </string>
           </argument>
         </arguments>
