@@ -52,6 +52,9 @@
             <kind>1</kind>
             <string>//create code
 alarm[0] = false;
+
+num = 2;
+menuButtons[num] = id;
 </string>
           </argument>
         </arguments>

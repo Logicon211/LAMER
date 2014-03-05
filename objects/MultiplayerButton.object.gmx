@@ -28,6 +28,7 @@
             <string>//Button Press Code
 
 //Multiplayer doesn't do anything yet
+room_goto(SettingsRoom);
 </string>
           </argument>
         </arguments>
@@ -52,6 +53,9 @@
             <kind>1</kind>
             <string>//create code
 alarm[0] = false;
+
+num = 1;
+menuButtons[num] = id;
 </string>
           </argument>
         </arguments>
@@ -69,5 +73,8 @@ alarm[0] = false;
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>60,60</point>
+  </PhysicsShapePoints>
 </object>

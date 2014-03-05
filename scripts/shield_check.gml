@@ -1,4 +1,4 @@
-if(keyboard_check(ord('D')) || keyboard_check(ord('C')))
+if(keyboard_check(ord('D')) or keyboard_check(ord('C')) or keyboard_check(ord('B')))
 {
     return true;
 }

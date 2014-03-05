@@ -37,29 +37,6 @@ alarm[0] = true;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="11">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>state = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="10">
       <action>
         <libid>1</libid>
@@ -77,10 +54,10 @@ alarm[0] = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>state = 1;
+            <string>//state = 1;
 
 //buttonArray[selectedButton].state = 0;
-//selectedButton = num;
+selectedButton[owningPlayer] = num;
 </string>
           </argument>
         </arguments>
@@ -163,18 +140,60 @@ if(state = 1)
     //P2
     else if(owningPlayer == 1)
     {
-        draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_orange,image_alpha);
+        if(!isAI[1])
+        {
+            draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_orange,image_alpha);
+        }
+        else
+        {
+            if(lockedIn[0] and !lockedIn[1] and isAI[1])
+            {
+                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_red,image_alpha);
+            }
+            else
+            {
+                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_orange,image_alpha);
+            }
+        }
     }
     //P3
     else if(owningPlayer == 2)
     {
-        draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_green,image_alpha);
+        if(!isAI[2])
+        {
+            draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_green,image_alpha);
+        }
+        else
+        {
+            if(lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or (lockedIn[0] and !lockedIn[2] and !isAI[1] and isAI[2]))
+            {
+                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_red,image_alpha);
+            }
+            else
+            {
+                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_green,image_alpha);
+            }
+        }    
     }
     
     //P4
     else if(owningPlayer == 3)
     {
-        draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_blue,image_alpha);
+        if(!isAI[3])
+        {
+            draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_blue,image_alpha);
+        }
+        else
+        {
+            if(lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1] and isAI[2] and isAI[3] or (lockedIn[0] and !lockedIn[3] and !isAI[1] and !isAI[2] and isAI[3]) or (lockedIn[0] and lockedIn[2] and !lockedIn[3] and isAI[2] and isAI[3]))
+            {
+                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_red,image_alpha);
+            }
+            else
+            {
+                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_blue,image_alpha);
+            }
+        } 
     }
 }
 else

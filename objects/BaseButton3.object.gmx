@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>state = 0;
+num = 0
 
 alarm[0] = true;
 //Individual create code

@@ -72,9 +72,7 @@ face[0] = 0;
 
 if(!hasRun) {
     nodeConnections[0] = MapNodeList[0];
-    nodeConnections[1] = MapNodeList[1];
-    nodeConnections[2] = MapNodeList[4];
-    nodeConnections[3] = MapNodeList[5];
+    nodeConnections[1] = MapNodeList[3];
     hasRun = true;
 }
 </string>

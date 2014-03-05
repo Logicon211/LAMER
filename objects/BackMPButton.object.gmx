@@ -27,21 +27,8 @@
             <kind>1</kind>
             <string>alarm[1] = false;
 //Need to define actions specifically for multiplayer Inventory
-/*
-view_visible[1] = true;
-categoryName = "Head Pieces"
-categoryNumber = num;
 
-lookingAtItems = true;
-
-//Display the player's current Head Parts inventory
-for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
-{
-    var invUIItem = instance_create(1280,100 + (100*i),InventoryUIItem);
-    invUIItem.inventoryItem = ds_list_find_value(HeadInventory, i);
-    inventoryArray[i] = invUIItem;
-}
-*/
+room_goto(SettingsRoom);
 </string>
           </argument>
         </arguments>
@@ -64,7 +51,7 @@ for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>num = 6;
+            <string>num = 5;
 //buttonArray[0] = id;
 alarm[0] = false;
 </string>

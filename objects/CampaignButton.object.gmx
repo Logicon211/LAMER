@@ -52,6 +52,9 @@ room_goto(OverMap);
             <kind>1</kind>
             <string>//create code
 alarm[0] = false;
+
+num = 0;
+menuButtons[num] = id;
 </string>
           </argument>
         </arguments>

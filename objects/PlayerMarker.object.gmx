@@ -71,6 +71,143 @@ else
 {
     isMoving = false;
 }
+
+//LEFT
+if(left_check_pressed())
+{
+    var testX = self.x;
+    var nodeToMoveTo = 0;
+    
+    for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
+    {
+        if(MapNodeList[atMapNode].nodeConnections[i].x &lt; testX and !MapNodeList[atMapNode].nodeConnections[i].isLocked)
+        {
+            nodeToMoveTo = MapNodeList[atMapNode].nodeConnections[i];
+            testX = MapNodeList[atMapNode].nodeConnections[i].x;
+        }
+    }
+    
+    //if found a node in that direction, move there.
+    if(nodeToMoveTo != 0 and !isMoving) 
+    {
+        show_debug_message("Node found at " + string(nodeToMoveTo))
+        moveToNode = nodeToMoveTo;
+        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        playerMarker.direction = dir;
+        playerMarker.speed = 12;
+    }
+}
+
+//RIGHT
+if(right_check_pressed())
+{
+    var testX = self.x;
+    var nodeToMoveTo = 0;
+    
+    for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
+    {
+        if(MapNodeList[atMapNode].nodeConnections[i].x &gt; testX and !MapNodeList[atMapNode].nodeConnections[i].isLocked)
+        {
+            nodeToMoveTo = MapNodeList[atMapNode].nodeConnections[i];
+            testX = MapNodeList[atMapNode].nodeConnections[i].x;
+        }
+    }
+    //if found a node in that direction, move there.
+    if(nodeToMoveTo != 0 and !isMoving) 
+    {
+        show_debug_message("Node found at " + string(nodeToMoveTo));
+        moveToNode = nodeToMoveTo;
+        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        playerMarker.direction = dir;
+        playerMarker.speed = 12;
+    }
+}
+
+//UP
+if(up_check_pressed())
+{
+    var testY = self.y;
+    var nodeToMoveTo = 0;
+    
+    for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
+    {
+        if(MapNodeList[atMapNode].nodeConnections[i].y &lt; testY and !MapNodeList[atMapNode].nodeConnections[i].isLocked)
+        {
+            nodeToMoveTo = MapNodeList[atMapNode].nodeConnections[i];
+            testY = MapNodeList[atMapNode].nodeConnections[i].y;
+        }
+    }
+    
+    //if found a node in that direction, move there.
+    if(nodeToMoveTo != 0 and !isMoving) 
+    {
+        show_debug_message("Node found at " + string(nodeToMoveTo))
+        moveToNode = nodeToMoveTo;
+        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        playerMarker.direction = dir;
+        playerMarker.speed = 12;
+    }
+}
+//DOWN
+if(down_check_pressed())
+{
+    var testY = self.y;
+    var nodeToMoveTo = 0;
+    
+    for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
+    {
+        if(MapNodeList[atMapNode].nodeConnections[i].y &gt; testY and !MapNodeList[atMapNode].nodeConnections[i].isLocked)
+        {
+            nodeToMoveTo = MapNodeList[atMapNode].nodeConnections[i];
+            testY = MapNodeList[atMapNode].nodeConnections[i].y;
+        }
+    }
+    
+    //if found a node in that direction, move there.
+    if(nodeToMoveTo != 0 and !isMoving) 
+    {
+        show_debug_message("Node found at " + string(nodeToMoveTo))
+        moveToNode = nodeToMoveTo;
+        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        playerMarker.direction = dir;
+        playerMarker.speed = 12;
+    }
+}
+
+//ENTER
+if(attack1_check_pressed())
+{
+        //Might change this so something other than ENTER keypress
+    //Like a GUI button to press, but if it's all keyboard based
+    //we should probably use a key press
+    
+    //on ENTER,do battle fight, for now just go as if player won:
+    
+    //MapNodeList[atMapNode].hasCompleted = true;
+    
+    if(MapNodeList[atMapNode].hasRadioText)
+    {
+        radText = MapNodeList[atMapNode].radioText;
+        radFace = MapNodeList[atMapNode].face; //gets pictures of faces for radio
+        nodePlayerIsAt = atMapNode;
+        room_goto(RadioRoom);
+    }
+    else
+    {
+        //include code to fight? 
+        nodePlayerIsAt = atMapNode;
+        unlockNodes(MapNodeList[atMapNode]);
+    }
+}
+
+if(shield_check())
+{
+    room_goto(MenuRoom);
+}
 </string>
           </argument>
         </arguments>
@@ -93,7 +230,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var testY = self.y;
+            <string>/*var testY = self.y;
 var nodeToMoveTo = 0;
 
 for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
@@ -114,7 +251,7 @@ if(nodeToMoveTo != 0 and !isMoving)
     dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
     playerMarker.direction = dir;
     playerMarker.speed = 12;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -137,7 +274,7 @@ if(nodeToMoveTo != 0 and !isMoving)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var testX = self.x;
+            <string>/*var testX = self.x;
 var nodeToMoveTo = 0;
 
 for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
@@ -157,7 +294,7 @@ if(nodeToMoveTo != 0 and !isMoving)
     dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
     playerMarker.direction = dir;
     playerMarker.speed = 12;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -180,7 +317,7 @@ if(nodeToMoveTo != 0 and !isMoving)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var testY = self.y;
+            <string>/*var testY = self.y;
 var nodeToMoveTo = 0;
 
 for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
@@ -201,7 +338,7 @@ if(nodeToMoveTo != 0 and !isMoving)
     dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
     playerMarker.direction = dir;
     playerMarker.speed = 12;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -224,7 +361,7 @@ if(nodeToMoveTo != 0 and !isMoving)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var testX = self.x;
+            <string>/*var testX = self.x;
 var nodeToMoveTo = 0;
 
 for(var i = 0; i &lt; array_length_1d(MapNodeList[atMapNode].nodeConnections); i++)
@@ -245,7 +382,7 @@ if(nodeToMoveTo != 0 and !isMoving)
     dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
     playerMarker.direction = dir;
     playerMarker.speed = 12;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -276,7 +413,7 @@ if(nodeToMoveTo != 0 and !isMoving)
 
 //MapNodeList[atMapNode].hasCompleted = true;
 
-if(MapNodeList[atMapNode].hasRadioText)
+/*if(MapNodeList[atMapNode].hasRadioText)
 {
     radText = MapNodeList[atMapNode].radioText;
     radFace = MapNodeList[atMapNode].face; //gets pictures of faces for radio
@@ -288,7 +425,7 @@ else
     //include code to fight? 
     nodePlayerIsAt = atMapNode;
     unlockNodes(MapNodeList[atMapNode]);
-}
+}*/
 </string>
           </argument>
         </arguments>

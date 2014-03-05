@@ -46,11 +46,11 @@ radFace = 0;
 globalvar player1Money;
 player1Money = 1000;
 globalvar player2Money;
-player2Money = 0;
+player2Money = 1000;
 globalvar player3Money;
-player3Money = 0;
+player3Money = 1000;
 globalvar player4Money;
-player4Money = 0;
+player4Money = 1000;
 
 
 //Player's current loadout
@@ -61,7 +61,6 @@ playerLoadOut1[1] = 0; //Torso
 playerLoadOut1[2] = 0; //Left Arm
 playerLoadOut1[3] = 0; //Right Arm
 playerLoadOut1[4] = 0; //Legs
-playerLoadOut1[5] = 0; //BackPack
 
 //player2
 globalvar playerLoadOut2;
@@ -70,7 +69,6 @@ playerLoadOut2[1] = 0; //Torso
 playerLoadOut2[2] = 0; //Left Arm
 playerLoadOut2[3] = 0; //Right Arm
 playerLoadOut2[4] = 0; //Legs
-playerLoadOut2[5] = 0; //BackPack
 
 //player1
 globalvar playerLoadOut3;
@@ -79,7 +77,6 @@ playerLoadOut3[1] = 0; //Torso
 playerLoadOut3[2] = 0; //Left Arm
 playerLoadOut3[3] = 0; //Right Arm
 playerLoadOut3[4] = 0; //Legs
-playerLoadOut3[5] = 0; //BackPack
 
 //player1
 globalvar playerLoadOut4;
@@ -88,7 +85,6 @@ playerLoadOut4[1] = 0; //Torso
 playerLoadOut4[2] = 0; //Left Arm
 playerLoadOut4[3] = 0; //Right Arm
 playerLoadOut4[4] = 0; //Legs
-playerLoadOut4[5] = 0; //BackPack
 
 //Colors
 globalvar playerColors;
@@ -207,6 +203,22 @@ playerLoadOut4[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
 playerLoadOut4[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut4[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
+//MULTIPLAYER SETTINGS OBJECTS (Initialized with defaults)
+
+globalvar numPlayersSetting;
+numPlayersSetting = 2;
+
+globalvar numCPUsSetting;
+numCPUsSetting = 0;
+
+globalvar timeLimitSetting;
+timeLimitSetting = 999;
+
+globalvar livesSetting;
+livesSetting = 999;
+
+globalvar creditLimitSetting;
+creditLimitSetting = 1000;
 
 /***************************************************
   Player Colors

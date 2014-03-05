@@ -83,12 +83,8 @@ else if (state == 1)
         selectedInventory = -1;
         inventoryArray = destroyArray(inventoryArray);
         
-        //re display the player with new parts
-        //Need to check to see which player does this
-        with(displayPlayer) {
-            instance_destroy();
-        }
-        displayPlayer = createPlayer(0,1,600,250);
+        //re display the player with new parts 
+        displayPlayer = refreshPlayer(displayPlayer);
     }
 }
 </string>

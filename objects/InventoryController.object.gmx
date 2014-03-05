@@ -800,6 +800,9 @@ else
             selectedInventory = -1;
             inventoryArray = destroyArray(inventoryArray);
         }
+        
+        //Refresh the player so it shows the new stuff equipped
+        displayPlayer = refreshPlayer(displayPlayer);
     }
 }
 
