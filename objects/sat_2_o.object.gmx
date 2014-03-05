@@ -54,22 +54,7 @@ num = 2;
           <argument>
             <kind>1</kind>
             <string>//Player specific code. 
-if(owningPlayer == 0)
-{
-    sat_2 = player1Colors[4];
-}
-else if(owningPlayer == 1)
-{
-    sat_2 = player2Colors[4];
-}
-else if(owningPlayer == 2)
-{
-    sat_2 = player3Colors[4];
-}
-else if(owningPlayer == 3)
-{
-    sat_2 = player4Colors[4];
-}
+sat_2 = playerColors[owningPlayer, 4]; 
 xTrack = sat_2;
 </string>
           </argument>
@@ -107,23 +92,7 @@ if(mouse_check_button(mb_left))
 sat_2 = xTrack;
 
 //player specific code here, Player1 for now
-playerColors[0,4] = sat_2;
-if(owningPlayer = 0)
-{
-    player1Colors[4] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player2Colors[4] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player3Colors[4] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player4Colors[4] = xTrack;
-}
+playerColors[owningPlayer,4] = xTrack;
 </string>
           </argument>
         </arguments>

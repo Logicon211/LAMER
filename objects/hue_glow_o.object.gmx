@@ -55,22 +55,7 @@ num = 1;
           <argument>
             <kind>1</kind>
             <string>//Player specific code. 
-if(owningPlayer == 0)
-{
-    hue_glow = player1Colors[6];
-}
-else if(owningPlayer == 1)
-{
-    hue_glow = player2Colors[6];
-}
-else if(owningPlayer == 2)
-{
-    hue_glow = player3Colors[6];
-}
-else if(owningPlayer == 3)
-{
-    hue_glow = player4Colors[6];
-}
+hue_glow = playerColors[owningPlayer, 6]; 
 xTrack = hue_glow;
 </string>
           </argument>
@@ -107,22 +92,7 @@ if(mouse_check_button(mb_left))
 hue_glow = xTrack;
 
 //player specific code here, Player1 for now
-if(owningPlayer = 0)
-{
-    player1Colors[6] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player2Colors[6] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player3Colors[6] = xTrack;
-}
-else if(owningPlayer = 0)
-{
-    player4Colors[6] = xTrack;
-}
+playerColors[owningPlayer, 6] = xTrack;
 </string>
           </argument>
         </arguments>
