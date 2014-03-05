@@ -46,6 +46,7 @@ for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
 viewingColors[owningPlayer] = false;
 selectedButton[owningPlayer] = 0;
 selectingColors[owningPlayer] = false;
+lockedIn[owningPlayer] = false;
 
 if(hueBar[owningPlayer] != 0)
 {
