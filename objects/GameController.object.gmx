@@ -329,6 +329,54 @@ for(i=0; i&lt;4; i++)
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(shield_check_pressed())
+{
+    if(room == InventoryRoom)
+    {
+        //if in inventory screen and looking through items to select
+        if(view_visible[1])
+        {
+            view_visible[1] = false;
+            lookingAtItems = false;
+            selectedInventory = -1;
+            inventoryArray = destroyArray(inventoryArray);
+        }
+        else 
+        {
+            room_goto(OverMap);
+        }
+    }
+}
+
+if(attack2_check_pressed())
+{
+    if(room == OverMap)
+    {
+        room_goto(InventoryRoom);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="73">
       <action>
         <libid>1</libid>
@@ -346,10 +394,10 @@ for(i=0; i&lt;4; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(room == OverMap)
+            <string>/*if(room == OverMap)
 {
     room_goto(InventoryRoom);
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -372,7 +420,7 @@ for(i=0; i&lt;4; i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(room == InventoryRoom)
+            <string>/*if(room == InventoryRoom)
 {
     //if in inventory screen and looking through items to select
     if(view_visible[1])
@@ -386,7 +434,7 @@ for(i=0; i&lt;4; i++)
     {
         room_goto(OverMap);
     }
-}
+}*/
 /*else 
 {
     room_goto(OverMap);

@@ -321,6 +321,38 @@ if(down_check_pressed())
         inventoryArray[selectedInventory].state = 1;
     }
 }
+
+if(attack1_check_pressed())
+{
+    if(!view_visible[1])
+    {
+        buttonArray[selectedButton].state = 0;
+        
+        buttonArray[selectedButton].alarm[1] = true;
+        
+        selectedBar = 0;
+    }
+    else
+    {
+        if(selectedInventory != -1)
+        {
+            //do code to confirm selection
+            //TODO Add a check to figure out which player to load the item slot into
+            playerLoadOut1[categoryNumber] = inventoryArray[selectedInventory].inventoryItem;
+            if(view_visible[1])
+            {
+                view_visible[1] = false;
+                lookingAtItems = false;
+                selectedInventory = -1;
+                inventoryArray = destroyArray(inventoryArray);
+            }
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayer = refreshPlayer(displayPlayer);
+        }
+    }
+
+}
 </string>
           </argument>
         </arguments>
@@ -778,7 +810,7 @@ else  // This is when you're picking an inventory item
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!view_visible[1])
+            <string>/*if(!view_visible[1])
 {
     buttonArray[selectedButton].state = 0;
     
@@ -805,7 +837,7 @@ else
         displayPlayer = refreshPlayer(displayPlayer);
     }
 }
-
+*/
 </string>
           </argument>
         </arguments>

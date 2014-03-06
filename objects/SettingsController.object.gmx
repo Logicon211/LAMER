@@ -397,6 +397,11 @@ if(down_check_pressed())
         selectedSettingsButton = numPlayersButtons[selectedPlayersButton];
     }
 }
+
+if(attack1_check_pressed())
+{
+    selectedSettingsButton.alarm[1] = true;
+}
 </string>
           </argument>
         </arguments>
