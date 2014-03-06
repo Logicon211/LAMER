@@ -55,16 +55,8 @@ createPlayer(0,0,200,200);</code>
     <instance objName="land_o" x="1856" y="0" name="inst_A7F16DA1" locked="0" code="" scaleX="2" scaleY="34" colour="4294967295" rotation="0"/>
     <instance objName="land_o" x="-64" y="0" name="inst_F1C8EB04" locked="0" code="" scaleX="4" scaleY="34" colour="4294967295" rotation="0"/>
     <instance objName="land_o" x="288" y="576" name="inst_ACAB6D3C" locked="0" code="" scaleX="1" scaleY="0" colour="4294967295" rotation="0"/>
-    <instance objName="hue_prime_o" x="768" y="64" name="inst_6111F5CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="sat_prime_o" x="768" y="128" name="inst_E78099EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="val_prime_o" x="768" y="192" name="inst_05839313" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="val_2_o" x="960" y="192" name="inst_D701EA76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="sat_2_o" x="960" y="128" name="inst_F26B043D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="hue_2_o" x="960" y="64" name="inst_E649B16F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="val_glow_o" x="1152" y="192" name="inst_8A148EB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="sat_glow_o" x="1152" y="128" name="inst_702B5D76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="hue_glow_o" x="1152" y="64" name="inst_B00427F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="start_fight_o" x="384" y="128" name="inst_986EB0A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="start_fight_o" x="512" y="-64" name="inst_986EB0A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="MusicController" x="832" y="-64" name="inst_DDFA8731" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

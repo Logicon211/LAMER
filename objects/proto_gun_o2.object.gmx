@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>oldX = x;
+            <string>player = instance_nearest(x,y,player_o);
+playerNum = player.playerNum;
+oldX = x;
 oldY = y;
 </string>
           </argument>
@@ -74,9 +76,9 @@ oldY = y+vspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha);
+            <string>draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,merge_color(getPlayerColor(playerNum,1),c_white,0.8), image_alpha);
 draw_set_blend_mode(bm_add);
-draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,make_color_hsv(hue_glow,sat_glow,val_glow),random_range(0.5,1));
+draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,getPlayerColor(playerNum,2),random_range(0.5,1));
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>

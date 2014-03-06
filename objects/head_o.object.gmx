@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>oldX = x;
 oldY = y;
-
+player = instance_nearest(x,y,player_o);
 delete = false;
 </string>
           </argument>
@@ -56,7 +56,7 @@ delete = false;
     instance_destroy();
 }
 
-perfect_trail_angled(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale);
+perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale,getPlayerColor(player.playerNum,2));
 
 oldX = x+hspeed;
 oldY = y+vspeed;
@@ -82,11 +82,11 @@ oldY = y+vspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,make_color_hsv(hue_prime,sat_prime,val_prime),image_alpha);
-draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,make_color_hsv(hue_2,sat_2,val_2),image_alpha);
+            <string>draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,getPlayerColor(player.playerNum,0),image_alpha);
+draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,getPlayerColor(player.playerNum,1),image_alpha);
 draw_sprite_ext(sprite_index,2,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha);
 draw_set_blend_mode(bm_add);
-draw_sprite_ext(sprite_index,2,x,y,image_xscale,image_yscale,image_angle,make_color_hsv(hue_glow,sat_glow,val_glow),image_alpha);
+draw_sprite_ext(sprite_index,2,x,y,image_xscale,image_yscale,image_angle,getPlayerColor(player.playerNum,2),image_alpha);
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_alpha = 0.03;
+colorVar = 0;
 </string>
           </argument>
         </arguments>
@@ -76,7 +77,7 @@ if(image_alpha&lt;=0)
           <argument>
             <kind>1</kind>
             <string>draw_set_blend_mode(bm_add);
-draw_sprite_ext(sprite_index,2,x,y,image_xscale,1,0,make_color_hsv(hue_glow,sat_glow,val_glow),image_alpha);
+draw_sprite_ext(sprite_index,2,x,y,image_xscale,1,0,colorVar,image_alpha);
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>
