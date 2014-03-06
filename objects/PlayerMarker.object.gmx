@@ -204,9 +204,12 @@ if(attack1_check_pressed())
     }
 }
 
-if(shield_check())
+if(shield_check_pressed())
 {
-    room_goto(MenuRoom);
+    if(room == OverMap)
+    {
+        room_goto(MenuRoom);
+    }
 }
 </string>
           </argument>
