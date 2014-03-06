@@ -159,8 +159,8 @@
         <script>scripts\right_check.gml</script>
         <script>scripts\right_check_pressed.gml</script>
         <script>scripts\up_check.gml</script>
-        <script>scripts\down_check.gml</script>
         <script>scripts\up_check_pressed.gml</script>
+        <script>scripts\down_check.gml</script>
         <script>scripts\down_check_pressed.gml</script>
       </scripts>
       <scripts name="actions">

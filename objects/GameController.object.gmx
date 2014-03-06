@@ -52,6 +52,13 @@ player3Money = 1000;
 globalvar player4Money;
 player4Money = 1000;
 
+//Controller analogue stick direction correction tracker
+globalvar controllerDirection;
+for(i=0; i&lt;4; i++)
+{   for(j=0; j&lt;4; j++)
+    {   controllerDirection[i,j] = 0;
+    }   
+}
 
 //Player's current loadout
 //player1
@@ -286,6 +293,37 @@ playerNumCreate = 0; //default value
             <string>//This alarm gets called to unlock nodes that the player is on
 unlockNodes(MapNodeList[nodePlayerIsAt]);
 alarm[10] = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//set each controller axis state for check_pressed to have something to compare too.
+//meant to fix the million presses per second bug
+for(i=0; i&lt;4; i++)
+{   //left horizontal axis
+    controllerDirection[i,0] = gamepad_axis_value(i, gp_axislh);
+    //left vertical axis
+    controllerDirection[i,1] = gamepad_axis_value(i, gp_axislv);
+    //right horizontal axis
+}
 </string>
           </argument>
         </arguments>

@@ -8,7 +8,10 @@ if(keyboard_check_pressed(vk_up))
 }
 else if(gamepad_axis_value(controllerNum,gp_axislv)<-0.3)
 {
-    return true;
+    if(controllerDirection[controllerNum,1] > -0.25)
+    {
+        return true;
+    }
 }
 else
 {
