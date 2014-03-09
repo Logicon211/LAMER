@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>player = instance_nearest(x,y,player_o);
 playerNum = player.playerNum;
+
+//height from origin to bottom of foot
+height = sprite_height-12;
 </string>
           </argument>
         </arguments>

@@ -227,6 +227,11 @@ livesSetting = 999;
 globalvar creditLimitSetting;
 creditLimitSetting = 1000;
 
+globalvar startBattleVar;
+startBattleVar[0] = 2;//numPlayers;
+startBattleVar[1] = 0;//numCPUs;
+startBattleVar[2] = testRange;//newRoom;
+
 /***************************************************
   Player Colors
     Added by Elliot Coy - Feb 13 9PM

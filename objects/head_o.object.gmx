@@ -29,6 +29,9 @@
 oldY = y;
 player = instance_nearest(x,y,player_o);
 delete = false;
+
+//origin to top of sprite, or desired collision top
+height = 30;
 </string>
           </argument>
         </arguments>

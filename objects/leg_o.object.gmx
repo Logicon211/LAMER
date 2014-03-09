@@ -35,6 +35,11 @@ vspeedvar = 0;
 hspeedvar = 0;
 lower_angle = 1000;//used during attack animations to set lower leg position
 delete = false;
+
+//origin to knee joint
+height = 56;
+//lowerleg height
+height += lower_leg.height;
 </string>
           </argument>
         </arguments>

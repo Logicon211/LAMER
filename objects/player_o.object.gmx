@@ -91,7 +91,7 @@ playerNum = playerNumCreate;
 var playerType;//int
 playerType = 0;//default player user
  
-image_alpha = 0;
+image_alpha = 0.5;
 /***************************************************
   airborne - boolean
     is used to track if the player is 
@@ -145,11 +145,6 @@ attack[2]=0;
 core = createPart(playerNum,1);
 //EDN Create Core
 
-height = sprite_height+core.height;
-headheight = core.headheight;
-coreheight = core.sprite_height;
-legheight = core.legheight;
-
 attackType[1] = core.attackType[1];
 attackType[2] = core.attackType[2];
 
@@ -177,6 +172,41 @@ for(i=boostNums;i&gt;0;i--)
 {
     booster[i] = core.booster[i];
 }
+
+/***************************************************
+  Height
+ ***************************************************/
+
+height = core.height;
+heightAdjust = core.heightAdjust;
+
+/***************************************************
+  END Height
+ ***************************************************/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//y -= image_angle-core.image_angle;
+//image_angle = core.image_angle;
 </string>
           </argument>
         </arguments>
@@ -267,6 +297,17 @@ if(restart_check())
 //END restart game
 
 /***************************************************
+  Height Adjust and Collision Box
+ ***************************************************/
+
+image_yscale = height/32;
+
+/***************************************************
+  Height Adjust and Collision Box
+ ***************************************************/
+
+
+/***************************************************
   Controls
  ***************************************************/
 if(state=string('slideL'))
@@ -286,7 +327,7 @@ else if(state=string('slideR'))
 else
 {
     //shield pressed
-    if(shield_check())
+    if(shield_check(playerNum))
     {
         core.gun_aim = 0;
         shield_counter += 1;
@@ -300,12 +341,12 @@ else
         shield_obj.y = core.y;
         if(shield_counter&gt;=1)
         {
-            if(left_check_pressed())
+            if(left_check_pressed(playerNum))
             {
                 state=string('slideL');
                 shield_counter = -10;
             }
-            if(right_check_pressed())
+            if(right_check_pressed(playerNum))
             {
                 state=string('slideR');
                 shield_counter = -10;
@@ -314,7 +355,7 @@ else
      
     }
     //shield released
-    else if(shield_check_released())
+    else if(shield_check_released(playerNum))
     {
         core.gun_aim = 0;
         with(shield_obj){instance_destroy()}
@@ -322,7 +363,7 @@ else
         shield_counter = 0;
     }
     //down pressed
-    else if(down_check())
+    else if(down_check(playerNum))
     {
         if(airborne)
         {
@@ -333,11 +374,11 @@ else
         }
         target_hspeed = 0;
         core.gun_aim = -1; // ** x&lt;0=down ** x=0=off ** x&gt;0=up
-        if(attack1_check())
+        if(attack1_check(playerNum))
         {
             attack[1] = true;
         }
-        if(attack2_check())
+        if(attack2_check(playerNum))
         {
             attack[2] = true;
         }
@@ -354,13 +395,13 @@ else
     {
         core.gun_aim = 0;
         //left and right keys pressed
-        if(left_check() &amp;&amp; right_check())
+        if(left_check(playerNum) &amp;&amp; right_check(playerNum))
         {
             target_hspeed = 0;
             walking=false;
         }
         //left key pressed
-        else if(left_check())
+        else if(left_check(playerNum))
         {
             walking=true;
             if(boosting)
@@ -373,7 +414,7 @@ else
             }
         }
         //right key pressed
-        else if(right_check())
+        else if(right_check(playerNum))
         {
             walking=true;
             if(boosting)
@@ -393,7 +434,7 @@ else
         }
         
         //jump pressed
-        if(jump_check())
+        if(jump_check(playerNum))
         {
             if(!airborne)
             {
@@ -408,11 +449,14 @@ else
         }
         
         //boost pressed
-        if(boost_check())
+        if(boost_check(playerNum))
         {
             boosting=true;
-            if(jump_check())
+            if(jump_check(playerNum))
             {
+                if(!airborne)
+                {   y -= 3
+                }
                 airborne = true;
                 vspeed -= 3;
             }
@@ -422,11 +466,11 @@ else
             boosting=false;
         }
         
-        if(attack1_check())
+        if(attack1_check(playerNum))
         {
             attack[1] = true;
         }
-        if(attack2_check())
+        if(attack2_check(playerNum))
         {
             attack[2] = true;
         }
@@ -519,10 +563,27 @@ else if(target_hspeed&lt;hspeed)
 
 /***************************************************
   Gravity
- ***************************************************/
-
-if(airborne)
+ ***************************************************
+if(find_edge_below(x,y+1,core.righthalf,140,vspeed,land_parent))
 {
+    while(find_edge_below(x,y,core.righthalf,140,vspeed,land_parent))
+    {
+        y -= 1;
+    }
+}   */
+
+if(instance_place(x,y+1,land_parent))
+{
+    while(instance_place(x,y,land_parent))
+    {
+        y-=1
+    }
+    airborne = false;
+    vspeed = 0;
+}
+else
+{
+    airborne = true;
     vspeed += 2; //*weight/1000
 }
 if(vspeed &lt; -32)
@@ -545,56 +606,8 @@ if(vspeed &gt; 40)
 /***************************************************
   Collision
  ***************************************************/
- 
 
-if(vspeed&gt;0)
-{
-    //check bottom left
-    if(find_edge_below(x,y,-core.lefthalf,140,vspeed,land_parent))
-    {
-        if(state=string('shield'))
-        {
-            core.gun_aim = 0;
-            with(shield_obj){instance_destroy()}
-            state = string('tonorm');
-            shield_counter = 0;
-        }
-        state = string('land');
-    }
-    //check bottom right
-    else if(find_edge_below(x,y,core.righthalf,140,vspeed,land_parent))
-    {
-        if(state=string('shield'))
-        {
-            core.gun_aim = 0;
-            with(shield_obj){instance_destroy()}
-            state = string('tonorm');
-            shield_counter = 0;
-        }
-        state = string('land');
-    }
-}
-else if(vspeed&lt;0)
-{
-    //check top left
-    if(find_edge_above(x,y,-core.lefthalf,-64,vspeed,land_parent)){}
-    //check top right
-    else{find_edge_above(x,y,core.righthalf,-64,vspeed,land_parent);}
-}
-if(hspeed&lt;0)
-{
-    //check left bottom
-    if(find_edge_left(x,y,-core.lefthalf,64,hspeed,land_parent)){}
-    //check left top
-    else{find_edge_left(x,y,-core.lefthalf,-64,hspeed,land_parent);}
-}
-else if(hspeed&gt;0)
-{
-    //check right bottom
-    if(find_edge_right(x,y,core.righthalf,64,hspeed,land_parent)){}
-    //check right top
-    else{find_edge_right(x,y,core.righthalf,-32,hspeed,land_parent);}
-}
+playerCollision();
 
 /***************************************************
   END Collision
@@ -680,13 +693,13 @@ if(state = string('jump'))
     {
         jumpCounter += 1;
         core.x = x;
-        core.y = y_ease(core.y,y+20,4);
+        core.y = y_ease(core.y,y+20-heightAdjust,4);
     }
     else if(jumpCounter=5)
     {
         jumpCounter = 100;
         core.x = x;
-        core.y = y_ease(core.y,y+20,4);
+        core.y = y_ease(core.y,y+20-heightAdjust,4);
         vspeed -= 28;
         airborne = true;
         state = string('tonorm');
@@ -704,7 +717,7 @@ if(state = string('jump'))
 else if(state = string('normal'))
 {
     core.x = x;
-    core.y = y;
+    core.y = y-heightAdjust;
     core.image_angle = angle_ease(core.image_angle,-hspeed*1.5,8);
 }
 
@@ -719,7 +732,7 @@ else if(state = string('normal'))
 else if(state = string('tonorm'))
 {
     core.x = x_ease(core.x,x,4);
-    core.y = y_ease(core.y,y,4);
+    core.y = y_ease(core.y,y-heightAdjust,4);
     core.image_angle = angle_ease(core.image_angle,-hspeed*1.5,4);
 
 }
@@ -735,7 +748,7 @@ else if(state = string('tonorm'))
 else if(state = string('shield'))
 {
     core.x = x_ease(core.x,x+35*core.image_xscale,8);
-    core.y = y_ease(core.y,y+40,8);
+    core.y = y_ease(core.y,y+40-heightAdjust,8);
     core.image_angle = angle_ease(core.image_angle,-25*core.image_xscale,4);
 }
 
@@ -750,7 +763,7 @@ else if(state = string('shield'))
 else if(state = string('kneel'))
 {
     core.x = x_ease(core.x,x+35*core.image_xscale,8);
-    core.y = y_ease(core.y,y+40,8);
+    core.y = y_ease(core.y,y+40-heightAdjust,8);
     core.image_angle = angle_ease(core.image_angle,-15*core.image_xscale,4);
 }
 
@@ -767,11 +780,11 @@ else if(state = string('slideL'))
     core.x = x;
     if(core.image_xscale = 1)
     {
-        core.y = y_ease(core.y,y-35,4);
+        core.y = y_ease(core.y,y-35-heightAdjust,4);
     }
     else
     {
-        core.y = y-20;
+        core.y = y-20-heightAdjus;
     }
     core.image_xscale = 1;    
     core.image_angle = angle_ease(core.image_angle,hspeed,4);
@@ -791,11 +804,11 @@ else if(state = string('slideR'))
     core.x = x;
     if(core.image_xscale = -1)
     {
-        core.y = y_ease(core.y,y-35,4);
+        core.y = y_ease(core.y,y-35-heightAdjust,4);
     }
     else
     {
-        core.y = y-20;
+        core.y = y-20-heightAdjus;
     }
     core.image_xscale = -1;
     core.image_angle = angle_ease(core.image_angle,hspeed,4);
@@ -816,7 +829,7 @@ else if(state = string('land'))
     {
         landCounter -= 1;
         core.x = x;
-        core.y = y_ease(core.y,y+landCounter*6,2);
+        core.y = y_ease(core.y,y+(landCounter*6)-heightAdjust,2);
     }
     else
     {

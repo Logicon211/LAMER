@@ -83,13 +83,6 @@ arm[2] = createPart(player.playerNum,3);
 arm[2].depth = depth+4;
 //END Create Arm2
 
-/***************************************************
-  Set Height
- ***************************************************/
-headheight = head.sprite_height;
-legheight = leg1.sprite_height;
-height = head.sprite_height+leg1.sprite_height+sprite_height;
-
 attack[1] = false;
 attack[2] = false;
 attackType[1] = arm[1].attack_type;
@@ -102,6 +95,44 @@ canSetAttack = true;
 attackVar = 0;
 
 delete = false;
+
+/***************************************************
+  Set Height
+  
+  Revised: Height needed new code. It must not look
+            at the height of the sprite but at the
+            distance between the origin and one of
+            the verticle anchor points. The anchor
+            for legs for example, is at y+35, so a
+            section of the total height is defined
+            within this core object as y+35-y = 35
+            
+            This must be done for all limbs with a
+            connection and joint to the core, save
+            for arms which will not effect hegiht.
+            
+            The head anchor is above the origin of
+            the core, so we must take the absolute
+            value of any given height attribute.
+ ***************************************************/
+
+//Initialize
+height = 0;
+//Origin to legs = 35
+height += 35;
+//Origin to head = -15
+height += 15;
+
+//head origin to top of sprite
+height += head.height;
+//legs height
+height += leg1.height;
+
+heightAdjust = height/2-head.height-15;
+
+/***************************************************
+  END Set Height
+ ***************************************************/
 </string>
           </argument>
         </arguments>

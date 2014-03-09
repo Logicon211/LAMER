@@ -11,7 +11,14 @@
   <colour>2359296</colour>
   <showcolour>-1</showcolour>
   <code>display_reset(8, true);
-createPlayer(0,0,200,200);</code>
+createPlayer(0,0,200,200);
+createPlayer(1,0,300,300);
+
+
+for(i=startBattleVar[1];i&gt;0;i--)
+{
+    //
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>
@@ -57,6 +64,8 @@ createPlayer(0,0,200,200);</code>
     <instance objName="land_o" x="288" y="576" name="inst_ACAB6D3C" locked="0" code="" scaleX="1" scaleY="0" colour="4294967295" rotation="0"/>
     <instance objName="start_fight_o" x="512" y="-64" name="inst_986EB0A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MusicController" x="832" y="-64" name="inst_DDFA8731" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="box" x="960" y="384" name="inst_3FED5CB4" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="768" y="640" name="inst_71258028" locked="0" code="" scaleX="28" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
