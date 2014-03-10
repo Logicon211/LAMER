@@ -31,7 +31,6 @@ hue_prime = playerColors[0,0];
 owningPlayer = 0;
 xTrack = hue_prime;
 num = 1;
-created = false;
 </string>
           </argument>
         </arguments>

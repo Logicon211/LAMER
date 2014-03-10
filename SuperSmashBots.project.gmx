@@ -109,6 +109,9 @@
     <background>background\InventoryBackground</background>
     <background>background\SettingsBackground</background>
     <background>background\stadiumBackgroundOne</background>
+    <background>background\Credits1</background>
+    <background>background\Credits2</background>
+    <background>background\CampaignInfoScreen</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -199,6 +202,7 @@
     <script>scripts\getPlayerColor.gml</script>
     <script>scripts\playerCollision.gml</script>
     <script>scripts\startBattle.gml</script>
+    <script>scripts\createColorBars.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -429,6 +433,8 @@
     <object>objects\loadingRoomController</object>
     <object>objects\autoTurret</object>
     <object>objects\shieldFlash</object>
+    <object>objects\CreditsController</object>
+    <object>objects\InfoScreenController</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
@@ -440,6 +446,9 @@
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
+    <room>rooms\Credits1Room</room>
+    <room>rooms\Credits2Room</room>
+    <room>rooms\CampaignInfoRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
