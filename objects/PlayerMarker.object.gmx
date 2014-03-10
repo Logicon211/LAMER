@@ -183,7 +183,7 @@ if(down_check_pressed())
 }
 
 //ENTER
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
         //Might change this so something other than ENTER keypress
     //Like a GUI button to press, but if it's all keyboard based

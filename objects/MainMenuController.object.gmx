@@ -98,7 +98,7 @@ if(down_check_pressed())
 }
 
 //ENTER
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
     audio_play_sound(MenuConfirmationSound,1,false);
     menuButtons[selectedButton].alarm[1] = true;
