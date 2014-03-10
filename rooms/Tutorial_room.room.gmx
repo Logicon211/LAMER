@@ -90,8 +90,6 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <instance objName="land_tutorial_walls" x="3648" y="864" name="inst_A6D8E309" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="3808" y="768" name="inst_3F17EFDC" locked="0" code="" scaleX="2.5" scaleY="3.5" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="3968" y="640" name="inst_88093338" locked="0" code="" scaleX="5.5" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="4096" y="512" name="inst_27A5A15B" locked="0" code="" scaleX="4.12903213500977" scaleY="4.12903213500977" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="4160" y="320" name="inst_D0EE36B4" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="platform1" x="4320" y="640" name="inst_520B4215" locked="0" code="" scaleX="32" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="4448" y="992" name="inst_E201E1B7" locked="0" code="" scaleX="49.2698402404785" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="3712" y="0" name="inst_8832800C" locked="0" code="" scaleX="61.5" scaleY="4.5" colour="4294967295" rotation="0"/>
@@ -100,7 +98,13 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <instance objName="Land_tutorial_gate" x="5312" y="672" name="inst_D5AB2C33" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="7488" y="32" name="inst_FCE5AA38" locked="0" code="" scaleX="2" scaleY="10.5" colour="4294967295" rotation="0"/>
     <instance objName="Land_tutorial_gate" x="7488" y="704" name="inst_5E288824" locked="0" code="" scaleX="2" scaleY="4.5" colour="4294967295" rotation="0"/>
-    <instance objName="land_floor_panel" x="7264" y="992" name="inst_1B77FD06" locked="0" code="" scaleX="3" scaleY="0.100000001490116" colour="4294967295" rotation="0"/>
+    <instance objName="land_floor_panel" x="7296" y="992" name="inst_1B77FD06" locked="0" code="" scaleX="3" scaleY="0.100000001490116" colour="4294967295" rotation="0"/>
+    <instance objName="tutorial_help_move" x="96" y="640" name="inst_6BD9DD33" locked="0" code="" scaleX="0.600000023841858" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="tutorial_help_jump" x="768" y="640" name="inst_EA993EE1" locked="0" code="" scaleX="0.560000002384186" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="tutorial_help_thrusters" x="1984" y="512" name="inst_45A11A03" locked="0" code="" scaleX="0.879999995231628" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="tutorial_help_shield" x="4480" y="704" name="inst_1B68A6B0" locked="0" code="" scaleX="0.839999973773956" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="tutorial_help_attack" x="3008" y="800" name="inst_413B8993" locked="0" code="" scaleX="0.680000007152557" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="tutorial_help_platform" x="3712" y="384" name="inst_AFE0DC23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
