@@ -11,7 +11,8 @@
   <colour>4194304</colour>
   <showcolour>-1</showcolour>
   <code>display_reset(8, true);
-
+createPlayer(0,0,130,room_height-100);
+/*
 j=startBattleVar[1];
 for(i=startBattleVar[0];i&gt;0;i--)
 {
@@ -90,8 +91,6 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <instance objName="land_tutorial_walls" x="3648" y="864" name="inst_A6D8E309" locked="0" code="" scaleX="2.5" scaleY="2.5" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="3808" y="768" name="inst_3F17EFDC" locked="0" code="" scaleX="2.5" scaleY="3.5" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="3968" y="640" name="inst_88093338" locked="0" code="" scaleX="5.5" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="4096" y="512" name="inst_27A5A15B" locked="0" code="" scaleX="4.12903213500977" scaleY="4.12903213500977" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="4160" y="320" name="inst_D0EE36B4" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="platform1" x="4320" y="640" name="inst_520B4215" locked="0" code="" scaleX="32" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="4448" y="992" name="inst_E201E1B7" locked="0" code="" scaleX="49.2698402404785" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="3712" y="0" name="inst_8832800C" locked="0" code="" scaleX="61.5" scaleY="4.5" colour="4294967295" rotation="0"/>

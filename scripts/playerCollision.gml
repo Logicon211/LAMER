@@ -7,14 +7,17 @@
 /***************************************************
   Check Below
  ***************************************************/
-if(vspeed >= 0)
+
+if(vspeed > 0)
 {
-    if(instance_place(x,y+1,land_parent))
+    if(instance_place(x,y+1+vspeed,land_parent))
     {
-        while(instance_place(x,y,land_parent))
+        while(instance_place(x,y+vspeed,land_parent))
         {
-            y -= 1;
+            vspeed -= 1;
         }
+        y += vspeed;
+        vspeed = 0;
         airborne = false;
     }
     else
@@ -28,15 +31,16 @@ if(vspeed >= 0)
 
   Check Up
  ***************************************************/
-else
+
+if(vspeed < 0)
 {
-    if(instance_place(x,y-1,land_parent))
+    if(instance_place(x,y-1+vspeed,land_parent))
     {
-        while(instance_place(x,y,land_parent))
+        while(instance_place(x,y+vspeed,land_parent))
         {
-            y += 1;
+            vspeed += 1;
         }
-        airborne = false;
+        y += vspeed;
         vspeed = 0;
     }
 }

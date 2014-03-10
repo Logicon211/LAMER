@@ -177,9 +177,9 @@
         <script>scripts\attack2_check.gml</script>
         <script>scripts\attack2_check_pressed.gml</script>
         <script>scripts\shield_check.gml</script>
+        <script>scripts\shield_check_pressed.gml</script>
         <script>scripts\shield_check_released.gml</script>
         <script>scripts\boost_check.gml</script>
-        <script>scripts\shield_check_pressed.gml</script>
       </scripts>
       <script>scripts\restart_check.gml</script>
       <script>scripts\quit_check.gml</script>
@@ -396,6 +396,7 @@
         <object>objects\booster_trail_intense_o</object>
       </objects>
       <object>objects\bulletObject</object>
+      <object>objects\object156</object>
     </objects>
     <objects name="Color Adjusts">
       <object>objects\hue_prime_o</object>

@@ -87,7 +87,7 @@ if(attackVar = 0)
         //position
         sVar = 3;
         yEase10(player.y+10-player.heightAdjust,sVar);
-        xMove10(2*image_xscale);
+        xMove10(4*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
         //core
@@ -189,7 +189,7 @@ if(attackVar = 0)
         //position
         sVar = 3;
         yEase10(player.y+0-player.heightAdjust,sVar);
-        xMove10(15*image_xscale);
+        xMove10(10*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -30*image_xscale, sVar);
         //core

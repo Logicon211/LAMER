@@ -179,6 +179,8 @@ health = 1000;
   Height
  ***************************************************/
 
+xInVar = 0;
+
 height = core.height;
 heightAdjust = core.heightAdjust;
 
@@ -315,14 +317,16 @@ image_yscale = height/32;
 if(state=string('slideL'))
 {
     with(shield_obj){instance_destroy()}
-    x -= 300*boost_power/weight;
+    //x -= 300*boost_power/weight;
+    hspeed = -50;
     state=string('tonorm'){}
     
 }
 else if(state=string('slideR'))
 {
     with(shield_obj){instance_destroy()}
-    x += 300*boost_power/weight;
+    //x += 300*boost_power/weight;
+    hspeed = 50;
     state=string('tonorm'){}
     
 }
@@ -578,7 +582,7 @@ if(instance_place(x,y+1,land_parent))
 {
     while(instance_place(x,y,land_parent))
     {
-        y-=1
+        y-=1;
     }
     airborne = false;
     vspeed = 0;

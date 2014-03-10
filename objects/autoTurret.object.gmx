@@ -63,7 +63,7 @@ else
 
 ATcounter += 1;
 
-if((ATcounter mod 64) = 1)
+if((ATcounter mod 32) = 1)
 {
     instance_create(x,y,bulletObject);
 }

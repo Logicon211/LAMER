@@ -12,9 +12,32 @@
 */
 
 xInVar = argument0;
+//if player.xInVar = 0 effect_create_above(ef_firework,x,y,0.5,c_fuchsia);
+
+//player.hspeed += xInVar;
+
+player.xInVar = xInVar;
+
+//if player.xInVar = 0 effect_create_above(ef_firework,x,y,0.5,c_aqua);
 
 //player
 player.x += xInVar;
+with(player)
+{   if(xInVar>0)//moving right
+    {   while(instance_place(x,y,land_parent))
+        {   x-=1;
+            xInVar-=1;
+        }
+    }
+        
+    else//moving left
+    {   while(instance_place(x,y,land_parent))
+        {   x+=1;
+            xInVar-=1;
+        }
+    }
+}
+xInVar = player.xInVar;
 //core
 x += xInVar;
 //head
