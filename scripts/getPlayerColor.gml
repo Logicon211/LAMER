@@ -1,6 +1,6 @@
 //takes 2 number inputs a and b
 
-//returns playerColors[c,d]
+//returns playerColors[playerNum,color to get]
 
 in1 = argument0;
 in2 = argument1;

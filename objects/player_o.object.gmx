@@ -91,7 +91,7 @@ playerNum = playerNumCreate;
 var playerType;//int
 playerType = 0;//default player user
  
-image_alpha = 0.5;
+image_alpha = 0;
 /***************************************************
   airborne - boolean
     is used to track if the player is 
@@ -172,6 +172,8 @@ for(i=boostNums;i&gt;0;i--)
 {
     booster[i] = core.booster[i];
 }
+
+health = 1000;
 
 /***************************************************
   Height
@@ -784,7 +786,7 @@ else if(state = string('slideL'))
     }
     else
     {
-        core.y = y-20-heightAdjus;
+        core.y = y-20-heightAdjust;
     }
     core.image_xscale = 1;    
     core.image_angle = angle_ease(core.image_angle,hspeed,4);
@@ -808,7 +810,7 @@ else if(state = string('slideR'))
     }
     else
     {
-        core.y = y-20-heightAdjus;
+        core.y = y-20-heightAdjust;
     }
     core.image_xscale = -1;
     core.image_angle = angle_ease(core.image_angle,hspeed,4);

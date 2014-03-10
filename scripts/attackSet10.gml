@@ -44,10 +44,10 @@ if(canSetAttack)
     }
     else if(down_check())
     {
-        attackVar = 5;
+        attackVar = 1;
         if(boost_check())
         {
-            attackVar = 6;
+            attackVar = 2;
         }
     }
     canSetAttack = false;
@@ -63,7 +63,7 @@ if(attackVar = 0)
         //raise sword
         //position
         sVar = 6;
-        yEase10(player.y+0,sVar);
+        yEase10(player.y+0-player.heightAdjust,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, 15*image_xscale, sVar);
         //core
@@ -86,7 +86,7 @@ if(attackVar = 0)
         //swing sword
         //position
         sVar = 3;
-        yEase10(player.y+10,sVar);
+        yEase10(player.y+10-player.heightAdjust,sVar);
         xMove10(2*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
@@ -114,7 +114,7 @@ if(attackVar = 0)
         }
         //position
         sVar = 3;
-        yEase10(player.y+10,sVar);
+        yEase10(player.y+10-player.heightAdjust,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
         //core
@@ -137,7 +137,7 @@ if(attackVar = 0)
         //sword swing 2
         //position
         sVar = 3;
-        yEase10(player.y+20,sVar);
+        yEase10(player.y+20-player.heightAdjust,sVar);
         xMove10(8*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -30*image_xscale, sVar);
@@ -165,7 +165,7 @@ if(attackVar = 0)
         }
         //position
         sVar = 8;
-        yEase10(player.y+20,sVar);
+        yEase10(player.y+20-player.heightAdjust,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -30*image_xscale, sVar);
         //core
@@ -188,7 +188,7 @@ if(attackVar = 0)
         //sword swing 3
         //position
         sVar = 3;
-        yEase10(player.y+0,sVar);
+        yEase10(player.y+0-player.heightAdjust,sVar);
         xMove10(15*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -30*image_xscale, sVar);
@@ -220,7 +220,7 @@ if(attackVar = 0)
         //ease end animation
         //position
         sVar = 6;
-        yEase10(player.y+0,sVar);
+        yEase10(player.y+0-player.heightAdjust,sVar);
         xMove10(4*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, 0*image_xscale, sVar);
@@ -256,7 +256,7 @@ else if(attackVar=1)
         //raise sword
         //position
         sVar = 6;
-        yEase10(player.y+30,sVar);
+        yEase10(player.y+30-player.heightAdjust,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, 30*image_xscale, sVar);
         //core
@@ -279,7 +279,7 @@ else if(attackVar=1)
         //swing sword
         //position
         sVar = 3
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(15*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
@@ -303,7 +303,7 @@ else if(attackVar=1)
         //swing sword
         //position
         sVar = 3
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(15*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
@@ -327,7 +327,7 @@ else if(attackVar=1)
         //swing sword
         //position
         sVar = 3
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
         //core
@@ -350,7 +350,7 @@ else if(attackVar=1)
         //swing sword
         //position
         sVar = 3
-        yEase10(player.y+0*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+0*image_yscale,sVar);
         xMove10(5*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -5*image_xscale, sVar);
@@ -392,7 +392,7 @@ else if(attackVar = 2)
         //position
         effect_create_above(ef_flare,x,y-50-i,30,c_dkgray);
         sVar = 3;
-        yEase10(player.y+50,sVar);
+        yEase10(player.y+50-player.heightAdjust,sVar);
         xMove10(-2*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -30*image_xscale, sVar);
@@ -417,7 +417,7 @@ else if(attackVar = 2)
         //position
         effect_create_above(ef_flare,x,y-50-i,30,c_blue);
         sVar = 3;
-        yEase10(player.y+0*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+0*image_yscale,sVar);
         xMove10(25*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -15*image_xscale, sVar);
@@ -446,7 +446,7 @@ else if(attackVar = 2)
         }
         //position
         sVar = 10;
-        yEase10(player.y+10*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+10*image_yscale,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
         //core
@@ -469,7 +469,7 @@ else if(attackVar = 2)
         //raise sword
         //position
         sVar = 6;
-        yEase10(player.y+30,sVar);
+        yEase10(player.y-player.heightAdjust+30,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, 30*image_xscale, sVar);
         //core
@@ -492,7 +492,7 @@ else if(attackVar = 2)
         //swing sword
         //position
         sVar = 3
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(15*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
@@ -516,7 +516,7 @@ else if(attackVar = 2)
         //swing sword
         //position
         sVar = 3
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(15*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
@@ -540,7 +540,7 @@ else if(attackVar = 2)
         //swing sword
         //position
         sVar = 3
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
         //core
@@ -574,7 +574,7 @@ else if(attackVar = 2)
         //swing sword
         //position
         sVar = 4
-        yEase10(player.y+0*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+0*image_yscale,sVar);
         xMove10(5*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -5*image_xscale, sVar);
@@ -609,7 +609,7 @@ else if(attackVar=3)
         //prepare swing sword
         //position
         sVar = 4;
-        yEase10(player.y+30,sVar);
+        yEase10(player.y-player.heightAdjust+30,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
         //core
@@ -632,7 +632,7 @@ else if(attackVar=3)
         //swing sword
         //position
         sVar = 3;
-        yEase10(player.y+0*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+0*image_yscale,sVar);
         xMove10(0*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, 20*image_xscale, sVar);
@@ -656,7 +656,7 @@ else if(attackVar=3)
         //prepare swing sword
         //position
         sVar = 4;
-        yEase10(player.y+0,sVar);
+        yEase10(player.y-player.heightAdjust+0,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, 0*image_xscale, sVar);
         //core
@@ -695,7 +695,7 @@ else if(attackVar=4)
         //prepare swing sword
         //position
         sVar = 6;
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(0*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, -40*image_xscale, sVar);
@@ -719,7 +719,7 @@ else if(attackVar=4)
         //swing sword
         //position
         sVar = 3;
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(-5*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, 10*image_xscale, sVar);
@@ -743,7 +743,7 @@ else if(attackVar=4)
         //swing sword
         //position
         sVar = 3;
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(-5*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, 10*image_xscale, sVar);
@@ -767,7 +767,7 @@ else if(attackVar=4)
         //prepare swing sword
         //position
         sVar = 3;
-        yEase10(player.y+70*image_yscale,sVar);
+        yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
         xMove10(0*image_xscale);
         //head
         head.image_angle = angle_ease(head.image_angle, 10*image_xscale, sVar);
@@ -791,7 +791,7 @@ else if(attackVar=4)
         //prepare swing sword
         //position
         sVar = 4;
-        yEase10(player.y+0,sVar);
+        yEase10(player.y-player.heightAdjust+0,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, 0*image_xscale, sVar);
         //core

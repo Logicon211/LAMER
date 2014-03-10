@@ -20,9 +20,9 @@
     <glyph character="61" x="410" y="251" w="35" h="35" shift="33" offset="4"/>
     <glyph character="77" x="87" y="57" w="40" h="42" shift="33" offset="2"/>
     <glyph character="122" x="155" y="161" w="36" h="42" shift="33" offset="3"/>
+    <glyph character="115" x="435" y="206" w="33" h="43" shift="33" offset="4"/>
     <glyph character="56" x="41" y="161" w="36" h="43" shift="33" offset="5"/>
     <glyph character="35" x="283" y="57" w="39" h="42" shift="33" offset="4"/>
-    <glyph character="115" x="435" y="206" w="33" h="43" shift="33" offset="4"/>
     <glyph character="105" x="158" y="303" w="24" h="42" shift="33" offset="12"/>
     <glyph character="47" x="2" y="2" w="46" h="50" shift="33" offset="-1"/>
     <glyph character="80" x="231" y="161" w="36" h="42" shift="33" offset="6"/>
@@ -31,12 +31,12 @@
     <glyph character="48" x="183" y="206" w="34" h="43" shift="33" offset="6"/>
     <glyph character="32" x="461" y="2" w="33" h="53" shift="33" offset="0"/>
     <glyph character="91" x="424" y="2" w="35" h="50" shift="33" offset="8"/>
+    <glyph character="79" x="306" y="109" w="37" h="43" shift="33" offset="4"/>
+    <glyph character="97" x="142" y="251" w="32" h="43" shift="33" offset="4"/>
     <glyph character="114" x="278" y="251" w="32" h="42" shift="33" offset="8"/>
     <glyph character="57" x="306" y="161" w="35" h="43" shift="33" offset="6"/>
-    <glyph character="98" x="39" y="206" w="34" h="43" shift="33" offset="4"/>
-    <glyph character="79" x="306" y="109" w="37" h="43" shift="33" offset="4"/>
     <glyph character="107" x="380" y="161" w="35" h="42" shift="33" offset="5"/>
-    <glyph character="97" x="142" y="251" w="32" h="43" shift="33" offset="4"/>
+    <glyph character="98" x="39" y="206" w="34" h="43" shift="33" offset="4"/>
     <glyph character="46" x="343" y="303" w="13" h="42" shift="33" offset="12"/>
     <glyph character="38" x="267" y="109" w="37" h="43" shift="33" offset="3"/>
     <glyph character="100" x="364" y="57" w="38" h="43" shift="33" offset="5"/>
