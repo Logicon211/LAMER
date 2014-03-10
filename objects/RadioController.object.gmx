@@ -63,8 +63,8 @@ radioIndex++;
     else 
     {
         //start fight code
-        room_goto(OverMap);
-        mapController.alarm[10] = true;
+        room_goto(battleMapPlayerIsAt)
+        //mapController.alarm[10] = true;
     }
 
 }
@@ -96,7 +96,8 @@ if(shield_check())
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(120, 400, text);
+            <string>draw_set_font(InventoryContent)
+draw_text(120, 400, text);
 
 draw_sprite_ext(radFace[0], -1, 90, 60, 1, 1, 0, c_white, 1);
 draw_sprite_ext(radFace[1], -1, 895, 60, 1, 1, 0, c_white, 1);
@@ -197,5 +198,8 @@ else
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>

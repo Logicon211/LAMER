@@ -48,8 +48,7 @@ radioText[4] = "END TRANSMISSION";
 face[0] = MitchFace;
 face[1] = EliotFace;
 
-//battleMap = The battlemap (or room) this node points to
-
+battleMap = testRange;
 
 </string>
           </argument>

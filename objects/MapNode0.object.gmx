@@ -46,7 +46,7 @@ radioText[3] = "END TRANSMISSION";
 face[0] = MitchFace;
 face[1] = LoganFace;
 
-//battleMap = The battlemap (or room) this node points to
+battleMap = Tutorial_room;
 </string>
           </argument>
         </arguments>
