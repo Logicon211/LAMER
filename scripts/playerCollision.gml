@@ -7,29 +7,49 @@
 /***************************************************
   Check Below
  ***************************************************/
-
-if(instance_place(x,y+1,land_parent))
+if(vspeed >= 0)
 {
-    while(instance_place(x,y,land_parent))
+    if(instance_place(x,y+1,land_parent))
     {
-        y -= 1;
+        while(instance_place(x,y,land_parent))
+        {
+            y -= 1;
+        }
+        airborne = false;
     }
-    airborne = false;
-}
-else
-{
-    airborne = true;
+    else
+    {
+        airborne = true;
+    }
 }
 
 /***************************************************
   END Check Below
+
+  Check Up
+ ***************************************************/
+else
+{
+    if(instance_place(x,y-1,land_parent))
+    {
+        while(instance_place(x,y,land_parent))
+        {
+            y += 1;
+        }
+        airborne = false;
+        vspeed = 0;
+    }
+}
+
+/***************************************************
+  END Check Up
   
   Check Left/Right
  ***************************************************/
 
 if(hspeed>0)//moving right
 {
-    if(instance_place(x+hspeed,y,land_parent))
+    if(instance_place(x+hspeed,y-10,land_parent))
     {
         for(i=hspeed-1;i>0;i--)
         {
@@ -44,7 +64,7 @@ if(hspeed>0)//moving right
 }
 else if(hspeed<0)//moving left
 {
-    if(instance_place(x+hspeed,y,land_parent))
+    if(instance_place(x+hspeed,y-10,land_parent))
     {
         for(i=hspeed-1;i<0;i++)
         {

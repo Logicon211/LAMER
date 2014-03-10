@@ -9,6 +9,7 @@
     <sound>sound\MainMenuMusic</sound>
     <sound>sound\MultiplayerMenuMusic</sound>
     <sound>sound\OvermapMusic</sound>
+    <sound>sound\weeee</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -92,6 +93,9 @@
     <sprite>sprites\isAISprite</sprite>
     <sprite>sprites\LEVELSELECTSprite</sprite>
     <sprite>sprites\InventoryButtonStringSprite</sprite>
+    <sprite>sprites\floor_panel</sprite>
+    <sprite>sprites\grey_placeholder_tutorial</sprite>
+    <sprite>sprites\tutorial_gate</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -202,6 +206,7 @@
     <shader type="GLSLES">shaders\shader4.shader</shader>
     <shader type="GLSLES">shaders\shader5.shader</shader>
     <shader type="GLSLES">shaders\shader7.shader</shader>
+    <shader type="GLSLES">shaders\woooooo.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -390,6 +395,7 @@
         <object>objects\booster_trail_small_o</object>
         <object>objects\booster_trail_intense_o</object>
       </objects>
+      <object>objects\bulletObject</object>
     </objects>
     <objects name="Color Adjusts">
       <object>objects\hue_prime_o</object>
@@ -409,24 +415,28 @@
       <object>objects\land_o</object>
       <object>objects\platform1</object>
       <object>objects\box</object>
+      <object>objects\land_floor_panel</object>
+      <object>objects\land_tutorial_walls</object>
+      <object>objects\Land_tutorial_gate</object>
     </objects>
     <object>objects\ShaderTestObject</object>
-    <object>objects\BoxObject</object>
     <object>objects\ClosedDoor</object>
     <object>objects\MusicController</object>
     <object>objects\InventoryButtonStringObject</object>
     <object>objects\loadingRoomController</object>
+    <object>objects\autoTurret</object>
+    <object>objects\shieldFlash</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
     <room>rooms\MPMapSelect</room>
     <room>rooms\testRange</room>
+    <room>rooms\Tutorial_room</room>
     <room>rooms\RadioRoom</room>
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
-    <room>rooms\room9</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
