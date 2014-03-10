@@ -69,8 +69,7 @@ for(i=numPlayersSetting;i&gt;0;i--)
     <instance objName="land_o" x="-64" y="0" name="inst_F1C8EB04" locked="0" code="" scaleX="2" scaleY="34" colour="4294967295" rotation="0"/>
     <instance objName="start_fight_o" x="512" y="-64" name="inst_986EB0A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MusicController" x="832" y="-64" name="inst_DDFA8731" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="box" x="960" y="384" name="inst_3FED5CB4" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="768" y="640" name="inst_71258028" locked="0" code="" scaleX="28" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="448" y="672" name="inst_71258028" locked="0" code="" scaleX="28" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
