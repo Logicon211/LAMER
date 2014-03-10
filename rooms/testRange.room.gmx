@@ -71,7 +71,6 @@ for(i=numPlayersSetting;i&gt;0;i--)
     <instance objName="MusicController" x="832" y="-64" name="inst_DDFA8731" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="box" x="960" y="384" name="inst_3FED5CB4" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="platform1" x="768" y="640" name="inst_71258028" locked="0" code="" scaleX="28" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="autoTurret" x="1600" y="832" name="inst_388C6AF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

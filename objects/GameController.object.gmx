@@ -367,7 +367,7 @@ for(i=0; i&lt;4; i++)
     }
 }
 
-if(attack1_check_pressed())
+if(attack2_check_pressed())
 {
     if(room == OverMap)
     {

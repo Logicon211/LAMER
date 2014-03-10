@@ -2,7 +2,7 @@ controllerNum = argument_count;
 if(controllerNum>0)
 {   controllerNum = argument[0];
 }
-if(keyboard_check_pressed(ord('S')) || keyboard_check_pressed(ord('X')))
+if(keyboard_check_pressed(ord('S')) || keyboard_check_pressed(ord('X')) or keyboard_check_pressed(ord('I')))
 {
     if(controllerNum == 0)
     {
