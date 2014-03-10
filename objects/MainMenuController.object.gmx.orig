@@ -99,7 +99,7 @@ if(down_check_pressed())
 }
 
 //ENTER
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
     audio_play_sound(MenuConfirmationSound,1,false);
     menuButtons[selectedButton].alarm[1] = true;
@@ -204,6 +204,7 @@ if(right_check_pressed())
 //UP
 if(up_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     selectedButton--;
     if(selectedButton &lt; 0)
     {
@@ -214,6 +215,7 @@ if(up_check_pressed())
 //DOWN
 if(down_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     selectedButton++
     if(selectedButton &gt;= array_length_1d(menuButtons))
     {
@@ -224,6 +226,7 @@ if(down_check_pressed())
 //ENTER
 if(attack1_check_pressed())
 {
+    audio_play_sound(MenuConfirmationSound,1,false);
     menuButtons[selectedButton].alarm[1] = true;
 }
 </string>
@@ -245,4 +248,4 @@ if(attack1_check_pressed())
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
->>>>>>> 703e06d9a45f63e4b25cdb38a9436250186db4b3
+>>>>>>> 5c5ced27cb45a1854264320aff2e7fcb49ed77f9

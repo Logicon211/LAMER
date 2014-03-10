@@ -184,7 +184,7 @@ if(down_check_pressed())
 }
 
 //ENTER
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
     //Start fight on map node
 
@@ -298,6 +298,7 @@ else
 //LEFT
 if(left_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testX = self.x;
     var nodeToMoveTo = 0;
     
@@ -325,6 +326,7 @@ if(left_check_pressed())
 //RIGHT
 if(right_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testX = self.x;
     var nodeToMoveTo = 0;
     
@@ -351,6 +353,7 @@ if(right_check_pressed())
 //UP
 if(up_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testY = self.y;
     var nodeToMoveTo = 0;
     
@@ -377,6 +380,7 @@ if(up_check_pressed())
 //DOWN
 if(down_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testY = self.y;
     var nodeToMoveTo = 0;
     
@@ -408,7 +412,7 @@ if(attack1_check_pressed())
 
     //DOn't have a way to do it right now, so I guess just go into the game
     
-    room_goto(testRange);
+    room_goto(MapNodeList[playerMarker.atMapNode].battleMap);
 }
 
 //BACK BUTTON CHECK
@@ -438,4 +442,4 @@ if(shield_check())
     <point>16,16</point>
   </PhysicsShapePoints>
 </object>
->>>>>>> 703e06d9a45f63e4b25cdb38a9436250186db4b3
+>>>>>>> 5c5ced27cb45a1854264320aff2e7fcb49ed77f9
