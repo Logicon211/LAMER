@@ -9,6 +9,9 @@
     <sound>sound\MainMenuMusic</sound>
     <sound>sound\MultiplayerMenuMusic</sound>
     <sound>sound\OvermapMusic</sound>
+    <sound>sound\MenuNavigationSound</sound>
+    <sound>sound\NodeNavigationSound</sound>
+    <sound>sound\MenuConfirmationSound</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>

@@ -52,7 +52,7 @@
             <kind>1</kind>
             <string>//create code
 alarm[0] = false;
-
+audio_play_sound(MenuNavigationSound,1,false);
 num = 2;
 menuButtons[num] = id;
 </string>

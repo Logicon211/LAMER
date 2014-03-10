@@ -63,6 +63,7 @@ for(var i = 0; i &lt; ds_list_size(LegsInventory); i++)
             <kind>1</kind>
             <string>num = 4;
 buttonArray[4] = id;
+audio_play_sound(MenuNavigationSound,1,false);
 alarm[0] = false;
 </string>
           </argument>

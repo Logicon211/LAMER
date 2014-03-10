@@ -80,6 +80,7 @@ valBar = instance_create(950, 270, val_glow_o);
             <kind>1</kind>
             <string>num = 7;
 buttonArray[7] = id;
+audio_play_sound(MenuNavigationSound,1,false);
 alarm[0] = false;
 </string>
           </argument>
