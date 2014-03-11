@@ -437,6 +437,7 @@
     <object>objects\shieldFlash</object>
     <object>objects\CreditsController</object>
     <object>objects\InfoScreenController</object>
+    <object>objects\renewRoom</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
