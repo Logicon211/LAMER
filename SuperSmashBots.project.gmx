@@ -100,6 +100,10 @@
     <sprite>sprites\grey_placeholder_tutorial</sprite>
     <sprite>sprites\tutorial_gate</sprite>
     <sprite>sprites\healthSprite</sprite>
+    <sprites name="MapPreviews">
+      <sprite>sprites\MapPreviewTestSprite</sprite>
+      <sprite>sprites\MapPreviewTestSprite2</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -244,6 +248,7 @@
       <object>objects\InventoryUINameP2</object>
       <object>objects\InventoryUINameP3</object>
       <object>objects\InventoryUINameP4</object>
+      <object>objects\MultiplayerMapController</object>
     </objects>
     <object>objects\GameController</object>
     <object>objects\MultiplayerInventoryController</object>
