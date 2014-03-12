@@ -282,7 +282,8 @@ heightAdjust = core.heightAdjust;
     effect_create_above(ef_firework,x,y,30,c_yellow);
     effect_create_above(ef_firework,x,y,30,c_red);
     effect_create_above(ef_firework,x,y,30,c_orange);
-    instance_destroy()
+    instance_create(x,y,renewRoom);
+    playerType = 2;
 }
 
 //***************************************************
@@ -894,7 +895,7 @@ else if(state = string('land'))
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>2</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -915,6 +916,40 @@ else if(state = string('land'))
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>vspeed+=1;
+playerCollision();
+image_angle+=random_range(1,10);
+
+core.dead = true;
+arm[1].dead = true;
+arm[2].dead = true;
+leg1.dead = true;
+leg2.dead = true;
+head.dead = true;
+larm[1].dead = true;
+larm[2].dead = true;
+lleg1.dead = true;
+lleg2.dead = true;
+</string>
+          </argument>
+        </arguments>
       </action>
       <action>
         <libid>1</libid>

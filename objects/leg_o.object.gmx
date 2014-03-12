@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>legnums=2;
+            <string>dead = false;
+legnums=2;
 me=0;
 player=instance_nearest(x,y,player_o);
 setdepth=false;
@@ -62,81 +63,90 @@ height += lower_leg.height;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!instance_exists(player))
+            <string>if(dead)
 {
-    with(lower_leg){instance_destroy();}
-    instance_destroy();
+    vspeed+=1;
+    playerCollision();
+    image_angle+=random_range(1,10);
 }
-
-joint = rotation_tracker(x,y,image_angle,x-1,y+56)
-limb_anchor(lower_leg,joint[0],joint[1],hspeed,vspeed,image_xscale)
-
-/***************************************************
-  Angled States
- ***************************************************/
-
-//Jump State
-if(player.state = string('jump'))
+else
 {
-    lower_leg.image_angle = angle_ease(lower_leg.image_angle, lower_angle, 4);
-}
-//END Jump State
-
-//Land State
-if(player.state = string('land'))
-{
-    lower_leg.image_angle = angle_ease(lower_leg.image_angle, lower_angle, 2);
-}
-//END Land State
-
-//Normal State 
-else if(player.state=string('normal'))
-{
-    lower_leg.image_angle = image_angle-15*image_xscale;
-}
-//END Normal State 
-
-//ToNorm State 
-else if(player.state=string('tonorm'))
-{
-    lower_leg.image_angle = angle_ease(lower_leg.image_angle,image_angle-15*image_xscale,4);
-}
-//END ToNorm State 
-
-//Attack State 
-else if(player.state=string('attack'))
-{
-    lower_leg.image_angle = lower_angle;
-}
-//END Attack State 
-
-//Shield State
-
-else if(player.state=string('shield') || player.state=string('kneel'))
-{
-    if(me=1)
+    if(!instance_exists(player))
     {
-        lower_leg.image_angle = angle_ease(lower_leg.image_angle,-80*image_xscale,8);
+        with(lower_leg){instance_destroy();}
+        instance_destroy();
     }
-    else if(me=2)
+    
+    joint = rotation_tracker(x,y,image_angle,x-1,y+56)
+    limb_anchor(lower_leg,joint[0],joint[1],hspeed,vspeed,image_xscale)
+    
+    /***************************************************
+      Angled States
+     ***************************************************/
+    
+    //Jump State
+    if(player.state = string('jump'))
     {
-        lower_leg.image_angle = angle_ease(lower_leg.image_angle,0,8);
+        lower_leg.image_angle = angle_ease(lower_leg.image_angle, lower_angle, 4);
     }
-    else if(me=3)
+    //END Jump State
+    
+    //Land State
+    if(player.state = string('land'))
     {
-        lower_leg.image_angle = angle_ease(lower_leg.image_angle,10*image_xscale,8);
+        lower_leg.image_angle = angle_ease(lower_leg.image_angle, lower_angle, 2);
     }
-    else
+    //END Land State
+    
+    //Normal State 
+    else if(player.state=string('normal'))
     {
-        lower_leg.image_angle = angle_ease(lower_leg.image_angle,-70*image_xscale,8);
-    }    
+        lower_leg.image_angle = image_angle-15*image_xscale;
+    }
+    //END Normal State 
+    
+    //ToNorm State 
+    else if(player.state=string('tonorm'))
+    {
+        lower_leg.image_angle = angle_ease(lower_leg.image_angle,image_angle-15*image_xscale,4);
+    }
+    //END ToNorm State 
+    
+    //Attack State 
+    else if(player.state=string('attack'))
+    {
+        lower_leg.image_angle = lower_angle;
+    }
+    //END Attack State 
+    
+    //Shield State
+    
+    else if(player.state=string('shield') || player.state=string('kneel'))
+    {
+        if(me=1)
+        {
+            lower_leg.image_angle = angle_ease(lower_leg.image_angle,-80*image_xscale,8);
+        }
+        else if(me=2)
+        {
+            lower_leg.image_angle = angle_ease(lower_leg.image_angle,0,8);
+        }
+        else if(me=3)
+        {
+            lower_leg.image_angle = angle_ease(lower_leg.image_angle,10*image_xscale,8);
+        }
+        else
+        {
+            lower_leg.image_angle = angle_ease(lower_leg.image_angle,-70*image_xscale,8);
+        }    
+    }
+    
+    //END Shield State
+     
+    /***************************************************
+      END Angled States
+     ***************************************************/
 }
-
-//END Shield State
- 
-/***************************************************
-  END Angled States
- ***************************************************/
 </string>
           </argument>
         </arguments>
