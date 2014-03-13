@@ -59,6 +59,7 @@
     <instance objName="MPMapNode5" x="1116" y="378" name="inst_D3F8BB9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MPPlayerMarker" x="537" y="241" name="inst_05A670E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="LevelSelectObjectText" x="447" y="0" name="inst_09D7E1A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="MultiplayerMapController" x="43" y="37" name="inst_9C4B41CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -9,13 +9,10 @@
     <sound>sound\MainMenuMusic</sound>
     <sound>sound\MultiplayerMenuMusic</sound>
     <sound>sound\OvermapMusic</sound>
-<<<<<<< HEAD
     <sound>sound\MenuNavigationSound</sound>
+    <sound>sound\weeee</sound>
     <sound>sound\NodeNavigationSound</sound>
     <sound>sound\MenuConfirmationSound</sound>
-=======
-    <sound>sound\weeee</sound>
->>>>>>> 703e06d9a45f63e4b25cdb38a9436250186db4b3
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -102,6 +99,15 @@
     <sprite>sprites\floor_panel</sprite>
     <sprite>sprites\grey_placeholder_tutorial</sprite>
     <sprite>sprites\tutorial_gate</sprite>
+    <sprite>sprites\healthSprite</sprite>
+<<<<<<< HEAD
+    <sprite>sprites\cameraSprite</sprite>
+=======
+    <sprites name="MapPreviews">
+      <sprite>sprites\MapPreviewTestSprite</sprite>
+      <sprite>sprites\MapPreviewTestSprite2</sprite>
+    </sprites>
+>>>>>>> 10b564cd996e7d14d3b37b0045679bf06dc36ed5
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -112,6 +118,9 @@
     <background>background\InventoryBackground</background>
     <background>background\SettingsBackground</background>
     <background>background\stadiumBackgroundOne</background>
+    <background>background\Credits1</background>
+    <background>background\Credits2</background>
+    <background>background\CampaignInfoScreen</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -183,9 +192,9 @@
         <script>scripts\attack2_check.gml</script>
         <script>scripts\attack2_check_pressed.gml</script>
         <script>scripts\shield_check.gml</script>
+        <script>scripts\shield_check_pressed.gml</script>
         <script>scripts\shield_check_released.gml</script>
         <script>scripts\boost_check.gml</script>
-        <script>scripts\shield_check_pressed.gml</script>
       </scripts>
       <script>scripts\restart_check.gml</script>
       <script>scripts\quit_check.gml</script>
@@ -202,6 +211,7 @@
     <script>scripts\getPlayerColor.gml</script>
     <script>scripts\playerCollision.gml</script>
     <script>scripts\startBattle.gml</script>
+    <script>scripts\createColorBars.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -242,6 +252,7 @@
       <object>objects\InventoryUINameP2</object>
       <object>objects\InventoryUINameP3</object>
       <object>objects\InventoryUINameP4</object>
+      <object>objects\MultiplayerMapController</object>
     </objects>
     <object>objects\GameController</object>
     <object>objects\MultiplayerInventoryController</object>
@@ -402,6 +413,7 @@
         <object>objects\booster_trail_intense_o</object>
       </objects>
       <object>objects\bulletObject</object>
+      <object>objects\object156</object>
     </objects>
     <objects name="Color Adjusts">
       <object>objects\hue_prime_o</object>
@@ -432,6 +444,11 @@
     <object>objects\loadingRoomController</object>
     <object>objects\autoTurret</object>
     <object>objects\shieldFlash</object>
+    <object>objects\CreditsController</object>
+    <object>objects\InfoScreenController</object>
+    <object>objects\renewRoom</object>
+    <object>objects\cameraObject</object>
+    <object>objects\tutorialBossTrigger</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
@@ -443,6 +460,9 @@
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
+    <room>rooms\Credits1Room</room>
+    <room>rooms\Credits2Room</room>
+    <room>rooms\CampaignInfoRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

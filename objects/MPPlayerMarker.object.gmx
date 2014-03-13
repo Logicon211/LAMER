@@ -183,7 +183,7 @@ if(down_check_pressed())
 }
 
 //ENTER
-if(attack1_check_pressed())
+if(jump_check_pressed() or attack1_check_pressed())
 {
     //Start fight on map node
 
