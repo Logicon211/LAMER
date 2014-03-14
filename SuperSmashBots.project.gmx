@@ -107,6 +107,11 @@
     <sprite>sprites\tutorial_shield</sprite>
     <sprite>sprites\tutorial_turret</sprite>
     <sprite>sprites\tutorial_platform</sprite>
+    <sprite>sprites\Level_Floor_Tile1</sprite>
+    <sprite>sprites\Level_Floor_Tile2</sprite>
+    <sprite>sprites\Level_Platform_Tile1</sprite>
+    <sprite>sprites\Level_platform_Tile1_leftedge</sprite>
+    <sprite>sprites\Level_Platform_Tile1_RightEdge</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -451,6 +456,10 @@
     <object>objects\tutorial_help_shield</object>
     <object>objects\tutorial_help_turret</object>
     <object>objects\tutorial_help_platform</object>
+    <object>objects\Level_Flloor1</object>
+    <object>objects\Level_Floor2</object>
+    <object>objects\Platform1_leftedge</object>
+    <object>objects\Platform1_rightedge</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
@@ -466,6 +475,11 @@
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
     <room>rooms\CampaignInfoRoom</room>
+    <room>rooms\Stage1</room>
+    <room>rooms\Stage2</room>
+    <room>rooms\Stage3</room>
+    <room>rooms\Stage4</room>
+    <room>rooms\Stage5</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
