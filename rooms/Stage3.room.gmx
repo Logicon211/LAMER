@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>12632256</colour>
+  <colour>8421440</colour>
   <showcolour>-1</showcolour>
   <code></code>
   <enableViews>0</enableViews>
@@ -50,15 +50,24 @@
     <view visible="0" objName="" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="land_tutorial_walls" x="0" y="0" name="inst_2F3E60B5" locked="0" code="" scaleX="1" scaleY="17" colour="4294967295" rotation="0"/>
-    <instance objName="land_tutorial_walls" x="64" y="0" name="inst_F10AAB12" locked="0" code="" scaleX="28.9523811340332" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="land_tutorial_walls" x="1856" y="64" name="inst_DCB5929A" locked="0" code="" scaleX="1" scaleY="16" colour="4294967295" rotation="0"/>
-    <instance objName="land_tutorial_walls" x="64" y="1024" name="inst_436845FA" locked="0" code="" scaleX="27.9365005493164" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="land_tutorial_walls" x="416" y="832" name="inst_C0FA91CD" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="land_tutorial_walls" x="1248" y="832" name="inst_7E161AAB" locked="0" code="" scaleX="4.06349229812622" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="672" y="544" name="inst_8657F905" locked="0" code="" scaleX="18" scaleY="0.46875" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1408" y="352" name="inst_AEECA0EB" locked="0" code="" scaleX="10.9677419662476" scaleY="0.53125" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="128" y="352" name="inst_AF73300C" locked="0" code="" scaleX="12.03125" scaleY="0.4375" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="352" y="960" name="inst_845A3F5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="480" y="960" name="inst_414BC4C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="608" y="960" name="inst_0D2DD59A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="736" y="960" name="inst_7A8782A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="864" y="960" name="inst_9F708135" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="992" y="960" name="inst_6ED71B2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="1120" y="960" name="inst_763CA64C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="1248" y="960" name="inst_3411DE40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="1376" y="960" name="inst_EEE49BFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="1440" y="960" name="inst_FAEB9CB6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="288" y="960" name="inst_01ADA165" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="1504" y="960" name="inst_A6CDAA9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="544" y="704" name="inst_BD66F26A" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1152" y="704" name="inst_CA81B888" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_rightedge" x="768" y="704" name="inst_C21887B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_rightedge" x="1376" y="704" name="inst_E86F11E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_leftedge" x="1120" y="704" name="inst_323AF04D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_leftedge" x="512" y="704" name="inst_B0CD761C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

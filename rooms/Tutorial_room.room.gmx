@@ -11,7 +11,8 @@
   <colour>4194304</colour>
   <showcolour>-1</showcolour>
   <code>display_reset(8, true);
-
+createPlayer(0,0,130,room_height-100);
+/*
 j=startBattleVar[1];
 for(i=startBattleVar[0];i&gt;0;i--)
 {

@@ -32,7 +32,7 @@
     know how to function, move, and act. It is a
     critical part of the animations and actions.
  ***************************************************/
-
+health2 = 1000;
 state = string('normal');
 
 /***************************************************
@@ -179,6 +179,8 @@ health = 1000;
   Height
  ***************************************************/
 
+xInVar = 0;
+
 height = core.height;
 heightAdjust = core.heightAdjust;
 
@@ -273,7 +275,17 @@ heightAdjust = core.heightAdjust;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//***************************************************
+            <string>if(health2 = 0)
+{
+    effect_create_above(ef_firework,x,y,30,c_red);
+    effect_create_above(ef_firework,x,y,30,c_orange);
+    effect_create_above(ef_firework,x,y,30,c_yellow);
+    effect_create_above(ef_firework,x,y,30,c_red);
+    effect_create_above(ef_firework,x,y,30,c_orange);
+    instance_destroy()
+}
+
+//***************************************************
 //room speed test
 if(gamepad_button_check(0,gp_shoulderrb))
 {
@@ -315,14 +327,16 @@ image_yscale = height/32;
 if(state=string('slideL'))
 {
     with(shield_obj){instance_destroy()}
-    x -= 300*boost_power/weight;
+    //x -= 300*boost_power/weight;
+    hspeed = -50;
     state=string('tonorm'){}
     
 }
 else if(state=string('slideR'))
 {
     with(shield_obj){instance_destroy()}
-    x += 300*boost_power/weight;
+    //x += 300*boost_power/weight;
+    hspeed = 50;
     state=string('tonorm'){}
     
 }
@@ -578,7 +592,7 @@ if(instance_place(x,y+1,land_parent))
 {
     while(instance_place(x,y,land_parent))
     {
-        y-=1
+        y-=1;
     }
     airborne = false;
     vspeed = 0;
@@ -915,6 +929,29 @@ else if(state = string('land'))
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(healthSprite,0,view_xview+30+100*playerNum,view_yview+30,health/10,1,0,getPlayerColor(playerNum,0),1);
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="10" enumb="82">

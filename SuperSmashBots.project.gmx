@@ -9,7 +9,10 @@
     <sound>sound\MainMenuMusic</sound>
     <sound>sound\MultiplayerMenuMusic</sound>
     <sound>sound\OvermapMusic</sound>
+    <sound>sound\MenuNavigationSound</sound>
     <sound>sound\weeee</sound>
+    <sound>sound\NodeNavigationSound</sound>
+    <sound>sound\MenuConfirmationSound</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -97,6 +100,7 @@
     <sprite>sprites\grey_placeholder_tutorial</sprite>
     <sprite>sprites\tutorial_gate</sprite>
     <sprite>sprites\tutorial_move</sprite>
+    <sprite>sprites\healthSprite</sprite>
     <sprite>sprites\tutorial_jump</sprite>
     <sprite>sprites\tutorial_thrusters</sprite>
     <sprite>sprites\tutorial_attack</sprite>
@@ -113,6 +117,9 @@
     <background>background\InventoryBackground</background>
     <background>background\SettingsBackground</background>
     <background>background\stadiumBackgroundOne</background>
+    <background>background\Credits1</background>
+    <background>background\Credits2</background>
+    <background>background\CampaignInfoScreen</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -184,9 +191,9 @@
         <script>scripts\attack2_check.gml</script>
         <script>scripts\attack2_check_pressed.gml</script>
         <script>scripts\shield_check.gml</script>
+        <script>scripts\shield_check_pressed.gml</script>
         <script>scripts\shield_check_released.gml</script>
         <script>scripts\boost_check.gml</script>
-        <script>scripts\shield_check_pressed.gml</script>
       </scripts>
       <script>scripts\restart_check.gml</script>
       <script>scripts\quit_check.gml</script>
@@ -203,6 +210,7 @@
     <script>scripts\getPlayerColor.gml</script>
     <script>scripts\playerCollision.gml</script>
     <script>scripts\startBattle.gml</script>
+    <script>scripts\createColorBars.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -403,6 +411,7 @@
         <object>objects\booster_trail_intense_o</object>
       </objects>
       <object>objects\bulletObject</object>
+      <object>objects\object156</object>
     </objects>
     <objects name="Color Adjusts">
       <object>objects\hue_prime_o</object>
@@ -435,6 +444,8 @@
     <object>objects\shieldFlash</object>
     <object>objects\tutorial_help_jump</object>
     <object>objects\tutorial_help_move</object>
+    <object>objects\CreditsController</object>
+    <object>objects\InfoScreenController</object>
     <object>objects\tutorial_help_thrusters</object>
     <object>objects\tutorial_help_attack</object>
     <object>objects\tutorial_help_shield</object>
@@ -452,6 +463,9 @@
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
     <room>rooms\room9</room>
+    <room>rooms\Credits1Room</room>
+    <room>rooms\Credits2Room</room>
+    <room>rooms\CampaignInfoRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

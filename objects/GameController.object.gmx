@@ -36,6 +36,8 @@ globalvar moveToNode; //globalvar of node we're moving to
 
 globalvar nodePlayerIsAt; //Node player is on when he starts a battle and/or radio. This is persistent
 
+globalvar battleMapPlayerIsAt;
+
 globalvar radText;
 radText = "";
 globalvar radFace;
@@ -166,14 +168,9 @@ ItemArray[5] = instance_create(0, 0, testBackPackObject1);
 //Will probably do something here to read a save file and load inventory, for now, test inventory
 
 ds_list_add(HeadInventory, ProtoHeadObjectItem);
-ds_list_add(HeadInventory, ProtoHeadObjectItem);
-ds_list_add(HeadInventory, ProtoHeadObjectItem);
 ds_list_add(TorsoInventory, ProtoTorsoObjectItem);
-ds_list_add(TorsoInventory, ProtoTorsoObjectItem);
-ds_list_add(ArmInventory, ProtoSwordObjectItem);
 ds_list_add(ArmInventory, ProtoSwordObjectItem);
 ds_list_add(ArmInventory, ProtoGunObjectItem);
-ds_list_add(LegsInventory, ProtoLegsObjectItem);
 ds_list_add(LegsInventory, ProtoLegsObjectItem);
 ds_list_add(BackPackInventory, testBackPackObject1);
 
@@ -182,7 +179,7 @@ ds_list_add(BackPackInventory, testBackPackObject1);
 playerLoadOut1[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut1[1] = ds_list_find_value(TorsoInventory, 0); //Torso
 playerLoadOut1[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut1[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut1[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
 playerLoadOut1[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut1[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
@@ -190,7 +187,7 @@ playerLoadOut1[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 playerLoadOut2[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut2[1] = ds_list_find_value(TorsoInventory, 0); //Torso
 playerLoadOut2[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut2[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut2[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
 playerLoadOut2[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut2[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
@@ -198,7 +195,7 @@ playerLoadOut2[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 playerLoadOut3[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut3[1] = ds_list_find_value(TorsoInventory, 0); //Torso
 playerLoadOut3[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut3[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut3[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
 playerLoadOut3[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut3[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
@@ -206,7 +203,7 @@ playerLoadOut3[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 playerLoadOut4[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut4[1] = ds_list_find_value(TorsoInventory, 0); //Torso
 playerLoadOut4[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut4[3] = ds_list_find_value(ArmInventory, 2); //Right Arm
+playerLoadOut4[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
 playerLoadOut4[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut4[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
@@ -228,7 +225,7 @@ globalvar creditLimitSetting;
 creditLimitSetting = 1000;
 
 globalvar startBattleVar;
-startBattleVar[0] = 1;//numPlayers;
+startBattleVar[0] = 4;//numPlayers;
 startBattleVar[1] = 0;//numCPUs;
 startBattleVar[2] = testRange;//newRoom;
 

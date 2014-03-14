@@ -30,6 +30,8 @@ player = instance_nearest(x,y,player_o);
 playerNum = player.playerNum;
 oldX = y;
 oldY = x;
+
+attacking = true;
 </string>
           </argument>
         </arguments>
@@ -56,6 +58,18 @@ oldY = x;
 
 oldX = x+hspeed;
 oldY = y+vspeed;
+
+if(instance_place(x,y,player_o))
+{
+    derp = instance_place(x,y,player_o);
+    if(derp != player)
+    {
+        derp.health -= 200;
+        derp.hspeed = 25*image_xscale;
+        derp.vspeed = 5*image_xscale;
+        derp.airborne = true;
+    }
+}
 </string>
           </argument>
         </arguments>

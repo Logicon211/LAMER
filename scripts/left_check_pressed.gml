@@ -4,7 +4,10 @@ if(controllerNum>0)
 }
 if(keyboard_check_pressed(vk_left))
 {
-    return true;
+    if(controllerNum == 0)
+    {
+        return true;
+    }
 }
 else if(gamepad_axis_value(controllerNum,gp_axislh)<-0.4)
 {

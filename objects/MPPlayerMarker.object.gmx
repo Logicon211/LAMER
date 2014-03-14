@@ -75,6 +75,7 @@ else
 //LEFT
 if(left_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testX = self.x;
     var nodeToMoveTo = 0;
     
@@ -102,6 +103,7 @@ if(left_check_pressed())
 //RIGHT
 if(right_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testX = self.x;
     var nodeToMoveTo = 0;
     
@@ -128,6 +130,7 @@ if(right_check_pressed())
 //UP
 if(up_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testY = self.y;
     var nodeToMoveTo = 0;
     
@@ -154,6 +157,7 @@ if(up_check_pressed())
 //DOWN
 if(down_check_pressed())
 {
+    audio_play_sound(NodeNavigationSound,1,false);
     var testY = self.y;
     var nodeToMoveTo = 0;
     
@@ -185,7 +189,7 @@ if(attack1_check_pressed())
 
     //DOn't have a way to do it right now, so I guess just go into the game
     
-    room_goto(testRange);
+    room_goto(MapNodeList[playerMarker.atMapNode].battleMap);
 }
 
 //BACK BUTTON CHECK

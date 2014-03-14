@@ -42,9 +42,7 @@ hasRadioText = false; //check to see if there's radio chat before the fight
 radioText[0] = "";
 
 face[0] = 0;
-//battleMap = The battlemap (or room) this node points to
-
-
+battleMap = testRange;
 </string>
           </argument>
         </arguments>

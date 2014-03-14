@@ -78,6 +78,7 @@ if(right_check_pressed())
 //UP
 if(up_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     selectedButton--;
     if(selectedButton &lt; 0)
     {
@@ -88,6 +89,7 @@ if(up_check_pressed())
 //DOWN
 if(down_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     selectedButton++
     if(selectedButton &gt;= array_length_1d(menuButtons))
     {
@@ -98,6 +100,7 @@ if(down_check_pressed())
 //ENTER
 if(attack1_check_pressed())
 {
+    audio_play_sound(MenuConfirmationSound,1,false);
     menuButtons[selectedButton].alarm[1] = true;
 }
 </string>

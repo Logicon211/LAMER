@@ -102,7 +102,8 @@ if(valBar[owningPlayer] != 0)
 //recreate them
 if(owningPlayer == 0)
 {
-    hueBar[owningPlayer] = instance_create(470, 40, hue_2_o);
+    createColorBars(1, 470, 40, 0.75, owningPlayer);
+   /* hueBar[owningPlayer] = instance_create(470, 40, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;
     hueBar[owningPlayer].owningPlayer = owningPlayer;
@@ -116,11 +117,12 @@ if(owningPlayer == 0)
     valBar[owningPlayer].image_xscale = 0.75;
     valBar[owningPlayer].image_yscale = 0.75;
     valBar[owningPlayer].owningPlayer = owningPlayer;
-    valBar[owningPlayer].alarm[0]= true
+    valBar[owningPlayer].alarm[0]= true*/
 }
 else if(owningPlayer == 1)
 {
-    hueBar[owningPlayer] = instance_create(1100, 40, hue_2_o);
+    createColorBars(1, 1100, 40, 0.75, owningPlayer);
+   /* hueBar[owningPlayer] = instance_create(1100, 40, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;
     hueBar[owningPlayer].owningPlayer = owningPlayer;
@@ -134,11 +136,12 @@ else if(owningPlayer == 1)
     valBar[owningPlayer].image_xscale = 0.75;
     valBar[owningPlayer].image_yscale = 0.75;
     valBar[owningPlayer].owningPlayer = owningPlayer;
-    valBar[owningPlayer].alarm[0]= true
+    valBar[owningPlayer].alarm[0]= true*/
 }
 else if(owningPlayer == 2)
 {
-    hueBar[owningPlayer] = instance_create(470, 400, hue_2_o);
+    createColorBars(1, 470, 400, 0.75, owningPlayer);
+   /* hueBar[owningPlayer] = instance_create(470, 400, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;
     hueBar[owningPlayer].owningPlayer = owningPlayer;
@@ -152,11 +155,12 @@ else if(owningPlayer == 2)
     valBar[owningPlayer].image_xscale = 0.75;
     valBar[owningPlayer].image_yscale = 0.75;
     valBar[owningPlayer].owningPlayer = owningPlayer;
-    valBar[owningPlayer].alarm[0]= true
+    valBar[owningPlayer].alarm[0]= true*/
 }
 else if(owningPlayer == 3)
 {
-    hueBar[owningPlayer] = instance_create(1100, 400, hue_2_o);
+    createColorBars(1, 1100, 400, 0.75, owningPlayer);
+    /*hueBar[owningPlayer] = instance_create(1100, 400, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;
     hueBar[owningPlayer].owningPlayer = owningPlayer;
@@ -170,7 +174,7 @@ else if(owningPlayer == 3)
     valBar[owningPlayer].image_xscale = 0.75;
     valBar[owningPlayer].image_yscale = 0.75;
     valBar[owningPlayer].owningPlayer = owningPlayer;
-    valBar[owningPlayer].alarm[0]= true
+    valBar[owningPlayer].alarm[0]= true*/
 }
 </string>
           </argument>

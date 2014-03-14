@@ -4,9 +4,12 @@ if(controllerNum>0)
 }
 if(keyboard_check_pressed(ord('S')) || keyboard_check_pressed(ord('X')))
 {
-    return true;
+    if(controllerNum == 0)
+    {
+        return true;
+    }
 }
-else if(gamepad_button_check_pressed(controllerNum,gp_face3))
+else if(gamepad_button_check_pressed(controllerNum,gp_face4))
 {
     return true;
 }

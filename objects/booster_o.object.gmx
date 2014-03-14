@@ -56,29 +56,31 @@ playerNum = player.playerNum;
             <string>//perfectTrailEffectWhite(oldX,oldY,x+hspeed,y+vspeed,ef_flare);
 //perfectTrailEffect(oldX,oldY,x+hspeed,y+vspeed,ef_explosion,player.playerNum);
 
+bColor = getPlayerColor(0,2);
+
 if(intense&gt;0)
 {
-    perfect_trail(oldX,oldY,x+hspeed,y+vspeed,booster_trail_intense_o);
+    perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,booster_trail_intense_o,0,random_range(0.5,1),bColor);
     image_xscale=2;
     image_yscale=2;
     intense -= 1;
 }
 else if(player.boosting)
 {
-    perfect_trail(oldX,oldY,x+hspeed,y+vspeed,booster_trail_o);
+    perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,booster_trail_o,0,random_range(0.5,1),bColor);
     image_xscale=1.5;
     image_yscale=1.5;
 }
 else if(player.state=string('slideL') || player.state=string('slideR'))
 {
-    perfect_trail(oldX,oldY,x+hspeed,y+vspeed,booster_trail_intense_o);
+    perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,booster_trail_intense_o,0,random_range(0.5,1),bColor);
     image_xscale=2;
     image_yscale=2;
     intense = 8;
 }
 else
 {
-    perfect_trail(oldX,oldY,x+hspeed,y+vspeed,booster_trail_small_o);
+    perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,booster_trail_small_o,0,random_range(0.5,1),bColor);
     image_xscale=1;
     image_yscale=1;
 }
