@@ -106,6 +106,11 @@
     <sprite>sprites\tutorial_attack</sprite>
     <sprite>sprites\tutorial_shield</sprite>
     <sprite>sprites\tutorial_turret</sprite>
+    <sprite>sprites\cameraSprite</sprite>
+    <sprites name="MapPreviews">
+      <sprite>sprites\MapPreviewTestSprite</sprite>
+      <sprite>sprites\MapPreviewTestSprite2</sprite>
+    </sprites>
     <sprite>sprites\tutorial_platform</sprite>
     <sprite>sprites\Level_Floor_Tile1</sprite>
     <sprite>sprites\Level_Floor_Tile2</sprite>
@@ -256,6 +261,7 @@
       <object>objects\InventoryUINameP2</object>
       <object>objects\InventoryUINameP3</object>
       <object>objects\InventoryUINameP4</object>
+      <object>objects\MultiplayerMapController</object>
     </objects>
     <object>objects\GameController</object>
     <object>objects\MultiplayerInventoryController</object>
@@ -454,6 +460,9 @@
     <object>objects\tutorial_help_thrusters</object>
     <object>objects\tutorial_help_attack</object>
     <object>objects\tutorial_help_shield</object>
+    <object>objects\renewRoom</object>
+    <object>objects\cameraObject</object>
+    <object>objects\tutorialBossTrigger</object>
     <object>objects\tutorial_help_turret</object>
     <object>objects\tutorial_help_platform</object>
     <object>objects\Level_Flloor1</object>

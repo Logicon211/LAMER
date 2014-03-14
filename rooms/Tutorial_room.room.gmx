@@ -12,6 +12,7 @@
   <showcolour>-1</showcolour>
   <code>display_reset(8, true);
 createPlayer(0,0,130,room_height-100);
+instance_create(0,0,cameraObject);
 /*
 j=startBattleVar[1];
 for(i=startBattleVar[0];i&gt;0;i--)
@@ -55,7 +56,7 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="player_o" xview="50" yview="200" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="500" vborder="500" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="cameraObject" xview="50" yview="200" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="500" vborder="500" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -101,6 +102,7 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <instance objName="Land_tutorial_gate" x="7488" y="704" name="inst_5E288824" locked="0" code="" scaleX="2" scaleY="4.5" colour="4294967295" rotation="0"/>
     <instance objName="land_floor_panel" x="7296" y="992" name="inst_1B77FD06" locked="0" code="" scaleX="3" scaleY="0.100000001490116" colour="4294967295" rotation="0"/>
     <instance objName="tutorial_help_move" x="96" y="640" name="inst_6BD9DD33" locked="0" code="" scaleX="0.600000023841858" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="tutorialBossTrigger" x="5312" y="672" name="inst_F5A85BFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tutorial_help_jump" x="768" y="640" name="inst_EA993EE1" locked="0" code="" scaleX="0.560000002384186" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
     <instance objName="tutorial_help_thrusters" x="1984" y="512" name="inst_45A11A03" locked="0" code="" scaleX="0.879999995231628" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
     <instance objName="tutorial_help_shield" x="4480" y="704" name="inst_1B68A6B0" locked="0" code="" scaleX="0.839999973773956" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>

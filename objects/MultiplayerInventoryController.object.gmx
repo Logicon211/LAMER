@@ -532,7 +532,7 @@ if(!lockedIn[0])
         }
     }
     //CONFIRM (ENTER Or A)
-    if(attack1_check_pressed())
+    if(jump_check_pressed())
     {
         audio_play_sound(MenuConfirmationSound,1,false);
         if(!lookingAtItems[0])
@@ -716,7 +716,7 @@ else if(lockedIn[0] and !lockedIn[1] and isAI[1])
         }
     }
     //CONFIRM (ENTER Or A)
-    if(attack1_check_pressed())
+    if(jump_check_pressed())
     {
         audio_play_sound(MenuConfirmationSound,1,false);
         if(!lookingAtItems[1])
@@ -901,7 +901,7 @@ else if(lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or 
         }
     }
     //CONFIRM (ENTER Or A)
-    if(attack1_check_pressed())
+    if(jump_check_pressed())
     {
         audio_play_sound(MenuConfirmationSound,1,false);
         if(!lookingAtItems[2])
@@ -1086,7 +1086,7 @@ else if(lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1]
         }
     }
     //CONFIRM (ENTER Or A)
-    if(attack1_check_pressed())
+    if(jump_check_pressed())
     {
         audio_play_sound(MenuConfirmationSound,1,false);
         if(!lookingAtItems[3])
@@ -1270,7 +1270,7 @@ if(down_check_pressed(1))
     }
 }
 //CONFIRM (ENTER Or A)
-if(attack1_check_pressed(1))
+if(jump_check_pressed(1))
 {
     audio_play_sound(MenuConfirmationSound,1,false);
     if(!lookingAtItems[1])
@@ -1455,7 +1455,7 @@ if(down_check_pressed(2))
     }
 }
 //CONFIRM (ENTER Or A)
-if(attack1_check_pressed(2))
+if(jump_check_pressed(2))
 {
     audio_play_sound(MenuConfirmationSound,1,false);
     if(!lookingAtItems[2])
@@ -1640,7 +1640,7 @@ if(down_check_pressed(3))
     }
 }
 //CONFIRM (ENTER Or A)
-if(attack1_check_pressed(3))
+if(jump_check_pressed(3))
 {
     audio_play_sound(MenuConfirmationSound,1,false);
     if(!lookingAtItems[3])

@@ -403,7 +403,7 @@ if(down_check_pressed())
     }
 }
 
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
     audio_play_sound(MenuConfirmationSound,1,false);
     selectedSettingsButton.alarm[1] = true;
@@ -586,6 +586,7 @@ if(creditLimitButtons[selectedCreditButton].state != 1) {
 //LEFT CHECK
 if(left_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     //Num Players Row
     if(selectedSettingsRow == 0)
     {
@@ -673,6 +674,7 @@ if(left_check_pressed())
 //RIGHT CHECK
 if(right_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     //Num Players Row
     if(selectedSettingsRow == 0)
     {
@@ -753,6 +755,7 @@ if(right_check_pressed())
 //UP CHECK
 if(up_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     //Num Players Row
     if(selectedSettingsRow == 0)
     {
@@ -803,6 +806,7 @@ if(up_check_pressed())
 //DOWN CHECK
 if(down_check_pressed())
 {
+    audio_play_sound(MenuNavigationSound,1,false);
     //Num Players Row
     if(selectedSettingsRow == 0)
     {
@@ -853,6 +857,7 @@ if(down_check_pressed())
 
 if(attack1_check_pressed())
 {
+    audio_play_sound(MenuConfirmationSound,1,false);
     selectedSettingsButton.alarm[1] = true;
 }
 </string>
@@ -897,4 +902,4 @@ if(attack1_check_pressed())
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
->>>>>>> 703e06d9a45f63e4b25cdb38a9436250186db4b3
+>>>>>>> 5c5ced27cb45a1854264320aff2e7fcb49ed77f9

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>oldX = x;
+            <string>dead = false;
+oldX = x;
 oldY = y;
 player = instance_nearest(x,y,player_o);
 delete = false;
@@ -54,15 +55,24 @@ height = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(delete)
+            <string>if(dead)
 {
-    instance_destroy();
+    vspeed+=1;
+    playerCollision();
+    image_angle+=random_range(1,10);
 }
-
-perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale,getPlayerColor(player.playerNum,2));
-
-oldX = x+hspeed;
-oldY = y+vspeed;
+else
+{
+    if(delete)
+    {
+        instance_destroy();
+    }
+    
+    perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale,getPlayerColor(player.playerNum,2));
+    
+    oldX = x+hspeed;
+    oldY = y+vspeed;
+}
 </string>
           </argument>
         </arguments>

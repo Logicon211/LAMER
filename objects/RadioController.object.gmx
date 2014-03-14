@@ -53,7 +53,7 @@ radioIndex++;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(attack1_check_pressed())
+            <string>if(jump_check_pressed())
 {
     if(radioIndex &lt; (array_length_1d(radText)))
     {

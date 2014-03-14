@@ -8,33 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>globalvar menuButtons;
-menuButtons = 0;
-
-globalvar selectedButton;
-selectedButton = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -52,56 +25,18 @@ selectedButton = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for(var i=0;i&lt;array_length_1d(menuButtons);i++)
+            <string>if(player_o.x-(x+200))
 {
-    if(i != selectedButton)
-    {
-        menuButtons[i].state = 0;
+    trap = instance_create(x,y,Land_tutorial_gate);
+    trap.image_yscale = 6;
+    cam = instance_nearest(x,y,cameraObject)
+    cam.pNums += 1;
+    turret = instance_nearest(x,y,autoTurret);
+    cam.players[cam.pNums-1] = turret;
+    with(turret)
+    {   active = true;
     }
-    else
-    {
-        menuButtons[i].state = 1;
-    }
-}
-
-//LEFT
-if(left_check_pressed())
-{
-
-}
-//RIGHT
-if(right_check_pressed())
-{
-
-}
-
-//UP
-if(up_check_pressed())
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    selectedButton--;
-    if(selectedButton &lt; 0)
-    {
-        selectedButton = array_length_1d(menuButtons) - 1;
-    }
-}
-
-//DOWN
-if(down_check_pressed())
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    selectedButton++
-    if(selectedButton &gt;= array_length_1d(menuButtons))
-    {
-        selectedButton = 0;
-    }
-}
-
-//ENTER
-if(jump_check_pressed())
-{
-    audio_play_sound(MenuConfirmationSound,1,false);
-    menuButtons[selectedButton].alarm[1] = true;
+    instance_destroy();
 }
 </string>
           </argument>

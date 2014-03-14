@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player = instance_nearest(x,y,player_o);
+            <string>dead = false;
+player = instance_nearest(x,y,player_o);
 playerNum = player.playerNum;
 oldX = x;
 oldY = y;
@@ -51,9 +52,18 @@ oldY = y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>perfect_trail_angled(oldX,oldY,x+hspeed,y+vspeed,proto_gun_trail_o,image_angle,image_xscale);
-oldX = x+hspeed;
-oldY = y+vspeed;
+            <string>if(dead)
+{
+    vspeed+=1;
+    playerCollision();
+    image_angle+=random_range(1,10);
+}
+else
+{
+    perfect_trail_angled(oldX,oldY,x+hspeed,y+vspeed,proto_gun_trail_o,image_angle,image_xscale);
+    oldX = x+hspeed;
+    oldY = y+vspeed;
+}
 </string>
           </argument>
         </arguments>
