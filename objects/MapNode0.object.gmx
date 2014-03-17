@@ -36,11 +36,12 @@ isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = false; //check to see if there's radio chat before the fight
+hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "WOOOOOOOOOOO";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = LoganFace;
 
 battleMap = Tutorial_room;
 </string>
