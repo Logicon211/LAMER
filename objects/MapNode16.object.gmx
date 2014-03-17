@@ -25,23 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 16;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Greenland";
+nodeDescription = "A former safe haven from the Apocalypse due to its uselessness and cold, with global warming it is #now a base for the most elite of the elite pilots. This is the closest that one can get to civilization as #it was once known, minus all the Colossi everywhere.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = false; //check to see if there's radio chat before the fight
+hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Dr. Dastardly: It WORKS! HAHAHAHAHA! And they laughed at me back at university. Maybe it was because of the tutu though...";
+radioText[1] = "Dr. Dastardly: Oh well. Their corpses will be put to good use in my experiments.";
+radioText[2] = "Player: Auuuugh, my eyes! I... I can't see!";
+radioText[3] = "Dr. Dastardly: Have you been blinded... by my BRILLIANCE?!";
+radioText[4] = "Player: Bare... head... too... shiny... must... avert... gaze...";
+radioText[5] = "Dr. Dastardly: You dare mock my lack of hair follicles?! I'll just have to take yours and implant it on my head then!";
+radioText[6] = "Dr. Dastardly: And I'll do it using my greatest creation: I call it Super-Future, version 8999!";
+radioText[7] = "Player: So... you're telling me it's not over 9000? It's not even equal to 9000? I can probably take it! Let's go!";
+radioText[8] = "Player: On a side note, isn't that a terrible name for a Colossus? Why not, like, a game subtitle?";
+radioText[9] = "Hey, I'm a mad scientist, not some shmansy-fancy art major! Cut me some slack!";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = MitchFace;
+
 battleMap = testRange;
 </string>
           </argument>

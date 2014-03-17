@@ -25,23 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 2;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Third Map Node";
-nodeDescription = "Some Fluff about the area in the Third node"
-
+nodeName = "South America";
+nodeDescription = "Rich in precious gems and metals, South America was one of the first to suffer due to the #Apocalypse. In the bombed out husk of a country, there is a makeshift colloseum.";
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = false; //check to see if there's radio chat before the fight
+hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Player: I'm here to challenge you so I can defeat Maximus LoveLife!";
+radioText[1] = "Goon: Why you gotta be so rude?";
+radioText[2] = "Player: Wha...?";
+radioText[3] = "Don't you know I'm human too?";
+radioText[4] = "Well, yeah, but in order to get to-";
+radioText[5] = "Why you gotta be so rude?";
+radioText[6] = "Didn't you just say that?";
+radioText[7] = "*click* Whoops, left the radio on. Time to beat the tar out of you.";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = EGoonFace1;
 
 battleMap = testRange;
 

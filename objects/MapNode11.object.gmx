@@ -25,23 +25,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 11;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Australia";
+nodeDescription = "Everything wants to kill you in Australia, and Colossi is no exception. The wildlife here does pose the #occasional problem for a Colossus, but not a single one has been lost yet.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = false; //check to see if there's radio chat before the fight
+hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Mr. DarkClaw: I knew you were coming. Nothing slips my watch.";
+radioText[1] = "Player: Uh, nothing?";
+radioText[2] = "Mr. DarkClaw: Nothing.";
+radioText[3] = "Player: Yeah, nothing... but like, nothing-nothing?";
+radioText[4] = "Mr. DarkClaw: Nothing-nothing.";
+radioText[5] = "Player: Does that mean...?";
+radioText[6] = "Mr. DarkClaw: Oooooooh yeah. I know. Got the Betamax recording right here with me.";
+radioText[7] = "Mr. DarkClaw: I will destroy you in mind and body. Unless, of course, you defeat me.";
+radioText[8] = "Player: Fine! I'm going rip that tape out of your cold, dead hands!";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = RaphFace;
+
 battleMap = testRange;
 </string>
           </argument>

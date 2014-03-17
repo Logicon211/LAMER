@@ -25,23 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 14;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Brazil";
+nodeDescription = "Brazil, known mostly for its tourism, was able to avoid the harsher consequences of the Apocalypse. #However, it now caters only to the elite pilots with their events and other services.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = false; //check to see if there's radio chat before the fight
+hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Goon: Gotta win this, gotta win this, gotta win this...";
+radioText[1] = "Player: Why is it so important that you win this match?";
+radioText[2] = "Goon: ...Dr. Dastardly said he would bring my wife back to life if I won...";
+radioText[3] = "Player: I'm sorry for your lo-";
+radioText[4] = "Goon: ...with some new and improved features! Like detachable limbs! Isn't that cool?!";
+radioText[5] = "Player: You disgust me. Have you no respect?";
+radioText[6] = "Goon: You're right. Screw detachable limbs. I should be going for the really cool features, like laser eyes!";
+radioText[7] = "Player: *sigh*";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = MGoonFace2;
+
 battleMap = testRange;
 </string>
           </argument>

@@ -45,7 +45,14 @@
       <sprite>sprites\MitchFace</sprite>
       <sprite>sprites\LoganFace</sprite>
       <sprite>sprites\RaphFace</sprite>
-      <sprite>sprites\EliotFace</sprite>
+      <sprite>sprites\ElliotFace</sprite>
+      <sprite>sprites\PlayerFace</sprite>
+      <sprite>sprites\EGoonFace1</sprite>
+      <sprite>sprites\EGoonFace2</sprite>
+      <sprite>sprites\RGoonFace1</sprite>
+      <sprite>sprites\RGoonFace2</sprite>
+      <sprite>sprites\MGoonFace1</sprite>
+      <sprite>sprites\MGoonFace2</sprite>
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\HeadButtonSprite</sprite>
@@ -316,11 +323,57 @@
         <object>objects\testHead</object>
       </objects>
       <objects name="InventoryItems">
-        <object>objects\ProtoHeadObjectItem</object>
-        <object>objects\ProtoTorsoObjectItem</object>
-        <object>objects\ProtoSwordObjectItem</object>
-        <object>objects\ProtoGunObjectItem</object>
-        <object>objects\ProtoLegsObjectItem</object>
+        <objects name="Heads">
+          <object>objects\ProtoHeadObjectItem</object>
+          <object>objects\AuraH</object>
+          <object>objects\HyperionHelios</object>
+          <object>objects\CriusAstraeus</object>
+          <object>objects\PheobeLelantos</object>
+          <object>objects\CronusH</object>
+          <object>objects\HyperionHeliosMkII</object>
+        </objects>
+        <objects name="Torso">
+          <object>objects\ProtoTorsoObjectItem</object>
+          <object>objects\AuraT</object>
+          <object>objects\HyperionEos</object>
+          <object>objects\CriusPallas</object>
+          <object>objects\CoeusLelantos</object>
+          <object>objects\CronusT</object>
+          <object>objects\HyperionEosMkII</object>
+        </objects>
+        <objects name="Legs">
+          <object>objects\ProtoLegsObjectItem</object>
+          <object>objects\AuraL</object>
+          <object>objects\HyperionSelene</object>
+          <object>objects\CriusPerses</object>
+          <object>objects\LelantosAura</object>
+          <object>objects\CronusL</object>
+          <object>objects\HyperionSeleneMkII</object>
+        </objects>
+        <objects name="Guns">
+          <object>objects\ProtoGunObjectItem</object>
+          <object>objects\ThePointer</object>
+          <object>objects\CronusSeismos</object>
+          <object>objects\HermesRhipto</object>
+          <object>objects\VulcanPistol</object>
+          <object>objects\EnyoGat</object>
+          <object>objects\ArtemisML</object>
+          <object>objects\HephaestusCannon</object>
+          <object>objects\HermesMG</object>
+          <object>objects\MinervaML</object>
+          <object>objects\ApolloPiras</object>
+          <object>objects\ErisRhipto</object>
+        </objects>
+        <objects name="Melee">
+          <object>objects\ProtoSwordObjectItem</object>
+          <object>objects\AetherFoil</object>
+          <object>objects\AthenaBroadsword</object>
+          <object>objects\AresEdge</object>
+          <object>objects\ChronosFist</object>
+          <object>objects\ZeusArm</object>
+          <object>objects\HadesAxe</object>
+          <object>objects\GaiaHammer</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Radio">
