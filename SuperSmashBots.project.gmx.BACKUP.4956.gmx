@@ -99,28 +99,17 @@
     <sprite>sprites\floor_panel</sprite>
     <sprite>sprites\grey_placeholder_tutorial</sprite>
     <sprite>sprites\tutorial_gate</sprite>
+<<<<<<< HEAD
     <sprite>sprites\tutorial_move</sprite>
-    <sprite>sprites\healthSprite</sprite>
     <sprite>sprites\tutorial_jump</sprite>
     <sprite>sprites\tutorial_thrusters</sprite>
     <sprite>sprites\tutorial_attack</sprite>
     <sprite>sprites\tutorial_shield</sprite>
     <sprite>sprites\tutorial_turret</sprite>
     <sprite>sprites\tutorial_platform</sprite>
-    <sprite>sprites\Level_Platform_Tile1</sprite>
-    <sprite>sprites\healthSprite</sprite>
-<<<<<<< HEAD
-    <sprite>sprites\cameraSprite</sprite>
 =======
-    <sprites name="MapPreviews">
-      <sprite>sprites\MapPreviewTestSprite</sprite>
-      <sprite>sprites\MapPreviewTestSprite2</sprite>
-    </sprites>
->>>>>>> 10b564cd996e7d14d3b37b0045679bf06dc36ed5
-    <sprite>sprites\Level_Floor_Tile1</sprite>
-    <sprite>sprites\Level_Platform_Tile1_RightEdge</sprite>
-    <sprite>sprites\Level_platform_Tile1_leftedge</sprite>
-    <sprite>sprites\Level_Floor_Tile2</sprite>
+    <sprite>sprites\healthSprite</sprite>
+>>>>>>> 5c5ced27cb45a1854264320aff2e7fcb49ed77f9
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -265,7 +254,6 @@
       <object>objects\InventoryUINameP2</object>
       <object>objects\InventoryUINameP3</object>
       <object>objects\InventoryUINameP4</object>
-      <object>objects\MultiplayerMapController</object>
     </objects>
     <object>objects\GameController</object>
     <object>objects\MultiplayerInventoryController</object>
@@ -449,32 +437,26 @@
       <object>objects\land_floor_panel</object>
       <object>objects\land_tutorial_walls</object>
       <object>objects\Land_tutorial_gate</object>
-      <object>objects\Platform1_rightedge</object>
-      <object>objects\Platform1_leftedge</object>
-    </objects>
-    <objects name="tutorial_objects">
-      <object>objects\tutorial_help_platform</object>
-      <object>objects\tutorial_help_turret</object>
-      <object>objects\tutorial_help_shield</object>
-      <object>objects\tutorial_help_attack</object>
-      <object>objects\tutorial_help_thrusters</object>
-      <object>objects\tutorial_help_move</object>
-      <object>objects\tutorial_help_jump</object>
-      <object>objects\autoTurret</object>
     </objects>
     <object>objects\ShaderTestObject</object>
     <object>objects\ClosedDoor</object>
     <object>objects\MusicController</object>
     <object>objects\InventoryButtonStringObject</object>
     <object>objects\loadingRoomController</object>
+    <object>objects\autoTurret</object>
     <object>objects\shieldFlash</object>
+<<<<<<< HEAD
+    <object>objects\tutorial_help_jump</object>
+    <object>objects\tutorial_help_move</object>
+    <object>objects\tutorial_help_thrusters</object>
+    <object>objects\tutorial_help_attack</object>
+    <object>objects\tutorial_help_shield</object>
+    <object>objects\tutorial_help_turret</object>
+    <object>objects\tutorial_help_platform</object>
+=======
     <object>objects\CreditsController</object>
     <object>objects\InfoScreenController</object>
-    <object>objects\Level_Flloor1</object>
-    <object>objects\Level_Floor2</object>
-    <object>objects\renewRoom</object>
-    <object>objects\cameraObject</object>
-    <object>objects\tutorialBossTrigger</object>
+>>>>>>> 5c5ced27cb45a1854264320aff2e7fcb49ed77f9
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
@@ -486,14 +468,13 @@
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
+<<<<<<< HEAD
+    <room>rooms\room9</room>
+=======
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
     <room>rooms\CampaignInfoRoom</room>
-    <room>rooms\Stage2</room>
-    <room>rooms\Stage1</room>
-    <room>rooms\Stage3</room>
-    <room>rooms\Stage4</room>
-    <room>rooms\Stage5</room>
+>>>>>>> 5c5ced27cb45a1854264320aff2e7fcb49ed77f9
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
