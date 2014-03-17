@@ -25,23 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 8;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Germany";
+nodeDescription = "Though it suffered some damage from the Apocalypse, most of Germany remains intact but under the power of #those who use their well made Colossi.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = false; //check to see if there's radio chat before the fight
+hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Goon: He's watching... I know he's here, somewhere, watching!";
+radioText[1] = "Player: Who now?";
+radioText[2] = "Goon: Him! DarkClaw! He's everywhere, yet nowhere! He leads us with his invisible hand!";
+radioText[3] = "Goon: He's judging me! I know it!";
+radioText[4] = "Player: Hold on now, calm down...";
+radioText[5] = "Goon: I can't let him see me fail! AAAAAAAAATTAAAAAAAACK!";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = RGoonFace1;
+
 battleMap = testRange;
 </string>
           </argument>

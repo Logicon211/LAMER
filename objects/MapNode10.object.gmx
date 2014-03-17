@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 10;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "England";
+nodeDescription = "The sun never sets on the British Empire... that is until the Colossi came into being. Now, its mighty #naval power has been subverted for the production of Colossus so their new leaders can conquer other lands.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,6 +41,7 @@ hasRadioText = false; //check to see if there's radio chat before the fight
 radioText[0] = "";
 
 face[0] = 0;
+
 battleMap = testRange;
 </string>
           </argument>
