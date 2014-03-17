@@ -102,7 +102,7 @@ if(valBar[owningPlayer] != 0)
 //recreate them
 if(owningPlayer == 0)
 {
-    createColorBars(1, 470, 40, 0.75, owningPlayer);
+    createColorBars(1, 470, 70, 0.75, owningPlayer);
    /* hueBar[owningPlayer] = instance_create(470, 40, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;
@@ -121,7 +121,7 @@ if(owningPlayer == 0)
 }
 else if(owningPlayer == 1)
 {
-    createColorBars(1, 1100, 40, 0.75, owningPlayer);
+    createColorBars(1, 1100, 70, 0.75, owningPlayer);
    /* hueBar[owningPlayer] = instance_create(1100, 40, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;
@@ -140,7 +140,7 @@ else if(owningPlayer == 1)
 }
 else if(owningPlayer == 2)
 {
-    createColorBars(1, 470, 430, 0.75, owningPlayer);
+    createColorBars(1, 470, 400, 0.75, owningPlayer);
    /* hueBar[owningPlayer] = instance_create(470, 400, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;
@@ -159,7 +159,7 @@ else if(owningPlayer == 2)
 }
 else if(owningPlayer == 3)
 {
-    createColorBars(1, 1100, 430, 0.75, owningPlayer);
+    createColorBars(1, 1100, 400, 0.75, owningPlayer);
     /*hueBar[owningPlayer] = instance_create(1100, 400, hue_2_o);
     hueBar[owningPlayer].image_xscale = 0.75;
     hueBar[owningPlayer].image_yscale = 0.75;

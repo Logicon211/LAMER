@@ -200,7 +200,7 @@ if(numPlayersSetting &gt;= 3)
 }
 else
 {
-    instance_create(232, 432, ClosedDoor);
+    instance_create(265, 410, ClosedDoor);
 }
 
 //Creating buttons for player4, putting them in his array
@@ -223,7 +223,7 @@ if(numPlayersSetting &gt;= 4)
 }
 else
 {
-    instance_create(870, 432, ClosedDoor);
+    instance_create(905, 410, ClosedDoor);
 }
 
 
