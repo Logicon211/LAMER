@@ -38,7 +38,14 @@ hasRun = false; //code to get the initialization to run only once
 
 hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "WOOOOOOOOOOO";
+radioText[0] = "Maintenance Guy: Alright, let's do some run-throughs to make sure you're ready to go for the match.";
+radioText[1] = "Player: Good enough. Are there safeties in place so I don’t get too badly beat up?";
+radioText[2] = "Maintenance Guy: Safeties? What safeties? You bought these parts second hand from the black market and had me assemble it!";
+radioText[3] = "Maintenance Guy: For minimum wage no less.";
+radioText[4] = "Player: Gah… oh well. I appreciate it. I’ll make you proud!";
+radioText[5] = "Maintenance Guy: You don’t need to make me proud! You need to pay me more money!";
+radioText[6] = "Maintenance Guy: Uh… still there? I really do need more money… Please?";
+radioText[7] = "Maintenance Guy: I’m never working for this guy again…";
 
 face[0] = PlayerFace;
 face[1] = LoganFace;
