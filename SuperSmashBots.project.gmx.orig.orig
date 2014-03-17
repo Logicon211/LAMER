@@ -101,26 +101,25 @@
     <sprite>sprites\tutorial_gate</sprite>
     <sprite>sprites\tutorial_move</sprite>
     <sprite>sprites\healthSprite</sprite>
+<<<<<<< HEAD
     <sprite>sprites\tutorial_jump</sprite>
     <sprite>sprites\tutorial_thrusters</sprite>
     <sprite>sprites\tutorial_attack</sprite>
     <sprite>sprites\tutorial_shield</sprite>
     <sprite>sprites\tutorial_turret</sprite>
     <sprite>sprites\tutorial_platform</sprite>
+    <sprite>sprites\Level_Floor_Tile1</sprite>
+    <sprite>sprites\Level_Floor_Tile2</sprite>
     <sprite>sprites\Level_Platform_Tile1</sprite>
-    <sprite>sprites\healthSprite</sprite>
-<<<<<<< HEAD
-    <sprite>sprites\cameraSprite</sprite>
+    <sprite>sprites\Level_platform_Tile1_leftedge</sprite>
+    <sprite>sprites\Level_Platform_Tile1_RightEdge</sprite>
 =======
+    <sprite>sprites\cameraSprite</sprite>
     <sprites name="MapPreviews">
       <sprite>sprites\MapPreviewTestSprite</sprite>
       <sprite>sprites\MapPreviewTestSprite2</sprite>
     </sprites>
->>>>>>> 10b564cd996e7d14d3b37b0045679bf06dc36ed5
-    <sprite>sprites\Level_Floor_Tile1</sprite>
-    <sprite>sprites\Level_Platform_Tile1_RightEdge</sprite>
-    <sprite>sprites\Level_platform_Tile1_leftedge</sprite>
-    <sprite>sprites\Level_Floor_Tile2</sprite>
+>>>>>>> fe1f96f5f7ae451dab96efd4275ffe128a29da72
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -449,32 +448,33 @@
       <object>objects\land_floor_panel</object>
       <object>objects\land_tutorial_walls</object>
       <object>objects\Land_tutorial_gate</object>
-      <object>objects\Platform1_rightedge</object>
-      <object>objects\Platform1_leftedge</object>
-    </objects>
-    <objects name="tutorial_objects">
-      <object>objects\tutorial_help_platform</object>
-      <object>objects\tutorial_help_turret</object>
-      <object>objects\tutorial_help_shield</object>
-      <object>objects\tutorial_help_attack</object>
-      <object>objects\tutorial_help_thrusters</object>
-      <object>objects\tutorial_help_move</object>
-      <object>objects\tutorial_help_jump</object>
-      <object>objects\autoTurret</object>
     </objects>
     <object>objects\ShaderTestObject</object>
     <object>objects\ClosedDoor</object>
     <object>objects\MusicController</object>
     <object>objects\InventoryButtonStringObject</object>
     <object>objects\loadingRoomController</object>
+    <object>objects\autoTurret</object>
     <object>objects\shieldFlash</object>
+    <object>objects\tutorial_help_jump</object>
+    <object>objects\tutorial_help_move</object>
     <object>objects\CreditsController</object>
     <object>objects\InfoScreenController</object>
+<<<<<<< HEAD
+    <object>objects\tutorial_help_thrusters</object>
+    <object>objects\tutorial_help_attack</object>
+    <object>objects\tutorial_help_shield</object>
+    <object>objects\tutorial_help_turret</object>
+    <object>objects\tutorial_help_platform</object>
     <object>objects\Level_Flloor1</object>
     <object>objects\Level_Floor2</object>
+    <object>objects\Platform1_leftedge</object>
+    <object>objects\Platform1_rightedge</object>
+=======
     <object>objects\renewRoom</object>
     <object>objects\cameraObject</object>
     <object>objects\tutorialBossTrigger</object>
+>>>>>>> fe1f96f5f7ae451dab96efd4275ffe128a29da72
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>
@@ -486,11 +486,12 @@
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
+    <room>rooms\room9</room>
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
     <room>rooms\CampaignInfoRoom</room>
-    <room>rooms\Stage2</room>
     <room>rooms\Stage1</room>
+    <room>rooms\Stage2</room>
     <room>rooms\Stage3</room>
     <room>rooms\Stage4</room>
     <room>rooms\Stage5</room>
