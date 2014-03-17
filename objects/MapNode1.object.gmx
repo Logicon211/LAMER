@@ -32,7 +32,7 @@ MapNodeList[nodeNumber] = id;
 nodeName = "Egypt";
 nodeDescription = "The Pyramids continue to stand strong despite the destruction that's occured. They also make #for a nice colosseum backdrop.";
 
-isLocked = true;
+isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
