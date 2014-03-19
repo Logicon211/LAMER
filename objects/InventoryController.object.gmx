@@ -459,6 +459,11 @@ if(playerLoadOut1[5] != 0)
     }
 }
 
+//Assign player stats
+playerStats[0, 0] = totalArmor;
+playerStats[0, 1] = totalWeight;
+playerStats[0, 2] = totalCooling;
+
 //Cost
 draw_text(965, 420, "Total Cost:")
 draw_text(1120, 420, string(totalCost))

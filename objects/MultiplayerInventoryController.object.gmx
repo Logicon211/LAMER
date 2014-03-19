@@ -1791,6 +1791,11 @@ if(playerLoadOut1[5] != 0)
         totalBonuses += playerLoadOut1[5].bonuses + "#"
     }
 }
+//Assign player stats
+playerStats[0, 0] = totalArmor;
+playerStats[0, 1] = totalWeight;
+playerStats[0, 2] = totalCooling;
+
 //show remaining credits OR Say PICK COLOR
 if(viewingColors[0])
 {
@@ -2031,6 +2036,11 @@ if(playerLoadOut2[5] != 0)
         totalBonuses += playerLoadOut2[5].bonuses + "#"
     }
 }
+
+//Assign player stats
+playerStats[1, 0] = totalArmor;
+playerStats[1, 1] = totalWeight;
+playerStats[1, 2] = totalCooling;
 
 //show remaining credits
 if(viewingColors[1])
@@ -2277,6 +2287,12 @@ if(playerLoadOut3[5] != 0)
         totalBonuses += playerLoadOut3[5].bonuses + "#"
     }
 }
+
+//Assign player stats
+playerStats[2, 0] = totalArmor;
+playerStats[2, 1] = totalWeight;
+playerStats[2, 2] = totalCooling;
+
 //show remaining credits
 if(viewingColors[2])
 {
@@ -2519,6 +2535,12 @@ if(playerLoadOut4[5] != 0)
         totalBonuses += playerLoadOut4[5].bonuses + "#"
     }
 }
+
+//Assign player stats
+playerStats[3, 0] = totalArmor;
+playerStats[3, 1] = totalWeight;
+playerStats[3, 2] = totalCooling;
+
 //show remaining credits
 if(viewingColors[3])
 {
