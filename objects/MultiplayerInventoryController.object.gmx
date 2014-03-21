@@ -2704,7 +2704,6 @@ else
 //Color Bars
 if(selectedBar[0] != 0)
 {   
-    show_debug_message(string(selectedBar[0]));
     draw_sprite_ext(colorSelectorSprite,0,selectedBar[0].x - 6, selectedBar[0].y - 5,0.75,0.75,0,c_white,1);
 }
 if(selectedBar[1] != 0)

@@ -67,15 +67,10 @@
     <instance objName="Lives5Button" x="896" y="464" name="inst_B0329826" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Lives8Button" x="1024" y="464" name="inst_6D7B5AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Lives10Button" x="1152" y="464" name="inst_1AABB975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NumCreds1000Button" x="512" y="528" name="inst_998ED1A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NumCreds2000Button" x="640" y="528" name="inst_6A5FD5E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NumCreds3000Button" x="768" y="528" name="inst_67060ED1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NumCreds4000Button" x="896" y="528" name="inst_288D5DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NumCreds5000Button" x="1024" y="528" name="inst_FE7DB0BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="BackButton" x="128" y="608" name="inst_7387C1FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NextButton" x="1088" y="608" name="inst_1FD47138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NumCPUs2Button" x="768" y="336" name="inst_96953D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="NumCPUs3Button" x="896" y="336" name="inst_6411E048" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="NumCPUs2Button" x="768" y="336" name="inst_96953D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="NextButton" x="1088" y="608" name="inst_1FD47138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="BackButton" x="128" y="608" name="inst_7387C1FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

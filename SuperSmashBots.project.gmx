@@ -137,6 +137,7 @@
     <background>background\Credits1</background>
     <background>background\Credits2</background>
     <background>background\CampaignInfoScreen</background>
+    <background>background\VictoryBackground</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -228,6 +229,7 @@
     <script>scripts\playerCollision.gml</script>
     <script>scripts\startBattle.gml</script>
     <script>scripts\createColorBars.gml</script>
+    <script>scripts\gotoVictoryRoom.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -512,6 +514,7 @@
     <object>objects\tutorial_help_move</object>
     <object>objects\CreditsController</object>
     <object>objects\InfoScreenController</object>
+    <object>objects\VictoryScreenController</object>
     <object>objects\tutorial_help_thrusters</object>
     <object>objects\tutorial_help_attack</object>
     <object>objects\tutorial_help_shield</object>
@@ -526,6 +529,7 @@
     <object>objects\Platform1_rightedge</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\CampaignInfoRoom</room>
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
     <room>rooms\MPMapSelect</room>
@@ -538,12 +542,12 @@
     <room>rooms\room9</room>
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
-    <room>rooms\CampaignInfoRoom</room>
     <room>rooms\Stage1</room>
     <room>rooms\Stage2</room>
     <room>rooms\Stage3</room>
     <room>rooms\Stage4</room>
     <room>rooms\Stage5</room>
+    <room>rooms\VictoryRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//Button Press Code
 
-room_goto(CampaignInfoRoom);
+room_goto(OverMap);
 </string>
           </argument>
         </arguments>

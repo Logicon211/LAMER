@@ -43,6 +43,10 @@ radText = "";
 globalvar radFace;
 radFace = 0;
 
+//To track who might have won an MP game
+globalvar playerWon;
+playerWon = 0;
+
 //Players' Money
 //Will need to load this from save file at some point
 globalvar player1Money;
