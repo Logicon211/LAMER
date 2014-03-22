@@ -43,6 +43,10 @@ radText = "";
 globalvar radFace;
 radFace = 0;
 
+//To track who might have won an MP game
+globalvar playerWon;
+playerWon = 0;
+
 //Players' Money
 //Will need to load this from save file at some point
 globalvar player1Money;
@@ -162,8 +166,43 @@ ItemArray[1] = instance_create(0, 0, ProtoTorsoObjectItem);
 ItemArray[2] = instance_create(0, 0, ProtoSwordObjectItem);
 ItemArray[3] = instance_create(0, 0, ProtoGunObjectItem);
 ItemArray[4] = instance_create(0, 0, ProtoLegsObjectItem);
-ItemArray[5] = instance_create(0, 0, testBackPackObject1);
-
+ItemArray[6] = instance_create(0, 0, testBackPackObject1);
+ItemArray[7] = instance_create(0, 0, AuraH);
+ItemArray[8] = instance_create(0, 0, HyperionHelios);
+ItemArray[9] = instance_create(0, 0, CriusAstraeus);
+ItemArray[10] = instance_create(0, 0, PheobeLelantos);
+ItemArray[11] = instance_create(0, 0, CronusH);
+ItemArray[12] = instance_create(0, 0, HyperionHeliosMkII);
+ItemArray[13] = instance_create(0, 0, AuraT);
+ItemArray[14] = instance_create(0, 0, HyperionEos);
+ItemArray[15] = instance_create(0, 0, CriusPallas);
+ItemArray[16] = instance_create(0, 0, CoeusLelantos);
+ItemArray[17] = instance_create(0, 0, CronusT);
+ItemArray[18] = instance_create(0, 0, HyperionEosMkII);
+ItemArray[20] = instance_create(0, 0, AuraL);
+ItemArray[21] = instance_create(0, 0, HyperionSelene);
+ItemArray[22] = instance_create(0, 0, CriusPerses);
+ItemArray[23] = instance_create(0, 0, LelantosAura);
+ItemArray[24] = instance_create(0, 0, CronusL);
+ItemArray[25] = instance_create(0, 0, HyperionSeleneMkII);
+ItemArray[26] = instance_create(0, 0, ThePointer);
+ItemArray[27] = instance_create(0, 0, CronusSeismos);
+ItemArray[28] = instance_create(0, 0, HermesRhipto);
+ItemArray[29] = instance_create(0, 0, VulcanPistol);
+ItemArray[30] = instance_create(0, 0, EnyoGat);
+ItemArray[31] = instance_create(0, 0, ArtemisML);
+ItemArray[32] = instance_create(0, 0, HephaestusCannon);
+ItemArray[33] = instance_create(0, 0, HermesMG);
+ItemArray[34] = instance_create(0, 0, MinervaML);
+ItemArray[35] = instance_create(0, 0, ApolloPiras);
+ItemArray[36] = instance_create(0, 0, ErisRhipto);
+ItemArray[37] = instance_create(0, 0, AetherFoil);
+ItemArray[38] = instance_create(0, 0, AthenaBroadsword);
+ItemArray[39] = instance_create(0, 0, AresEdge);
+ItemArray[40] = instance_create(0, 0, ChronosFist);
+ItemArray[41] = instance_create(0, 0, ZeusArm);
+ItemArray[42] = instance_create(0, 0, HadesAxe);
+ItemArray[43] = instance_create(0, 0, GaiaHammer);
 
 //Will probably do something here to read a save file and load inventory, for now, test inventory
 
@@ -173,6 +212,42 @@ ds_list_add(ArmInventory, ProtoSwordObjectItem);
 ds_list_add(ArmInventory, ProtoGunObjectItem);
 ds_list_add(LegsInventory, ProtoLegsObjectItem);
 ds_list_add(BackPackInventory, testBackPackObject1);
+ds_list_add(HeadInventory, AuraH);
+ds_list_add(HeadInventory, HyperionHelios);
+ds_list_add(HeadInventory, CriusAstraeus);
+ds_list_add(HeadInventory, PheobeLelantos);
+ds_list_add(HeadInventory, CronusH);
+ds_list_add(HeadInventory, HyperionHeliosMkII);
+ds_list_add(TorsoInventory, AuraT);
+ds_list_add(TorsoInventory, HyperionEos);
+ds_list_add(TorsoInventory, CriusPallas);
+ds_list_add(TorsoInventory, CoeusLelantos);
+ds_list_add(TorsoInventory, CronusT);
+ds_list_add(TorsoInventory, HyperionEosMkII);
+ds_list_add(LegsInventory, AuraL);
+ds_list_add(LegsInventory, HyperionSelene);
+ds_list_add(LegsInventory, CriusPerses);
+ds_list_add(LegsInventory, LelantosAura);
+ds_list_add(LegsInventory, CronusL);
+ds_list_add(LegsInventory, HyperionSeleneMkII);
+ds_list_add(ArmInventory, ThePointer);
+ds_list_add(ArmInventory, CronusSeismos);
+ds_list_add(ArmInventory, HermesRhipto);
+ds_list_add(ArmInventory, VulcanPistol);
+ds_list_add(ArmInventory, EnyoGat);
+ds_list_add(ArmInventory, ArtemisML);
+ds_list_add(ArmInventory, HephaestusCannon);
+ds_list_add(ArmInventory, HermesMG);
+ds_list_add(ArmInventory, MinervaML);
+ds_list_add(ArmInventory, ApolloPiras);
+ds_list_add(ArmInventory, ErisRhipto);
+ds_list_add(ArmInventory, AetherFoil);
+ds_list_add(ArmInventory, AthenaBroadsword);
+ds_list_add(ArmInventory, AresEdge);
+ds_list_add(ArmInventory, ChronosFist);
+ds_list_add(ArmInventory, ZeusArm);
+ds_list_add(ArmInventory, HadesAxe);
+ds_list_add(ArmInventory, GaiaHammer);
 
 //Add in items to default inventory
 //PLAYER1 INVENTORY
@@ -206,6 +281,33 @@ playerLoadOut4[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
 playerLoadOut4[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
 playerLoadOut4[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut4[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
+
+//TOTAL PLAYER STATS Calculated from each players' parts
+
+globalvar playerStats;
+//0 - Armor
+//1 - Weight
+//2 - Cooling (Or Energy [total or Regen?])
+
+//PLAYER 1
+playerStats[0, 0] = playerLoadOut1[0].armor + playerLoadOut1[1].armor + playerLoadOut1[2].armor + playerLoadOut1[3].armor + playerLoadOut1[4].armor;
+playerStats[0, 1] = playerLoadOut1[0].weight + playerLoadOut1[1].weight + playerLoadOut1[2].weight + playerLoadOut1[3].weight + playerLoadOut1[4].weight;
+playerStats[0, 2] = playerLoadOut1[0].cooling + playerLoadOut1[1].cooling + playerLoadOut1[2].cooling + playerLoadOut1[3].cooling + playerLoadOut1[4].cooling;
+
+//PLAYER 2
+playerStats[1, 0] = playerLoadOut2[0].armor + playerLoadOut2[1].armor + playerLoadOut2[2].armor + playerLoadOut2[3].armor + playerLoadOut2[4].armor;
+playerStats[1, 1] = playerLoadOut2[0].weight + playerLoadOut2[1].weight + playerLoadOut2[2].weight + playerLoadOut2[3].weight + playerLoadOut2[4].weight;
+playerStats[1, 2] = playerLoadOut2[0].cooling + playerLoadOut2[1].cooling + playerLoadOut2[2].cooling + playerLoadOut2[3].cooling + playerLoadOut2[4].cooling;
+
+//PLAYER 3
+playerStats[2, 0] = playerLoadOut3[0].armor + playerLoadOut3[1].armor + playerLoadOut3[2].armor + playerLoadOut3[3].armor + playerLoadOut3[4].armor;
+playerStats[2, 1] = playerLoadOut3[0].weight + playerLoadOut3[1].weight + playerLoadOut3[2].weight + playerLoadOut3[3].weight + playerLoadOut3[4].weight;
+playerStats[2, 2] = playerLoadOut3[0].cooling + playerLoadOut3[1].cooling + playerLoadOut3[2].cooling + playerLoadOut3[3].cooling + playerLoadOut3[4].cooling;
+
+//PLAYER 4
+playerStats[3, 0] = playerLoadOut4[0].armor + playerLoadOut4[1].armor + playerLoadOut4[2].armor + playerLoadOut4[3].armor + playerLoadOut4[4].armor;
+playerStats[3, 1] = playerLoadOut4[0].weight + playerLoadOut4[1].weight + playerLoadOut4[2].weight + playerLoadOut4[3].weight + playerLoadOut4[4].weight;
+playerStats[3, 2] = playerLoadOut4[0].cooling + playerLoadOut4[1].cooling + playerLoadOut4[2].cooling + playerLoadOut4[3].cooling + playerLoadOut4[4].cooling;
 
 //MULTIPLAYER SETTINGS OBJECTS (Initialized with defaults)
 

@@ -28,15 +28,15 @@
             <string>
 //Will need to check numplayers setting and numCPUs to figure out exactly what to create here:
 globalvar displayPlayers;
-displayPlayers[0] = createPlayer(0,1, 315,140);
-displayPlayers[1] = createPlayer(1,1, 950,140);
+displayPlayers[0] = createPlayer(0,1, 350,140);
+displayPlayers[1] = createPlayer(1,1, 985,140);
 if(numPlayersSetting &gt;= 3)
 {
-    displayPlayers[2] = createPlayer(2,1, 315,510);
+    displayPlayers[2] = createPlayer(2,1, 350,510);
 }
 if(numPlayersSetting &gt;= 4)
 {
-    displayPlayers[3] = createPlayer(3,1, 950,510);
+    displayPlayers[3] = createPlayer(3,1, 985,510);
 }
 
 player1Money = creditLimitSetting;
@@ -200,7 +200,7 @@ if(numPlayersSetting &gt;= 3)
 }
 else
 {
-    instance_create(232, 432, ClosedDoor);
+    instance_create(265, 410, ClosedDoor);
 }
 
 //Creating buttons for player4, putting them in his array
@@ -223,7 +223,7 @@ if(numPlayersSetting &gt;= 4)
 }
 else
 {
-    instance_create(870, 432, ClosedDoor);
+    instance_create(905, 410, ClosedDoor);
 }
 
 
@@ -769,7 +769,7 @@ else if(lockedIn[0] and !lockedIn[1] and isAI[1])
     }
 }
 //Player 3 AI control if other 2 are locked in (or not AI)
-else if(lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or (lockedIn[0] and !lockedIn[2] and !isAI[1] and isAI[2]))
+else if((lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or (lockedIn[0] and !lockedIn[2] and !isAI[1] and isAI[2])) and numPlayersSetting &gt;= 3)
 {
     //LEFT
     if(left_check())
@@ -954,7 +954,7 @@ else if(lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or 
     }
 }
 //Player 4 AI control if other 3 are locked in (or not AI)
-else if(lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1] and isAI[2] and isAI[3] or (lockedIn[0] and !lockedIn[3] and !isAI[1] and !isAI[2] and isAI[3]) or (lockedIn[0] and lockedIn[2] and !lockedIn[3] and isAI[2] and isAI[3]))
+else if((lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1] and isAI[2] and isAI[3] or (lockedIn[0] and !lockedIn[3] and !isAI[1] and !isAI[2] and isAI[3]) or (lockedIn[0] and lockedIn[2] and !lockedIn[3] and isAI[2] and isAI[3])) and numPlayersSetting &gt;= 4)
 {
     //LEFT DOWN
     if(left_check())
@@ -1791,18 +1791,18 @@ if(playerLoadOut1[5] != 0)
         totalBonuses += playerLoadOut1[5].bonuses + "#"
     }
 }
+//Assign player stats
+playerStats[0, 0] = totalArmor;
+playerStats[0, 1] = totalWeight;
+playerStats[0, 2] = totalCooling;
+
 //show remaining credits OR Say PICK COLOR
-if(!viewingColors[0])
+if(viewingColors[0])
 {
     draw_set_font(InventoryHeader);
-    draw_text(300, 10, "Credits:");
-    draw_set_font(InventoryContent);
-    draw_text(300, 35, string(player1Money - totalCost));
-}
-else
-{
-    draw_set_font(InventoryHeader);
+    draw_set_color(c_white);
     draw_text(220, 10, "Choose your colors");
+    draw_set_color(c_black);
     draw_set_font(InventoryContent);
 }
 
@@ -1811,46 +1811,46 @@ if(!lookingAtItems[0])
     if(viewingColors[0])
     {
         draw_set_font(InventoryHeader);
-        draw_text(465, 125, "Current Stats:")
+        draw_text(495, 150, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(465, 160, "Total Cost:")
-        draw_text(540, 160, string(totalCost))
+        draw_text(495, 180, "Total Cost:")
+        draw_text(580, 180, string(totalCost))
         //Armor
-        draw_text(465, 190, "Armor:")
-        draw_text(540, 190, string(totalArmor))
+        draw_text(495, 205, "Armor:")
+        draw_text(580, 205, string(totalArmor))
         //Weight
-        draw_text(465, 220, "Weight:")
-        draw_text(540, 220, string(totalWeight))
+        draw_text(495, 230, "Weight:")
+        draw_text(580, 230, string(totalWeight))
         //Weight
-        draw_text(465, 250, "Cooling:")
-        draw_text(540, 250, string(totalCooling))
+        draw_text(495, 255, "Cooling:")
+        draw_text(580, 255, string(totalCooling))
     }
     else
     {
         draw_set_font(InventoryHeader);
-        draw_text(465, 25, "Current Stats:")
+        draw_text(490, 50, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(465, 60, "Total Cost:")
-        draw_text(540, 60, string(totalCost))
+        draw_text(495, 80, "Total Cost:")
+        draw_text(580, 80, string(totalCost))
         //Armor
-        draw_text(465, 90, "Armor:")
-        draw_text(540, 90, string(totalArmor))
+        draw_text(495, 105, "Armor:")
+        draw_text(580, 105, string(totalArmor))
         //Weight
-        draw_text(465, 120, "Weight:")
-        draw_text(540, 120, string(totalWeight))
+        draw_text(495, 130, "Weight:")
+        draw_text(580, 130, string(totalWeight))
         //Weight
-        draw_text(465, 150, "Cooling:")
-        draw_text(540, 150, string(totalCooling))
+        draw_text(495, 155, "Cooling:")
+        draw_text(580, 155, string(totalCooling))
     }
 }
 else
 {
     draw_set_font(InventoryHeader);
-    draw_text(465, 25, string(categoryName[0]) + " Stats:")
+    draw_text(490, 50, string(categoryName[0]) + " Stats:")
     draw_set_font(InventoryContent);
 
     if(playerLoadOut1[categoryNumber[0]] != 0)
@@ -1862,23 +1862,23 @@ else
     }
     
     //Cost
-    draw_text(465, 60, "Cost:")
-    draw_text(540, 60, string(totalCost))
+    draw_text(495, 80, "Cost:")
+    draw_text(580, 80, string(totalCost))
     //Armor
-    draw_text(465, 90, "Armor:")
-    draw_text(540, 90, string(totalArmor))
+    draw_text(495, 105, "Armor:")
+    draw_text(580, 105, string(totalArmor))
     //Weight
-    draw_text(465, 120, "Weight:")
-    draw_text(540, 120, string(totalWeight))
+    draw_text(495, 130, "Weight:")
+    draw_text(580, 130, string(totalWeight))
     //Weight
-    draw_text(465, 150, "Cooling:")
-    draw_text(540, 150, string(totalCooling))
+    draw_text(495, 155, "Cooling:")
+    draw_text(580, 155, string(totalCooling))
     
     //Comparison:
     if(selectedInventory[0] != -1)
     {
         draw_set_font(InventoryHeader);
-        draw_text(465, 190, "Selected Item:");
+        draw_text(495, 210, "Selected Item:");
         draw_set_font(InventoryContent);
     
         var costComp = inventoryArray1[selectedInventory[0]].inventoryItem.cost;
@@ -1886,7 +1886,7 @@ else
         var weightComp = inventoryArray1[selectedInventory[0]].inventoryItem.weight;
         var coolingComp = inventoryArray1[selectedInventory[0]].inventoryItem.cooling;
     
-        draw_text(465, 225, "cost:");
+        draw_text(495, 245, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -1899,11 +1899,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 225, string(costComp));
+        draw_text(580, 245, string(costComp));
         draw_set_color(c_black);
         
         //Armor
-        draw_text(465, 255, "Armor:");
+        draw_text(495, 270, "Armor:");
         if(armorComp &gt; totalArmor)
         {
             draw_set_color(c_green);
@@ -1916,11 +1916,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 255, string(armorComp));
+        draw_text(580, 270, string(armorComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(465, 285, "Weight:");
+        draw_text(495, 295, "Weight:");
         if(weightComp &lt; totalWeight)
         {
             draw_set_color(c_green);
@@ -1933,11 +1933,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 285, string(weightComp));
+        draw_text(580, 295, string(weightComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(465, 315, "Cooling:");
+        draw_text(495, 320, "Cooling:");
         if(coolingComp &gt; totalCooling)
         {
             draw_set_color(c_green);
@@ -1950,7 +1950,7 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 315, string(coolingComp));
+        draw_text(580, 320, string(coolingComp));
         draw_set_color(c_black);
     }
 }
@@ -1968,7 +1968,7 @@ totalBonuses = "";
 //AI?
 if(isAI[1])
 {
-    draw_sprite(isAISprite,0,750,10);
+    draw_sprite(isAISprite,0,770,10);
 }
 if(playerLoadOut2[0] != 0)
 {
@@ -2037,18 +2037,18 @@ if(playerLoadOut2[5] != 0)
     }
 }
 
+//Assign player stats
+playerStats[1, 0] = totalArmor;
+playerStats[1, 1] = totalWeight;
+playerStats[1, 2] = totalCooling;
+
 //show remaining credits
-if(!viewingColors[1])
+if(viewingColors[1])
 {
     draw_set_font(InventoryHeader);
-    draw_text(900, 10, "Credits:");
-    draw_set_font(InventoryContent);
-    draw_text(900, 35, string(player2Money - totalCost));
-}
-else
-{
-    draw_set_font(InventoryHeader);
+    draw_set_color(c_white);
     draw_text(850, 10, "Choose your colors");
+    draw_set_color(c_black);
     draw_set_font(InventoryContent);
 }
 
@@ -2057,46 +2057,46 @@ if(!lookingAtItems[1])
     if(viewingColors[1])
     {
         draw_set_font(InventoryHeader);
-        draw_text(1110, 125, "Current Stats:")
+        draw_text(1100, 150, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 160, "Total Cost:")
-        draw_text(1195, 160, string(totalCost))
+        draw_text(1110, 180, "Total Cost:")
+        draw_text(1195, 180, string(totalCost))
         //Armor
-        draw_text(1110, 190, "Armor:")
-        draw_text(1195, 190, string(totalArmor))
+        draw_text(1110, 205, "Armor:")
+        draw_text(1195, 205, string(totalArmor))
         //Weight
-        draw_text(1110, 220, "Weight:")
-        draw_text(1195, 220, string(totalWeight))
+        draw_text(1110, 230, "Weight:")
+        draw_text(1195, 230, string(totalWeight))
         //Weight
-        draw_text(1110, 250, "Cooling:")
-        draw_text(1195, 250, string(totalCooling))
+        draw_text(1110, 255, "Cooling:")
+        draw_text(1195, 255, string(totalCooling))
     }
     else
     {
         draw_set_font(InventoryHeader);
-        draw_text(1110, 25, "Current Stats:")
+        draw_text(1100, 50, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 60, "Total Cost:")
-        draw_text(1195, 60, string(totalCost))
+        draw_text(1110, 80, "Total Cost:")
+        draw_text(1195, 80, string(totalCost))
         //Armor
-        draw_text(1110, 90, "Armor:")
-        draw_text(1195, 90, string(totalArmor))
+        draw_text(1110, 105, "Armor:")
+        draw_text(1195, 105, string(totalArmor))
         //Weight
-        draw_text(1110, 120, "Weight:")
-        draw_text(1195, 120, string(totalWeight))
+        draw_text(1110, 130, "Weight:")
+        draw_text(1195, 130, string(totalWeight))
         //Weight
-        draw_text(1110, 150, "Cooling:")
-        draw_text(1195, 150, string(totalCooling))
+        draw_text(1110, 155, "Cooling:")
+        draw_text(1195, 155, string(totalCooling))
     }
 }
 else
 {
     draw_set_font(InventoryHeader);
-    draw_text(1110, 25, string(categoryName[1]) + " Stats:")
+    draw_text(1100, 50, string(categoryName[1]) + " Stats:")
     draw_set_font(InventoryContent);
 
     if(playerLoadOut2[categoryNumber[1]] != 0)
@@ -2108,23 +2108,23 @@ else
     }
     
     //Cost
-    draw_text(1110, 60, "Cost:")
-    draw_text(1195, 60, string(totalCost))
+    draw_text(1110, 80, "Cost:")
+    draw_text(1195, 80, string(totalCost))
     //Armor
-    draw_text(1110, 90, "Armor:")
-    draw_text(1195, 90, string(totalArmor))
+    draw_text(1110, 105, "Armor:")
+    draw_text(1195, 105, string(totalArmor))
     //Weight
-    draw_text(1110, 120, "Weight:")
-    draw_text(1195, 120, string(totalWeight))
+    draw_text(1110, 130, "Weight:")
+    draw_text(1195, 130, string(totalWeight))
     //Weight
-    draw_text(1110, 150, "Cooling:")
-    draw_text(1195, 150, string(totalCooling))
+    draw_text(1110, 155, "Cooling:")
+    draw_text(1195, 155, string(totalCooling))
     
     //Comparison:
     if(selectedInventory[1] != -1)
     {
         draw_set_font(InventoryHeader);
-        draw_text(1110, 190, "Selected Item:");
+        draw_text(1100, 210, "Selected Item:");
         draw_set_font(InventoryContent);
     
         var costComp = inventoryArray2[selectedInventory[1]].inventoryItem.cost;
@@ -2132,7 +2132,7 @@ else
         var weightComp = inventoryArray2[selectedInventory[1]].inventoryItem.weight;
         var coolingComp = inventoryArray2[selectedInventory[1]].inventoryItem.cooling;
     
-        draw_text(1110, 225, "cost:");
+        draw_text(1110, 245, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -2145,11 +2145,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 225, string(costComp));
+        draw_text(1195, 245, string(costComp));
         draw_set_color(c_black);
         
         //Armor
-        draw_text(1110, 255, "Armor:");
+        draw_text(1110, 270, "Armor:");
         if(armorComp &gt; totalArmor)
         {
             draw_set_color(c_green);
@@ -2162,11 +2162,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 255, string(armorComp));
+        draw_text(1195, 270, string(armorComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(1110, 285, "Weight:");
+        draw_text(1110, 295, "Weight:");
         if(weightComp &lt; totalWeight)
         {
             draw_set_color(c_green);
@@ -2179,11 +2179,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 285, string(weightComp));
+        draw_text(1195, 295, string(weightComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(1110, 315, "Cooling:");
+        draw_text(1110, 320, "Cooling:");
         if(coolingComp &gt; totalCooling)
         {
             draw_set_color(c_green);
@@ -2196,7 +2196,7 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 315, string(coolingComp));
+        draw_text(1195, 320, string(coolingComp));
         draw_set_color(c_black);
     }
 }
@@ -2218,7 +2218,7 @@ if(numPlayersSetting &gt;= 3)
 //AI?
 if(isAI[2])
 {
-    draw_sprite(isAISprite,0,100,370);
+    draw_sprite(isAISprite,0,120,370);
 }
 
 if(playerLoadOut3[0] != 0)
@@ -2287,18 +2287,19 @@ if(playerLoadOut3[5] != 0)
         totalBonuses += playerLoadOut3[5].bonuses + "#"
     }
 }
+
+//Assign player stats
+playerStats[2, 0] = totalArmor;
+playerStats[2, 1] = totalWeight;
+playerStats[2, 2] = totalCooling;
+
 //show remaining credits
-if(!viewingColors[2])
+if(viewingColors[2])
 {
     draw_set_font(InventoryHeader);
-    draw_text(300, 370, "Credits:");
-    draw_set_font(InventoryContent);
-    draw_text(300, 395, string(player3Money - totalCost));
-}
-else
-{
-    draw_set_font(InventoryHeader);
-    draw_text(220, 370, "Choose your colors");
+    draw_set_color(c_white);
+    draw_text(220, 350, "Choose your colors");
+    draw_set_color(c_black);
     draw_set_font(InventoryContent);
 }
 
@@ -2307,46 +2308,46 @@ if(!lookingAtItems[2])
     if(viewingColors[2])
     {
         draw_set_font(InventoryHeader);
-        draw_text(465, 485, "Current Stats:")
+        draw_text(490, 485, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(465, 520, "Total Cost:")
-        draw_text(540, 520, string(totalCost))
+        draw_text(495, 515, "Total Cost:")
+        draw_text(570, 515, string(totalCost))
         //Armor
-        draw_text(465, 550, "Armor:")
-        draw_text(540, 550, string(totalArmor))
+        draw_text(495, 540, "Armor:")
+        draw_text(570, 540, string(totalArmor))
         //Weight
-        draw_text(465, 580, "Weight:")
-        draw_text(540, 580, string(totalWeight))
+        draw_text(495, 565, "Weight:")
+        draw_text(570, 565, string(totalWeight))
         //Weight
-        draw_text(465, 610, "Cooling:")
-        draw_text(540, 610, string(totalCooling))
+        draw_text(495, 590, "Cooling:")
+        draw_text(570, 590, string(totalCooling))
     }
     else
     {
         draw_set_font(InventoryHeader);
-        draw_text(465, 385, "Current Stats:")
+        draw_text(485, 400, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(465, 420, "Total Cost:")
-        draw_text(540, 420, string(totalCost))
+        draw_text(495, 430, "Total Cost:")
+        draw_text(570, 430, string(totalCost))
         //Armor
-        draw_text(465, 450, "Armor:")
-        draw_text(540, 450, string(totalArmor))
+        draw_text(495, 455, "Armor:")
+        draw_text(570, 455, string(totalArmor))
         //Weight
-        draw_text(465, 480, "Weight:")
-        draw_text(540, 480, string(totalWeight))
+        draw_text(495, 480, "Weight:")
+        draw_text(570, 480, string(totalWeight))
         //Weight
-        draw_text(465, 510, "Cooling:")
-        draw_text(540, 510, string(totalCooling))
+        draw_text(495, 505, "Cooling:")
+        draw_text(570, 505, string(totalCooling))
     }
 }
 else
 {
     draw_set_font(InventoryHeader);
-    draw_text(465, 385, string(categoryName[2]) + " Stats:")
+    draw_text(485, 400, string(categoryName[2]) + " Stats:")
     draw_set_font(InventoryContent);
 
     if(playerLoadOut3[categoryNumber[2]] != 0)
@@ -2358,23 +2359,23 @@ else
     }
     
     //Cost
-    draw_text(465, 420, "Cost:")
-    draw_text(540, 420, string(totalCost))
+    draw_text(495, 430, "Cost:")
+    draw_text(570, 430, string(totalCost))
     //Armor
-    draw_text(465, 450, "Armor:")
-    draw_text(540, 450, string(totalArmor))
+    draw_text(495, 455, "Armor:")
+    draw_text(570, 455, string(totalArmor))
     //Weight
-    draw_text(465, 480, "Weight:")
-    draw_text(540, 480, string(totalWeight))
+    draw_text(495, 480, "Weight:")
+    draw_text(570, 480, string(totalWeight))
     //Weight
-    draw_text(465, 510, "Cooling:")
-    draw_text(540, 510, string(totalCooling))
+    draw_text(495, 505, "Cooling:")
+    draw_text(570, 505, string(totalCooling))
     
     //Comparison:
     if(selectedInventory[2] != -1)
     {
         draw_set_font(InventoryHeader);
-        draw_text(465, 550, "Selected Item:");
+        draw_text(490, 545, "Selected Item:");
         draw_set_font(InventoryContent);
     
         var costComp = inventoryArray3[selectedInventory[2]].inventoryItem.cost;
@@ -2382,7 +2383,7 @@ else
         var weightComp = inventoryArray3[selectedInventory[2]].inventoryItem.weight;
         var coolingComp = inventoryArray3[selectedInventory[2]].inventoryItem.cooling;
     
-        draw_text(465, 585, "cost:");
+        draw_text(495, 580, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -2395,11 +2396,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 585, string(costComp));
+        draw_text(570, 580, string(costComp));
         draw_set_color(c_black);
         
         //Armor
-        draw_text(465, 615, "Armor:");
+        draw_text(495, 605, "Armor:");
         if(armorComp &gt; totalArmor)
         {
             draw_set_color(c_green);
@@ -2412,11 +2413,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 615, string(armorComp));
+        draw_text(570, 605, string(armorComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(465, 645, "Weight:");
+        draw_text(495, 630, "Weight:");
         if(weightComp &lt; totalWeight)
         {
             draw_set_color(c_green);
@@ -2429,11 +2430,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 645, string(weightComp));
+        draw_text(570, 630, string(weightComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(465, 675, "Cooling:");
+        draw_text(495, 655, "Cooling:");
         if(coolingComp &gt; totalCooling)
         {
             draw_set_color(c_green);
@@ -2446,7 +2447,7 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(540, 675, string(coolingComp));
+        draw_text(570, 655, string(coolingComp));
         draw_set_color(c_black);
     }
 }
@@ -2465,7 +2466,7 @@ if(numPlayersSetting &gt;= 4)
 //AI?
 if(isAI[3])
 {
-    draw_sprite(isAISprite,0,750, 370);
+    draw_sprite(isAISprite,0,770, 370);
 }
 
 if(playerLoadOut4[0] != 0)
@@ -2534,18 +2535,19 @@ if(playerLoadOut4[5] != 0)
         totalBonuses += playerLoadOut4[5].bonuses + "#"
     }
 }
+
+//Assign player stats
+playerStats[3, 0] = totalArmor;
+playerStats[3, 1] = totalWeight;
+playerStats[3, 2] = totalCooling;
+
 //show remaining credits
-if(!viewingColors[3])
+if(viewingColors[3])
 {
     draw_set_font(InventoryHeader);
-    draw_text(900, 370, "Credits:");
-    draw_set_font(InventoryContent);
-    draw_text(900, 395, string(player4Money - totalCost));
-}
-else
-{
-    draw_set_font(InventoryHeader);
-    draw_text(850, 370, "Choose your colors");
+    draw_set_color(c_white);
+    draw_text(850, 350, "Choose your colors");
+    draw_set_color(c_black);
     draw_set_font(InventoryContent);
 }
 
@@ -2554,46 +2556,46 @@ if(!lookingAtItems[3])
     if(viewingColors[3])
     {
         draw_set_font(InventoryHeader);
-        draw_text(1110, 485, "Current Stats:")
+        draw_text(1100, 485, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 520, "Total Cost:")
-        draw_text(1195, 520, string(totalCost))
+        draw_text(1110, 515, "Total Cost:")
+        draw_text(1195, 515, string(totalCost))
         //Armor
-        draw_text(1110, 550, "Armor:")
-        draw_text(1195, 550, string(totalArmor))
+        draw_text(1110, 540, "Armor:")
+        draw_text(1195, 540, string(totalArmor))
         //Weight
-        draw_text(1110, 580, "Weight:")
-        draw_text(1195, 580, string(totalWeight))
+        draw_text(1110, 565, "Weight:")
+        draw_text(1195, 565, string(totalWeight))
         //Weight
-        draw_text(1110, 610, "Cooling:")
-        draw_text(1195, 610, string(totalCooling))
+        draw_text(1110, 590, "Cooling:")
+        draw_text(1195, 590, string(totalCooling))
     }
     else
     {
         draw_set_font(InventoryHeader);
-        draw_text(1110, 385, "Current Stats:")
+        draw_text(1110, 400, "Current Stats:")
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 420, "Total Cost:")
-        draw_text(1195, 420, string(totalCost))
+        draw_text(1110, 430, "Total Cost:")
+        draw_text(1195, 430, string(totalCost))
         //Armor
-        draw_text(1110, 450, "Armor:")
-        draw_text(1195, 450, string(totalArmor))
+        draw_text(1110, 455, "Armor:")
+        draw_text(1195, 455, string(totalArmor))
         //Weight
         draw_text(1110, 480, "Weight:")
         draw_text(1195, 480, string(totalWeight))
         //Weight
-        draw_text(1110, 510, "Cooling:")
-        draw_text(1195, 510, string(totalCooling))
+        draw_text(1110, 505, "Cooling:")
+        draw_text(1195, 505, string(totalCooling))
     }
 }
 else
 {
     draw_set_font(InventoryHeader);
-    draw_text(1110, 385, string(categoryName[3]) + " Stats:")
+    draw_text(1100, 400, string(categoryName[3]) + " Stats:")
     draw_set_font(InventoryContent);
 
     if(playerLoadOut4[categoryNumber[3]] != 0)
@@ -2605,23 +2607,23 @@ else
     }
     
     //Cost
-    draw_text(1110, 420, "Cost:")
-    draw_text(1195, 420, string(totalCost))
+    draw_text(1110, 430, "Cost:")
+    draw_text(1195, 430, string(totalCost))
     //Armor
-    draw_text(1110, 450, "Armor:")
-    draw_text(1195, 450, string(totalArmor))
+    draw_text(1110, 455, "Armor:")
+    draw_text(1195, 455, string(totalArmor))
     //Weight
     draw_text(1110, 480, "Weight:")
     draw_text(1195, 480, string(totalWeight))
     //Weight
-    draw_text(1110, 510, "Cooling:")
-    draw_text(1195, 510, string(totalCooling))
+    draw_text(1110, 505, "Cooling:")
+    draw_text(1195, 505, string(totalCooling))
     
     //Comparison:
     if(selectedInventory[3] != -1)
     {
         draw_set_font(InventoryHeader);
-        draw_text(1110, 550, "Selected Item:");
+        draw_text(1100, 545, "Selected Item:");
         draw_set_font(InventoryContent);
     
         var costComp = inventoryArray4[selectedInventory[3]].inventoryItem.cost;
@@ -2629,7 +2631,7 @@ else
         var weightComp = inventoryArray4[selectedInventory[3]].inventoryItem.weight;
         var coolingComp = inventoryArray4[selectedInventory[3]].inventoryItem.cooling;
     
-        draw_text(1110, 585, "cost:");
+        draw_text(1110, 580, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -2642,11 +2644,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 585, string(costComp));
+        draw_text(1195, 580, string(costComp));
         draw_set_color(c_black);
         
         //Armor
-        draw_text(1110, 615, "Armor:");
+        draw_text(1110, 605, "Armor:");
         if(armorComp &gt; totalArmor)
         {
             draw_set_color(c_green);
@@ -2659,11 +2661,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 615, string(armorComp));
+        draw_text(1195, 605, string(armorComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(1110, 645, "Weight:");
+        draw_text(1110, 630, "Weight:");
         if(weightComp &lt; totalWeight)
         {
             draw_set_color(c_green);
@@ -2676,11 +2678,11 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 645, string(weightComp));
+        draw_text(1195, 630, string(weightComp));
         draw_set_color(c_black);
         
         //Weight
-        draw_text(1110, 675, "Cooling:");
+        draw_text(1110, 655, "Cooling:");
         if(coolingComp &gt; totalCooling)
         {
             draw_set_color(c_green);
@@ -2693,7 +2695,7 @@ else
         {
             draw_set_color(c_black);
         }
-        draw_text(1195, 675, string(coolingComp));
+        draw_text(1195, 655, string(coolingComp));
         draw_set_color(c_black);
     }
 }
@@ -2702,7 +2704,6 @@ else
 //Color Bars
 if(selectedBar[0] != 0)
 {   
-    show_debug_message(string(selectedBar[0]));
     draw_sprite_ext(colorSelectorSprite,0,selectedBar[0].x - 6, selectedBar[0].y - 5,0.75,0.75,0,c_white,1);
 }
 if(selectedBar[1] != 0)

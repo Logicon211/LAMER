@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 15;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Canada";
+nodeDescription = "When the Colossus was first designed, New Brunswick (because everyone was unemployed and needed jobs) was# the development hub for most of the necessary software. It remains so to this day but under the harsh #control of those that use it.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,6 +41,7 @@ hasRadioText = false; //check to see if there's radio chat before the fight
 radioText[0] = "";
 
 face[0] = 0;
+
 battleMap = testRange;
 
 </string>

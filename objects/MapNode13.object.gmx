@@ -25,23 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 13;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Mexico";
+nodeDescription = "Mexico's drug cartels survive to this day, providing entertaining substances to successful #Colossus pilots. However, they hope not for money but that the pilots will end up overdosing #and killing themselves.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = false; //check to see if there's radio chat before the fight
+hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Goon: Hello. I am automated Colossus pilot 295, programmed to destroy for Dr. Dastardly. How are you today?";
+radioText[1] = "Player: Uhhhhh... good?";
+radioText[2] = "Goon: Perfect. This will make your extermination slightly more tolerable for you.";
+radioText[3] = "Player: Wait, can't we talk about this first? What about the 3 directives?!";
+radioText[4] = "Goon: Error, diplomacy module not installed. Resolution, attack.";
+radioText[5] = "Player: Well, it was worth a try I guess...";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = MGoonFace1;
+
 battleMap = testRange;
 </string>
           </argument>

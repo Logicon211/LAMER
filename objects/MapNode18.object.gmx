@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 18;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Super Not-So-Secret Space Elevator";
+nodeDescription = "Humanity's last ditch attempt to leave the ensuing chaos, this space elevator remains unfinished #and only reaches slightly past stratosphere. The top has been modified to be an epic colosseum, where #the true battles are decided.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,6 +41,7 @@ hasRadioText = false; //check to see if there's radio chat before the fight
 radioText[0] = "";
 
 face[0] = 0;
+
 battleMap = testRange;
 </string>
           </argument>

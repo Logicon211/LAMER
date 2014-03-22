@@ -45,7 +45,14 @@
       <sprite>sprites\MitchFace</sprite>
       <sprite>sprites\LoganFace</sprite>
       <sprite>sprites\RaphFace</sprite>
-      <sprite>sprites\EliotFace</sprite>
+      <sprite>sprites\ElliotFace</sprite>
+      <sprite>sprites\PlayerFace</sprite>
+      <sprite>sprites\EGoonFace1</sprite>
+      <sprite>sprites\EGoonFace2</sprite>
+      <sprite>sprites\RGoonFace1</sprite>
+      <sprite>sprites\RGoonFace2</sprite>
+      <sprite>sprites\MGoonFace1</sprite>
+      <sprite>sprites\MGoonFace2</sprite>
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\HeadButtonSprite</sprite>
@@ -130,6 +137,7 @@
     <background>background\Credits1</background>
     <background>background\Credits2</background>
     <background>background\CampaignInfoScreen</background>
+    <background>background\VictoryBackground</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -221,6 +229,7 @@
     <script>scripts\playerCollision.gml</script>
     <script>scripts\startBattle.gml</script>
     <script>scripts\createColorBars.gml</script>
+    <script>scripts\gotoVictoryRoom.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -238,6 +247,8 @@
     <font>fonts\font1</font>
     <font>fonts\InventoryHeader</font>
     <font>fonts\InventoryContent</font>
+    <font>fonts\CampaignFont</font>
+    <font>fonts\RadioFont</font>
     <font>fonts\InventoryContentSmall</font>
   </fonts>
   <objects name="objects">
@@ -329,11 +340,57 @@
         <object>objects\testHead</object>
       </objects>
       <objects name="InventoryItems">
-        <object>objects\ProtoHeadObjectItem</object>
-        <object>objects\ProtoTorsoObjectItem</object>
-        <object>objects\ProtoSwordObjectItem</object>
-        <object>objects\ProtoGunObjectItem</object>
-        <object>objects\ProtoLegsObjectItem</object>
+        <objects name="Heads">
+          <object>objects\ProtoHeadObjectItem</object>
+          <object>objects\AuraH</object>
+          <object>objects\HyperionHelios</object>
+          <object>objects\CriusAstraeus</object>
+          <object>objects\PheobeLelantos</object>
+          <object>objects\CronusH</object>
+          <object>objects\HyperionHeliosMkII</object>
+        </objects>
+        <objects name="Torso">
+          <object>objects\ProtoTorsoObjectItem</object>
+          <object>objects\AuraT</object>
+          <object>objects\HyperionEos</object>
+          <object>objects\CriusPallas</object>
+          <object>objects\CoeusLelantos</object>
+          <object>objects\CronusT</object>
+          <object>objects\HyperionEosMkII</object>
+        </objects>
+        <objects name="Legs">
+          <object>objects\ProtoLegsObjectItem</object>
+          <object>objects\AuraL</object>
+          <object>objects\HyperionSelene</object>
+          <object>objects\CriusPerses</object>
+          <object>objects\LelantosAura</object>
+          <object>objects\CronusL</object>
+          <object>objects\HyperionSeleneMkII</object>
+        </objects>
+        <objects name="Guns">
+          <object>objects\ProtoGunObjectItem</object>
+          <object>objects\ThePointer</object>
+          <object>objects\CronusSeismos</object>
+          <object>objects\HermesRhipto</object>
+          <object>objects\VulcanPistol</object>
+          <object>objects\EnyoGat</object>
+          <object>objects\ArtemisML</object>
+          <object>objects\HephaestusCannon</object>
+          <object>objects\HermesMG</object>
+          <object>objects\MinervaML</object>
+          <object>objects\ApolloPiras</object>
+          <object>objects\ErisRhipto</object>
+        </objects>
+        <objects name="Melee">
+          <object>objects\ProtoSwordObjectItem</object>
+          <object>objects\AetherFoil</object>
+          <object>objects\AthenaBroadsword</object>
+          <object>objects\AresEdge</object>
+          <object>objects\ChronosFist</object>
+          <object>objects\ZeusArm</object>
+          <object>objects\HadesAxe</object>
+          <object>objects\GaiaHammer</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Radio">
@@ -457,6 +514,7 @@
     <object>objects\tutorial_help_move</object>
     <object>objects\CreditsController</object>
     <object>objects\InfoScreenController</object>
+    <object>objects\VictoryScreenController</object>
     <object>objects\tutorial_help_thrusters</object>
     <object>objects\tutorial_help_attack</object>
     <object>objects\tutorial_help_shield</object>
@@ -471,6 +529,7 @@
     <object>objects\Platform1_rightedge</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\CampaignInfoRoom</room>
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
     <room>rooms\MPMapSelect</room>
@@ -483,13 +542,12 @@
     <room>rooms\room9</room>
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
-    <room>rooms\CampaignInfoRoom</room>
     <room>rooms\Stage1</room>
     <room>rooms\Stage2</room>
     <room>rooms\Stage3</room>
     <room>rooms\Stage4</room>
     <room>rooms\Stage5</room>
-    <room>rooms\room18</room>
+    <room>rooms\VictoryRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

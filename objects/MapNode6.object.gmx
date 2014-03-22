@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 6;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "Russia";
+nodeDescription = "In an attempt to hold off the Apocalypse until they had developed their own Colossus model, #Russia utilized its entire nuclear arsenal. Considering the fact it is an irridiated wasteland #populated by automated resource collection robots now, we can see how that worked out for them.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,6 +41,7 @@ hasRadioText = false; //check to see if there's radio chat before the fight
 radioText[0] = "";
 
 face[0] = 0;
+
 battleMap = testRange;
 </string>
           </argument>

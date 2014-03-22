@@ -25,25 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 0;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "First Map Node";
-nodeDescription = "Some Fluff about the area in the node HAS RADIO"
+nodeName = "Algeria";
+nodeDescription = " **TUTORIAL HERE**# #What was once Algeria is now mostly abandoned desert, save for the small dusty colosseum. #Rookies who somehow manage to acquire a Colossus are numerous here.";
 
 isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
+
 hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "Mitch: This is some test text";
-radioText[1] = "Logan: This is a second line for this text"
-radioText[2] = "Mitch: A third line to work with!"
-radioText[3] = "END TRANSMISSION";
+radioText[0] = "WOOOOOOOOOOO";
 
-face[0] = MitchFace;
+face[0] = PlayerFace;
 face[1] = LoganFace;
 
 battleMap = Tutorial_room;

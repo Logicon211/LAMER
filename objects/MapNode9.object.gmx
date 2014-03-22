@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 9;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Seventh Map Node";
-nodeDescription = "Some Fluff about the area in the Seventh node"
+nodeName = "India";
+nodeDescription = "India used most of its natural resources and expanding economic power producing Colossi during the #Apocalypse. It still does now, but for the benifit of those that control it.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,6 +41,7 @@ hasRadioText = false; //check to see if there's radio chat before the fight
 radioText[0] = "";
 
 face[0] = 0;
+
 battleMap = testRange;
 
 </string>

@@ -55,8 +55,8 @@ room_goto(MenuRoom);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>num = 0;
-backNextButtons[0] = id;
+            <string>num = 1;
+backNextButtons[1] = id;
 alarm[0] = false;
 </string>
           </argument>
