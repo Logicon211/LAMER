@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>target = instance_nearest(x,y,player_o);
-move_towards_point(target.x,target.y,32);
+//move_towards_point(target.x,target.y,32);
+hspeed = target.image_xscale*32;
 </string>
           </argument>
         </arguments>
@@ -52,7 +53,7 @@ move_towards_point(target.x,target.y,32);
             <string>if(instance_position(x,y,player_o))
 {
     target = instance_position(x,y,player_o)
-    target.health -= 100;
+    target.health2 -= 100;
     target.hspeed += hspeed/2;
     instance_destroy();
 }

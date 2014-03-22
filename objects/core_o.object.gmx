@@ -634,6 +634,7 @@ if(player.state = string('mobileAttack'))
             <string>vspeed+=1;
 playerCollision();
 image_angle+=random_range(1,10);
+effect_create_below(ef_smoke,x,y,1,c_white);
 </string>
           </argument>
         </arguments>

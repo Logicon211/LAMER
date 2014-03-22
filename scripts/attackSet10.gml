@@ -60,6 +60,7 @@ if(attackVar = 0)
 {
     if(i>0 and i<6)
     {
+        larmA.attacking = false;
         //raise sword
         //position
         sVar = 6;
@@ -79,10 +80,11 @@ if(attackVar = 0)
         lleg1.image_angle = angle_ease(lleg1.image_angle, -60*image_xscale, sVar);
         //leg2
         leg2.image_angle = angle_ease(leg2.image_angle, 50*image_xscale, sVar);
-        lleg2.image_angle = angle_ease(lleg2.image_angle, 40*image_xscale, sVar);
+           lleg2.image_angle = angle_ease(lleg2.image_angle, 40*image_xscale, sVar);
     }
     else if(i<10)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3;
@@ -107,6 +109,7 @@ if(attackVar = 0)
     }
     else if(i<20)
     {
+        larmA.attacking = true;
         //OPEN TO SWING SWORD 2
         if(attack1_check_pressed())
         {   armA.animationCounter = 21;
@@ -134,6 +137,7 @@ if(attackVar = 0)
     }
     else if(i>21 and i<28)
     {
+        larmA.attacking = true;
         //sword swing 2
         //position
         sVar = 3;
@@ -158,6 +162,7 @@ if(attackVar = 0)
     }
     else if(i>21 and i<36)
     {
+        larmA.attacking = false;
         //OPEN TO SWING SWORD 3
         if(attack1_check_pressed())
         {   armA.animationCounter = 37;
@@ -185,6 +190,7 @@ if(attackVar = 0)
     }
     else if(i>37 and i<46)
     {
+        larmA.attacking = true;
         //sword swing 3
         //position
         sVar = 3;
@@ -209,6 +215,7 @@ if(attackVar = 0)
     }
     else if(i>45)
     {
+        larmA.attacking = false;
         if(i=54)
         {
             //end
@@ -253,7 +260,8 @@ else if(attackVar=1)
 {
     if(i>0 and i<8)
     {
-        //raise sword
+        larmA.attacking = true;
+        //raise sword-
         //position
         sVar = 6;
         yEase10(player.y+30-player.heightAdjust,sVar);
@@ -276,6 +284,7 @@ else if(attackVar=1)
     }
     else if(i<14)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3
@@ -300,6 +309,7 @@ else if(attackVar=1)
     }
     else if(i<16)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3
@@ -324,6 +334,7 @@ else if(attackVar=1)
     }
     else if(i<30)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3
@@ -347,6 +358,7 @@ else if(attackVar=1)
     }
     else if(i<34)
     {
+        larmA.attacking = false;
         //swing sword
         //position
         sVar = 3
@@ -371,6 +383,7 @@ else if(attackVar=1)
     }
     else
     {
+        larmA.attacking = false;
         armA.image_angle += 360*image_xscale;
         larmA.image_angle += 360*image_xscale;
         //end
@@ -388,6 +401,7 @@ else if(attackVar = 2)
 {
     if(i>0 and i<10)
     {
+        larmA.attacking = false;
         //pullback sword
         //position
         effect_create_above(ef_flare,x,y-50-i,30,c_dkgray);
@@ -413,6 +427,7 @@ else if(attackVar = 2)
     }
     else if(i<16)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         effect_create_above(ef_flare,x,y-50-i,30,c_blue);
@@ -438,6 +453,7 @@ else if(attackVar = 2)
     }
     else if(i<30)
     {
+        larmA.attacking = true;
         //OPEN TO SWING SWORD 2
         effect_create_above(ef_flare,x,y-50-i,40,make_color_hsv(70,255,255));
         if(attack1_check_pressed())
@@ -466,6 +482,7 @@ else if(attackVar = 2)
     }
     else if(i>31 and i<40)
     {
+        larmA.attacking = true;
         //raise sword
         //position
         sVar = 6;
@@ -489,6 +506,7 @@ else if(attackVar = 2)
     }
     else if(i>31 and i<46)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3
@@ -513,6 +531,7 @@ else if(attackVar = 2)
     }
     else if(i>31 and i<48)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3
@@ -537,6 +556,7 @@ else if(attackVar = 2)
     }
     else if(i>31 and i<62)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3
@@ -560,6 +580,7 @@ else if(attackVar = 2)
     }
     else if(i>31)
     {
+        larmA.attacking = false;
         if(i=70)
         {
             //end
@@ -595,6 +616,7 @@ else if(attackVar = 2)
     }
     else
     {
+        larmA.attacking = false;
         armA.animationCounter = 63;
         i=armA.animationCounter;
     }
@@ -606,6 +628,7 @@ else if(attackVar=3)
 {
     if(i>0 and i<6)
     {
+        larmA.attacking = false;
         //prepare swing sword
         //position
         sVar = 4;
@@ -629,6 +652,7 @@ else if(attackVar=3)
     }
     else if(i<18)
     {
+        larmA.attacking = true;
         //swing sword
         //position
         sVar = 3;
@@ -653,6 +677,7 @@ else if(attackVar=3)
     }
     else if(i<22)
     {
+        larmA.attacking = false;
         //prepare swing sword
         //position
         sVar = 4;
@@ -676,6 +701,7 @@ else if(attackVar=3)
     }
     else
     {
+        larmA.attacking = false;
         larmA.image_angle += 360*image_xscale;
         //end
         player.state = string('tonorm');

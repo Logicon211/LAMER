@@ -68,7 +68,6 @@ instance_create(x,y,cameraObject);</code>
   <instances>
     <instance objName="start_fight_o" x="512" y="-64" name="inst_986EB0A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MusicController" x="832" y="-64" name="inst_DDFA8731" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="2432" y="1504" name="inst_71258028" locked="0" code="" scaleX="28" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="land_o" x="1952" y="1984" name="inst_F482BB66" locked="0" code="" scaleX="59" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
