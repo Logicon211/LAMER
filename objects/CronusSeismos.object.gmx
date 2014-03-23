@@ -28,7 +28,7 @@
             <string>name = "Cronus Seismos";
 
 //This is the actual link to the object, so we can create it on start up.
-part = proto_gun_o;
+part = CronosUpperArm;
 
 //stats
 
