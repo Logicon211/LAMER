@@ -61,6 +61,7 @@ if(valBar[owningPlayer] != 0)
         instance_destroy();
     }
 }
+selectedBar[owningPlayer] = 0;
 
 if(lockedIn[owningPlayer] == false)
 {

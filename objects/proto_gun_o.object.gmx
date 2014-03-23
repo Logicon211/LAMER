@@ -69,6 +69,7 @@ number = 0;
     vspeed+=1;
     playerCollision();
     image_angle+=random_range(1,10);
+    effect_create_above(ef_smoke,x,y,1,c_white);
 }
 else
 {

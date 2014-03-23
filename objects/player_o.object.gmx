@@ -34,7 +34,7 @@
  ***************************************************/
 health2 = 1000;
 state = string('normal');
-
+deadCounter = 0;
 /***************************************************
   States are as follows
 
@@ -937,16 +937,40 @@ else if(state = string('land'))
 playerCollision();
 image_angle+=random_range(1,10);
 
-core.dead = true;
-arm[1].dead = true;
-arm[2].dead = true;
-leg1.dead = true;
-leg2.dead = true;
-head.dead = true;
-larm[1].dead = true;
-larm[2].dead = true;
-lleg1.dead = true;
-lleg2.dead = true;
+if(deadCounter=0)
+{
+    core.dead = true;
+    core.hspeed = random_range(-30,30);
+    core.vspeed = random_range(0,-30);
+    arm[1].dead = true;
+    arm[1].hspeed = random_range(-30,30);
+    arm[1].vspeed = random_range(0,-30);
+    arm[2].dead = true;
+    arm[2].hspeed = random_range(-30,30);
+    arm[2].vspeed = random_range(0,-30);
+    leg1.dead = true;
+    leg1.hspeed = random_range(-30,30);
+    leg1.vspeed = random_range(0,-30);
+    leg2.dead = true;
+    leg2.hspeed = random_range(-30,30);
+    leg2.vspeed = random_range(0,-30);
+    head.dead = true;
+    head.hspeed = random_range(-30,30);
+    head.vspeed = random_range(0,-30);
+    larm[1].dead = true;
+    larm[1].hspeed = random_range(-30,30);
+    larm[1].vspeed = random_range(0,-30);
+    larm[2].dead = true;
+    larm[2].hspeed = random_range(-30,30);
+    larm[2].vspeed = random_range(0,-30);
+    lleg1.dead = true;
+    lleg1.hspeed = random_range(-30,30);
+    lleg1.vspeed = random_range(0,-30);
+    lleg2.dead = true;
+    lleg2.hspeed = random_range(-30,30);
+    lleg2.vspeed = random_range(0,-30);
+}
+deadCounter +=1;
 </string>
           </argument>
         </arguments>
@@ -983,7 +1007,7 @@ lleg2.dead = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(healthSprite,0,view_xview+30+100*playerNum,view_yview+30,health/10,1,0,getPlayerColor(playerNum,0),1);
+            <string>draw_sprite_ext(healthSprite,0,view_xview+30+100*playerNum,view_yview+30,health2/10,1,0,getPlayerColor(playerNum,0),1);
 </string>
           </argument>
         </arguments>

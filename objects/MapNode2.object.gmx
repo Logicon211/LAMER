@@ -31,7 +31,7 @@ MapNodeList[nodeNumber] = id;
 
 nodeName = "South America";
 nodeDescription = "Rich in precious gems and metals, South America was one of the first to suffer due to the #Apocalypse. In the bombed out husk of a country, there is a makeshift colloseum.";
-isLocked = true;
+isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 

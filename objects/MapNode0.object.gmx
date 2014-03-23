@@ -30,7 +30,7 @@ nodeNumber = 0;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Algeria";
-nodeDescription = "What was once Algeria is now mostly abandoned desert, save for the small dusty colosseum. #Rookies who somehow manage to acquire a Colossus are numerous here.";
+nodeDescription = " **TUTORIAL HERE**# #What was once Algeria is now mostly abandoned desert, save for the small dusty colosseum. #Rookies who somehow manage to acquire a Colossus are numerous here.";
 
 isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet

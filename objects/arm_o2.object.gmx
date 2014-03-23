@@ -32,7 +32,7 @@ playerNum = player.playerNum;
 oldX = y;
 oldY = x;
 
-attacking = true;
+attacking = false;
 </string>
           </argument>
         </arguments>
@@ -60,6 +60,7 @@ attacking = true;
     vspeed+=1;
     playerCollision();
     image_angle+=random_range(1,10);
+    effect_create_above(ef_smoke,x,y,1,c_white);
 }
 else
 {
@@ -67,16 +68,18 @@ else
     
     oldX = x+hspeed;
     oldY = y+vspeed;
-    
-    if(instance_place(x,y,player_o))
+    if(attacking)
     {
-        derp = instance_place(x,y,player_o);
-        if(derp != player)
+        if(instance_place(x,y,player_o))
         {
-            derp.health2 -= 100;
-            derp.hspeed = 25*image_xscale;
-            derp.vspeed = 5*image_xscale;
-            derp.airborne = true;
+            derp = instance_place(x,y,player_o);
+            if(derp != player)
+            {
+                derp.health2 -= 100;
+                derp.hspeed = 25*image_xscale;
+                derp.vspeed = 5*image_xscale;
+                derp.airborne = true;
+            }
         }
     }
 }

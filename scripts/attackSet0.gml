@@ -9,12 +9,8 @@ i = armA.animationCounter;
 
 if((i mod 15) = 1)
 {
-    effect_create_above(ef_spark,armA.x+larmA.sprite_height*image_xscale,armA.y,50,c_black);
-    effect_create_above(ef_spark,armA.x+larmA.sprite_height*image_xscale,armA.y,50,c_black);
-    effect_create_above(ef_spark,armA.x+larmA.sprite_height*image_xscale,armA.y,50,c_white);
-    effect_create_above(ef_spark,armA.x+larmA.sprite_height*image_xscale,armA.y,50,c_white);
-    effect_create_above(ef_spark,armA.x+larmA.sprite_height*image_xscale,armA.y,50,c_orange);
-    effect_create_above(ef_spark,armA.x+larmA.sprite_height*image_xscale,armA.y,50,c_orange);
+    shoot = instance_create(armA.x+larmA.sprite_height*image_xscale,armA.y,bulletObject2);
+    shoot.hspeed = larmA.image_xscale*32;
 }
 
 armA.image_angle = angle_ease(armA.image_angle, 80*image_xscale, 3);

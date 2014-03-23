@@ -43,6 +43,10 @@ radText = "";
 globalvar radFace;
 radFace = 0;
 
+//To track who might have won an MP game
+globalvar playerWon;
+playerWon = 0;
+
 //Players' Money
 //Will need to load this from save file at some point
 globalvar player1Money;
@@ -277,6 +281,33 @@ playerLoadOut4[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
 playerLoadOut4[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
 playerLoadOut4[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut4[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
+
+//TOTAL PLAYER STATS Calculated from each players' parts
+
+globalvar playerStats;
+//0 - Armor
+//1 - Weight
+//2 - Cooling (Or Energy [total or Regen?])
+
+//PLAYER 1
+playerStats[0, 0] = playerLoadOut1[0].armor + playerLoadOut1[1].armor + playerLoadOut1[2].armor + playerLoadOut1[3].armor + playerLoadOut1[4].armor;
+playerStats[0, 1] = playerLoadOut1[0].weight + playerLoadOut1[1].weight + playerLoadOut1[2].weight + playerLoadOut1[3].weight + playerLoadOut1[4].weight;
+playerStats[0, 2] = playerLoadOut1[0].cooling + playerLoadOut1[1].cooling + playerLoadOut1[2].cooling + playerLoadOut1[3].cooling + playerLoadOut1[4].cooling;
+
+//PLAYER 2
+playerStats[1, 0] = playerLoadOut2[0].armor + playerLoadOut2[1].armor + playerLoadOut2[2].armor + playerLoadOut2[3].armor + playerLoadOut2[4].armor;
+playerStats[1, 1] = playerLoadOut2[0].weight + playerLoadOut2[1].weight + playerLoadOut2[2].weight + playerLoadOut2[3].weight + playerLoadOut2[4].weight;
+playerStats[1, 2] = playerLoadOut2[0].cooling + playerLoadOut2[1].cooling + playerLoadOut2[2].cooling + playerLoadOut2[3].cooling + playerLoadOut2[4].cooling;
+
+//PLAYER 3
+playerStats[2, 0] = playerLoadOut3[0].armor + playerLoadOut3[1].armor + playerLoadOut3[2].armor + playerLoadOut3[3].armor + playerLoadOut3[4].armor;
+playerStats[2, 1] = playerLoadOut3[0].weight + playerLoadOut3[1].weight + playerLoadOut3[2].weight + playerLoadOut3[3].weight + playerLoadOut3[4].weight;
+playerStats[2, 2] = playerLoadOut3[0].cooling + playerLoadOut3[1].cooling + playerLoadOut3[2].cooling + playerLoadOut3[3].cooling + playerLoadOut3[4].cooling;
+
+//PLAYER 4
+playerStats[3, 0] = playerLoadOut4[0].armor + playerLoadOut4[1].armor + playerLoadOut4[2].armor + playerLoadOut4[3].armor + playerLoadOut4[4].armor;
+playerStats[3, 1] = playerLoadOut4[0].weight + playerLoadOut4[1].weight + playerLoadOut4[2].weight + playerLoadOut4[3].weight + playerLoadOut4[4].weight;
+playerStats[3, 2] = playerLoadOut4[0].cooling + playerLoadOut4[1].cooling + playerLoadOut4[2].cooling + playerLoadOut4[3].cooling + playerLoadOut4[4].cooling;
 
 //MULTIPLAYER SETTINGS OBJECTS (Initialized with defaults)
 
