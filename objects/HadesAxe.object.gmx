@@ -30,6 +30,8 @@
 //This is the actual link to the object, so we can create it on start up.
 part = arm_o;
 
+type = 3;
+
 //stats
 
 cost = 15;

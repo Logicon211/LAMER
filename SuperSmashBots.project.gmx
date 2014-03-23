@@ -223,11 +223,17 @@
     <script>scripts\unselectAllItems.gml</script>
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
-    <script>scripts\script55.gml</script>
     <script>scripts\getPlayerColor.gml</script>
     <script>scripts\playerCollision.gml</script>
     <script>scripts\startBattle.gml</script>
     <script>scripts\createColorBars.gml</script>
+    <scripts name="AI">
+      <script>scripts\initializeAI.gml</script>
+      <script>scripts\targetAI.gml</script>
+      <script>scripts\stepAI.gml</script>
+      <script>scripts\moveAI.gml</script>
+      <script>scripts\attackAI.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
