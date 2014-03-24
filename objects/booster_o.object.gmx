@@ -55,9 +55,9 @@ playerNum = player.playerNum;
             <kind>1</kind>
             <string>//perfectTrailEffectWhite(oldX,oldY,x+hspeed,y+vspeed,ef_flare);
 //perfectTrailEffect(oldX,oldY,x+hspeed,y+vspeed,ef_explosion,player.playerNum);
-
-bColor = getPlayerColor(0,2);
-
+if(!instance_exists(player)){instance_destroy();}
+else{
+bColor = getPlayerColor(player.playerNum,2);
 if(intense&gt;0)
 {
     perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,booster_trail_intense_o,0,random_range(0.5,1),bColor);
@@ -87,6 +87,8 @@ else
 
 oldX = x+hspeed;
 oldY = y+vspeed;
+
+}
 </string>
           </argument>
         </arguments>

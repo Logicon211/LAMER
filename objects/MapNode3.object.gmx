@@ -42,7 +42,7 @@ radioText[0] = "";
 
 face[0] = 0;
 
-battleMap = testRange;
+battleMap = Stage3;
 
 </string>
           </argument>

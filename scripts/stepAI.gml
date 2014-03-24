@@ -2,7 +2,7 @@
 //  1 - Target script
 //  2 - Attack script
 //  3 - Move script
-
+ 
 switch (ds_stack_pop(stackAI))
 {
     case 1:

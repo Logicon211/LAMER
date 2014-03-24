@@ -10,7 +10,23 @@
   <persistent>0</persistent>
   <colour>8421440</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>display_reset(8, true);
+
+j=numCPUsSetting;
+for(i=numPlayersSetting;i&gt;0;i--)
+{
+    if(j&gt;0)
+    {
+        createPlayer((i-1),3,200+i*300,room_height/2);
+    }
+    else
+    {
+        createPlayer((i-1),0,200+i*300,room_height/2);
+    }
+    j--;
+}
+
+instance_create(x,y,cameraObject);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>
@@ -55,19 +71,62 @@
     <instance objName="Level_Floor2" x="448" y="736" name="inst_FC5F64E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="576" y="736" name="inst_B879EAF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="704" y="736" name="inst_79DB0F53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="448" y="384" name="inst_B8DA56A7" locked="0" code="" scaleX="0.213333338499069" scaleY="0.586666643619537" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="1344" y="384" name="inst_B47BC718" locked="0" code="" scaleX="0.213333338499069" scaleY="0.586666643619537" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="512" y="480" name="inst_B8DA56A7" locked="0" code="" scaleX="0.213332995772362" scaleY="0.586667001247406" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="1280" y="480" name="inst_B47BC718" locked="0" code="" scaleX="0.213332995772362" scaleY="0.586667001247406" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1216" y="736" name="inst_9B85819C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1088" y="736" name="inst_2E3F9C58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1600" y="736" name="inst_0E21C6DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1472" y="736" name="inst_F1AC2A01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1344" y="736" name="inst_6E5DB110" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="832" y="224" name="inst_F3BDDEE7" locked="0" code="" scaleX="0.426666676998138" scaleY="0.213333338499069" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="352" y="704" name="inst_01F7C6D7" locked="0" code="" scaleX="0.533333361148834" scaleY="0.319999992847443" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="1248" y="672" name="inst_2A226015" locked="0" code="" scaleX="0.533333361148834" scaleY="0.373333334922791" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="896" y="128" name="inst_F3BDDEE7" locked="0" code="" scaleX="0.213333338499069" scaleY="0.213333338499069" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="416" y="576" name="inst_01F7C6D7" locked="0" code="" scaleX="0.533333003520966" scaleY="0.319999992847443" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="1184" y="576" name="inst_2A226015" locked="0" code="" scaleX="0.533333003520966" scaleY="0.373333007097244" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="768" y="256" name="inst_1D408F91" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="896" y="256" name="inst_0AA8F28A" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1024" y="256" name="inst_153A6029" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="thrusters_right" x="704" y="864" name="inst_B7F0A441" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_left" x="256" y="864" name="inst_287E05CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="288" y="864" name="inst_CE603509" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="320" y="864" name="inst_8F7B0D69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="352" y="864" name="inst_7F79F7C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="384" y="864" name="inst_74F4CF86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="480" y="864" name="inst_8C075E2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="416" y="864" name="inst_82E7AC1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="448" y="864" name="inst_EAFB0347" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="512" y="864" name="inst_98AFCC1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="544" y="864" name="inst_1A4F172A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="576" y="864" name="inst_F1D24454" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="608" y="864" name="inst_84D3EAD4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="640" y="864" name="inst_7D10EF25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="672" y="864" name="inst_BCE90654" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1184" y="864" name="inst_0B193A32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_left" x="1120" y="864" name="inst_713A9022" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thrusters_right" x="1632" y="864" name="inst_F0F8A84A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1152" y="864" name="inst_AE0A7F80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1216" y="864" name="inst_89D711B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1248" y="864" name="inst_07D681FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1280" y="864" name="inst_5CA3EDB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1312" y="864" name="inst_BA5D7BAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1344" y="864" name="inst_5B6CCF15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1376" y="864" name="inst_7DA4FC16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1408" y="864" name="inst_EA712E50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1440" y="864" name="inst_F742B6A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1472" y="864" name="inst_C3B5A9B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1504" y="864" name="inst_8B8CE7E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1536" y="864" name="inst_0AA578B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1600" y="864" name="inst_FC590DFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1568" y="864" name="inst_9F93DF31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="928" y="320" name="inst_920B47A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_left" x="800" y="320" name="inst_E185F451" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thrusters_right" x="1088" y="320" name="inst_17BE9B62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="832" y="320" name="inst_D19C6EAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="864" y="320" name="inst_2DD13296" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="896" y="320" name="inst_63BF72B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="960" y="320" name="inst_6DD3E42C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="992" y="320" name="inst_C3008BE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1024" y="320" name="inst_8135C8F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="thruster_middle" x="1056" y="320" name="inst_B75AE70B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="start_fight_o" x="192" y="-96" name="inst_F125A700" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

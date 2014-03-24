@@ -28,9 +28,7 @@
             <string>name = "Athena's Broadsword";
 
 //This is the actual link to the object, so we can create it on start up.
-part = arm_o;
-
-type = 3;
+part = heavysword_upperrarm;
 
 //stats
 
