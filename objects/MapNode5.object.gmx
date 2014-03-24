@@ -51,7 +51,7 @@ radioText[8] = "Maximus Lovelife: I love my life! I love my life to the max! I w
 face[0] = PlayerFace;
 face[1] = ElliotFace;
 
-battleMap = testRange;
+battleMap = Stage5;
 </string>
           </argument>
         </arguments>

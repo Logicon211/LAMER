@@ -28,7 +28,7 @@
             <string>name = "Aura L";
 
 //This is the actual link to the object, so we can create it on start up.
-part = leg_o;
+part = aura_upperleg;
 
 //stats
 

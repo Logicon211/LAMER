@@ -48,7 +48,7 @@ radioText[5] = "Player: ...I'm just going to put you out of your misery now.";
 face[0] = PlayerFace;
 face[1] = EGoonFace2;
 
-battleMap = testRange;
+battleMap = Stage1;
 
 </string>
           </argument>
