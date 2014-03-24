@@ -36,4 +36,7 @@ with(pIn.arm[1]){dead=false;}
 with(pIn.arm[2]){dead=false;}
 with(pIn.core){dead=false;}
 
+
+
+
 return pIn

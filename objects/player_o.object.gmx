@@ -443,7 +443,7 @@ deadCounter +=1;
             <string>if(playerType = 0 or playerType &gt; 2)
 {
 
-if(health2 &lt;= 0)
+if(health2 &lt;= 0 or y&gt;=room_height-200)
 {
     if(health2&lt;0){health2=0}
     splodeColor = choose(c_red,c_yellow,c_orange)
@@ -460,11 +460,7 @@ if(health2 &lt;= 0)
     respawn = instance_create(x,y,renewRoom);
     respawn.pIn = id;
     playerType = 2;
-    for(i=0;i&lt;core.boostNums;i++)
-    {   with(core.booster[i])
-        {   instance_destroy();
-        }
-    }
+
     x = 0;
     y = 0;
 }
