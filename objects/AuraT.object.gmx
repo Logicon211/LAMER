@@ -28,7 +28,7 @@
             <string>name = "Aura T";
 
 //This is the actual link to the object, so we can create it on start up.
-part = core_o;
+part = core2;
 
 type = 1;
 

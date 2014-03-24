@@ -219,6 +219,88 @@ heightAdjust = core.heightAdjust;
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/***************************************************
+  INPUT CONTROL
+  
+  If player....
+ ***************************************************/
+
+if(playerType = 0)
+{
+    if(down_check())
+    {   controlSet[0] = 1;
+    }
+    else
+    {   controlSet[0] = 0;
+    }
+    if(down_check())
+    {   controlSet[1] = 1;
+    }
+    else
+    {   controlSet[1] = 0;
+    }
+    if(down_check())
+    {   controlSet[2] = 1;
+    }
+    else
+    {   controlSet[2] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+}
+
+else if(playerType &gt; 2)
+{
+    //call AI script.
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>612</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -275,18 +357,25 @@ heightAdjust = core.heightAdjust;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(health2 = 0)
+            <string>if(health2 &lt;= 0)
 {
-    effect_create_above(ef_firework,x,y,30,c_red);
-    effect_create_above(ef_firework,x,y,30,c_orange);
-    effect_create_above(ef_firework,x,y,30,c_yellow);
-    effect_create_above(ef_firework,x,y,30,c_red);
-    effect_create_above(ef_firework,x,y,30,c_orange);
+    if(health2&lt;0){health2=0}
+    splodeColor = choose(c_red,c_yellow,c_orange)
+    for(i=0;i&lt;20;i++)
+    {
+        effect_create_above(ef_smoke,x+random_range(-50,50),y+random_range(-70,70),300,c_orange);
+        effect_create_above(ef_flare,x+random_range(-50,50),y+random_range(-70,70),300,c_orange);
+    }
+    splodeColor = choose(getPlayerColor(playerNum,0),getPlayerColor(playerNum,1),getPlayerColor(playerNum,2))
+    for(i=0;i&lt;20;i++)
+    {
+        //effect_create_above(ef_firework,x+random_range(-30,30),y+random_range(-50,50),100,splodeColor);
+    }
     instance_create(x,y,renewRoom);
     playerType = 2;
 }
 
-//***************************************************
+/***************************************************
 //room speed test
 if(gamepad_button_check(0,gp_shoulderrb))
 {
@@ -296,7 +385,7 @@ else
 {
     room_speed = 30;
 }
-//***************************************************
+//***************************************************/
 
 //quit game
 if(quit_check())
@@ -860,6 +949,62 @@ else if(state = string('land'))
 </string>
           </argument>
         </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>playerType</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
       <action>
         <libid>1</libid>

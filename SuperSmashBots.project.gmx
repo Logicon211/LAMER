@@ -19,6 +19,10 @@
     <sprite>sprites\ShopMapNodeSprite</sprite>
     <sprite>sprites\RegMapNodeSprite</sprite>
     <sprite>sprites\VisitedMapNodeSprite</sprite>
+    <sprite>sprites\CronosSpriteGun</sprite>
+    <sprites name="LightTorso">
+      <sprite>sprites\torso001</sprite>
+    </sprites>
     <sprites name="BattleSprites">
       <sprite>sprites\hue_s</sprite>
       <sprite>sprites\colorSelectorSprite</sprite>
@@ -229,6 +233,7 @@
     <script>scripts\startBattle.gml</script>
     <script>scripts\createColorBars.gml</script>
     <script>scripts\gotoVictoryRoom.gml</script>
+    <script>scripts\script65.gml</script>
     <scripts name="AI">
       <script>scripts\initializeAI.gml</script>
       <script>scripts\targetAI.gml</script>
@@ -448,6 +453,7 @@
           <objects name="Prototype">
             <object>objects\core_o</object>
           </objects>
+          <object>objects\core2</object>
         </objects>
         <objects name="Heads">
           <objects name="Prototype">
@@ -472,7 +478,9 @@
           <objects name="Small Guns">
             <objects name="Prototype">
               <object>objects\proto_gun_o</object>
+              <object>objects\CronosUpperArm</object>
               <object>objects\proto_gun_o2</object>
+              <object>objects\CronosLowerGun</object>
               <object>objects\proto_gun_trail_o</object>
             </objects>
           </objects>
@@ -486,6 +494,7 @@
       </objects>
       <object>objects\bulletObject</object>
       <object>objects\bulletObject2</object>
+      <object>objects\CosmosBullet</object>
     </objects>
     <objects name="Color Adjusts">
       <object>objects\hue_prime_o</object>
