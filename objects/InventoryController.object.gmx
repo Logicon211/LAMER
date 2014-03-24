@@ -322,7 +322,7 @@ if(down_check_pressed())
     }
 }
 
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
     if(!view_visible[1])
     {
