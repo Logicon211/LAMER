@@ -30,8 +30,6 @@
 //This is the actual link to the object, so we can create it on start up.
 part = head2;
 
-type = 0;
-
 //stats
 
 cost = 10;

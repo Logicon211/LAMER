@@ -30,8 +30,6 @@
 //This is the actual link to the object, so we can create it on start up.
 part = heavysword_upperrarm;
 
-type = 3;
-
 //stats
 
 cost = 15;

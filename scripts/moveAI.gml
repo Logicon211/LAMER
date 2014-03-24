@@ -1,7 +1,7 @@
 if(typeAI < 50)
-{
+{ 
     if(x < currentTarget.x)
-    {
+    { 
         controlSet[6] = 1;
         controlSet[7] = 0;
     }

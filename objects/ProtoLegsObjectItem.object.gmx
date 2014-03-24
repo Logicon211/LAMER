@@ -30,8 +30,6 @@
 //This is the actual link to the object, so we can create it on start up.
 part = leg_o;
 
-type = 4;
-
 //stats
 
 cost = 20;

@@ -1,6 +1,6 @@
 var attacked, mChance, rChance;
 var leftArm, rightArm;
-
+ 
 switch(playerNum)
 {
     case 2:

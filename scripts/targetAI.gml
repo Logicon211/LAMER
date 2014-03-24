@@ -1,5 +1,5 @@
 var numPlayers, player, rank, smallestDis, largestRank, num;
-
+ 
 numPlayers = instance_number(player_o);
 
 for(num = 0; num < numPlayers; num++)
