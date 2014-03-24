@@ -151,56 +151,100 @@ valBar[3] = 0;
 //Creating buttons for player1, putting them in his array
 player1Buttons[0] = instance_create(10, 10, HeadMPButton);
 player1Buttons[0].owningPlayer = 0;
+player1Buttons[0].image_yscale = 0.75;
+player1Buttons[0].image_xscale = 0.75;
 player1Buttons[1] = instance_create(10, 55, TorsoMPButton);
 player1Buttons[1].owningPlayer = 0;
+player1Buttons[1].image_yscale = 0.75;
+player1Buttons[1].image_xscale = 0.75;
 player1Buttons[2] = instance_create(10, 100, LArmMPButton);
 player1Buttons[2].owningPlayer = 0;
+player1Buttons[2].image_yscale = 0.75;
+player1Buttons[2].image_xscale = 0.75;
 player1Buttons[3] = instance_create(10, 145, RArmMPButton);
 player1Buttons[3].owningPlayer = 0;
+player1Buttons[3].image_yscale = 0.75;
+player1Buttons[3].image_xscale = 0.75;
 player1Buttons[4] = instance_create(10, 190, LegsMPButton);
 player1Buttons[4].owningPlayer = 0;
+player1Buttons[4].image_yscale = 0.75;
+player1Buttons[4].image_xscale = 0.75;
 player1Buttons[5] = instance_create(10, 250, BackMPButton);
 player1Buttons[5].owningPlayer = 0;
+player1Buttons[5].image_yscale = 0.75;
+player1Buttons[5].image_xscale = 0.75;
 player1Buttons[6] = instance_create(10, 295, NextMPButton);
 player1Buttons[6].owningPlayer = 0;
+player1Buttons[6].image_yscale = 0.75;
+player1Buttons[6].image_xscale = 0.75;
 
 //Creating buttons for player2, putting them in his array
 player2Buttons[0] = instance_create(655, 10, HeadMPButton);
 player2Buttons[0].owningPlayer = 1;
+player2Buttons[0].image_yscale = 0.75;
+player2Buttons[0].image_xscale = 0.75;
 player2Buttons[1] = instance_create(655, 55, TorsoMPButton);
 player2Buttons[1].owningPlayer = 1;
+player2Buttons[1].image_yscale = 0.75;
+player2Buttons[1].image_xscale = 0.75;
 player2Buttons[2] = instance_create(655, 100, LArmMPButton);
 player2Buttons[2].owningPlayer = 1;
+player2Buttons[2].image_yscale = 0.75;
+player2Buttons[2].image_xscale = 0.75;
 player2Buttons[3] = instance_create(655, 145, RArmMPButton);
 player2Buttons[3].owningPlayer = 1;
+player2Buttons[3].image_yscale = 0.75;
+player2Buttons[3].image_xscale = 0.75;
 player2Buttons[4] = instance_create(655, 190, LegsMPButton);
 player2Buttons[4].owningPlayer = 1;
+player2Buttons[4].image_yscale = 0.75;
+player2Buttons[4].image_xscale = 0.75;
 player2Buttons[5] = instance_create(655, 250, BackMPButton);
 player2Buttons[5].owningPlayer = 1;
+player2Buttons[5].image_yscale = 0.75;
+player2Buttons[5].image_xscale = 0.75;
 player2Buttons[6] = instance_create(655, 295, NextMPButton);
 player2Buttons[6].owningPlayer = 1;
+player2Buttons[6].image_yscale = 0.75;
+player2Buttons[6].image_xscale = 0.75;
 
 //Creating buttons for player3, putting them in his array
 if(numPlayersSetting &gt;= 3)
 {
     player3Buttons[0] = instance_create(10, 370, HeadMPButton);
     player3Buttons[0].owningPlayer = 2;
+    player3Buttons[0].image_yscale = 0.75;
+    player3Buttons[0].image_xscale = 0.75;
     player3Buttons[1] = instance_create(10, 415, TorsoMPButton);
     player3Buttons[1].owningPlayer = 2;
+    player3Buttons[1].image_yscale = 0.75;
+    player3Buttons[1].image_xscale = 0.75;
     player3Buttons[2] = instance_create(10, 460, LArmMPButton);
     player3Buttons[2].owningPlayer = 2;
+    player3Buttons[2].image_yscale = 0.75;
+    player3Buttons[2].image_xscale = 0.75;
     player3Buttons[3] = instance_create(10, 505, RArmMPButton);
     player3Buttons[3].owningPlayer = 2;
+    player3Buttons[3].image_yscale = 0.75;
+    player3Buttons[3].image_xscale = 0.75;
     player3Buttons[4] = instance_create(10, 550, LegsMPButton);
     player3Buttons[4].owningPlayer = 2;
+    player3Buttons[4].image_yscale = 0.75;
+    player3Buttons[4].image_xscale = 0.75;
     player3Buttons[5] = instance_create(10, 610, BackMPButton);
     player3Buttons[5].owningPlayer = 2;
+    player3Buttons[5].image_yscale = 0.75;
+    player3Buttons[5].image_xscale = 0.75;
     player3Buttons[6] = instance_create(10, 655, NextMPButton);
     player3Buttons[6].owningPlayer = 2;
+    player3Buttons[6].image_yscale = 0.75;
+    player3Buttons[6].image_xscale = 0.75;
 }
 else
 {
-    instance_create(265, 410, ClosedDoor);
+    var test = instance_create(235, 400, ClosedDoor);
+    test.image_xscale = 0.42;
+    test.image_yscale = 0.42;
 }
 
 //Creating buttons for player4, putting them in his array
@@ -208,22 +252,38 @@ if(numPlayersSetting &gt;= 4)
 {
     player4Buttons[0] = instance_create(655, 370, HeadMPButton);
     player4Buttons[0].owningPlayer = 3;
+    player4Buttons[0].image_yscale = 0.75;
+    player4Buttons[0].image_xscale = 0.75;
     player4Buttons[1] = instance_create(655, 415, TorsoMPButton);
     player4Buttons[1].owningPlayer = 3;
+    player4Buttons[1].image_yscale = 0.75;
+    player4Buttons[1].image_xscale = 0.75;
     player4Buttons[2] = instance_create(655, 460, LArmMPButton);
     player4Buttons[2].owningPlayer = 3;
+    player4Buttons[2].image_yscale = 0.75;
+    player4Buttons[2].image_xscale = 0.75;
     player4Buttons[3] = instance_create(655, 505, RArmMPButton);
     player4Buttons[3].owningPlayer = 3;
+    player4Buttons[3].image_yscale = 0.75;
+    player4Buttons[3].image_xscale = 0.75;
     player4Buttons[4] = instance_create(655, 550, LegsMPButton);
     player4Buttons[4].owningPlayer = 3;
+    player4Buttons[4].image_yscale = 0.75;
+    player4Buttons[4].image_xscale = 0.75;
     player4Buttons[5] = instance_create(655, 610, BackMPButton);
     player4Buttons[5].owningPlayer = 3;
+    player4Buttons[5].image_yscale = 0.75;
+    player4Buttons[5].image_xscale = 0.75;
     player4Buttons[6] = instance_create(655, 655, NextMPButton);
     player4Buttons[6].owningPlayer = 3;
+    player4Buttons[6].image_yscale = 0.75;
+    player4Buttons[6].image_xscale = 0.75;
 }
 else
 {
-    instance_create(905, 410, ClosedDoor);
+    var test = instance_create(866, 400, ClosedDoor);
+    test.image_xscale = 0.42;
+    test.image_yscale = 0.42;
 }
 
 

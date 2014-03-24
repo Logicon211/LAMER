@@ -6,18 +6,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>174</bbox_right>
-  <bbox_top>0</bbox_top>
-  <bbox_bottom>249</bbox_bottom>
+  <bbox_left>41</bbox_left>
+  <bbox_right>497</bbox_right>
+  <bbox_top>72</bbox_top>
+  <bbox_bottom>682</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>175</width>
-  <height>250</height>
+  <width>537</width>
+  <height>732</height>
   <frames>
     <frame index="0">images\ClosedDoorSprite_0.png</frame>
   </frames>

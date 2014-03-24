@@ -99,8 +99,8 @@ if(shield_check())
             <string>draw_set_font(RadioFont)
 draw_text(120, 400, text);
 
-draw_sprite_ext(radFace[0], -1, 90, 60, 1, 1, 0, c_white, 1);
-draw_sprite_ext(radFace[1], -1, 895, 60, 1, 1, 0, c_white, 1);
+draw_sprite_ext(radFace[0], -1, 93, 69, 1, 1, 0, c_white, 1);
+draw_sprite_ext(radFace[1], -1, 898, 69, 1, 1, 0, c_white, 1);
 </string>
           </argument>
         </arguments>
