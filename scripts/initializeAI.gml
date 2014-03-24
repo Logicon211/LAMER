@@ -8,7 +8,7 @@ typeAI = floor(random(100)) + 1;
 
 currentTarget = 0;
 lastAttack = 0;
-
+/*
 switch(playerNum)
 {
     case 2:
@@ -20,4 +20,4 @@ switch(playerNum)
     case 4:
         leftArmType = playerLoadOut4[2].type;
         rightArmType = playerLoadOut4[3].type;
-}
+}*/
