@@ -191,6 +191,12 @@ heightAdjust = core.heightAdjust;
  
 initializeAI();
 aiCounter = 0;
+
+for(i=0;i&lt;10;i++)
+{
+    controlSet[i] = 0;
+    controlSetPrv[i] = 0;
+}
 </string>
           </argument>
         </arguments>
@@ -242,56 +248,63 @@ aiCounter = 0;
   
   If player....
  ***************************************************/
-
+controlSetPrv = controlSet;
+ 
 if(playerType = 0)
 {
-    if(down_check())
+    if(attack1_check(playerNum))
     {   controlSet[0] = 1;
     }
     else
     {   controlSet[0] = 0;
     }
-    if(down_check())
+    if(attack2_check(playerNum))
     {   controlSet[1] = 1;
     }
     else
     {   controlSet[1] = 0;
     }
-    if(down_check())
+    if(jump_check(playerNum))
     {   controlSet[2] = 1;
     }
     else
     {   controlSet[2] = 0;
     }
-    if(down_check())
+    if(shield_check(playerNum))
+    {   controlSet[3] = 1;
+    }
+    else
+    {   controlSet[3] = 0;
+    }
+    if(up_check(playerNum))
+    {   controlSet[4] = 1;
+    }
+    else
+    {   controlSet[4] = 0;
+    }
+    if(down_check(playerNum))
     {   controlSet[5] = 1;
     }
     else
     {   controlSet[5] = 0;
     }
-    if(down_check())
-    {   controlSet[5] = 1;
+    if(left_check(playerNum))
+    {   controlSet[6] = 1;
     }
     else
-    {   controlSet[5] = 0;
+    {   controlSet[6] = 0;
     }
-    if(down_check())
-    {   controlSet[5] = 1;
-    }
-    else
-    {   controlSet[5] = 0;
-    }
-    if(down_check())
-    {   controlSet[5] = 1;
+    if(right_check(playerNum))
+    {   controlSet[7] = 1;
     }
     else
-    {   controlSet[5] = 0;
+    {   controlSet[7] = 0;
     }
-    if(down_check())
-    {   controlSet[5] = 1;
+    if(boost_check(playerNum))
+    {   controlSet[8] = 1;
     }
     else
-    {   controlSet[5] = 0;
+    {   controlSet[8] = 0;
     }
 }
 
@@ -514,7 +527,7 @@ else if(state=string('slideR'))
 else
 {
     //shield pressed
-    if(shield_check(playerNum))
+    if(controlSet[3])
     {
         core.gun_aim = 0;
         shield_counter += 1;
@@ -528,12 +541,12 @@ else
         shield_obj.y = core.y;
         if(shield_counter&gt;=1)
         {
-            if(left_check_pressed(playerNum))
+            if(controlSet[6] and !controlSetPrv[6])
             {
                 state=string('slideL');
                 shield_counter = -10;
             }
-            if(right_check_pressed(playerNum))
+            if(controlSet[7] and !controlSetPrv[7])
             {
                 state=string('slideR');
                 shield_counter = -10;
@@ -542,7 +555,7 @@ else
      
     }
     //shield released
-    else if(shield_check_released(playerNum))
+    else if(controlSet[3] and controlSetPrv[3])
     {
         core.gun_aim = 0;
         with(shield_obj){instance_destroy()}
@@ -550,7 +563,7 @@ else
         shield_counter = 0;
     }
     //down pressed
-    else if(down_check(playerNum))
+    else if(controlSet[5])
     {
         if(airborne)
         {
@@ -561,11 +574,11 @@ else
         }
         target_hspeed = 0;
         core.gun_aim = -1; // ** x&lt;0=down ** x=0=off ** x&gt;0=up
-        if(attack1_check(playerNum))
+        if(controlSet[0])
         {
             attack[1] = true;
         }
-        if(attack2_check(playerNum))
+        if(controlSet[1])
         {
             attack[2] = true;
         }
@@ -582,13 +595,13 @@ else
     {
         core.gun_aim = 0;
         //left and right keys pressed
-        if(left_check(playerNum) &amp;&amp; right_check(playerNum))
+        if(controlSet[6] &amp;&amp; controlSet[7])
         {
             target_hspeed = 0;
             walking=false;
         }
         //left key pressed
-        else if(left_check(playerNum))
+        else if(controlSet[6])
         {
             walking=true;
             if(boosting)
@@ -601,7 +614,7 @@ else
             }
         }
         //right key pressed
-        else if(right_check(playerNum))
+        else if(controlSet[7])
         {
             walking=true;
             if(boosting)
@@ -621,7 +634,7 @@ else
         }
         
         //jump pressed
-        if(jump_check(playerNum))
+        if(controlSet[2])
         {
             if(!airborne)
             {
@@ -636,10 +649,10 @@ else
         }
         
         //boost pressed
-        if(boost_check(playerNum))
+        if(controlSet[8])
         {
             boosting=true;
-            if(jump_check(playerNum))
+            if(controlSet[2])
             {
                 if(!airborne)
                 {   y -= 3
@@ -653,11 +666,11 @@ else
             boosting=false;
         }
         
-        if(attack1_check(playerNum))
+        if(controlSet[0])
         {
             attack[1] = true;
         }
-        if(attack2_check(playerNum))
+        if(controlSet[1])
         {
             attack[2] = true;
         }

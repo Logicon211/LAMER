@@ -19,24 +19,21 @@
  ***************************************************/
 
 pIn = argument0;
+pIn.health2 = 1000;
+pIn.playerType = 0;
 
 pIn.x +=1000;
 pIn.y +=1000;
 
-with(pIn.lleg1){instance_destroy();}
-with(pIn.lleg2){instance_destroy();}
-with(pIn.larm[1]){instance_destroy();}
-with(pIn.larm[2]){instance_destroy();}
-with(pIn.head){instance_destroy();}
-with(pIn.leg1){instance_destroy();}
-with(pIn.leg2){instance_destroy();}
-with(pIn.arm[1]){instance_destroy();}
-with(pIn.arm[2]){instance_destroy();}
-with(pIn.core){instance_destroy();}
-for(i=pIn.boostNums;i>0;i--){
-    with(pIn.booster[i]){instance_destroy();}
-}
-pOut = createPlayer(pIn.playerNum,pIn.playerType,pIn.x-1000,pIn.y-1000)//recreate player
-with(pIn){instance_destroy();}
+with(pIn.lleg1){dead=false;}
+with(pIn.lleg2){dead=false;}
+with(pIn.larm[1]){dead=false;}
+with(pIn.larm[2]){dead=false;}
+with(pIn.head){dead=false;}
+with(pIn.leg1){dead=false;}
+with(pIn.leg2){dead=false;}
+with(pIn.arm[1]){dead=false;}
+with(pIn.arm[2]){dead=false;}
+with(pIn.core){dead=false;}
 
-return pOut
+return pIn
