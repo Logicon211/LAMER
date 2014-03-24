@@ -219,6 +219,88 @@ heightAdjust = core.heightAdjust;
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/***************************************************
+  INPUT CONTROL
+  
+  If player....
+ ***************************************************/
+
+if(playerType = 0)
+{
+    if(down_check())
+    {   controlSet[0] = 1;
+    }
+    else
+    {   controlSet[0] = 0;
+    }
+    if(down_check())
+    {   controlSet[1] = 1;
+    }
+    else
+    {   controlSet[1] = 0;
+    }
+    if(down_check())
+    {   controlSet[2] = 1;
+    }
+    else
+    {   controlSet[2] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+    if(down_check())
+    {   controlSet[5] = 1;
+    }
+    else
+    {   controlSet[5] = 0;
+    }
+}
+
+else if(playerType &gt; 2)
+{
+    //call AI script.
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>612</id>
         <kind>0</kind>
         <userelative>0</userelative>
