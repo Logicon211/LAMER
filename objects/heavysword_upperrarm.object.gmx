@@ -38,8 +38,8 @@ animationCounter = 0;
 lower_angle = 1234;
 delete = false;
 
-dominance = 0;
-number = 0;
+dominance = 10;
+number = 10;
 
 
 </string>
