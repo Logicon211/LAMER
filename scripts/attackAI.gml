@@ -1,18 +1,4 @@
 var attacked, mChance, rChance;
-var leftArm, rightArm;
-
-switch(playerNum)
-{
-    case 2:
-        leftArm = playerLoadOut2[2];
-        rightArm = playerLoadOut2[3];
-    case 3:
-        leftArm = playerLoadOut3[2];
-        rightArm = playerLoadOut3[3];
-    case 4:
-        leftArm = playerLoadOut4[2];
-        rightArm = playerLoadOut4[3];
-}
 
 attacked = false;
 
