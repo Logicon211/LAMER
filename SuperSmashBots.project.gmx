@@ -117,6 +117,7 @@
     <sprite>sprites\Level_Platform_Tile1</sprite>
     <sprite>sprites\Level_platform_Tile1_leftedge</sprite>
     <sprite>sprites\Level_Platform_Tile1_RightEdge</sprite>
+    <sprite>sprites\TUTORIAL_DOOR_OVER</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -469,6 +470,7 @@
     <object>objects\Level_Floor2</object>
     <object>objects\Platform1_leftedge</object>
     <object>objects\Platform1_rightedge</object>
+    <object>objects\object174</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MenuRoom</room>

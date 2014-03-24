@@ -55,16 +55,16 @@
     <instance objName="Level_Floor2" x="448" y="736" name="inst_FC5F64E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="576" y="736" name="inst_B879EAF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="704" y="736" name="inst_79DB0F53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="448" y="384" name="inst_B8DA56A7" locked="0" code="" scaleX="0.213333338499069" scaleY="0.586666643619537" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="1344" y="384" name="inst_B47BC718" locked="0" code="" scaleX="0.213333338499069" scaleY="0.586666643619537" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="512" y="384" name="inst_B8DA56A7" locked="0" code="" scaleX="0.213332995772362" scaleY="0.586667001247406" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="1280" y="384" name="inst_B47BC718" locked="0" code="" scaleX="0.213332995772362" scaleY="0.586667001247406" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1216" y="736" name="inst_9B85819C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1088" y="736" name="inst_2E3F9C58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1600" y="736" name="inst_0E21C6DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1472" y="736" name="inst_F1AC2A01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1344" y="736" name="inst_6E5DB110" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Flloor1" x="832" y="224" name="inst_F3BDDEE7" locked="0" code="" scaleX="0.426666676998138" scaleY="0.213333338499069" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="352" y="704" name="inst_01F7C6D7" locked="0" code="" scaleX="0.533333361148834" scaleY="0.319999992847443" colour="4294967295" rotation="0"/>
-    <instance objName="Level_Flloor1" x="1248" y="672" name="inst_2A226015" locked="0" code="" scaleX="0.533333361148834" scaleY="0.373333334922791" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="416" y="704" name="inst_01F7C6D7" locked="0" code="" scaleX="0.533333003520966" scaleY="0.319999992847443" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Flloor1" x="1184" y="672" name="inst_2A226015" locked="0" code="" scaleX="0.533333003520966" scaleY="0.373333007097244" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="768" y="256" name="inst_1D408F91" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="896" y="256" name="inst_0AA8F28A" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="1024" y="256" name="inst_153A6029" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
