@@ -173,7 +173,8 @@ for(i=boostNums;i&gt;0;i--)
     booster[i] = core.booster[i];
 }
 
-health = 1000;
+health2 = 1000;
+healthMax = 1000;
 
 /***************************************************
   Height
@@ -187,6 +188,9 @@ heightAdjust = core.heightAdjust;
 /***************************************************
   END Height
  ***************************************************/
+ 
+initializeAI();
+aiCounter = 0;
 </string>
           </argument>
         </arguments>
@@ -293,37 +297,12 @@ if(playerType = 0)
 
 else if(playerType &gt; 2)
 {
-    //call AI script.
+    aiCounter++;
+    if((aiCounter mod 15)=1)
+    {   stepAI()
+    }
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>playerType</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -357,7 +336,101 @@ else if(playerType &gt; 2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(health2 &lt;= 0)
+            <string>if(playerType = 2)
+{
+
+vspeed+=1;
+playerCollision();
+image_angle+=random_range(1,10);
+
+if(deadCounter=0)
+{
+    core.dead = true;
+    core.hspeed = random_range(-30,30);
+    core.vspeed = random_range(0,-30);
+    arm[1].dead = true;
+    arm[1].hspeed = random_range(-30,30);
+    arm[1].vspeed = random_range(0,-30);
+    arm[2].dead = true;
+    arm[2].hspeed = random_range(-30,30);
+    arm[2].vspeed = random_range(0,-30);
+    leg1.dead = true;
+    leg1.hspeed = random_range(-30,30);
+    leg1.vspeed = random_range(0,-30);
+    leg2.dead = true;
+    leg2.hspeed = random_range(-30,30);
+    leg2.vspeed = random_range(0,-30);
+    head.dead = true;
+    head.hspeed = random_range(-30,30);
+    head.vspeed = random_range(0,-30);
+    larm[1].dead = true;
+    larm[1].hspeed = random_range(-30,30);
+    larm[1].vspeed = random_range(0,-30);
+    larm[2].dead = true;
+    larm[2].hspeed = random_range(-30,30);
+    larm[2].vspeed = random_range(0,-30);
+    lleg1.dead = true;
+    lleg1.hspeed = random_range(-30,30);
+    lleg1.vspeed = random_range(0,-30);
+    lleg2.dead = true;
+    lleg2.hspeed = random_range(-30,30);
+    lleg2.vspeed = random_range(0,-30);
+}
+deadCounter +=1;
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(playerType = 0 or playerType &gt; 2)
+{
+
+if(health2 &lt;= 0)
 {
     if(health2&lt;0){health2=0}
     splodeColor = choose(c_red,c_yellow,c_orange)
@@ -371,8 +444,16 @@ else if(playerType &gt; 2)
     {
         //effect_create_above(ef_firework,x+random_range(-30,30),y+random_range(-50,50),100,splodeColor);
     }
-    instance_create(x,y,renewRoom);
+    respawn = instance_create(x,y,renewRoom);
+    respawn.pIn = id;
     playerType = 2;
+    for(i=0;i&lt;core.boostNums;i++)
+    {   with(core.booster[i])
+        {   instance_destroy();
+        }
+    }
+    x = 0;
+    y = 0;
 }
 
 /***************************************************
@@ -760,6 +841,8 @@ if(keyboard_check(ord('O')))
     color_tst += 1;
     color_tst2 = color_tst mod 5;
 }
+
+}
 </string>
           </argument>
         </arguments>
@@ -780,7 +863,11 @@ if(keyboard_check(ord('O')))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/***************************************************
+            <string>if(playerType = 0 or playerType &gt; 2)
+{
+
+
+/***************************************************
   Positioning Code
  ***************************************************/
 
@@ -946,176 +1033,8 @@ else if(state = string('land'))
 /***************************************************
   END Land State
  ***************************************************/
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>playerType</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>424</id>
-        <kind>2</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>playerType</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>2</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>422</id>
-        <kind>1</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>vspeed+=1;
-playerCollision();
-image_angle+=random_range(1,10);
-
-if(deadCounter=0)
-{
-    core.dead = true;
-    core.hspeed = random_range(-30,30);
-    core.vspeed = random_range(0,-30);
-    arm[1].dead = true;
-    arm[1].hspeed = random_range(-30,30);
-    arm[1].vspeed = random_range(0,-30);
-    arm[2].dead = true;
-    arm[2].hspeed = random_range(-30,30);
-    arm[2].vspeed = random_range(0,-30);
-    leg1.dead = true;
-    leg1.hspeed = random_range(-30,30);
-    leg1.vspeed = random_range(0,-30);
-    leg2.dead = true;
-    leg2.hspeed = random_range(-30,30);
-    leg2.vspeed = random_range(0,-30);
-    head.dead = true;
-    head.hspeed = random_range(-30,30);
-    head.vspeed = random_range(0,-30);
-    larm[1].dead = true;
-    larm[1].hspeed = random_range(-30,30);
-    larm[1].vspeed = random_range(0,-30);
-    larm[2].dead = true;
-    larm[2].hspeed = random_range(-30,30);
-    larm[2].vspeed = random_range(0,-30);
-    lleg1.dead = true;
-    lleg1.hspeed = random_range(-30,30);
-    lleg1.vspeed = random_range(0,-30);
-    lleg2.dead = true;
-    lleg2.hspeed = random_range(-30,30);
-    lleg2.vspeed = random_range(0,-30);
+ 
 }
-deadCounter +=1;
 </string>
           </argument>
         </arguments>
