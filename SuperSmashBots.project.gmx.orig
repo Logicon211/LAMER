@@ -19,6 +19,10 @@
     <sprite>sprites\ShopMapNodeSprite</sprite>
     <sprite>sprites\RegMapNodeSprite</sprite>
     <sprite>sprites\VisitedMapNodeSprite</sprite>
+    <sprite>sprites\CronosSpriteGun</sprite>
+    <sprites name="LightTorso">
+      <sprite>sprites\torso001</sprite>
+    </sprites>
     <sprites name="BattleSprites">
       <sprite>sprites\hue_s</sprite>
       <sprite>sprites\colorSelectorSprite</sprite>
@@ -45,7 +49,14 @@
       <sprite>sprites\MitchFace</sprite>
       <sprite>sprites\LoganFace</sprite>
       <sprite>sprites\RaphFace</sprite>
-      <sprite>sprites\EliotFace</sprite>
+      <sprite>sprites\ElliotFace</sprite>
+      <sprite>sprites\PlayerFace</sprite>
+      <sprite>sprites\EGoonFace1</sprite>
+      <sprite>sprites\EGoonFace2</sprite>
+      <sprite>sprites\RGoonFace1</sprite>
+      <sprite>sprites\RGoonFace2</sprite>
+      <sprite>sprites\MGoonFace1</sprite>
+      <sprite>sprites\MGoonFace2</sprite>
     </sprites>
     <sprites name="Buttons">
       <sprite>sprites\HeadButtonSprite</sprite>
@@ -106,21 +117,17 @@
     <sprite>sprites\tutorial_attack</sprite>
     <sprite>sprites\tutorial_shield</sprite>
     <sprite>sprites\tutorial_turret</sprite>
-    <sprite>sprites\tutorial_platform</sprite>
-    <sprite>sprites\Level_Platform_Tile1</sprite>
-    <sprite>sprites\healthSprite</sprite>
-<<<<<<< HEAD
     <sprite>sprites\cameraSprite</sprite>
-=======
     <sprites name="MapPreviews">
       <sprite>sprites\MapPreviewTestSprite</sprite>
       <sprite>sprites\MapPreviewTestSprite2</sprite>
     </sprites>
->>>>>>> 10b564cd996e7d14d3b37b0045679bf06dc36ed5
+    <sprite>sprites\tutorial_platform</sprite>
     <sprite>sprites\Level_Floor_Tile1</sprite>
-    <sprite>sprites\Level_Platform_Tile1_RightEdge</sprite>
-    <sprite>sprites\Level_platform_Tile1_leftedge</sprite>
     <sprite>sprites\Level_Floor_Tile2</sprite>
+    <sprite>sprites\Level_Platform_Tile1</sprite>
+    <sprite>sprites\Level_platform_Tile1_leftedge</sprite>
+    <sprite>sprites\Level_Platform_Tile1_RightEdge</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -134,6 +141,7 @@
     <background>background\Credits1</background>
     <background>background\Credits2</background>
     <background>background\CampaignInfoScreen</background>
+    <background>background\VictoryBackground</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -220,11 +228,22 @@
     <script>scripts\unselectAllItems.gml</script>
     <script>scripts\unlockNodes.gml</script>
     <script>scripts\destroyArray.gml</script>
-    <script>scripts\script55.gml</script>
     <script>scripts\getPlayerColor.gml</script>
     <script>scripts\playerCollision.gml</script>
     <script>scripts\startBattle.gml</script>
     <script>scripts\createColorBars.gml</script>
+    <script>scripts\gotoVictoryRoom.gml</script>
+<<<<<<< HEAD
+    <scripts name="AI">
+      <script>scripts\initializeAI.gml</script>
+      <script>scripts\targetAI.gml</script>
+      <script>scripts\stepAI.gml</script>
+      <script>scripts\moveAI.gml</script>
+      <script>scripts\attackAI.gml</script>
+    </scripts>
+=======
+    <script>scripts\script65.gml</script>
+>>>>>>> origin/master
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -242,6 +261,8 @@
     <font>fonts\font1</font>
     <font>fonts\InventoryHeader</font>
     <font>fonts\InventoryContent</font>
+    <font>fonts\CampaignFont</font>
+    <font>fonts\RadioFont</font>
     <font>fonts\InventoryContentSmall</font>
   </fonts>
   <objects name="objects">
@@ -333,11 +354,57 @@
         <object>objects\testHead</object>
       </objects>
       <objects name="InventoryItems">
-        <object>objects\ProtoHeadObjectItem</object>
-        <object>objects\ProtoTorsoObjectItem</object>
-        <object>objects\ProtoSwordObjectItem</object>
-        <object>objects\ProtoGunObjectItem</object>
-        <object>objects\ProtoLegsObjectItem</object>
+        <objects name="Heads">
+          <object>objects\ProtoHeadObjectItem</object>
+          <object>objects\AuraH</object>
+          <object>objects\HyperionHelios</object>
+          <object>objects\CriusAstraeus</object>
+          <object>objects\PheobeLelantos</object>
+          <object>objects\CronusH</object>
+          <object>objects\HyperionHeliosMkII</object>
+        </objects>
+        <objects name="Torso">
+          <object>objects\ProtoTorsoObjectItem</object>
+          <object>objects\AuraT</object>
+          <object>objects\HyperionEos</object>
+          <object>objects\CriusPallas</object>
+          <object>objects\CoeusLelantos</object>
+          <object>objects\CronusT</object>
+          <object>objects\HyperionEosMkII</object>
+        </objects>
+        <objects name="Legs">
+          <object>objects\ProtoLegsObjectItem</object>
+          <object>objects\AuraL</object>
+          <object>objects\HyperionSelene</object>
+          <object>objects\CriusPerses</object>
+          <object>objects\LelantosAura</object>
+          <object>objects\CronusL</object>
+          <object>objects\HyperionSeleneMkII</object>
+        </objects>
+        <objects name="Guns">
+          <object>objects\ProtoGunObjectItem</object>
+          <object>objects\ThePointer</object>
+          <object>objects\CronusSeismos</object>
+          <object>objects\HermesRhipto</object>
+          <object>objects\VulcanPistol</object>
+          <object>objects\EnyoGat</object>
+          <object>objects\ArtemisML</object>
+          <object>objects\HephaestusCannon</object>
+          <object>objects\HermesMG</object>
+          <object>objects\MinervaML</object>
+          <object>objects\ApolloPiras</object>
+          <object>objects\ErisRhipto</object>
+        </objects>
+        <objects name="Melee">
+          <object>objects\ProtoSwordObjectItem</object>
+          <object>objects\AetherFoil</object>
+          <object>objects\AthenaBroadsword</object>
+          <object>objects\AresEdge</object>
+          <object>objects\ChronosFist</object>
+          <object>objects\ZeusArm</object>
+          <object>objects\HadesAxe</object>
+          <object>objects\GaiaHammer</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Radio">
@@ -389,6 +456,7 @@
           <objects name="Prototype">
             <object>objects\core_o</object>
           </objects>
+          <object>objects\core2</object>
         </objects>
         <objects name="Heads">
           <objects name="Prototype">
@@ -413,7 +481,9 @@
           <objects name="Small Guns">
             <objects name="Prototype">
               <object>objects\proto_gun_o</object>
+              <object>objects\CronosUpperArm</object>
               <object>objects\proto_gun_o2</object>
+              <object>objects\CronosLowerGun</object>
               <object>objects\proto_gun_trail_o</object>
             </objects>
           </objects>
@@ -426,7 +496,8 @@
         <object>objects\booster_trail_intense_o</object>
       </objects>
       <object>objects\bulletObject</object>
-      <object>objects\object156</object>
+      <object>objects\bulletObject2</object>
+      <object>objects\CosmosBullet</object>
     </objects>
     <objects name="Color Adjusts">
       <object>objects\hue_prime_o</object>
@@ -449,34 +520,34 @@
       <object>objects\land_floor_panel</object>
       <object>objects\land_tutorial_walls</object>
       <object>objects\Land_tutorial_gate</object>
-      <object>objects\Platform1_rightedge</object>
-      <object>objects\Platform1_leftedge</object>
-    </objects>
-    <objects name="tutorial_objects">
-      <object>objects\tutorial_help_platform</object>
-      <object>objects\tutorial_help_turret</object>
-      <object>objects\tutorial_help_shield</object>
-      <object>objects\tutorial_help_attack</object>
-      <object>objects\tutorial_help_thrusters</object>
-      <object>objects\tutorial_help_move</object>
-      <object>objects\tutorial_help_jump</object>
-      <object>objects\autoTurret</object>
     </objects>
     <object>objects\ShaderTestObject</object>
     <object>objects\ClosedDoor</object>
     <object>objects\MusicController</object>
     <object>objects\InventoryButtonStringObject</object>
     <object>objects\loadingRoomController</object>
+    <object>objects\autoTurret</object>
     <object>objects\shieldFlash</object>
+    <object>objects\tutorial_help_jump</object>
+    <object>objects\tutorial_help_move</object>
     <object>objects\CreditsController</object>
     <object>objects\InfoScreenController</object>
-    <object>objects\Level_Flloor1</object>
-    <object>objects\Level_Floor2</object>
+    <object>objects\VictoryScreenController</object>
+    <object>objects\tutorial_help_thrusters</object>
+    <object>objects\tutorial_help_attack</object>
+    <object>objects\tutorial_help_shield</object>
     <object>objects\renewRoom</object>
     <object>objects\cameraObject</object>
     <object>objects\tutorialBossTrigger</object>
+    <object>objects\tutorial_help_turret</object>
+    <object>objects\tutorial_help_platform</object>
+    <object>objects\Level_Flloor1</object>
+    <object>objects\Level_Floor2</object>
+    <object>objects\Platform1_leftedge</object>
+    <object>objects\Platform1_rightedge</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\CampaignInfoRoom</room>
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
     <room>rooms\MPMapSelect</room>
@@ -486,14 +557,15 @@
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
+    <room>rooms\room9</room>
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
-    <room>rooms\CampaignInfoRoom</room>
-    <room>rooms\Stage2</room>
     <room>rooms\Stage1</room>
+    <room>rooms\Stage2</room>
     <room>rooms\Stage3</room>
     <room>rooms\Stage4</room>
     <room>rooms\Stage5</room>
+    <room>rooms\VictoryRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

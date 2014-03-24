@@ -53,15 +53,25 @@ if(owningPlayer == 0)
     
     player1Buttons[0] = instance_create(10, 10, PrimaryColorMPButton);
     player1Buttons[0].owningPlayer = 0;
+    player1Buttons[0].image_yscale = 0.75;
+    player1Buttons[0].image_xscale = 0.75;
     player1Buttons[1] = instance_create(10, 55, SecondaryColorMPButton);
     player1Buttons[1].owningPlayer = 0;
+    player1Buttons[1].image_yscale = 0.75;
+    player1Buttons[1].image_xscale = 0.75;
     player1Buttons[2] = instance_create(10, 100, EnergyColorMPButton);
     player1Buttons[2].owningPlayer = 0;
+    player1Buttons[2].image_yscale = 0.75;
+    player1Buttons[2].image_xscale = 0.75;
     
     player1Buttons[3] = instance_create(10, 250, Back2MPButton);
     player1Buttons[3].owningPlayer = 0;
+    player1Buttons[3].image_yscale = 0.75;
+    player1Buttons[3].image_xscale = 0.75;
     player1Buttons[4] = instance_create(10, 295, LockInMPButton);
     player1Buttons[4].owningPlayer = 0;
+    player1Buttons[4].image_yscale = 0.75;
+    player1Buttons[4].image_xscale = 0.75;
 }
 //Player 2
 else if(owningPlayer == 1)
@@ -70,15 +80,25 @@ else if(owningPlayer == 1)
     
     player2Buttons[0] = instance_create(655, 10, PrimaryColorMPButton);
     player2Buttons[0].owningPlayer = 1;
+    player2Buttons[0].image_yscale = 0.75;
+    player2Buttons[0].image_xscale = 0.75;
     player2Buttons[1] = instance_create(655, 55, SecondaryColorMPButton);
     player2Buttons[1].owningPlayer = 1;
+    player2Buttons[1].image_yscale = 0.75;
+    player2Buttons[1].image_xscale = 0.75;
     player2Buttons[2] = instance_create(655, 100, EnergyColorMPButton);
     player2Buttons[2].owningPlayer = 1;
+    player2Buttons[2].image_yscale = 0.75;
+    player2Buttons[2].image_xscale = 0.75;
     
     player2Buttons[3] = instance_create(655, 250, Back2MPButton);
     player2Buttons[3].owningPlayer = 1;
+    player2Buttons[3].image_yscale = 0.75;
+    player2Buttons[3].image_xscale = 0.75;
     player2Buttons[4] = instance_create(655, 295, LockInMPButton);
     player2Buttons[4].owningPlayer = 1;
+    player2Buttons[4].image_yscale = 0.75;
+    player2Buttons[4].image_xscale = 0.75;
 }
 //Player 3
 else if(owningPlayer == 2)
@@ -87,15 +107,25 @@ else if(owningPlayer == 2)
     
     player3Buttons[0] = instance_create(10, 370, PrimaryColorMPButton);
     player3Buttons[0].owningPlayer = 2;
+    player3Buttons[0].image_yscale = 0.75;
+    player3Buttons[0].image_xscale = 0.75;
     player3Buttons[1] = instance_create(10, 415, SecondaryColorMPButton);
     player3Buttons[1].owningPlayer = 2;
+    player3Buttons[1].image_yscale = 0.75;
+    player3Buttons[1].image_xscale = 0.75;
     player3Buttons[2] = instance_create(10, 460, EnergyColorMPButton);
     player3Buttons[2].owningPlayer = 2;
+    player3Buttons[2].image_yscale = 0.75;
+    player3Buttons[2].image_xscale = 0.75;
     
     player3Buttons[3] = instance_create(10, 610, Back2MPButton);
     player3Buttons[3].owningPlayer = 2;
+    player3Buttons[3].image_yscale = 0.75;
+    player3Buttons[3].image_xscale = 0.75;
     player3Buttons[4] = instance_create(10, 655, LockInMPButton);
     player3Buttons[4].owningPlayer = 2;
+    player3Buttons[4].image_yscale = 0.75;
+    player3Buttons[4].image_xscale = 0.75;
 }
 //Player 4
 else if(owningPlayer == 3)
@@ -104,15 +134,25 @@ else if(owningPlayer == 3)
     
     player4Buttons[0] = instance_create(655, 370, PrimaryColorMPButton);
     player4Buttons[0].owningPlayer = 3;
+    player4Buttons[0].image_yscale = 0.75;
+    player4Buttons[0].image_xscale = 0.75;
     player4Buttons[1] = instance_create(655, 415, SecondaryColorMPButton);
     player4Buttons[1].owningPlayer = 3;
+    player4Buttons[1].image_yscale = 0.75;
+    player4Buttons[1].image_xscale = 0.75;
     player4Buttons[2] = instance_create(655, 460, EnergyColorMPButton);
     player4Buttons[2].owningPlayer = 3;
+    player4Buttons[2].image_yscale = 0.75;
+    player4Buttons[2].image_xscale = 0.75;
     
     player4Buttons[3] = instance_create(655, 610, Back2MPButton);
     player4Buttons[3].owningPlayer = 3;
+    player4Buttons[3].image_yscale = 0.75;
+    player4Buttons[3].image_xscale = 0.75;
     player4Buttons[4] = instance_create(655, 655, LockInMPButton);
     player4Buttons[4].owningPlayer = 3;
+    player4Buttons[4].image_yscale = 0.75;
+    player4Buttons[4].image_xscale = 0.75;
 }
 
 </string>

@@ -25,30 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 1;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Second Map Node";
-nodeDescription = "Some Fluff about the area in the Second node HAS RADIO"
+nodeName = "Egypt";
+nodeDescription = "The Pyramids continue to stand strong despite the destruction that's occured. They also make #for a nice colosseum backdrop.";
 
-isLocked = true;
+isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
 hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "This is some test text for another NODE :O";
-radioText[1] = "This is another line wow";
-radioText[2] = "Cool CoolCool";
-radioText[3] = "Cool CoolCool Cool Cool wow wow";
-radioText[4] = "END TRANSMISSION";
+radioText[0] = "Player: I'm here to defeat you so I can go on to challenge Maximus Lovelife, leader of Africa!";
+radioText[1] = "Goon: Why would you do that? Leader Lovelife is great! Thanks to him, I love my life!";
+radioText[2] = "Goon: Though, he is holding my wife's family at constant gunpoint so that I fight for him.";
+radioText[3] = "Player: How are you okay with this?!";
+radioText[4] = "Goon: Well, as long as I don't have to put up with my mother-in-law...";
+radioText[5] = "Player: ...I'm just going to put you out of your misery now.";
 
-face[0] = MitchFace;
-face[1] = EliotFace;
+face[0] = PlayerFace;
+face[1] = EGoonFace2;
 
-battleMap = testRange;
+battleMap = Stage1;
 
 </string>
           </argument>

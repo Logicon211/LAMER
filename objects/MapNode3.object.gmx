@@ -25,13 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//Node number, unique between nodes
+            <string>//Node number, unique between nodes
 nodeNumber = 3;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Fourth Map Node";
-nodeDescription = "Some Fluff about the area in the Fourth node"
+nodeName = "Congo";
+nodeDescription = "The Congo, with its precious metals hidden away deep in the earth, was also hit hard #by the Apocalypse. All that really remains is a colosseum surrounded by mountains and automated miners.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -43,7 +42,7 @@ radioText[0] = "";
 
 face[0] = 0;
 
-battleMap = testRange;
+battleMap = Stage3;
 
 </string>
           </argument>

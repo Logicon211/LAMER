@@ -579,10 +579,6 @@ if(timeButtons[selectedTimeButton].state != 1) {
 if(livesButtons[selectedLivesButton].state != 1) {
     livesButtons[selectedLivesButton].state = 2;
 }
-if(creditLimitButtons[selectedCreditButton].state != 1) {
-    creditLimitButtons[selectedCreditButton].state = 2;
-}
-
 //LEFT CHECK
 if(left_check_pressed())
 {
@@ -642,20 +638,8 @@ if(left_check_pressed())
         livesButtons[selectedLivesButton].alarm[1] = true;
         selectedSettingsButton = livesButtons[selectedLivesButton];
     }
-    //Credit Limit Row
-    else if(selectedSettingsRow == 4)
-    {
-        selectedSettingsButton.state = 0;
-        selectedCreditButton--;
-        if(selectedCreditButton &lt; 0)
-        {
-            selectedCreditButton = array_length_1d(creditLimitButtons) - 1
-        }
-        creditLimitButtons[selectedCreditButton].alarm[1] = true;
-        selectedSettingsButton = creditLimitButtons[selectedCreditButton];
-    }
     //Back - Next Button Row
-    else if(selectedSettingsRow == 5)
+    else if(selectedSettingsRow == 4)
     {
         if(selectedBackNextButton == -1)
         {
@@ -723,20 +707,8 @@ if(right_check_pressed())
         livesButtons[selectedLivesButton].alarm[1] = true;
         selectedSettingsButton = livesButtons[selectedLivesButton];
     }
-    //Credit Limit Row
-    else if(selectedSettingsRow == 4)
-    {
-        selectedSettingsButton.state = 0;
-        selectedCreditButton++;
-        if(selectedCreditButton == array_length_1d(creditLimitButtons))
-        {
-            selectedCreditButton = 0
-        }
-        creditLimitButtons[selectedCreditButton].alarm[1] = true;
-        selectedSettingsButton = creditLimitButtons[selectedCreditButton];
-    }
     //Back - Next Button Row
-    else if(selectedSettingsRow == 5)
+    else if(selectedSettingsRow == 4)
     {
         if(selectedBackNextButton == -1)
         {
@@ -759,7 +731,7 @@ if(up_check_pressed())
     //Num Players Row
     if(selectedSettingsRow == 0)
     {
-        selectedSettingsRow = 5;
+        selectedSettingsRow = 4;
         selectedSettingsButton.state = 3;
         if(selectedBackNextButton == -1)
         {
@@ -788,19 +760,12 @@ if(up_check_pressed())
         selectedSettingsButton.state = 3;
         selectedSettingsButton = timeButtons[selectedTimeButton];
     }
-    //Credit Limit Row
+    //Back - Next Button Row
     else if(selectedSettingsRow == 4)
     {
         selectedSettingsRow = 3;
         selectedSettingsButton.state = 3;
-        selectedSettingsButton = livesButtons[selectedLivesButton];
-    }
-    //Back - Next Button Row
-    else if(selectedSettingsRow == 5)
-    {
-        selectedSettingsRow = 4;
-        selectedSettingsButton.state = 3;
-        selectedSettingsButton = creditLimitButtons[selectedCreditButton];
+        selectedSettingsButton = livesButtons[selectedCreditButton];
     }
 }
 //DOWN CHECK
@@ -833,21 +798,10 @@ if(down_check_pressed())
     {
         selectedSettingsRow = 4;
         selectedSettingsButton.state = 3;
-        selectedSettingsButton = creditLimitButtons[selectedCreditButton];
-    }
-    //Credit Limit Row
-    else if(selectedSettingsRow == 4)
-    {
-        selectedSettingsRow = 5;
-        selectedSettingsButton.state = 3;
-        if(selectedBackNextButton == -1)
-        {
-            selectedBackNextButton = 0;
-        }
-        selectedSettingsButton = backNextButtons[selectedBackNextButton];
+        selectedSettingsButton = backNextButtons[selectedCreditButton];
     }
     //Back - Next Button Row
-    else if(selectedSettingsRow == 5)
+    else if(selectedSettingsRow == 4)
     {
         selectedSettingsRow = 0;
         selectedSettingsButton.state = 3;
@@ -855,7 +809,7 @@ if(down_check_pressed())
     }
 }
 
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
     audio_play_sound(MenuConfirmationSound,1,false);
     selectedSettingsButton.alarm[1] = true;
@@ -902,4 +856,4 @@ if(attack1_check_pressed())
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
->>>>>>> 5c5ced27cb45a1854264320aff2e7fcb49ed77f9
+>>>>>>> 99b012c818d7df27495fe79187a95f2d705c1f94

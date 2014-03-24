@@ -322,7 +322,7 @@ if(down_check_pressed())
     }
 }
 
-if(attack1_check_pressed())
+if(jump_check_pressed())
 {
     if(!view_visible[1])
     {
@@ -458,6 +458,11 @@ if(playerLoadOut1[5] != 0)
         totalBonuses += playerLoadOut1[5].bonuses + "#"
     }
 }
+
+//Assign player stats
+playerStats[0, 0] = totalArmor;
+playerStats[0, 1] = totalWeight;
+playerStats[0, 2] = totalCooling;
 
 //Cost
 draw_text(965, 420, "Total Cost:")

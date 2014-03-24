@@ -7,18 +7,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>552</bbox_left>
-  <bbox_right>1784</bbox_right>
-  <bbox_top>114</bbox_top>
-  <bbox_bottom>2288</bbox_bottom>
+  <bbox_left>20</bbox_left>
+  <bbox_right>85</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>385</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>1800</width>
-  <height>2400</height>
+  <width>106</width>
+  <height>404</height>
   <frames>
     <frame index="0">images\TUTORIAL_DOOR_OVER_0.png</frame>
   </frames>

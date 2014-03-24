@@ -56,8 +56,8 @@ room_goto(MultiplayerLoadoutRoom);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>num = 1;
-backNextButtons[1] = id;
+            <string>num = 0;
+backNextButtons[0] = id;
 alarm[0] = false;
 </string>
           </argument>
