@@ -40,6 +40,8 @@ inventoryArray = 0;
 globalvar lookingAtItems;
 lookingAtItems = false;
 
+globalvar currentItem;
+
 //Array to store the buttons on screen, so we can manipulate them via keyboard
 globalvar buttonArray;
 buttonArray[0] = 0;
@@ -257,6 +259,15 @@ if(up_check_pressed())
             selectedInventory--;
         }
         inventoryArray[selectedInventory].state = 1;
+        
+        if(selectedInventory != -1)
+        {
+            //do code to confirm selection
+            playerLoadOut1[categoryNumber] = inventoryArray[selectedInventory].inventoryItem;
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayer = refreshPlayer(displayPlayer);
+        }
     }
 }
 
@@ -319,6 +330,15 @@ if(down_check_pressed())
             selectedInventory++;
         }
         inventoryArray[selectedInventory].state = 1;
+        
+        if(selectedInventory != -1)
+        {
+            //do code to confirm selection
+            playerLoadOut1[categoryNumber] = inventoryArray[selectedInventory].inventoryItem;
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayer = refreshPlayer(displayPlayer);
+        }
     }
 }
 
@@ -353,6 +373,26 @@ if(jump_check_pressed())
     }
 
 }
+
+/*if(shield_check())
+{
+    audio_play_sound(MenuNavigationSound,1,false);
+    if(lookingAtItems)
+    {
+        //do code to confirm selection
+        playerLoadOut1[categoryNumber] = currentItem;
+        
+        //Refresh the player so it shows the new stuff equipped
+        displayPlayer = refreshPlayer(displayPlayer);
+    
+        //View 1 is player 1
+        view_visible[1] = false;
+        lookingAtItems = false;
+        selectedInventory = -1;
+        inventoryArray = destroyArray(inventoryArray);
+    }
+
+}*/
 </string>
           </argument>
         </arguments>
@@ -377,10 +417,10 @@ if(jump_check_pressed())
             <kind>1</kind>
             <string>//Print current loadout stats on screen (Still need to add stat comparisons)
 //Need to figure out multiple players inventory screens
-draw_set_font(InventoryHeader);
-draw_text(965, 650, "Money:");
-draw_set_font(InventoryContent);
-draw_text(965, 675, string(player1Money));
+/*draw_set_font(InventoryHeader);
+draw_text(965, 650, "Money:");*/
+/*draw_set_font(InventoryContent);
+draw_text(965, 675, string(player1Money));*/
 
 draw_set_font(InventoryHeader);
 draw_text(965, 380, "Current Stats:")
@@ -465,8 +505,8 @@ playerStats[0, 1] = totalWeight;
 playerStats[0, 2] = totalCooling;
 
 //Cost
-draw_text(965, 420, "Total Cost:")
-draw_text(1120, 420, string(totalCost))
+/*draw_text(965, 420, "Total Cost:")
+draw_text(1120, 420, string(totalCost))*/
 //Armor
 draw_text(965, 450, "Armor:")
 draw_text(1120, 450, string(totalArmor))
@@ -495,8 +535,8 @@ if(lookingAtItems)
     
     if(playerLoadOut1[categoryNumber] != 0)
     {
-        draw_text(1720, 120, "cost:");
-        draw_text(1780, 120, string(playerLoadOut1[categoryNumber].cost));
+        /*draw_text(1720, 120, "cost:");
+        draw_text(1780, 120, string(playerLoadOut1[categoryNumber].cost));*/
         //Armor
         draw_text(1720, 140, "Armor:");
         draw_text(1780, 140, string(playerLoadOut1[categoryNumber].armor));
@@ -507,15 +547,15 @@ if(lookingAtItems)
         draw_text(1720, 180, "Cooling:");
         draw_text(1780, 180, string(playerLoadOut1[categoryNumber].cooling));
         //Bonuses
-        draw_set_font(InventoryContentSmall);
-        draw_text(1680, 210, playerLoadOut1[categoryNumber].bonuses);
+        /*draw_set_font(InventoryContentSmall);
+        draw_text(1680, 210, playerLoadOut1[categoryNumber].bonuses);*/
         draw_set_font(InventoryContent);
     }
     
     if(selectedInventory != -1)
     {
-        draw_text(1920, 120, "cost:");
-        draw_text(1980, 120, string(inventoryArray[selectedInventory].inventoryItem.cost));
+       /* draw_text(1920, 120, "cost:");
+        draw_text(1980, 120, string(inventoryArray[selectedInventory].inventoryItem.cost));*/
         //Armor
         draw_text(1920, 140, "Armor:");
         draw_text(1980, 140, string(inventoryArray[selectedInventory].inventoryItem.armor));
@@ -526,8 +566,8 @@ if(lookingAtItems)
         draw_text(1920, 180, "Cooling:");
         draw_text(1980, 180, string(inventoryArray[selectedInventory].inventoryItem.cooling));
         //Bonuses
-        draw_set_font(InventoryContentSmall);
-        draw_text(1880, 210, inventoryArray[selectedInventory].inventoryItem.bonuses);
+        /*draw_set_font(InventoryContentSmall);
+        draw_text(1880, 210, inventoryArray[selectedInventory].inventoryItem.bonuses);*/
         draw_set_font(InventoryContent);
     }
 }

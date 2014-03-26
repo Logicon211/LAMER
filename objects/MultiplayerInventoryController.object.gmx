@@ -44,6 +44,12 @@ player2Money = creditLimitSetting;
 player3Money = creditLimitSetting;
 player4Money = creditLimitSetting;
 
+//Current item is the item that the player currently has equipped, needs to be saved in case the player wants to back out of the inventory without changing anything
+globalvar currentItem;
+currentItem[0] = 0;
+currentItem[1] = 0;
+currentItem[2] = 0;
+currentItem[3] = 0;
 
 //Easy variable to store if a player is AI or not
 globalvar isAI;
@@ -538,6 +544,15 @@ if(!lockedIn[0])
                 selectedInventory[0]--;
             }
             inventoryArray1[selectedInventory[0]].state = 1;
+            
+            if(selectedInventory[0] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut1[categoryNumber[0]] = inventoryArray1[selectedInventory[0]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[0] = refreshPlayer(displayPlayers[0]);
+            }
         }
     }
     
@@ -589,6 +604,15 @@ if(!lockedIn[0])
                 selectedInventory[0]++;
             }
             inventoryArray1[selectedInventory[0]].state = 1;
+            
+            if(selectedInventory[0] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut1[categoryNumber[0]] = inventoryArray1[selectedInventory[0]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[0] = refreshPlayer(displayPlayers[0]);
+            }
         }
     }
     //CONFIRM (ENTER Or A)
@@ -635,6 +659,12 @@ if(!lockedIn[0])
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[0])
         {
+            //do code to confirm selection
+            playerLoadOut1[categoryNumber[0]] = currentItem[0];
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayers[0] = refreshPlayer(displayPlayers[0]);
+        
             //View 1 is player 1
             view_visible[1] = false;
             lookingAtItems[0] = false;
@@ -722,6 +752,15 @@ else if(lockedIn[0] and !lockedIn[1] and isAI[1])
                 selectedInventory[1]--;
             }
             inventoryArray2[selectedInventory[1]].state = 1;
+            
+            if(selectedInventory[1] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut2[categoryNumber[1]] = inventoryArray2[selectedInventory[1]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[1] = refreshPlayer(displayPlayers[1]);
+            }
         }
     }
     
@@ -773,6 +812,15 @@ else if(lockedIn[0] and !lockedIn[1] and isAI[1])
                 selectedInventory[1]++;
             }
             inventoryArray2[selectedInventory[1]].state = 1;
+            
+            if(selectedInventory[1] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut2[categoryNumber[1]] = inventoryArray2[selectedInventory[1]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[1] = refreshPlayer(displayPlayers[1]);
+            }
         }
     }
     //CONFIRM (ENTER Or A)
@@ -820,6 +868,12 @@ else if(lockedIn[0] and !lockedIn[1] and isAI[1])
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[1])
         {
+            //do code to confirm selection
+            playerLoadOut2[categoryNumber[1]] = currentItem[1];
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayers[1] = refreshPlayer(displayPlayers[1]);
+        
             //View 1 is player 1
             view_visible[2] = false;
             lookingAtItems[1] = false;
@@ -907,6 +961,15 @@ else if((lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or
                 selectedInventory[2]--;
             }
             inventoryArray3[selectedInventory[2]].state = 1;
+            
+            if(selectedInventory[2] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut3[categoryNumber[2]] = inventoryArray3[selectedInventory[2]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[2] = refreshPlayer(displayPlayers[2]);
+            }
         }
     }
     
@@ -958,6 +1021,15 @@ else if((lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or
                 selectedInventory[2]++;
             }
             inventoryArray3[selectedInventory[2]].state = 1;
+            
+            if(selectedInventory[2] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut3[categoryNumber[2]] = inventoryArray3[selectedInventory[2]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[2] = refreshPlayer(displayPlayers[2]);
+            }
         }
     }
     //CONFIRM (ENTER Or A)
@@ -1005,6 +1077,12 @@ else if((lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[2])
         {
+            //do code to confirm selection
+            playerLoadOut3[categoryNumber[2]] = currentItem[2];
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayers[2] = refreshPlayer(displayPlayers[2]);
+        
             //View 1 is player 1
             view_visible[3] = false;
             lookingAtItems[2] = false;
@@ -1092,6 +1170,15 @@ else if((lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1
                 selectedInventory[3]--;
             }
             inventoryArray4[selectedInventory[3]].state = 1;
+            
+            if(selectedInventory[3] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut4[categoryNumber[3]] = inventoryArray4[selectedInventory[3]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[3] = refreshPlayer(displayPlayers[3]);
+            }
         }
     }
     
@@ -1143,6 +1230,15 @@ else if((lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1
                 selectedInventory[3]++;
             }
             inventoryArray4[selectedInventory[3]].state = 1;
+            
+            if(selectedInventory[3] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut4[categoryNumber[3]] = inventoryArray4[selectedInventory[3]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[3] = refreshPlayer(displayPlayers[3]);
+            }
         }
     }
     //CONFIRM (ENTER Or A)
@@ -1186,6 +1282,12 @@ else if((lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1
     //BACK BUTTON CHECK
     if(shield_check())
     {
+        //do code to confirm selection
+        playerLoadOut4[categoryNumber[3]] = currentItem[3];
+        
+        //Refresh the player so it shows the new stuff equipped
+        displayPlayers[3] = refreshPlayer(displayPlayers[3]);
+    
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[3])
         {
@@ -1276,6 +1378,15 @@ if(up_check_pressed(1))
             selectedInventory[1]--;
         }
         inventoryArray2[selectedInventory[1]].state = 1;
+        
+        if(selectedInventory[1] != -1)
+        {
+            //do code to confirm selection
+            playerLoadOut2[categoryNumber[1]] = inventoryArray2[selectedInventory[1]].inventoryItem;
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayers[1] = refreshPlayer(displayPlayers[1]);
+        }
     }
 }
 
@@ -1327,6 +1438,15 @@ if(down_check_pressed(1))
             selectedInventory[1]++;
         }
         inventoryArray2[selectedInventory[1]].state = 1;
+        
+        if(selectedInventory[1] != -1)
+        {
+            //do code to confirm selection
+            playerLoadOut2[categoryNumber[1]] = inventoryArray2[selectedInventory[1]].inventoryItem;
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayers[1] = refreshPlayer(displayPlayers[1]);
+        }
     }
 }
 //CONFIRM (ENTER Or A)
@@ -1374,6 +1494,12 @@ if(shield_check(1))
     audio_play_sound(MenuNavigationSound,1,false);
     if(lookingAtItems[1])
     {
+        //do code to confirm selection
+        playerLoadOut2[categoryNumber[1]] = currentItem[1];
+        
+        //Refresh the player so it shows the new stuff equipped
+        displayPlayers[1] = refreshPlayer(displayPlayers[1]);
+    
         //View 1 is player 1
         view_visible[2] = false;
         lookingAtItems[1] = false;
@@ -1386,368 +1512,422 @@ if(shield_check(1))
 //PLAYER 3
 
 //LEFT
-if(left_check(2))
+if(numPlayersSetting - numCPUsSetting &gt;= 3)
 {
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(selectedBar[2] != 0)
+    if(left_check(2))
     {
-        selectedBar[2].xTrack-=5;
-        if(selectedBar[2].xTrack &lt; 0)
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(selectedBar[2] != 0)
         {
-            selectedBar[2].xTrack = 255;
-        }
-    }
-}
-
-//RIGHT DOWN
-if(right_check(2))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(selectedBar[2] != 0)
-    {
-        selectedBar[2].xTrack+=5;
-        if(selectedBar[2].xTrack &gt; 255)
-        {
-            selectedBar[2].xTrack = 0;
-        }
-    }
-}
-
-//UP
-if(up_check_pressed(2))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(!lookingAtItems[2])
-    {
-        player3Buttons[selectedButton[2]].state = 0;
-        
-        if(!selectingColors[2])
-        {
-            selectedButton[2]--;
-            if(selectedButton[2] &lt;= -1)
+            selectedBar[2].xTrack-=5;
+            if(selectedBar[2].xTrack &lt; 0)
             {
-                selectedButton[2] = array_length_1d(player3Buttons)-1;
+                selectedBar[2].xTrack = 255;
+            }
+        }
+    }
+    
+    //RIGHT DOWN
+    if(right_check(2))
+    {
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(selectedBar[2] != 0)
+        {
+            selectedBar[2].xTrack+=5;
+            if(selectedBar[2].xTrack &gt; 255)
+            {
+                selectedBar[2].xTrack = 0;
+            }
+        }
+    }
+    
+    //UP
+    if(up_check_pressed(2))
+    {
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(!lookingAtItems[2])
+        {
+            player3Buttons[selectedButton[2]].state = 0;
+            
+            if(!selectingColors[2])
+            {
+                selectedButton[2]--;
+                if(selectedButton[2] &lt;= -1)
+                {
+                    selectedButton[2] = array_length_1d(player3Buttons)-1;
+                }
+                player3Buttons[selectedButton[2]].alarm[0] = true;
+            }
+            else
+            {
+                if(selectedBar[2].num == 3)
+                {
+                    selectedBar[2] = satBar[2];
+                }
+                else if(selectedBar[2].num == 2)
+                {
+                    selectedBar[2] = hueBar[2];
+                }
+                else {
+                    selectedBar[2] = valBar[2];
+                }
+            }
+        }
+        else  // This is when you're picking an inventory item
+        {
+            unselectAllItems(inventoryArray3);
+            if(selectedInventory[2] == -1)
+            {
+                selectedInventory[2] = 0;
+            }
+            else if(selectedInventory[2] == 0)
+            {
+                selectedInventory[2] = array_length_1d(inventoryArray3) - 1;
+            }
+            else
+            {
+                selectedInventory[2]--;
+            }
+            inventoryArray3[selectedInventory[2]].state = 1;
+            
+            if(selectedInventory[2] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut3[categoryNumber[2]] = inventoryArray3[selectedInventory[2]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[2] = refreshPlayer(displayPlayers[2]);
+            }
+        }
+    }
+    
+    //DOWN
+    if(down_check_pressed(2))
+    {
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(!lookingAtItems[2])
+        {
+            player3Buttons[selectedButton[2]].state = 0;
+            
+            if(!selectingColors[2])
+            {
+            selectedButton[2]++;
+            if(selectedButton[2] &gt;= array_length_1d(player3Buttons))
+            {
+                selectedButton[2] = 0;
             }
             player3Buttons[selectedButton[2]].alarm[0] = true;
-        }
-        else
-        {
-            if(selectedBar[2].num == 3)
+            }
+            else
             {
-                selectedBar[2] = satBar[2];
+                if(selectedBar[2].num == 1)
+                {
+                    selectedBar[2] = satBar[2];
+                }
+                else if(selectedBar[2].num == 2)
+                {
+                    selectedBar[2] = valBar[2];
+                }
+                else {
+                    selectedBar[2] = hueBar[2];
+                }
             }
-            else if(selectedBar[2].num == 2)
+        }
+        else // This is when you're picking an inventory item
+        {
+            unselectAllItems(inventoryArray3);
+            if(selectedInventory[2] == -1)
             {
-                selectedBar[2] = hueBar[2];
+                selectedInventory[2] = 0;
             }
-            else {
-                selectedBar[2] = valBar[2];
-            }
-        }
-    }
-    else  // This is when you're picking an inventory item
-    {
-        unselectAllItems(inventoryArray3);
-        if(selectedInventory[2] == -1)
-        {
-            selectedInventory[2] = 0;
-        }
-        else if(selectedInventory[2] == 0)
-        {
-            selectedInventory[2] = array_length_1d(inventoryArray3) - 1;
-        }
-        else
-        {
-            selectedInventory[2]--;
-        }
-        inventoryArray3[selectedInventory[2]].state = 1;
-    }
-}
-
-//DOWN
-if(down_check_pressed(2))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(!lookingAtItems[2])
-    {
-        player3Buttons[selectedButton[2]].state = 0;
-        
-        if(!selectingColors[2])
-        {
-        selectedButton[2]++;
-        if(selectedButton[2] &gt;= array_length_1d(player3Buttons))
-        {
-            selectedButton[2] = 0;
-        }
-        player3Buttons[selectedButton[2]].alarm[0] = true;
-        }
-        else
-        {
-            if(selectedBar[2].num == 1)
+            else if(selectedInventory[2] == array_length_1d(inventoryArray3) - 1)
             {
-                selectedBar[2] = satBar[2];
+                selectedInventory[2] = 0;
             }
-            else if(selectedBar[2].num == 2)
+            else
             {
-                selectedBar[2] = valBar[2];
+                selectedInventory[2]++;
             }
-            else {
-                selectedBar[2] = hueBar[2];
+            inventoryArray3[selectedInventory[2]].state = 1;
+            
+            if(selectedInventory[2] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut3[categoryNumber[2]] = inventoryArray3[selectedInventory[2]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[2] = refreshPlayer(displayPlayers[2]);
             }
         }
     }
-    else // This is when you're picking an inventory item
+    //CONFIRM (ENTER Or A)
+    if(jump_check_pressed(2))
     {
-        unselectAllItems(inventoryArray3);
-        if(selectedInventory[2] == -1)
+        audio_play_sound(MenuConfirmationSound,1,false);
+        if(!lookingAtItems[2])
         {
-            selectedInventory[2] = 0;
-        }
-        else if(selectedInventory[2] == array_length_1d(inventoryArray3) - 1)
-        {
-            selectedInventory[2] = 0;
+            if(!selectingColors[2])
+            {
+                player3Buttons[selectedButton[2]].alarm[1] = true;
+                player3Buttons[selectedButton[2]].alarm[2] = true;
+            }
+            else
+            {
+                selectedBar[2] = 0;
+                selectingColors[2] = false;
+            }
         }
         else
         {
-            selectedInventory[2]++;
-        }
-        inventoryArray3[selectedInventory[2]].state = 1;
-    }
-}
-//CONFIRM (ENTER Or A)
-if(jump_check_pressed(2))
-{
-    audio_play_sound(MenuConfirmationSound,1,false);
-    if(!lookingAtItems[2])
-    {
-        if(!selectingColors[2])
-        {
-            player3Buttons[selectedButton[2]].alarm[1] = true;
-            player3Buttons[selectedButton[2]].alarm[2] = true;
-        }
-        else
-        {
-            selectedBar[2] = 0;
-            selectingColors[2] = false;
+            if(selectedInventory[2] != -1)
+            {
+                //do code to confirm selection
+                //TODO Add a check to figure out which player to load the item slot into
+                playerLoadOut3[categoryNumber[2]] = inventoryArray3[selectedInventory[2]].inventoryItem;
+                if(lookingAtItems[2])
+                {
+                    //View 3 is player 3
+                    view_visible[3] = false;
+                    lookingAtItems[2] = false;
+                    selectedInventory[2] = -1;
+                    inventoryArray3 = destroyArray(inventoryArray3);
+                }
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[2] = refreshPlayer(displayPlayers[2]);
+            }
         }
     }
-    else
+    
+    //BACK BUTTON CHECK
+    if(shield_check(2))
     {
-        if(selectedInventory[2] != -1)
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(lookingAtItems[2])
         {
             //do code to confirm selection
-            //TODO Add a check to figure out which player to load the item slot into
-            playerLoadOut3[categoryNumber[2]] = inventoryArray3[selectedInventory[2]].inventoryItem;
-            if(lookingAtItems[2])
-            {
-                //View 3 is player 3
-                view_visible[3] = false;
-                lookingAtItems[2] = false;
-                selectedInventory[2] = -1;
-                inventoryArray3 = destroyArray(inventoryArray3);
-            }
+            playerLoadOut3[categoryNumber[2]] = currentItem[2];
             
             //Refresh the player so it shows the new stuff equipped
             displayPlayers[2] = refreshPlayer(displayPlayers[2]);
+        
+            //View 1 is player 1
+            view_visible[3] = false;
+            lookingAtItems[2] = false;
+            selectedInventory[2] = -1;
+            inventoryArray3 = destroyArray(inventoryArray3);
         }
     }
 }
-
-//BACK BUTTON CHECK
-if(shield_check(2))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(lookingAtItems[2])
-    {
-        //View 1 is player 1
-        view_visible[3] = false;
-        lookingAtItems[2] = false;
-        selectedInventory[2] = -1;
-        inventoryArray3 = destroyArray(inventoryArray3);
-    }
-}
-
 /*********************************************************************************************/
 //PLAYER 4
 
  //LEFT DOWN
-if(left_check(3))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(selectedBar[3] != 0)
+ 
+if(numCPUsSetting &lt;= 0)
+{ 
+    if(left_check(3))
     {
-        selectedBar[3].xTrack-=5;
-        if(selectedBar[3].xTrack &lt; 0)
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(selectedBar[3] != 0)
         {
-            selectedBar[3].xTrack = 255;
-        }
-    }
-}
-
-//RIGHT DOWN
-if(right_check(3))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(selectedBar[3] != 0)
-    {
-        selectedBar[3].xTrack+=5;
-        if(selectedBar[3].xTrack &gt; 255)
-        {
-            selectedBar[3].xTrack = 0;
-        }
-    }
-}
-
-//UP
-if(up_check_pressed(3))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(!lookingAtItems[3])
-    {
-        player4Buttons[selectedButton[3]].state = 0;
-        
-        if(!selectingColors[3])
-        {
-            selectedButton[3]--;
-            if(selectedButton[3] &lt;= -1)
+            selectedBar[3].xTrack-=5;
+            if(selectedBar[3].xTrack &lt; 0)
             {
-                selectedButton[3] = array_length_1d(player4Buttons)-1;
+                selectedBar[3].xTrack = 255;
+            }
+        }
+    }
+    
+    //RIGHT DOWN
+    if(right_check(3))
+    {
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(selectedBar[3] != 0)
+        {
+            selectedBar[3].xTrack+=5;
+            if(selectedBar[3].xTrack &gt; 255)
+            {
+                selectedBar[3].xTrack = 0;
+            }
+        }
+    }
+    
+    //UP
+    if(up_check_pressed(3))
+    {
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(!lookingAtItems[3])
+        {
+            player4Buttons[selectedButton[3]].state = 0;
+            
+            if(!selectingColors[3])
+            {
+                selectedButton[3]--;
+                if(selectedButton[3] &lt;= -1)
+                {
+                    selectedButton[3] = array_length_1d(player4Buttons)-1;
+                }
+                player4Buttons[selectedButton[3]].alarm[0] = true;
+            }
+            else
+            {
+                if(selectedBar[3].num == 3)
+                {
+                    selectedBar[3] = satBar[3];
+                }
+                else if(selectedBar[3].num == 2)
+                {
+                    selectedBar[3] = hueBar[3];
+                }
+                else {
+                    selectedBar[3] = valBar[3];
+                }
+            }
+        }
+        else  // This is when you're picking an inventory item
+        {
+            unselectAllItems(inventoryArray4);
+            if(selectedInventory[3] == -1)
+            {
+                selectedInventory[3] = 0;
+            }
+            else if(selectedInventory[3] == 0)
+            {
+                selectedInventory[3] = array_length_1d(inventoryArray4) - 1;
+            }
+            else
+            {
+                selectedInventory[3]--;
+            }
+            inventoryArray4[selectedInventory[3]].state = 1;
+            
+            if(selectedInventory[3] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut4[categoryNumber[3]] = inventoryArray4[selectedInventory[3]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[3] = refreshPlayer(displayPlayers[3]);
+            }
+        }
+    }
+    
+    //DOWN
+    if(down_check_pressed(3))
+    {
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(!lookingAtItems[3])
+        {
+            player4Buttons[selectedButton[3]].state = 0;
+            
+            if(!selectingColors[3])
+            {
+            selectedButton[3]++;
+            if(selectedButton[3] &gt;= array_length_1d(player4Buttons))
+            {
+                selectedButton[3] = 0;
             }
             player4Buttons[selectedButton[3]].alarm[0] = true;
-        }
-        else
-        {
-            if(selectedBar[3].num == 3)
+            }
+            else
             {
-                selectedBar[3] = satBar[3];
+                if(selectedBar[3].num == 1)
+                {
+                    selectedBar[3] = satBar[3];
+                }
+                else if(selectedBar[3].num == 2)
+                {
+                    selectedBar[3] = valBar[3];
+                }
+                else {
+                    selectedBar[3] = hueBar[3];
+                }
             }
-            else if(selectedBar[3].num == 2)
+        }
+        else // This is when you're picking an inventory item
+        {
+            unselectAllItems(inventoryArray4);
+            if(selectedInventory[3] == -1)
             {
-                selectedBar[3] = hueBar[3];
+                selectedInventory[3] = 0;
             }
-            else {
-                selectedBar[3] = valBar[3];
-            }
-        }
-    }
-    else  // This is when you're picking an inventory item
-    {
-        unselectAllItems(inventoryArray4);
-        if(selectedInventory[3] == -1)
-        {
-            selectedInventory[3] = 0;
-        }
-        else if(selectedInventory[3] == 0)
-        {
-            selectedInventory[3] = array_length_1d(inventoryArray4) - 1;
-        }
-        else
-        {
-            selectedInventory[3]--;
-        }
-        inventoryArray4[selectedInventory[3]].state = 1;
-    }
-}
-
-//DOWN
-if(down_check_pressed(3))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(!lookingAtItems[3])
-    {
-        player4Buttons[selectedButton[3]].state = 0;
-        
-        if(!selectingColors[3])
-        {
-        selectedButton[3]++;
-        if(selectedButton[3] &gt;= array_length_1d(player4Buttons))
-        {
-            selectedButton[3] = 0;
-        }
-        player4Buttons[selectedButton[3]].alarm[0] = true;
-        }
-        else
-        {
-            if(selectedBar[3].num == 1)
+            else if(selectedInventory[3] == array_length_1d(inventoryArray4) - 1)
             {
-                selectedBar[3] = satBar[3];
+                selectedInventory[3] = 0;
             }
-            else if(selectedBar[3].num == 2)
+            else
             {
-                selectedBar[3] = valBar[3];
+                selectedInventory[3]++;
             }
-            else {
-                selectedBar[3] = hueBar[3];
+            inventoryArray4[selectedInventory[3]].state = 1;
+            
+             if(selectedInventory[3] != -1)
+            {
+                //do code to confirm selection
+                playerLoadOut4[categoryNumber[3]] = inventoryArray4[selectedInventory[3]].inventoryItem;
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[3] = refreshPlayer(displayPlayers[3]);
             }
         }
     }
-    else // This is when you're picking an inventory item
+    //CONFIRM (ENTER Or A)
+    if(jump_check_pressed(3))
     {
-        unselectAllItems(inventoryArray4);
-        if(selectedInventory[3] == -1)
+        audio_play_sound(MenuConfirmationSound,1,false);
+        if(!lookingAtItems[3])
         {
-            selectedInventory[3] = 0;
-        }
-        else if(selectedInventory[3] == array_length_1d(inventoryArray4) - 1)
-        {
-            selectedInventory[3] = 0;
+            if(!selectingColors[3])
+            {
+                player4Buttons[selectedButton[3]].alarm[1] = true;
+                player4Buttons[selectedButton[3]].alarm[2] = true;
+            }
+            else
+            {
+                selectedBar[3] = 0;
+                selectingColors[3] = false;
+            }
         }
         else
         {
-            selectedInventory[3]++;
-        }
-        inventoryArray4[selectedInventory[3]].state = 1;
-    }
-}
-//CONFIRM (ENTER Or A)
-if(jump_check_pressed(3))
-{
-    audio_play_sound(MenuConfirmationSound,1,false);
-    if(!lookingAtItems[3])
-    {
-        if(!selectingColors[3])
-        {
-            player4Buttons[selectedButton[3]].alarm[1] = true;
-            player4Buttons[selectedButton[3]].alarm[2] = true;
-        }
-        else
-        {
-            selectedBar[3] = 0;
-            selectingColors[3] = false;
+            if(selectedInventory[3] != -1)
+            {
+                //do code to confirm selection
+                //TODO Add a check to figure out which player to load the item slot into
+                playerLoadOut4[categoryNumber[3]] = inventoryArray4[selectedInventory[3]].inventoryItem;
+                if(lookingAtItems[3])
+                {
+                    //View 4 is player 4
+                    view_visible[4] = false;
+                    lookingAtItems[3] = false;
+                    selectedInventory[3] = -1;
+                    inventoryArray4 = destroyArray(inventoryArray4);
+                }
+                
+                //Refresh the player so it shows the new stuff equipped
+                displayPlayers[3] = refreshPlayer(displayPlayers[3]);
+            }
         }
     }
-    else
+    //BACK BUTTON CHECK
+    if(shield_check(3))
     {
-        if(selectedInventory[3] != -1)
+        audio_play_sound(MenuNavigationSound,1,false);
+        if(lookingAtItems[3])
         {
             //do code to confirm selection
-            //TODO Add a check to figure out which player to load the item slot into
-            playerLoadOut4[categoryNumber[3]] = inventoryArray4[selectedInventory[3]].inventoryItem;
-            if(lookingAtItems[3])
-            {
-                //View 4 is player 4
-                view_visible[4] = false;
-                lookingAtItems[3] = false;
-                selectedInventory[3] = -1;
-                inventoryArray4 = destroyArray(inventoryArray4);
-            }
+            playerLoadOut4[categoryNumber[3]] = currentItem[3];
             
             //Refresh the player so it shows the new stuff equipped
             displayPlayers[3] = refreshPlayer(displayPlayers[3]);
+        
+            //View 1 is player 1
+            view_visible[4] = false;
+            lookingAtItems[3] = false;
+            selectedInventory[3] = -1;
+            inventoryArray4 = destroyArray(inventoryArray4);
         }
-    }
-}
-//BACK BUTTON CHECK
-if(shield_check(3))
-{
-    audio_play_sound(MenuNavigationSound,1,false);
-    if(lookingAtItems[3])
-    {
-        //View 1 is player 1
-        view_visible[4] = false;
-        lookingAtItems[3] = false;
-        selectedInventory[3] = -1;
-        inventoryArray4 = destroyArray(inventoryArray4);
     }
 }
 </string>
@@ -1875,8 +2055,8 @@ if(!lookingAtItems[0])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(495, 180, "Total Cost:")
-        draw_text(580, 180, string(totalCost))
+        /*draw_text(495, 180, "Total Cost:")
+        draw_text(580, 180, string(totalCost))*/
         //Armor
         draw_text(495, 205, "Armor:")
         draw_text(580, 205, string(totalArmor))
@@ -1894,8 +2074,8 @@ if(!lookingAtItems[0])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(495, 80, "Total Cost:")
-        draw_text(580, 80, string(totalCost))
+        /*draw_text(495, 80, "Total Cost:")
+        draw_text(580, 80, string(totalCost))*/
         //Armor
         draw_text(495, 105, "Armor:")
         draw_text(580, 105, string(totalArmor))
@@ -1922,8 +2102,8 @@ else
     }
     
     //Cost
-    draw_text(495, 80, "Cost:")
-    draw_text(580, 80, string(totalCost))
+    /*draw_text(495, 80, "Cost:")
+    draw_text(580, 80, string(totalCost))*/
     //Armor
     draw_text(495, 105, "Armor:")
     draw_text(580, 105, string(totalArmor))
@@ -1946,7 +2126,7 @@ else
         var weightComp = inventoryArray1[selectedInventory[0]].inventoryItem.weight;
         var coolingComp = inventoryArray1[selectedInventory[0]].inventoryItem.cooling;
     
-        draw_text(495, 245, "cost:");
+        /*draw_text(495, 245, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -1960,7 +2140,7 @@ else
             draw_set_color(c_black);
         }
         draw_text(580, 245, string(costComp));
-        draw_set_color(c_black);
+        draw_set_color(c_black);*/
         
         //Armor
         draw_text(495, 270, "Armor:");
@@ -2121,8 +2301,8 @@ if(!lookingAtItems[1])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 180, "Total Cost:")
-        draw_text(1195, 180, string(totalCost))
+        /*draw_text(1110, 180, "Total Cost:")
+        draw_text(1195, 180, string(totalCost))*/
         //Armor
         draw_text(1110, 205, "Armor:")
         draw_text(1195, 205, string(totalArmor))
@@ -2140,8 +2320,8 @@ if(!lookingAtItems[1])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 80, "Total Cost:")
-        draw_text(1195, 80, string(totalCost))
+        /*draw_text(1110, 80, "Total Cost:")
+        draw_text(1195, 80, string(totalCost))*/
         //Armor
         draw_text(1110, 105, "Armor:")
         draw_text(1195, 105, string(totalArmor))
@@ -2168,8 +2348,8 @@ else
     }
     
     //Cost
-    draw_text(1110, 80, "Cost:")
-    draw_text(1195, 80, string(totalCost))
+    /*draw_text(1110, 80, "Cost:")
+    draw_text(1195, 80, string(totalCost))*/
     //Armor
     draw_text(1110, 105, "Armor:")
     draw_text(1195, 105, string(totalArmor))
@@ -2192,7 +2372,7 @@ else
         var weightComp = inventoryArray2[selectedInventory[1]].inventoryItem.weight;
         var coolingComp = inventoryArray2[selectedInventory[1]].inventoryItem.cooling;
     
-        draw_text(1110, 245, "cost:");
+       /* draw_text(1110, 245, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -2206,7 +2386,7 @@ else
             draw_set_color(c_black);
         }
         draw_text(1195, 245, string(costComp));
-        draw_set_color(c_black);
+        draw_set_color(c_black);*/
         
         //Armor
         draw_text(1110, 270, "Armor:");
@@ -2372,8 +2552,8 @@ if(!lookingAtItems[2])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(495, 515, "Total Cost:")
-        draw_text(570, 515, string(totalCost))
+       /* draw_text(495, 515, "Total Cost:")
+        draw_text(570, 515, string(totalCost))*/
         //Armor
         draw_text(495, 540, "Armor:")
         draw_text(570, 540, string(totalArmor))
@@ -2391,8 +2571,8 @@ if(!lookingAtItems[2])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(495, 430, "Total Cost:")
-        draw_text(570, 430, string(totalCost))
+        /*draw_text(495, 430, "Total Cost:")
+        draw_text(570, 430, string(totalCost))*/
         //Armor
         draw_text(495, 455, "Armor:")
         draw_text(570, 455, string(totalArmor))
@@ -2419,8 +2599,8 @@ else
     }
     
     //Cost
-    draw_text(495, 430, "Cost:")
-    draw_text(570, 430, string(totalCost))
+    /*draw_text(495, 430, "Cost:")
+    draw_text(570, 430, string(totalCost))*/
     //Armor
     draw_text(495, 455, "Armor:")
     draw_text(570, 455, string(totalArmor))
@@ -2443,7 +2623,7 @@ else
         var weightComp = inventoryArray3[selectedInventory[2]].inventoryItem.weight;
         var coolingComp = inventoryArray3[selectedInventory[2]].inventoryItem.cooling;
     
-        draw_text(495, 580, "cost:");
+        /*draw_text(495, 580, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -2457,7 +2637,7 @@ else
             draw_set_color(c_black);
         }
         draw_text(570, 580, string(costComp));
-        draw_set_color(c_black);
+        draw_set_color(c_black);*/
         
         //Armor
         draw_text(495, 605, "Armor:");
@@ -2620,8 +2800,8 @@ if(!lookingAtItems[3])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 515, "Total Cost:")
-        draw_text(1195, 515, string(totalCost))
+        /*draw_text(1110, 515, "Total Cost:")
+        draw_text(1195, 515, string(totalCost))*/
         //Armor
         draw_text(1110, 540, "Armor:")
         draw_text(1195, 540, string(totalArmor))
@@ -2639,8 +2819,8 @@ if(!lookingAtItems[3])
         draw_set_font(InventoryContent);
         
         //Cost
-        draw_text(1110, 430, "Total Cost:")
-        draw_text(1195, 430, string(totalCost))
+        /*draw_text(1110, 430, "Total Cost:")
+        draw_text(1195, 430, string(totalCost))*/
         //Armor
         draw_text(1110, 455, "Armor:")
         draw_text(1195, 455, string(totalArmor))
@@ -2667,8 +2847,8 @@ else
     }
     
     //Cost
-    draw_text(1110, 430, "Cost:")
-    draw_text(1195, 430, string(totalCost))
+   /* draw_text(1110, 430, "Cost:")
+    draw_text(1195, 430, string(totalCost))*/
     //Armor
     draw_text(1110, 455, "Armor:")
     draw_text(1195, 455, string(totalArmor))
@@ -2691,7 +2871,7 @@ else
         var weightComp = inventoryArray4[selectedInventory[3]].inventoryItem.weight;
         var coolingComp = inventoryArray4[selectedInventory[3]].inventoryItem.cooling;
     
-        draw_text(1110, 580, "cost:");
+        /*draw_text(1110, 580, "cost:");
         if(costComp &lt; totalCost)
         {
             draw_set_color(c_green);
@@ -2705,7 +2885,7 @@ else
             draw_set_color(c_black);
         }
         draw_text(1195, 580, string(costComp));
-        draw_set_color(c_black);
+        draw_set_color(c_black);*/
         
         //Armor
         draw_text(1110, 605, "Armor:");
