@@ -9,7 +9,7 @@ if(keyboard_check(ord('S')) || keyboard_check(ord('X')))
         return true;
     }
 }
-else if(gamepad_button_check(controllerNum,gp_face4))
+else if(gamepad_button_check(controllerNum,gp_face2) or gamepad_button_check(controllerNum,gp_shoulderr))
 {
     return true;
 }

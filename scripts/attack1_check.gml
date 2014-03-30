@@ -6,7 +6,7 @@ if(keyboard_check(ord('A')) or keyboard_check(ord('Z')) or keyboard_check_presse
 {
     return true;
 }
-else if(gamepad_button_check(controllerNum,gp_face3))
+else if(gamepad_button_check(controllerNum,gp_face3) or gamepad_button_check(controllerNum,gp_shoulderl))
 {
     return true;
 }

@@ -61,7 +61,7 @@ oldY = y;
 }
 else
 {
-    perfect_trail_angled(oldX,oldY,x+hspeed,y+vspeed,proto_gun_trail_o,image_angle,image_xscale);
+    //perfect_trail_angled(oldX,oldY,x+hspeed,y+vspeed,proto_gun_trail_o,image_angle,image_xscale);
     oldX = x+hspeed;
     oldY = y+vspeed;
 }

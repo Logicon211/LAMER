@@ -34,9 +34,14 @@ with(pIn.leg1){dead=false;}
 with(pIn.leg2){dead=false;}
 with(pIn.arm[1]){dead=false;}
 with(pIn.arm[2]){dead=false;}
-with(pIn.core){dead=false;}
-
-
+with(pIn.core)
+{
+    dead=false;
+    for(i=0;i<=boostNums;i++)
+    {
+        booster[i].dead = false;
+    }
+}
 
 
 return pIn

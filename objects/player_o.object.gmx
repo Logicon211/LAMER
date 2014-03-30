@@ -35,6 +35,7 @@
 health2 = 1000;
 state = string('normal');
 deadCounter = 0;
+boostCounter = 0;
 /***************************************************
   States are as follows
 
@@ -248,8 +249,53 @@ for(i=0;i&lt;10;i++)
   
   If player....
  ***************************************************/
-controlSetPrv = controlSet;
+//controlSetPrv = controlSet;
+
+
+/***************************************************
+ ***************************************************/  
+if(boost_check(playerNum))
+{
+    if(airborne)//IN AIR
+    {
+        controlSet[8] = 1;
+        controlSet[2] = 0;
+    }
+    else //ON LAND
+    {
+        if(left_check(playerNum) or right_check(playerNum)) //walking on land
+        {
+            if(boostCounter&gt;0 and boostCounter&lt;5)
+            {
+                controlSet[8] = 1;
+                controlSet[2] = 1;
+            }
+            else
+            {
+                controlSet[8] = 1;
+                controlSet[2] = 0;
+            }
+        }
+        else if(!boosting)
+        {
+            controlSet[8] = 1;
+            controlSet[2] = 1;
+        }
+    }
+}
+else
+{
+    controlSet[8] = 0;
+    controlSet[2] = 0;
+}
+/***************************************************
+ ***************************************************/
  
+for(i=0;i&lt;9;i++)
+{
+    controlSetPrv[i]=controlSet[i];
+}
+
 if(playerType = 0)
 {
     if(attack1_check(playerNum))
@@ -264,12 +310,14 @@ if(playerType = 0)
     else
     {   controlSet[1] = 0;
     }
+    /*****************************
     if(jump_check(playerNum))
     {   controlSet[2] = 1;
     }
     else
     {   controlSet[2] = 0;
     }
+    *****************************/
     if(shield_check(playerNum))
     {   controlSet[3] = 1;
     }
@@ -300,18 +348,20 @@ if(playerType = 0)
     else
     {   controlSet[7] = 0;
     }
+    /*****************************
     if(boost_check(playerNum))
     {   controlSet[8] = 1;
     }
     else
     {   controlSet[8] = 0;
     }
+    *****************************/
 }
 
 else if(playerType &gt; 2)
 {
-    aiCounter++;
-    if((aiCounter mod 15)=1)
+    aiCounter = (aiCounter+1) mod 15;
+    if(aiCounter=1)
     {   stepAI()
     }
 }
@@ -352,13 +402,20 @@ else if(playerType &gt; 2)
             <string>if(playerType = 2)
 {
 
-vspeed+=1;
+//vspeed+=1;
 playerCollision();
-image_angle+=random_range(1,10);
+//image_angle+=random_range(1,10);
 
-if(deadCounter=0)
+if(deadCounter=0) //just got dead
 {
-    core.dead = true;
+    with(core)
+    {
+        dead=true;
+        for(i=0;i&lt;=boostNums;i++)
+        {
+            booster[i].dead = true;
+        }
+    }
     core.hspeed = random_range(-30,30);
     core.vspeed = random_range(0,-30);
     arm[1].dead = true;
@@ -388,7 +445,7 @@ if(deadCounter=0)
     lleg2.dead = true;
     lleg2.hspeed = random_range(-30,30);
     lleg2.vspeed = random_range(0,-30);
-}
+}                   //END just got dead
 deadCounter +=1;
 
 }
@@ -443,6 +500,19 @@ deadCounter +=1;
             <string>if(playerType = 0 or playerType &gt; 2)
 {
 
+/***************************************************
+  Fix Death
+ ***************************************************/
+ 
+ if(deadCounter&gt;0)
+ {
+    deadCounter = 0;
+    imae_angle = 0;
+ }
+ 
+/***************************************************
+  END Fix Death
+ ***************************************************/
 if(health2 &lt;= 0 or y&gt;=room_height-200)
 {
     if(health2&lt;0){health2=0}
@@ -530,6 +600,7 @@ else
         if(state!=string('shield'))
         {
             shield_obj = instance_create(x,y,shield_o);
+            shield_obj.player = id;
             state = string('shield');
         }
         target_hspeed = 0;
@@ -550,20 +621,20 @@ else
         }
      
     }
+    
     //shield released
-    else if(controlSet[3] and controlSetPrv[3])
+    else if(!controlSet[3] and controlSetPrv[3])
     {
+        effect_create_above(ef_flare,x,y,100,c_white)
         core.gun_aim = 0;
         with(shield_obj){instance_destroy()}
         state = string('tonorm');
         shield_counter = 0;
     }
     //down pressed
-    else if(controlSet[5])
+    /*
+    else if(controlSet[5] and !airborne)
     {
-        if(airborne)
-        {
-        }
         if(state!=string('kneel'))
         {
             state = string('kneel');
@@ -579,6 +650,7 @@ else
             attack[2] = true;
         }
     }
+    */
     else if(state=string('kneel'))
     {
         state=string('tonorm');
@@ -630,36 +702,34 @@ else
         }
         
         //jump pressed
-        if(controlSet[2])
+        if(controlSet[2] or keyboard_check(ord('U')))
         {
-            if(!airborne)
-            {
-                if(!boosting)
-                {
-                    state=string('jump');
-                    jumpCounter = 0;
-                    target_hspeed = 0;
-                }
-            }
-            else{}
+            boostCounter = 0;
+            y -= 3;
+            vspeed -= 12;
         }
         
         //boost pressed
         if(controlSet[8])
         {
             boosting=true;
-            if(controlSet[2])
-            {
-                if(!airborne)
-                {   y -= 3
+            if(airborne)
+            {   vspeed -= 2
+                if(controlSet[4])
+                {   vspeed -=2;
                 }
-                airborne = true;
-                vspeed -= 3;
+                if(controlSet[5])
+                {   vspeed +=2;
+                }
+            }
+            else
+            {   boostCounter = 5;
             }
         }
         else
         {
             boosting=false;
+            boostCounter -= 1;
         }
         
         if(controlSet[0])
