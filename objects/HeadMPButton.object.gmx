@@ -33,6 +33,23 @@ categoryNumber[owningPlayer] = num;
 
 lookingAtItems[owningPlayer] = true;
 
+if(owningPlayer == 0)
+{
+    currentItem[0] = playerLoadOut1[0];
+}
+else if(owningPlayer == 1)
+{
+    currentItem[1] = playerLoadOut2[0];
+}
+else if(owningPlayer == 2)
+{
+    currentItem[2] = playerLoadOut3[0];
+}
+else if(owningPlayer == 3)
+{
+    currentItem[3] = playerLoadOut4[0];
+}
+
 //Display the player's current Head Parts inventory
 for(var i = 0; i &lt; ds_list_size(HeadInventory); i++)
 {
