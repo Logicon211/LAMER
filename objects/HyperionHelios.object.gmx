@@ -28,7 +28,7 @@
             <string>name = "Hyperion Helios";
 
 //This is the actual link to the object, so we can create it on start up.
-part = head_o;
+part = heavyhead1;
 
 type = 0;
 

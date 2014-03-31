@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>2359296</colour>
+  <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>display_reset(8, true);
 
@@ -51,7 +51,7 @@ instance_create(x,y,cameraObject);</code>
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="stadiumBackgroundOne" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="-1"/>
+    <background visible="-1" foreground="0" name="stadiumBackgroundOne" x="1850" y="1000" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -72,7 +72,7 @@ instance_create(x,y,cameraObject);</code>
   </views>
   <instances>
     <instance objName="MusicController" x="832" y="-64" name="inst_DDFA8731" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="land_o" x="1952" y="1984" name="inst_F482BB66" locked="0" code="" scaleX="59" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="land_o" x="-32" y="2048" name="inst_F482BB66" locked="0" code="" scaleX="180" scaleY="17" colour="4294967295" rotation="0"/>
     <instance objName="start_fight_o" x="512" y="-64" name="inst_986EB0A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

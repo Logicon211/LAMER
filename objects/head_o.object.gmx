@@ -69,7 +69,7 @@ else
         instance_destroy();
     }
     
-    perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale,getPlayerColor(player.playerNum,2));
+    //perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale,getPlayerColor(player.playerNum,2));
     
     oldX = x+hspeed;
     oldY = y+vspeed;

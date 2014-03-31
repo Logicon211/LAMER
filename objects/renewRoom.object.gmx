@@ -51,14 +51,20 @@ pIn=0;
             <kind>1</kind>
             <string>derp += 1;
 
-if(derp = 180)
-{   //newGuy = respawnPlayer(pIn);
+if(derp = 100)
+{   respawnPlayer(pIn);
     //newGuy.x = room_width/2;
     //newGuy.y = 400;
     pIn.health2 = 1000;
     pIn.x = room_width/2
     pIn.y = 400;
+    //refreshPlayer(pIn);
     instance_destroy();
+    /***************************************************
+#################################################################
+      MINUS ONE LIFE &lt;&lt;HERE&lt;&lt;
+#################################################################
+     ***************************************************/
 }
 </string>
           </argument>

@@ -28,7 +28,7 @@
             <string>name = "Hyperion Eos";
 
 //This is the actual link to the object, so we can create it on start up.
-part = core_o;
+part = heavycore1;
 
 type = 1;
 

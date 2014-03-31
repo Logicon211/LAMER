@@ -33,34 +33,51 @@ categoryNumber[owningPlayer] = num;
 
 lookingAtItems[owningPlayer] = true;
 
+if(owningPlayer == 0)
+{
+    currentItem[0] = playerLoadOut1[2];
+}
+else if(owningPlayer == 1)
+{
+    currentItem[1] = playerLoadOut2[2];
+}
+else if(owningPlayer == 2)
+{
+    currentItem[2] = playerLoadOut3[2];
+}
+else if(owningPlayer == 3)
+{
+    currentItem[3] = playerLoadOut4[2];
+}
+
 //Display the player's current Head Parts inventory
-for(var i = 0; i &lt; ds_list_size(ArmInventory); i++)
+for(var i = 0; i &lt; ds_list_size(LArmInventory); i++)
 {
     if(owningPlayer == 0)
     {
         var invUIItem = instance_create(1280,65 + (50*i),InventoryUIItemMP);
-        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.inventoryItem = ds_list_find_value(LArmInventory, i);
         invUIItem.owningPlayer = owningPlayer;
         inventoryArray1[i] = invUIItem;
     }
     else if(owningPlayer == 1)
     {
         var invUIItem = instance_create(1536,65 + (50*i),InventoryUIItemMP);
-        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.inventoryItem = ds_list_find_value(LArmInventory, i);
         invUIItem.owningPlayer = owningPlayer;
         inventoryArray2[i] = invUIItem;
     }
     else if(owningPlayer == 2)
     {
         var invUIItem = instance_create(1792,65 + (50*i),InventoryUIItemMP);
-        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.inventoryItem = ds_list_find_value(LArmInventory, i);
         invUIItem.owningPlayer = owningPlayer;
         inventoryArray3[i] = invUIItem;
     }
     else if(owningPlayer == 3)
     {
         var invUIItem = instance_create(2048,65 + (50*i),InventoryUIItemMP);
-        invUIItem.inventoryItem = ds_list_find_value(ArmInventory, i);
+        invUIItem.inventoryItem = ds_list_find_value(LArmInventory, i);
         invUIItem.owningPlayer = owningPlayer;
         inventoryArray4[i] = invUIItem;
     }

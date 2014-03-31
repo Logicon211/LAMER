@@ -149,8 +149,11 @@ HeadInventory = ds_list_create();
 globalvar TorsoInventory;
 TorsoInventory = ds_list_create();
 
-globalvar ArmInventory;
-ArmInventory = ds_list_create();
+globalvar LArmInventory;
+LArmInventory = ds_list_create();
+
+globalvar RArmInventory;
+RArmInventory = ds_list_create();
 
 globalvar LegsInventory;
 LegsInventory = ds_list_create();
@@ -208,8 +211,8 @@ ItemArray[43] = instance_create(0, 0, GaiaHammer);
 
 ds_list_add(HeadInventory, ProtoHeadObjectItem);
 ds_list_add(TorsoInventory, ProtoTorsoObjectItem);
-ds_list_add(ArmInventory, ProtoSwordObjectItem);
-ds_list_add(ArmInventory, ProtoGunObjectItem);
+ds_list_add(LArmInventory, ProtoSwordObjectItem);
+ds_list_add(RArmInventory, ProtoGunObjectItem);
 ds_list_add(LegsInventory, ProtoLegsObjectItem);
 ds_list_add(BackPackInventory, testBackPackObject1);
 ds_list_add(HeadInventory, AuraH);
@@ -230,55 +233,55 @@ ds_list_add(LegsInventory, CriusPerses);
 ds_list_add(LegsInventory, LelantosAura);
 ds_list_add(LegsInventory, CronusL);
 ds_list_add(LegsInventory, HyperionSeleneMkII);
-ds_list_add(ArmInventory, ThePointer);
-ds_list_add(ArmInventory, CronusSeismos);
-ds_list_add(ArmInventory, HermesRhipto);
-ds_list_add(ArmInventory, VulcanPistol);
-ds_list_add(ArmInventory, EnyoGat);
-ds_list_add(ArmInventory, ArtemisML);
-ds_list_add(ArmInventory, HephaestusCannon);
-ds_list_add(ArmInventory, HermesMG);
-ds_list_add(ArmInventory, MinervaML);
-ds_list_add(ArmInventory, ApolloPiras);
-ds_list_add(ArmInventory, ErisRhipto);
-ds_list_add(ArmInventory, AetherFoil);
-ds_list_add(ArmInventory, AthenaBroadsword);
-ds_list_add(ArmInventory, AresEdge);
-ds_list_add(ArmInventory, ChronosFist);
-ds_list_add(ArmInventory, ZeusArm);
-ds_list_add(ArmInventory, HadesAxe);
-ds_list_add(ArmInventory, GaiaHammer);
+ds_list_add(LArmInventory, ThePointer);
+ds_list_add(RArmInventory, CronusSeismos);
+ds_list_add(RArmInventory, HermesRhipto);
+ds_list_add(RArmInventory, VulcanPistol);
+ds_list_add(RArmInventory, EnyoGat);
+ds_list_add(RArmInventory, ArtemisML);
+ds_list_add(RArmInventory, HephaestusCannon);
+ds_list_add(RArmInventory, HermesMG);
+ds_list_add(RArmInventory, MinervaML);
+ds_list_add(RArmInventory, ApolloPiras);
+ds_list_add(RArmInventory, ErisRhipto);
+ds_list_add(LArmInventory, AetherFoil);
+ds_list_add(LArmInventory, AthenaBroadsword);
+ds_list_add(LArmInventory, AresEdge);
+ds_list_add(LArmInventory, ChronosFist);
+ds_list_add(LArmInventory, ZeusArm);
+ds_list_add(LArmInventory, HadesAxe);
+ds_list_add(LArmInventory, GaiaHammer);
 
 //Add in items to default inventory
 //PLAYER1 INVENTORY
 playerLoadOut1[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut1[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut1[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut1[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
+playerLoadOut1[2] = ds_list_find_value(LArmInventory, 0); //Left Arm
+playerLoadOut1[3] = ds_list_find_value(RArmInventory, 0); //Right Arm
 playerLoadOut1[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut1[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
 //PLAYER2 INVENTORY
 playerLoadOut2[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut2[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut2[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut2[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
+playerLoadOut2[2] = ds_list_find_value(LArmInventory, 0); //Left Arm
+playerLoadOut2[3] = ds_list_find_value(RArmInventory, 0); //Right Arm
 playerLoadOut2[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut2[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
 //PLAYER3 INVENTORY
 playerLoadOut3[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut3[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut3[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut3[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
+playerLoadOut3[2] = ds_list_find_value(LArmInventory, 0); //Left Arm
+playerLoadOut3[3] = ds_list_find_value(RArmInventory, 0); //Right Arm
 playerLoadOut3[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut3[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
 //PLAYER4 INVENTORY
 playerLoadOut4[0] = ds_list_find_value(HeadInventory, 0); //Head
 playerLoadOut4[1] = ds_list_find_value(TorsoInventory, 0); //Torso
-playerLoadOut4[2] = ds_list_find_value(ArmInventory, 0); //Left Arm
-playerLoadOut4[3] = ds_list_find_value(ArmInventory, 1); //Right Arm
+playerLoadOut4[2] = ds_list_find_value(LArmInventory, 0); //Left Arm
+playerLoadOut4[3] = ds_list_find_value(RArmInventory, 0); //Right Arm
 playerLoadOut4[4] = ds_list_find_value(LegsInventory, 0); //Legs
 playerLoadOut4[5] = ds_list_find_value(BackPackInventory, 0); //BackPack
 
@@ -457,6 +460,13 @@ for(i=0; i&lt;4; i++)
         //if in inventory screen and looking through items to select
         if(view_visible[1])
         {
+            audio_play_sound(MenuNavigationSound,1,false);
+            //do code to confirm selection
+            playerLoadOut1[categoryNumber] = currentItem;
+            
+            //Refresh the player so it shows the new stuff equipped
+            displayPlayer = refreshPlayer(displayPlayer);
+        
             view_visible[1] = false;
             lookingAtItems = false;
             selectedInventory = -1;

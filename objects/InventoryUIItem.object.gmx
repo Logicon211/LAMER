@@ -69,6 +69,12 @@ arrayLocation = 0;
         }   
     }
     
+    //do code to confirm selection
+    playerLoadOut1[categoryNumber] = inventoryItem;
+    
+    //Refresh the player so it shows the new stuff equipped
+    displayPlayer = refreshPlayer(displayPlayer);
+    
     selectedInventory = selected;
 }
 else if (state == 1)
