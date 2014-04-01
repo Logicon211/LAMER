@@ -27,12 +27,12 @@
             <kind>1</kind>
             <string>if(player_o.x-(x+200))
 {
-    trap = instance_create(x,y,Land_tutorial_gate);
-    trap.image_yscale = 6;
-    cam = instance_nearest(x,y,cameraObject)
-    cam.pNums += 1;
-    turret = instance_nearest(x,y,autoTurret);
-    cam.players[cam.pNums-1] = turret;
+    trap = instance_create(5312,1216,Land_tutorial_gate);
+    trap.image_yscale = 0.96;
+    //cam = instance_nearest(x,y,cameraObject)
+    //cam.pNums += 1;
+    turret = instance_create(x+1500,y+250,autoTurret);
+    //cam.players[cam.pNums-1] = turret;
     with(turret)
     {   active = true;
     }

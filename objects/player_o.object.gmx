@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1234567</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>land_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -265,6 +265,7 @@ if(boost_check(playerNum))
     {
         if(left_check(playerNum) or right_check(playerNum)) //walking on land
         {
+            /*
             if(boostCounter&gt;0 and boostCounter&lt;5)
             {
                 controlSet[8] = 1;
@@ -272,16 +273,23 @@ if(boost_check(playerNum))
             }
             else
             {
-                controlSet[8] = 1;
-                controlSet[2] = 0;
             }
+            */
+            controlSet[8] = 1;
+            controlSet[2] = 0;
         }
         else if(!boosting)
         {
             controlSet[8] = 1;
             controlSet[2] = 1;
         }
+        if(up_check(playerNum))
+        {
+            controlSet[8] = 1;
+            controlSet[2] = 1;
+        }
     }
+    
 }
 else
 {

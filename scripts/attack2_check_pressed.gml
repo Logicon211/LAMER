@@ -9,7 +9,7 @@ if(keyboard_check_pressed(ord('S')) || keyboard_check_pressed(ord('X')) or keybo
         return true;
     }
 }
-else if(gamepad_button_check_pressed(controllerNum,gp_face4))
+else if(gamepad_button_check_pressed(controllerNum,gp_face4) or gamepad_button_check(controllerNum,gp_shoulderr))
 {
     return true;
 }

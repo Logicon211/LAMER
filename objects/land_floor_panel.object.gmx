@@ -62,8 +62,8 @@ else
     {
         if(instance_place(x,y-5,player_o))
         {
-            partner.y -= 5;
-            sound_play(weeee);
+            partner.y -= 10;
+            audio_play_sound(weeee,2,false);
         }
     }
 }
