@@ -31,7 +31,7 @@
     trap.image_yscale = 0.96;
     //cam = instance_nearest(x,y,cameraObject)
     //cam.pNums += 1;
-    turret = instance_create(x+1500,y+250,autoTurret);
+    turret = instance_create(x+1200,y+250,autoTurret);
     //cam.players[cam.pNums-1] = turret;
     with(turret)
     {   active = true;

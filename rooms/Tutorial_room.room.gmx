@@ -87,7 +87,7 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <instance objName="Level_Floor2" x="896" y="512" name="inst_74B6AA92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="3200" y="768" name="inst_41CBBA9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Land_tutorial_gate" x="2944" y="768" name="inst_2BA6E3AA" locked="0" code="" scaleX="1.39999997615814" scaleY="1.5349999666214" colour="4294967295" rotation="0"/>
-    <instance objName="shadow128Object" x="320" y="1280" name="inst_01777ACF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Level_Floor2" x="3904" y="1280" name="inst_5318FDB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platform1" x="3392" y="1152" name="inst_9DBC5367" locked="0" code="" scaleX="20" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="5376" y="1024" name="inst_864E97EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="2752" y="1280" name="inst_062B8990" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -266,7 +266,7 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <instance objName="Level_Floor2" x="4096" y="1408" name="inst_1970EE47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="4096" y="1152" name="inst_A47599AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="4224" y="1152" name="inst_5B5E6C16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ShadowObject2" x="2176" y="1280" name="inst_CE98076D" locked="0" code="" scaleX="32" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="startTutorial" x="576" y="384" name="inst_F43C4D66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="4032" y="1280" name="inst_A95F6AF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="4288" y="1280" name="inst_85B41DF5" locked="0" code="" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Level_Floor2" x="3776" y="640" name="inst_757AFF41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -353,8 +353,6 @@ for(i=startBattleVar[0];i&gt;0;i--)
     <instance objName="ShadowObject2" x="3008" y="768" name="inst_C4EBEA2C" locked="0" code="" scaleX="384" scaleY="2" colour="4294967295" rotation="180"/>
     <instance objName="ShadowObject2" x="1856" y="768" name="inst_6F61C775" locked="0" code="" scaleX="384" scaleY="2" colour="4294967295" rotation="180"/>
     <instance objName="ShadowObject2" x="704" y="768" name="inst_2489C3EA" locked="0" code="" scaleX="224" scaleY="2" colour="4294967295" rotation="180"/>
-    <instance objName="Level_Floor2" x="3904" y="1280" name="inst_5318FDB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="startTutorial" x="576" y="384" name="inst_F43C4D66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

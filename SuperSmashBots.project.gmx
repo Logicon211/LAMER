@@ -187,6 +187,7 @@
       <scripts name="other">
         <script>scripts\perfect_trail_angled.gml</script>
         <script>scripts\perfect_trail_angled_color.gml</script>
+        <script>scripts\boostFire.gml</script>
         <script>scripts\perfectTrailEffect.gml</script>
         <script>scripts\perfectTrailEffectWhite.gml</script>
         <script>scripts\rotation_tracker.gml</script>
