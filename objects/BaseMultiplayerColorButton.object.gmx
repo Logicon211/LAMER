@@ -208,7 +208,7 @@ if(state = 1)
     {
         if(!isAI[3])
         {
-            draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_blue,image_alpha);
+            draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_aqua,image_alpha);
         }
         else
         {
@@ -218,7 +218,7 @@ if(state = 1)
             }
             else
             {
-                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_blue,image_alpha);
+                draw_sprite_ext(sprite_index,state,x,y,image_xscale,image_yscale,image_angle,c_aqua,image_alpha);
             }
         } 
     }
