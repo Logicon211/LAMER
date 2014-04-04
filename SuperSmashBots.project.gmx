@@ -150,6 +150,10 @@
       <sprite>sprites\MapPreviewTestSprite</sprite>
       <sprite>sprites\MapPreviewTestSprite2</sprite>
     </sprites>
+    <sprite>sprites\shadow128Sprite</sprite>
+    <sprite>sprites\shadowLighterSprite</sprite>
+    <sprite>sprites\shadowVertLight</sprite>
+    <sprite>sprites\AnyKeyToGoBackSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -184,6 +188,7 @@
       <scripts name="other">
         <script>scripts\perfect_trail_angled.gml</script>
         <script>scripts\perfect_trail_angled_color.gml</script>
+        <script>scripts\boostFire.gml</script>
         <script>scripts\perfectTrailEffect.gml</script>
         <script>scripts\perfectTrailEffectWhite.gml</script>
         <script>scripts\rotation_tracker.gml</script>
@@ -238,6 +243,7 @@
         <script>scripts\shield_check_pressed.gml</script>
         <script>scripts\shield_check_released.gml</script>
         <script>scripts\boost_check.gml</script>
+        <script>scripts\y_check_pressed.gml</script>
       </scripts>
       <script>scripts\restart_check.gml</script>
       <script>scripts\quit_check.gml</script>
@@ -470,7 +476,9 @@
     <objects name="BattleObjects">
       <object>objects\player_o</object>
       <object>objects\shield_o</object>
-      <object>objects\start_fight_o</object>
+      <object>objects\startFight</object>
+      <object>objects\startWin</object>
+      <object>objects\startTutorial</object>
       <objects name="LoadoutSets">
         <objects name="Torsos">
           <objects name="Prototype">
@@ -578,6 +586,10 @@
     <object>objects\Level_Flloor1</object>
     <object>objects\Level_Floor2</object>
     <object>objects\object174</object>
+    <object>objects\shadow128Object</object>
+    <object>objects\ShadowObject2</object>
+    <object>objects\ShadowObject2Rotate</object>
+    <object>objects\AnyKeyToReturnObj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\CampaignInfoRoom</room>

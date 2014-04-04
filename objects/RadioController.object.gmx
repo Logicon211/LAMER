@@ -69,7 +69,7 @@ radioIndex++;
 
 }
 
-if(shield_check())
+if(attack2_check_pressed())
 {
     //GO back to map
     room_goto(OverMap);

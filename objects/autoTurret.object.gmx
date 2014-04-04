@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>player_o</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,9 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>health = 100;
+            <string>health2 = 500;
 ATcounter = 0;
 active = false;
+xLock = x;
+yLock = y;
+
+roomEnd = 60;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = xLock;
+y = yLock;
+speed = 0;
 </string>
           </argument>
         </arguments>
@@ -50,27 +79,65 @@ active = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(active)
+            <string>derp = instance_find(player_o,0);
+
+image_angle = point_direction(x,y,derp.x,derp.y);
+
+if(derp.x-x &lt; 0)
 {
-    derp = instance_nearest(x,y,player_o)
-    image_angle = point_direction(x,y,derp.x,derp.y);
-    
-    if(derp.x-x &lt; 0)
+    image_xscale = -1;
+}
+else
+{
+    image_xscale = 1;
+}
+
+ATcounter += 1;
+
+if((ATcounter mod 32) = 1 and health2&gt;0)
+{
+    bullet = instance_create(x+sprite_height*image_xscale,y,bulletObject);
+    bullet.target = derp;
+    with(bullet)
     {
-        image_xscale = -1;
-    }
-    else
-    {
-        image_xscale = 1;
-    }
-    
-    ATcounter += 1;
-    
-    if((ATcounter mod 32) = 1)
-    {
-        instance_create(x,y,bulletObject);
+        move_towards_point(target.x,target.y,32)
     }
 }
+
+if(health2&lt;=0)
+{
+    for(i=0;i&lt;10;i++)
+    {   effect_create_above(ef_spark,x+random_range(-25,25),y+random_range(-25,25),100,c_white)
+    }
+    effect_create_above(ef_explosion,x+random_range(-25,25),y+random_range(-25,25),100,c_white)
+    for(i=0;i&lt;10;i++)
+    {   effect_create_above(ef_spark,x+random_range(-25,25)*2,y+random_range(-25,25)*2,100,c_yellow)
+    }
+    effect_create_above(ef_explosion,x+random_range(-25,25)*2,y+random_range(-25,25)*2,100,c_yellow)
+    for(i=0;i&lt;10;i++)
+    {   effect_create_above(ef_spark,x+random_range(-25,25)*3,y+random_range(-25,25)*3,100,c_orange)
+    }
+    effect_create_above(ef_explosion,x+random_range(-25,25)*3,y+random_range(-25,25)*3,100,c_orange)
+    for(i=0;i&lt;10;i++)
+    {   effect_create_above(ef_spark,x+random_range(-25,25)*4,y+random_range(-25,25)*4,100,c_red)
+    }
+    effect_create_above(ef_explosion,x+random_range(-25,25)*4,y+random_range(-25,25)*4,100,c_red)
+    effect_create_above(ef_explosion,x+random_range(-25,25)*4,y+random_range(-25,25)*4,100,c_white)
+    effect_create_above(ef_explosion,x+random_range(-25,25)*4,y+random_range(-25,25)*4,100,c_dkgray)
+    effect_create_above(ef_explosion,x+random_range(-25,25)*4,y+random_range(-25,25)*4,100,c_dkgray)
+    
+    if(!instance_exists(startWin))
+    {
+        instance_create(x,y,startWin);
+    }
+    
+    roomEnd -= 1;
+    if(roomEnd&lt;=0)
+    {
+        room_goto(OverMap);
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -93,7 +160,7 @@ active = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(tutorial_gate,0,x,y,0.1,6,0,c_white,1);
+            <string>draw_sprite_ext(tutorial_gate,0,x,y,0.1,1,0,c_white,1);
 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle+90,c_white,1)
 draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle+90,c_red,random_range(0.5,1))

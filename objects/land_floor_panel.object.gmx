@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>readyPartner = 0;
+activated = false;
 </string>
           </argument>
         </arguments>
@@ -62,10 +63,18 @@ else
     {
         if(instance_place(x,y-5,player_o))
         {
-            partner.y -= 5;
-            sound_play(weeee);
+            if(!activated)
+            {
+                audio_play_sound(weeee,2,false);
+                activated = true;
+            }
         }
     }
+}
+
+if(activated)
+{
+    partner.y -= 15;
 }
 </string>
           </argument>

@@ -158,7 +158,7 @@ instance_create(x,y,cameraObject);</code>
     <instance objName="thruster_middle" x="992" y="352" name="inst_02ACF490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thruster_middle" x="1024" y="352" name="inst_B4E865E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thruster_middle" x="1056" y="352" name="inst_A64F4DF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="start_fight_o" x="192" y="-64" name="inst_15D4DC99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="startFight" x="192" y="-64" name="inst_15D4DC99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
