@@ -72,7 +72,6 @@
     <instance objName="MapNode16" x="500" y="73" name="inst_93F92661" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MapNode17" x="224" y="203" name="inst_3541F482" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MapNode18" x="481" y="240" name="inst_E9946BE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="InventoryButtonStringObject" x="974" y="618" name="inst_1691FB87" locked="0" code="" scaleX="0.409155994653702" scaleY="0.393938988447189" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

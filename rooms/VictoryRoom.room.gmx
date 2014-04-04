@@ -51,6 +51,7 @@
   </views>
   <instances>
     <instance objName="VictoryScreenController" x="64" y="64" name="inst_A7A2D1E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="AnyKeyToReturnObj" x="384" y="608" name="inst_E96BA515" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

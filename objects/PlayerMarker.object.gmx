@@ -212,7 +212,7 @@ if(jump_check_pressed() or attack1_check_pressed())
     }
 }
 
-if(shield_check_pressed())
+if(attack2_check_pressed())
 {
     if(room == OverMap)
     {

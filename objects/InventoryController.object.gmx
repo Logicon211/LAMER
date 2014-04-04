@@ -514,10 +514,10 @@ draw_text(1120, 450, string(totalArmor))
 draw_text(965, 480, "Weight:")
 draw_text(1120, 480, string(totalWeight))
 //Weight
-draw_text(965, 510, "Cooling:")
-draw_text(1120, 510, string(totalCooling))
+//draw_text(965, 510, "Cooling:")
+//draw_text(1120, 510, string(totalCooling))
 //Bonuses
-draw_text(965, 540, totalBonuses)
+//draw_text(965, 540, totalBonuses)
 
 
 //compare window stuff
@@ -533,19 +533,19 @@ if(lookingAtItems)
     //current Item draw stats
     //TODO: Needs to display correct players' stats, right now its just player 1
     
-    if(playerLoadOut1[categoryNumber] != 0)
+    if(currentItem != 0)
     {
         /*draw_text(1720, 120, "cost:");
         draw_text(1780, 120, string(playerLoadOut1[categoryNumber].cost));*/
         //Armor
         draw_text(1720, 140, "Armor:");
-        draw_text(1780, 140, string(playerLoadOut1[categoryNumber].armor));
+        draw_text(1780, 140, string(currentItem.armor));
         //Weight
         draw_text(1720, 160, "Weight:");
-        draw_text(1780, 160, string(playerLoadOut1[categoryNumber].weight));
+        draw_text(1780, 160, string(currentItem.weight));
         //Weight
-        draw_text(1720, 180, "Cooling:");
-        draw_text(1780, 180, string(playerLoadOut1[categoryNumber].cooling));
+        //draw_text(1720, 180, "Cooling:");
+        //draw_text(1780, 180, string(playerLoadOut1[categoryNumber].cooling));
         //Bonuses
         /*draw_set_font(InventoryContentSmall);
         draw_text(1680, 210, playerLoadOut1[categoryNumber].bonuses);*/
@@ -563,8 +563,8 @@ if(lookingAtItems)
         draw_text(1920, 160, "Weight:");
         draw_text(1980, 160, string(inventoryArray[selectedInventory].inventoryItem.weight));
         //Weight
-        draw_text(1920, 180, "Cooling:");
-        draw_text(1980, 180, string(inventoryArray[selectedInventory].inventoryItem.cooling));
+        //draw_text(1920, 180, "Cooling:");
+        //draw_text(1980, 180, string(inventoryArray[selectedInventory].inventoryItem.cooling));
         //Bonuses
         /*draw_set_font(InventoryContentSmall);
         draw_text(1880, 210, inventoryArray[selectedInventory].inventoryItem.bonuses);*/
