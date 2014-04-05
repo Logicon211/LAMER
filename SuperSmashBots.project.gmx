@@ -153,6 +153,9 @@
     <sprite>sprites\shadow128Sprite</sprite>
     <sprite>sprites\shadowLighterSprite</sprite>
     <sprite>sprites\shadowVertLight</sprite>
+    <sprite>sprites\fireTown</sprite>
+    <sprite>sprites\fireTownLight</sprite>
+    <sprite>sprites\sprite118</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -167,6 +170,8 @@
     <background>background\Credits2</background>
     <background>background\CampaignInfoScreen</background>
     <background>background\VictoryBackground</background>
+    <background>background\fireBG</background>
+    <background>background\mapBGlol</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -560,6 +565,12 @@
       <object>objects\thruster_left</object>
       <object>objects\thrusters_right</object>
       <object>objects\thruster_middle</object>
+      <object>objects\shadow128Object</object>
+      <object>objects\ShadowObject2</object>
+      <object>objects\ShadowObject2Rotate</object>
+    </objects>
+    <objects name="Start Animation Texts">
+      <object>objects\startAnimationText</object>
     </objects>
     <object>objects\ShaderTestObject</object>
     <object>objects\ClosedDoor</object>
@@ -584,11 +595,11 @@
     <object>objects\Level_Flloor1</object>
     <object>objects\Level_Floor2</object>
     <object>objects\object174</object>
-    <object>objects\shadow128Object</object>
-    <object>objects\ShadowObject2</object>
-    <object>objects\ShadowObject2Rotate</object>
+    <object>objects\fireTownObject</object>
+    <object>objects\menuLOL</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\IntroRoom1</room>
     <room>rooms\CampaignInfoRoom</room>
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
