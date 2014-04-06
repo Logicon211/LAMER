@@ -293,7 +293,7 @@ if(boost_check(playerNum))
 }
 else
 {
-    if(playerNum&lt;3)
+    if(playerType&lt;3)
     {
         controlSet[8] = 0;
         controlSet[2] = 0;
