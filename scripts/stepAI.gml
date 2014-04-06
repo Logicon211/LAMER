@@ -10,7 +10,7 @@ switch (ds_stack_pop(stackAI))
     case 2:
         attackAI();
     case 3:
-        blockAI();
+        //blockAI();
     case 4:
         xmoveAI();
         ymoveAI();

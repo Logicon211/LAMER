@@ -1,15 +1,15 @@
-if(x < currentTarget.x)
+if(y < currentTarget.x)
 { 
-    controlSet[6] = 0;
-    controlSet[7] = 1;
+    controlSet[4] = 1;
+    controlSet[8] = 1;
 }
-else if(x > currentTarget.x)
+/*else if(y > currentTarget.y)
 {
-    controlSet[6] = 1;
-    controlSet[7] = 0;
-}
+    controlSet[] = ;
+    controlSet[] = ;
+}*/
 else
 {
-    controlSet[6] = 0;
-    controlSet[7] = 0;
+    controlSet[4] = 0;
+    controlSet[8] = 0;
 }

@@ -1,11 +1,11 @@
-if (abs(x - currentTarget.x) > 500)
+/*if (abs(x - currentTarget.x) > 500)
 {
     controlSet[8] = 1;
 }
 else
 {
     controlSet[8] = 0;
-}
+}*/
 
 if(x < currentTarget.x)
 { 
