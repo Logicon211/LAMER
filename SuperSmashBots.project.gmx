@@ -153,9 +153,11 @@
     <sprite>sprites\shadow128Sprite</sprite>
     <sprite>sprites\shadowLighterSprite</sprite>
     <sprite>sprites\shadowVertLight</sprite>
+    <sprite>sprites\AnyKeyToGoBackSprite</sprite>
     <sprite>sprites\fireTown</sprite>
     <sprite>sprites\fireTownLight</sprite>
     <sprite>sprites\sprite118</sprite>
+    <sprite>sprites\playerNumberSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -247,6 +249,7 @@
         <script>scripts\shield_check_pressed.gml</script>
         <script>scripts\shield_check_released.gml</script>
         <script>scripts\boost_check.gml</script>
+        <script>scripts\y_check_pressed.gml</script>
       </scripts>
       <script>scripts\restart_check.gml</script>
       <script>scripts\quit_check.gml</script>
@@ -293,6 +296,9 @@
     <font>fonts\CampaignFont</font>
     <font>fonts\RadioFont</font>
     <font>fonts\InventoryContentSmall</font>
+    <font>fonts\CaviarDreams</font>
+    <font>fonts\CaviarDreamsBold</font>
+    <font>fonts\CaviarDreamsItalic</font>
   </fonts>
   <objects name="objects">
     <objects name="MultiplayerGUI">
@@ -597,6 +603,7 @@
     <object>objects\object174</object>
     <object>objects\fireTownObject</object>
     <object>objects\menuLOL</object>
+    <object>objects\AnyKeyToReturnObj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>

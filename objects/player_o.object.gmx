@@ -373,6 +373,8 @@ else if(playerType &gt; 2)
     {   stepAI()
     }
 }
+
+controlSet[8] = 1;
 </string>
           </argument>
         </arguments>
@@ -1159,6 +1161,17 @@ else if(state = string('land'))
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(healthSprite,0,view_xview+30+100*playerNum,view_yview+30,health2/10,1,0,getPlayerColor(playerNum,0),1);
+
+if(playerNum&gt;2)
+{
+    draw_sprite_ext(playerNumberSprite,4,x,y,1,1,0,c_white,0.75);
+}
+else if(playerNum&gt;1)
+{
+    playerNumColor=0;
+    draw_sprite_ext(playerNumberSprite,playerNum,x,y,1,1,0,playerNumColor,0.75);
+}
+
 </string>
           </argument>
         </arguments>

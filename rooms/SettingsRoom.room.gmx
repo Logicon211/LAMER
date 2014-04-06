@@ -56,21 +56,16 @@
     <instance objName="NumPlayers4Button" x="768" y="272" name="inst_6903A0A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="NumCPUs0Button" x="512" y="336" name="inst_D4705DEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="NumCPUs1Button" x="640" y="336" name="inst_43E3B784" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NoTimeLimitButton" x="512" y="400" name="inst_D3F4D99E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Time1MinuteButton" x="640" y="400" name="inst_B95BB4FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Time3MinuteButton" x="768" y="400" name="inst_69E15A71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Time5MinuteButton" x="896" y="400" name="inst_AB0B96B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Time8MinuteButton" x="1024" y="400" name="inst_303D546D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="NoLivesLimitButton" x="512" y="464" name="inst_785846FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Lives1Button" x="640" y="464" name="inst_05934A0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Lives3Button" x="768" y="464" name="inst_8BAE1063" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Lives5Button" x="896" y="464" name="inst_B0329826" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Lives8Button" x="1024" y="464" name="inst_6D7B5AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Lives10Button" x="1152" y="464" name="inst_1AABB975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Lives10Button" x="1152" y="400" name="inst_1AABB975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="NumCPUs3Button" x="896" y="336" name="inst_6411E048" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="NumCPUs2Button" x="768" y="336" name="inst_96953D41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="NextButton" x="1088" y="608" name="inst_1FD47138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="BackButton" x="128" y="608" name="inst_7387C1FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="NoLivesLimitButton" x="512" y="400" name="inst_785846FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Lives1Button" x="640" y="400" name="inst_05934A0F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Lives3Button" x="768" y="400" name="inst_8BAE1063" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Lives5Button" x="896" y="400" name="inst_B0329826" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Lives8Button" x="1024" y="400" name="inst_6D7B5AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

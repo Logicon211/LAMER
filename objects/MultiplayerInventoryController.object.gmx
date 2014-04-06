@@ -654,7 +654,7 @@ if(!lockedIn[0])
         }
     }
     //BACK BUTTON CHECK
-    if(shield_check())
+    if(attack2_check_pressed())
     {
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[0])
@@ -863,7 +863,7 @@ else if(lockedIn[0] and !lockedIn[1] and isAI[1])
     }
     
     //BACK BUTTON CHECK
-    if(shield_check())
+    if(attack2_check_pressed())
     {
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[1])
@@ -1072,7 +1072,7 @@ else if((lockedIn[0] and lockedIn[1] and !lockedIn[2] and isAI[1] and isAI[2] or
     }
     
     //BACK BUTTON CHECK
-    if(shield_check())
+    if(attack2_check_pressed())
     {
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[2])
@@ -1280,7 +1280,7 @@ else if((lockedIn[0] and lockedIn[1] and lockedIn[2] and !lockedIn[3] and isAI[1
         }
     }
     //BACK BUTTON CHECK
-    if(shield_check())
+    if(attack2_check_pressed())
     {
         //do code to confirm selection
         playerLoadOut4[categoryNumber[3]] = currentItem[3];
@@ -1489,7 +1489,7 @@ if(jump_check_pressed(1))
 }
 
 //BACK BUTTON CHECK
-if(shield_check(1))
+if(attack2_check_pressed(1))
 {
     audio_play_sound(MenuNavigationSound,1,false);
     if(lookingAtItems[1])
@@ -1700,7 +1700,7 @@ if(numPlayersSetting - numCPUsSetting &gt;= 3)
     }
     
     //BACK BUTTON CHECK
-    if(shield_check(2))
+    if(attack2_check_pressed(2))
     {
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[2])
@@ -1911,7 +1911,7 @@ if(numCPUsSetting &lt;= 0)
         }
     }
     //BACK BUTTON CHECK
-    if(shield_check(3))
+    if(attack2_check_pressed(3))
     {
         audio_play_sound(MenuNavigationSound,1,false);
         if(lookingAtItems[3])
@@ -1955,7 +1955,7 @@ if(numCPUsSetting &lt;= 0)
             <string>//Print current loadout stats on screen (Still need to add stat comparisons)
 //Need to figure out multiple players inventory screens
 
-draw_set_color(c_black);
+draw_set_color(c_white);
 
 var totalCost = 0;
 var totalArmor = 0;
@@ -2042,7 +2042,7 @@ if(viewingColors[0])
     draw_set_font(InventoryHeader);
     draw_set_color(c_white);
     draw_text(220, 10, "Choose your colors");
-    draw_set_color(c_black);
+    draw_set_color(c_white);
     draw_set_font(InventoryContent);
 }
 
@@ -2050,6 +2050,7 @@ if(!lookingAtItems[0])
 {
     if(viewingColors[0])
     {
+        draw_set_color(c_white);
         draw_set_font(InventoryHeader);
         draw_text(495, 150, "Current Stats:")
         draw_set_font(InventoryContent);
@@ -2095,10 +2096,10 @@ else
 
     if(playerLoadOut1[categoryNumber[0]] != 0)
     {
-        totalCost = playerLoadOut1[categoryNumber[0]].cost
-        totalArmor = playerLoadOut1[categoryNumber[0]].armor
-        totalWeight = playerLoadOut1[categoryNumber[0]].weight
-        totalCooling = playerLoadOut1[categoryNumber[0]].cooling
+        totalCost = currentItem[0].cost
+        totalArmor = currentItem[0].armor
+        totalWeight = currentItem[0].weight
+        totalCooling = currentItem[0].cooling
     }
     
     //Cost
@@ -2154,10 +2155,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(580, 270, string(armorComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(495, 295, "Weight:");
@@ -2171,10 +2172,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(580, 295, string(weightComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(495, 320, "Cooling:");
@@ -2188,10 +2189,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(580, 320, string(coolingComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
     }
 }
 
@@ -2288,7 +2289,7 @@ if(viewingColors[1])
     draw_set_font(InventoryHeader);
     draw_set_color(c_white);
     draw_text(850, 10, "Choose your colors");
-    draw_set_color(c_black);
+    draw_set_color(c_white);
     draw_set_font(InventoryContent);
 }
 
@@ -2296,6 +2297,7 @@ if(!lookingAtItems[1])
 {
     if(viewingColors[1])
     {
+        draw_set_color(c_white);
         draw_set_font(InventoryHeader);
         draw_text(1100, 150, "Current Stats:")
         draw_set_font(InventoryContent);
@@ -2341,10 +2343,10 @@ else
 
     if(playerLoadOut2[categoryNumber[1]] != 0)
     {
-        totalCost = playerLoadOut2[categoryNumber[1]].cost
-        totalArmor = playerLoadOut2[categoryNumber[1]].armor
-        totalWeight = playerLoadOut2[categoryNumber[1]].weight
-        totalCooling = playerLoadOut2[categoryNumber[1]].cooling
+        totalCost = currentItem[1].cost
+        totalArmor = currentItem[1].armor
+        totalWeight = currentItem[1].weight
+        totalCooling = currentItem[1].cooling
     }
     
     //Cost
@@ -2400,10 +2402,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(1195, 270, string(armorComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(1110, 295, "Weight:");
@@ -2417,10 +2419,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(1195, 295, string(weightComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(1110, 320, "Cooling:");
@@ -2434,10 +2436,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(1195, 320, string(coolingComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
     }
 }
 
@@ -2539,7 +2541,7 @@ if(viewingColors[2])
     draw_set_font(InventoryHeader);
     draw_set_color(c_white);
     draw_text(220, 350, "Choose your colors");
-    draw_set_color(c_black);
+    draw_set_color(c_white);
     draw_set_font(InventoryContent);
 }
 
@@ -2547,6 +2549,7 @@ if(!lookingAtItems[2])
 {
     if(viewingColors[2])
     {
+        draw_set_color(c_white);
         draw_set_font(InventoryHeader);
         draw_text(490, 485, "Current Stats:")
         draw_set_font(InventoryContent);
@@ -2592,10 +2595,10 @@ else
 
     if(playerLoadOut3[categoryNumber[2]] != 0)
     {
-        totalCost = playerLoadOut3[categoryNumber[2]].cost
-        totalArmor = playerLoadOut3[categoryNumber[2]].armor
-        totalWeight = playerLoadOut3[categoryNumber[2]].weight
-        totalCooling = playerLoadOut3[categoryNumber[2]].cooling
+        totalCost = currentItem[2].cost
+        totalArmor = currentItem[2].armor
+        totalWeight = currentItem[2].weight
+        totalCooling = currentItem[2].cooling
     }
     
     //Cost
@@ -2651,10 +2654,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(570, 605, string(armorComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(495, 630, "Weight:");
@@ -2668,10 +2671,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(570, 630, string(weightComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(495, 655, "Cooling:");
@@ -2685,10 +2688,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(570, 655, string(coolingComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
     }
 }
 }
@@ -2787,7 +2790,7 @@ if(viewingColors[3])
     draw_set_font(InventoryHeader);
     draw_set_color(c_white);
     draw_text(850, 350, "Choose your colors");
-    draw_set_color(c_black);
+    draw_set_color(c_white);
     draw_set_font(InventoryContent);
 }
 
@@ -2795,6 +2798,7 @@ if(!lookingAtItems[3])
 {
     if(viewingColors[3])
     {
+        draw_set_color(c_white);
         draw_set_font(InventoryHeader);
         draw_text(1100, 485, "Current Stats:")
         draw_set_font(InventoryContent);
@@ -2840,10 +2844,10 @@ else
 
     if(playerLoadOut4[categoryNumber[3]] != 0)
     {
-        totalCost = playerLoadOut4[categoryNumber[3]].cost
-        totalArmor = playerLoadOut4[categoryNumber[3]].armor
-        totalWeight = playerLoadOut4[categoryNumber[3]].weight
-        totalCooling = playerLoadOut4[categoryNumber[3]].cooling
+        totalCost = currentItem[3].cost
+        totalArmor = currentItem[3].armor
+        totalWeight = currentItem[3].weight
+        totalCooling = currentItem[3].cooling
     }
     
     //Cost
@@ -2899,10 +2903,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(1195, 605, string(armorComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(1110, 630, "Weight:");
@@ -2916,10 +2920,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(1195, 630, string(weightComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
         
         //Weight
         draw_text(1110, 655, "Cooling:");
@@ -2933,10 +2937,10 @@ else
         }
         else
         {
-            draw_set_color(c_black);
+            draw_set_color(c_white);
         }
         draw_text(1195, 655, string(coolingComp));
-        draw_set_color(c_black);
+        draw_set_color(c_white);
     }
 }
 }

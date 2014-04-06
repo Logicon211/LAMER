@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index, -1, x, y, 1, 1, 0, c_white, 1);
-draw_set_color(c_lime);
+draw_set_color(c_aqua);
 draw_set_font(CampaignFont);
 draw_text(20, 600, string(MapNodeList[playerMarker.atMapNode].nodeName));
 draw_text(20, 630, string(MapNodeList[playerMarker.atMapNode].nodeDescription));

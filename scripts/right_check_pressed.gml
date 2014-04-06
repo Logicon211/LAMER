@@ -9,9 +9,9 @@ if(keyboard_check_pressed(vk_right))
         return true;
     }
 }
-else if(gamepad_axis_value(controllerNum,gp_axislh)>0.4)
+else if(gamepad_axis_value(controllerNum,gp_axislh)>0.4 or gamepad_button_check_pressed(controllerNum,gp_padr))
 {
-    if(controllerDirection[controllerNum,0] < 0.3)
+    if(controllerDirection[controllerNum,0] < 0.3 or gamepad_button_check_pressed(controllerNum,gp_padr))
     {
         return true;
     }

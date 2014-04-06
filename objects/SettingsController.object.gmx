@@ -120,9 +120,6 @@ if(numPlayersButtons[selectedPlayersButton].state != 1) {
 if(numCPUsButtons[selectedCPUsButton].state != 1) {
     numCPUsButtons[selectedCPUsButton].state = 2;
 }
-if(timeButtons[selectedTimeButton].state != 1) {
-    timeButtons[selectedTimeButton].state = 2;
-}
 if(livesButtons[selectedLivesButton].state != 1) {
     livesButtons[selectedLivesButton].state = 2;
 }
@@ -294,25 +291,25 @@ if(up_check_pressed())
         selectedSettingsButton = numPlayersButtons[selectedPlayersButton];
     }
     //Time Limit Row
-    else if(selectedSettingsRow == 2)
+    /*else if(selectedSettingsRow == 2)
     {
         selectedSettingsRow = 1;
         selectedSettingsButton.state = 3;
         selectedSettingsButton = numCPUsButtons[selectedCPUsButton];
-    }
+    }*/
     //Lives Row
     else if(selectedSettingsRow == 3)
     {
-        selectedSettingsRow = 2;
+        selectedSettingsRow = 1;
         selectedSettingsButton.state = 3;
-        selectedSettingsButton = timeButtons[selectedTimeButton];
+        selectedSettingsButton = numCPUsButtons[selectedCPUsButton];
     }
     //Back - Next Button Row
     else if(selectedSettingsRow == 4)
     {
         selectedSettingsRow = 3;
         selectedSettingsButton.state = 3;
-        selectedSettingsButton = livesButtons[selectedCreditButton];
+        selectedSettingsButton = livesButtons[selectedLivesButton];
     }
 }
 //DOWN CHECK
@@ -329,17 +326,17 @@ if(down_check_pressed())
     //Num CPUs Row
     else if(selectedSettingsRow == 1)
     {
-        selectedSettingsRow = 2;
-        selectedSettingsButton.state = 3;
-        selectedSettingsButton = timeButtons[selectedTimeButton];
-    }
-    //Time Limit Row
-    else if(selectedSettingsRow == 2)
-    {
         selectedSettingsRow = 3;
         selectedSettingsButton.state = 3;
         selectedSettingsButton = livesButtons[selectedLivesButton];
     }
+    //Time Limit Row
+    /*else if(selectedSettingsRow == 2)
+    {
+        selectedSettingsRow = 3;
+        selectedSettingsButton.state = 3;
+        selectedSettingsButton = livesButtons[selectedLivesButton];
+    }*/
     //Lives Row
     else if(selectedSettingsRow == 3)
     {

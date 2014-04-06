@@ -27,9 +27,22 @@
             <kind>1</kind>
             <string>pos=0;
 pos2=0;
-str="       #In Association With          ##University of New Brunswick          #Department of Media Arts and Cultures          ##Game Design 2#and#Professor Jeff Mundee";
-var cstr;
-var cstr2;
+
+alphaVarBlack = 0;
+
+str[0]="#In Association With     "
+str[1]="##University of New Brunswick   ";
+str[2]="###Department of Media Arts and Cultures               ";
+str[3]="#####and   ";
+str[4]="######Professor Jeff Mundee's  ";
+str[5]="#######Game Design II            ";
+
+cstr[0] = "";
+cstr[1] = "";
+cstr[2] = "";
+cstr[3] = "";
+cstr[4] = "";
+cstr[5] = "";
 </string>
           </argument>
         </arguments>
@@ -52,20 +65,54 @@ var cstr2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>cstr=string_copy(str,1,pos);
-cstr2=string_copy(str,0,pos2);
-//shadow
-draw_set_font(InventoryHeader);
-draw_text_transformed_color(x,y,cstr2,1.8,image_yscale*2,0,c_black,c_black,c_black,c_black,image_yscale/4);
-//black outline
-draw_text_transformed_color(x+2,y+2,cstr2,1.8,image_yscale*2,0,c_dkgray,make_color_hsv(30,200,80/2),make_color_hsv(30,240,50/2),make_color_hsv(30,200,100/2),1);
-draw_text_transformed_color(x+2,y-2,cstr2,1.8,image_yscale*2,0,c_dkgray,make_color_hsv(30,200,80/2),make_color_hsv(30,240,50/2),make_color_hsv(30,200,100/2),1);
-draw_text_transformed_color(x-2,y+2,cstr2,1.8,image_yscale*2,0,c_dkgray,make_color_hsv(30,200,80/2),make_color_hsv(30,240,50/2),make_color_hsv(30,200,100/2),1);
-draw_text_transformed_color(x-2,y-2,cstr2,1.8,image_yscale*2,0,c_dkgray,make_color_hsv(30,200,80/2),make_color_hsv(30,240,50/2),make_color_hsv(30,200,100/2),1);
-//white
-draw_text_transformed_color(x,y,cstr,1.8,image_yscale*2,0,c_white,c_white,c_white,c_white,1);
-pos+=0.25;
-pos2+=0.25;
+            <string>pos+=0.34;
+
+alphaVar = 0;
+for(i=0; i&lt;=5; i++)
+{
+    alphaVar += string_length(str[i]) + 10;
+}
+alphaVar -= pos;
+
+if(alphaVar&lt;=0)
+{   image_alpha -= 0.05;
+}
+
+
+cstr[0]=string_copy(str[0],1,pos);
+cstr[1]=string_copy(str[1],1,pos-string_length(str[0]));
+cstr[2]=string_copy(str[2],1,pos-(string_length(str[0])+string_length(str[1])));
+cstr[3]=string_copy(str[3],1,pos-(string_length(str[0])+string_length(str[1])+string_length(str[2])));
+cstr[4]=string_copy(str[4],1,pos-(string_length(str[0])+string_length(str[1])+string_length(str[2])+string_length(str[3])));
+cstr[5]=string_copy(str[5],1,pos-(string_length(str[0])+string_length(str[1])+string_length(str[2])+string_length(str[3])+string_length(str[4])));
+
+for(i=0; i&lt;=5; i++)
+{
+    if(i=0 or i=3)
+    {   draw_set_font(CaviarDreamsItalic);
+    }
+    else
+    {   draw_set_font(CaviarDreamsBold);
+    }
+    //black outline
+    draw_text_transformed_color(x+2,y+2,cstr[i],1,1,0,c_black,c_black,c_black,c_black,image_alpha);
+    draw_text_transformed_color(x+2,y-1,cstr[i],1,1,0,c_black,c_black,c_black,c_black,image_alpha);
+    draw_text_transformed_color(x-1,y+2,cstr[i],1,1,0,c_black,c_black,c_black,c_black,image_alpha);
+    draw_text_transformed_color(x-1,y-1,cstr[i],1,1,0,c_black,c_black,c_black,c_black,image_alpha);
+    //white
+    draw_text_transformed_color(x,y,cstr[i],1,1,0,c_white,c_white,c_white,c_white,image_alpha);
+}
+
+if(image_alpha&lt;=-1)
+{   alphaVarBlack += 0.05;
+}
+
+draw_set_alpha(alphaVarBlack);
+draw_rectangle(0, 0, room_width, room_height, false);
+draw_set_alpha(1);
+
+
+
 </string>
           </argument>
         </arguments>
