@@ -25,12 +25,16 @@ for(num = 1; num <= 20; num++)
     {
         ds_stack_push(stackAI, 1);
     }
+    else if(num % 3 == 0)
+    {
+        ds_stack_push(stackAI, 3);
+    }
     else if(num % 2 == 0)
     {
         ds_stack_push(stackAI, 2);
     }
     else
     {
-        ds_stack_push(stackAI, 3);
+        ds_stack_push(stackAI, 4);
     }
 }

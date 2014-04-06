@@ -264,10 +264,12 @@
     <script>scripts\gotoVictoryRoom.gml</script>
     <script>scripts\script65.gml</script>
     <scripts name="AI">
+      <script>scripts\blockAI.gml</script>
       <script>scripts\initializeAI.gml</script>
       <script>scripts\targetAI.gml</script>
       <script>scripts\stepAI.gml</script>
-      <script>scripts\moveAI.gml</script>
+      <script>scripts\xmoveAI.gml</script>
+      <script>scripts\ymoveAI.gml</script>
       <script>scripts\attackAI.gml</script>
     </scripts>
   </scripts>
