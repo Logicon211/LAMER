@@ -508,9 +508,7 @@ deadCounter +=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>controlSet[8]=true;
-
-if(playerType = 0 or playerType &gt; 2)
+            <string>if(playerType = 0 or playerType &gt; 2)
 {
 
 /***************************************************
