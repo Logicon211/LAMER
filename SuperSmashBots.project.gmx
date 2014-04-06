@@ -606,7 +606,6 @@
     <object>objects\AnyKeyToReturnObj</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\IntroRoom1</room>
     <room>rooms\CampaignInfoRoom</room>
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
@@ -626,6 +625,7 @@
     <room>rooms\Stage4</room>
     <room>rooms\Stage5</room>
     <room>rooms\VictoryRoom</room>
+    <room>rooms\IntroRoom1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
