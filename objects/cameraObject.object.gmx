@@ -110,30 +110,30 @@ for(i=0; i&lt;instance_number(player_o); i++)
     }
 }
 
-wMin -= 300;
-wMax += 300;
-hMin -= 534;
-hMax += 534;
+wMin -= 375;
+wMax += 375;
+hMin -= 375;
+hMax += 375;
 
-wVar = (wMax-wMin)/1280;
-hVar = (hMax-hMin)/720;
+wVar = (wMax-wMin)/960;
+hVar = (hMax-hMin)/540;
 
 zoomScale = hVar;
 if(wVar&gt;hVar)
 {   zoomScale = wVar;
 }
 
-wVar = abs(1280*zoomScale);
+wVar = abs(960*zoomScale);
 hVar = view_wview[0]*9/16;
-if(wVar &gt;= 1280 and hVar &gt;= 720)
+if(wVar &gt;= 960 and hVar &gt;= 540)
 {
     view_wview[0] = wVar;
     view_hview[0] = hVar;
 }
 else
 {
-    view_wview[0] = 1280;
-    view_hview[0] = 720;
+    view_wview[0] = 960;
+    view_hview[0] = 540;
 }
 </string>
           </argument>
