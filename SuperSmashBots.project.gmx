@@ -281,7 +281,7 @@
       <script>scripts\xmoveAI.gml</script>
       <script>scripts\ymoveAI.gml</script>
       <script>scripts\attackAI.gml</script>
-      <script>scripts\statusAI.gml</script>
+      <script>scripts\resetcontrolAI.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
