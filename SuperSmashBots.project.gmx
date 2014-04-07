@@ -13,6 +13,7 @@
     <sound>sound\weeee</sound>
     <sound>sound\NodeNavigationSound</sound>
     <sound>sound\MenuConfirmationSound</sound>
+    <sound>sound\ShieldLoop</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -189,6 +190,7 @@
         <script>scripts\xMove10.gml</script>
         <script>scripts\xEase10.gml</script>
         <script>scripts\attackSet0.gml</script>
+        <script>scripts\script76.gml</script>
       </scripts>
       <scripts name="Easing">
         <script>scripts\x_ease.gml</script>
@@ -629,10 +631,15 @@
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
     <room>rooms\Stage1</room>
+    <room>rooms\Stage1_1</room>
     <room>rooms\Stage2</room>
+    <room>rooms\Stage2_1</room>
     <room>rooms\Stage3</room>
+    <room>rooms\Stage3_1</room>
     <room>rooms\Stage4</room>
+    <room>rooms\Stage4_1</room>
     <room>rooms\Stage5</room>
+    <room>rooms\Stage5_1</room>
     <room>rooms\VictoryRoom</room>
     <rooms name="Intro Animation Rooms">
       <room>rooms\IntroRoom1</room>
