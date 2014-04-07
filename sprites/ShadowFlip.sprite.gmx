@@ -8,8 +8,8 @@
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>127</bbox_right>
-  <bbox_top>1</bbox_top>
-  <bbox_bottom>127</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>126</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -19,6 +19,6 @@
   <width>128</width>
   <height>128</height>
   <frames>
-    <frame index="0">images\shadowLighterSprite_0.png</frame>
+    <frame index="0">images\ShadowFlip_0.png</frame>
   </frames>
 </sprite>

@@ -152,12 +152,15 @@
     </sprites>
     <sprite>sprites\shadow128Sprite</sprite>
     <sprite>sprites\shadowLighterSprite</sprite>
+    <sprite>sprites\ShadowFlip</sprite>
     <sprite>sprites\shadowVertLight</sprite>
     <sprite>sprites\AnyKeyToGoBackSprite</sprite>
-    <sprite>sprites\fireTown</sprite>
-    <sprite>sprites\fireTownLight</sprite>
     <sprite>sprites\sprite118</sprite>
     <sprite>sprites\playerNumberSprite</sprite>
+    <sprites name="IntroAnimation">
+      <sprite>sprites\fireTown</sprite>
+      <sprite>sprites\fireTownLight</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -174,6 +177,7 @@
     <background>background\VictoryBackground</background>
     <background>background\fireBG</background>
     <background>background\mapBGlol</background>
+    <background>background\fireTown2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -544,6 +548,7 @@
         <object>objects\booster_trail_small_o</object>
         <object>objects\booster_trail_intense_o</object>
       </objects>
+      <object>objects\bulletParent</object>
       <object>objects\bulletObject</object>
       <object>objects\bulletObject2</object>
       <object>objects\CosmosBullet</object>
@@ -576,6 +581,7 @@
       <object>objects\thruster_middle</object>
       <object>objects\shadow128Object</object>
       <object>objects\ShadowObject2</object>
+      <object>objects\ShadowObject2Flip</object>
       <object>objects\ShadowObject2Rotate</object>
     </objects>
     <objects name="Start Animation Texts">
@@ -628,7 +634,10 @@
     <room>rooms\Stage4</room>
     <room>rooms\Stage5</room>
     <room>rooms\VictoryRoom</room>
-    <room>rooms\IntroRoom1</room>
+    <rooms name="Intro Animation Rooms">
+      <room>rooms\IntroRoom1</room>
+      <room>rooms\IntroRoom2</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

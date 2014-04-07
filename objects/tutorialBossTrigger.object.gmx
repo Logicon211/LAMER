@@ -27,8 +27,10 @@
             <kind>1</kind>
             <string>if(player_o.x-(x+200))
 {
-    trap = instance_create(5312,1216,Land_tutorial_gate);
+    trap = instance_create(5504,1216,Land_tutorial_gate);
     trap.image_yscale = 0.96;
+    trap.image_xscale = 2.10989;
+    trap.depth = -20;
     //cam = instance_nearest(x,y,cameraObject)
     //cam.pNums += 1;
     turret = instance_create(x+1200,y+250,autoTurret);
