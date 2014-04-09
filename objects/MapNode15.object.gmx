@@ -44,6 +44,16 @@ face[0] = 0;
 
 battleMap = testRange;
 
+
+//Bot Settings on this Map Node
+numberOfBots = 1;
+DifficultyOfBots = 1;
+
+botLoadOut[0] = ProtoHeadObjectItem; //Head
+botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
+botLoadOut[3] = ProtoGunObjectItem; //Right Arm
+botLoadOut[4] = ProtoLegsObjectItem; //Legs
 </string>
           </argument>
         </arguments>

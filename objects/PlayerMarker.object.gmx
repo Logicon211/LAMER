@@ -193,6 +193,33 @@ if(jump_check_pressed() or attack1_check_pressed())
     
     //MapNodeList[atMapNode].hasCompleted = true;
     
+    indicatorNeeded = false;
+    
+    //Set number, difficulty, and loadouts of bots
+    numBots = MapNodeList[atMapNode].numberOfBots;
+    botDifficulty = MapNodeList[atMapNode].DifficultyOfBots
+    
+    //BOT PLAYER2 INVENTORY
+    playerLoadOut2[0] = MapNodeList[atMapNode].botLoadOut[0]; //Head
+    playerLoadOut2[1] = MapNodeList[atMapNode].botLoadOut[1]; //Torso
+    playerLoadOut2[2] = MapNodeList[atMapNode].botLoadOut[2]; //Left Arm
+    playerLoadOut2[3] = MapNodeList[atMapNode].botLoadOut[3]; //Right Arm
+    playerLoadOut2[4] = MapNodeList[atMapNode].botLoadOut[4]; //Legs
+    
+    //BOT PLAYER3 INVENTORY
+    playerLoadOut3[0] = MapNodeList[atMapNode].botLoadOut[0]; //Head
+    playerLoadOut3[1] = MapNodeList[atMapNode].botLoadOut[1]; //Torso
+    playerLoadOut3[2] = MapNodeList[atMapNode].botLoadOut[2]; //Left Arm
+    playerLoadOut3[3] = MapNodeList[atMapNode].botLoadOut[3]; //Right Arm
+    playerLoadOut3[4] = MapNodeList[atMapNode].botLoadOut[4]; //Legs
+    
+    //BOT PLAYER4 INVENTORY
+    playerLoadOut4[0] = MapNodeList[atMapNode].botLoadOut[0]; //Head
+    playerLoadOut4[1] = MapNodeList[atMapNode].botLoadOut[1]; //Torso
+    playerLoadOut4[2] = MapNodeList[atMapNode].botLoadOut[2]; //Left Arm
+    playerLoadOut4[3] = MapNodeList[atMapNode].botLoadOut[3]; //Right Arm
+    playerLoadOut4[4] = MapNodeList[atMapNode].botLoadOut[4]; //Legs
+    
     if(MapNodeList[atMapNode].hasRadioText)
     {
         radText = MapNodeList[atMapNode].radioText;

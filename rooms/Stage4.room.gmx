@@ -319,8 +319,6 @@ instance_create(x,y,cameraObject);</code>
     <instance objName="thruster_left" x="2861" y="2558" name="inst_5D163FE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thrusters_right" x="1869" y="2558" name="inst_E3134776" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thrusters_right" x="2989" y="2558" name="inst_87726CA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_0246E4F1" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="0" y="0" name="inst_CD585D2B" locked="0" code="" scaleX="0" scaleY="0" colour="0" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
