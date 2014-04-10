@@ -615,6 +615,7 @@
     <object>objects\fireTownObject</object>
     <object>objects\menuLOL</object>
     <object>objects\AnyKeyToReturnObj</object>
+    <object>objects\anykeySkip</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
