@@ -369,15 +369,15 @@ if(playerType = 0)
     *****************************/
 }
 /*
-                3 - AI mode Base Model (15 steps)
-                4 - AI decision every 60 steps
-                5 - AI decision every 30 steps
-                6 - AI decision every 15 steps
-                
-                7 - AI decision every 45 steps
-                8 - AI decision every 30 steps
-                9 - AI decision every 15 steps
-                10 - AI decision every 1 steps
+            3 - AI mode Base Model (15 steps)
+            4 - AI decision every 60 steps
+            5 - AI decision every 30 steps
+            6 - AI decision every 15 steps
+            
+            7 - AI decision every 45 steps
+            8 - AI decision every 30 steps
+            9 - AI decision every 15 steps
+            10 - AI decision every 1 steps
 */
                 
 else if(playerType = 3) //default AI difficulty

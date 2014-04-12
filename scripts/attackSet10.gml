@@ -4,6 +4,7 @@ armB = argument2;
 bNum = argument3;
 spd = argument4;//number, ie 10, where 1 is slow 10 is fast
 spd = (1/spd)*5;//now spd can be multiplied
+spd = 2.79;
 larmA = armA.lowerarm;
 larmB = armB.lowerarm;
 
@@ -28,26 +29,26 @@ i=armA.animationCounter;
 if(canSetAttack)
 {
     attackVar = 1;
-    if(left_check() or right_check())
+    if(left_check(playerNum) or right_check(playerNum))
     {
         attackVar = 0;
-        if(boost_check())
+        if(boost_check(playerNum))
         {
             attackVar = 2;
         }
     }
-    else if(up_check())
+    else if(up_check(playerNum))
     {
         attackVar = 3;
-        if(boost_check())
+        if(boost_check(playerNum))
         {
             attackVar = 4;
         }
     }
-    else if(down_check())
+    else if(down_check(playerNum))
     {
         attackVar = 1;
-        if(boost_check())
+        if(boost_check(playerNum))
         {
             attackVar = 2;
         }
@@ -60,12 +61,12 @@ if(canSetAttack)
 //**************************************************
 if(attackVar = 0)
 {
-    if(i>0 and i<6)
+    if(i>0*spd and i<6*spd)
     {
         larmA.attacking = false;
         //raise sword
         //position
-        sVar = 6;
+        sVar = 6*spd;
         yEase10(player.y+0-player.heightAdjust,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, 15*image_xscale, sVar);
@@ -84,12 +85,12 @@ if(attackVar = 0)
         leg2.image_angle = angle_ease(leg2.image_angle, 50*image_xscale, sVar);
            lleg2.image_angle = angle_ease(lleg2.image_angle, 40*image_xscale, sVar);
     }
-    else if(i<10)
+    else if(i<10*spd)
     {
         larmA.attacking = true;
         //swing sword
         //position
-        sVar = 3;
+        sVar = 3*spd;
         yEase10(player.y+10-player.heightAdjust,sVar);
         xMove10(4*image_xscale);
         //head
@@ -109,16 +110,16 @@ if(attackVar = 0)
         leg2.image_angle = angle_ease(leg2.image_angle, 50*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, 40*image_xscale, sVar);
     }
-    else if(i<20)
+    else if(i<20*spd)
     {
         larmA.attacking = true;
         //OPEN TO SWING SWORD 2
-        if(attack1_check_pressed())
-        {   armA.animationCounter = 21;
+        if(attack1_check_pressed(playerNum))
+        {   armA.animationCounter = 21*spd;
             i=armA.animationCounter;
         }
         //position
-        sVar = 3;
+        sVar = 3*spd;
         yEase10(player.y+10-player.heightAdjust,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -10*image_xscale, sVar);
@@ -137,12 +138,12 @@ if(attackVar = 0)
         leg2.image_angle = angle_ease(leg2.image_angle, 50*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, 40*image_xscale, sVar);
     }
-    else if(i>21 and i<28)
+    else if(i>21*spd and i<28*spd)
     {
         larmA.attacking = true;
         //sword swing 2
         //position
-        sVar = 3;
+        sVar = 3*spd;
         yEase10(player.y+20-player.heightAdjust,sVar);
         xMove10(8*image_xscale);
         //head
@@ -162,16 +163,16 @@ if(attackVar = 0)
         leg2.image_angle = angle_ease(leg2.image_angle, -30*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -60*image_xscale, sVar);
     }
-    else if(i>21 and i<36)
+    else if(i>21*spd and i<36*spd)
     {
         larmA.attacking = false;
         //OPEN TO SWING SWORD 3
         if(attack1_check_pressed())
-        {   armA.animationCounter = 37;
+        {   armA.animationCounter = 37*spd;
             i=armA.animationCounter;
         }
         //position
-        sVar = 8;
+        sVar = 8*spd;
         yEase10(player.y+20-player.heightAdjust,sVar);
         //head
         head.image_angle = angle_ease(head.image_angle, -30*image_xscale, sVar);
@@ -190,12 +191,12 @@ if(attackVar = 0)
         leg2.image_angle = angle_ease(leg2.image_angle, -30*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -60*image_xscale, sVar);
     }
-    else if(i>37 and i<46)
+    else if(i>37*spd and i<46*spd)
     {
         larmA.attacking = true;
         //sword swing 3
         //position
-        sVar = 3;
+        sVar = 3*spd;
         yEase10(player.y+0-player.heightAdjust,sVar);
         xMove10(10*image_xscale);
         //head
@@ -215,10 +216,10 @@ if(attackVar = 0)
         leg2.image_angle = angle_ease(leg2.image_angle, 50*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, 40*image_xscale, sVar);
     }
-    else if(i>45)
+    else if(i>45*spd)
     {
         larmA.attacking = false;
-        if(i=54)
+        if(i>54*spd)
         {
             //end
             player.state = string('tonorm');
@@ -228,7 +229,7 @@ if(attackVar = 0)
         }
         //ease end animation
         //position
-        sVar = 6;
+        sVar = 6*spd;
         yEase10(player.y+0-player.heightAdjust,sVar);
         xMove10(4*image_xscale);
         //head
@@ -250,7 +251,7 @@ if(attackVar = 0)
     }
     else
     {
-        armA.animationCounter = 46;
+        armA.animationCounter = 46*spd;
         i=armA.animationCounter;
     }
 }
@@ -260,7 +261,7 @@ if(attackVar = 0)
 //**************************************************
 else if(attackVar=1)
 {
-    if(i>0 and i<8)
+    if(i>0*spd and i<8*spd)
     {
         larmA.attacking = true;
         //raise sword-
@@ -284,7 +285,7 @@ else if(attackVar=1)
         leg2.image_angle = angle_ease(leg2.image_angle, -20*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -80*image_xscale, sVar);
     }
-    else if(i<14)
+    else if(i<14*spd)
     {
         larmA.attacking = true;
         //swing sword
@@ -309,7 +310,7 @@ else if(attackVar=1)
         leg2.image_angle = angle_ease(leg2.image_angle, -60*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -90*image_xscale, sVar);
     }
-    else if(i<16)
+    else if(i<16*spd)
     {
         larmA.attacking = true;
         //swing sword
@@ -334,7 +335,7 @@ else if(attackVar=1)
         leg2.image_angle = angle_ease(leg2.image_angle, -60*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -90*image_xscale, sVar);
     }
-    else if(i<30)
+    else if(i<30*spd)
     {
         larmA.attacking = true;
         //swing sword
@@ -358,7 +359,7 @@ else if(attackVar=1)
         leg2.image_angle = angle_ease(leg2.image_angle, -60*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -90*image_xscale, sVar);
     }
-    else if(i<34)
+    else if(i<34*spd)
     {
         larmA.attacking = false;
         //swing sword
@@ -401,12 +402,11 @@ else if(attackVar=1)
 //**************************************************
 else if(attackVar = 2)
 {
-    if(i>0 and i<10)
+    if(i>0*spd and i<10*spd)
     {
         larmA.attacking = false;
         //pullback sword
         //position
-        effect_create_above(ef_flare,x,y-50-i,30,c_dkgray);
         sVar = 3*spd;
         yEase10(player.y+50-player.heightAdjust,sVar);
         xMove10(-2*image_xscale);
@@ -427,12 +427,11 @@ else if(attackVar = 2)
         leg2.image_angle = angle_ease(leg2.image_angle, 40*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -110*image_xscale, 6);
     }
-    else if(i<16)
+    else if(i<16*spd)
     {
         larmA.attacking = true;
         //swing sword
         //position
-        effect_create_above(ef_flare,x,y-50-i,30,c_blue);
         sVar = 3*spd;
         yEase10(player.y-player.heightAdjust+0*image_yscale,sVar);
         xMove10(25*image_xscale);
@@ -453,13 +452,12 @@ else if(attackVar = 2)
         leg2.image_angle = angle_ease(leg2.image_angle, -40*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -50*image_xscale, sVar);
     }
-    else if(i<30)
+    else if(i<30*spd)
     {
         larmA.attacking = true;
         //OPEN TO SWING SWORD 2
-        effect_create_above(ef_flare,x,y-50-i,40,make_color_hsv(70,255,255));
-        if(attack1_check_pressed())
-        {   armA.animationCounter = 32;
+        if(attack1_check_pressed(playerNum))
+        {   armA.animationCounter = 32*spd;
             i=armA.animationCounter;
         }
         //position
@@ -482,7 +480,7 @@ else if(attackVar = 2)
         leg2.image_angle = angle_ease(leg2.image_angle, -50*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -60*image_xscale, sVar);
     }
-    else if(i>31 and i<40)
+    else if(i>31*spd and i<40*spd)
     {
         larmA.attacking = true;
         //raise sword
@@ -506,7 +504,7 @@ else if(attackVar = 2)
         leg2.image_angle = angle_ease(leg2.image_angle, -20*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -80*image_xscale, sVar);
     }
-    else if(i>31 and i<46)
+    else if(i>31*spd and i<46*spd)
     {
         larmA.attacking = true;
         //swing sword
@@ -531,7 +529,7 @@ else if(attackVar = 2)
         leg2.image_angle = angle_ease(leg2.image_angle, -60*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -90*image_xscale, sVar);
     }
-    else if(i>31 and i<48)
+    else if(i>31*spd and i<48*spd)
     {
         larmA.attacking = true;
         //swing sword
@@ -556,7 +554,7 @@ else if(attackVar = 2)
         leg2.image_angle = angle_ease(leg2.image_angle, -60*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -90*image_xscale, sVar);
     }
-    else if(i>31 and i<62)
+    else if(i>31*spd and i<62*spd)
     {
         larmA.attacking = true;
         //swing sword
@@ -580,10 +578,10 @@ else if(attackVar = 2)
         leg2.image_angle = angle_ease(leg2.image_angle, -60*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -90*image_xscale, sVar);
     }
-    else if(i>31)
+    else if(i>31*spd)
     {
         larmA.attacking = false;
-        if(i=70)
+        if(i=70*spd)
         {
             //end
             player.state = string('tonorm');
@@ -628,7 +626,7 @@ else if(attackVar = 2)
 //**************************************************
 else if(attackVar=3)
 {
-    if(i>0 and i<6)
+    if(i>0*spd and i<6*spd)
     {
         larmA.attacking = false;
         //prepare swing sword
@@ -652,7 +650,7 @@ else if(attackVar=3)
         leg2.image_angle = angle_ease(leg2.image_angle, 30*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -60*image_xscale, sVar);
     }
-    else if(i<18)
+    else if(i<18*spd)
     {
         larmA.attacking = true;
         //swing sword
@@ -677,7 +675,7 @@ else if(attackVar=3)
         leg2.image_angle = angle_ease(leg2.image_angle, -10*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -20*image_xscale, sVar);
     }
-    else if(i<22)
+    else if(i<22*spd)
     {
         larmA.attacking = false;
         //prepare swing sword
@@ -718,7 +716,7 @@ else if(attackVar=3)
 //**************************************************
 else if(attackVar=4)
 {
-    if(i>0 and i<14)
+    if(i>0*spd and i<14*spd)
     {
         //prepare swing sword
         //position
@@ -742,7 +740,7 @@ else if(attackVar=4)
         leg2.image_angle = angle_ease(leg2.image_angle, 0*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -110*image_xscale, sVar);
     }
-    else if(i<18)
+    else if(i<18*spd)
     {
         //swing sword
         //position
@@ -766,7 +764,7 @@ else if(attackVar=4)
         leg2.image_angle = angle_ease(leg2.image_angle, 10*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -110*image_xscale, sVar);
     }
-    else if(i<22)
+    else if(i<22*spd)
     {
         //swing sword
         //position
@@ -790,7 +788,7 @@ else if(attackVar=4)
         leg2.image_angle = angle_ease(leg2.image_angle, 10*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -110*image_xscale, sVar);
     }
-    else if(i<26)
+    else if(i<26*spd)
     {
         //prepare swing sword
         //position
@@ -814,7 +812,7 @@ else if(attackVar=4)
         leg2.image_angle = angle_ease(leg2.image_angle, 10*image_xscale, sVar);
         lleg2.image_angle = angle_ease(lleg2.image_angle, -110*image_xscale, sVar);
     }
-    else if(i<34)
+    else if(i<34*spd)
     {
         //prepare swing sword
         //position
