@@ -28,7 +28,7 @@
             <string>name = "Coeus Lelantos";
 
 //This is the actual link to the object, so we can create it on start up.
-part = core_o;
+part = heavy_core2;
 
 type = 1;
 

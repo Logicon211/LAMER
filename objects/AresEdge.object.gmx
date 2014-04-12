@@ -28,7 +28,7 @@
             <string>name = "Ares' Edge";
 
 //This is the actual link to the object, so we can create it on start up.
-part = arm_o;
+part = light_sword3_upper;
 
 type = 3;
 

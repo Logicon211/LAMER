@@ -13,7 +13,35 @@
     <sound>sound\weeee</sound>
     <sound>sound\NodeNavigationSound</sound>
     <sound>sound\MenuConfirmationSound</sound>
-    <sound>sound\ShieldLoop</sound>
+    <sounds name="SFX">
+      <sound>sound\ShieldLoop</sound>
+      <sounds name="attack_sounds">
+        <sounds name="shots">
+          <sound>sound\light_bullet_shot</sound>
+          <sound>sound\heavy_bullet_shot</sound>
+          <sound>sound\light_lazor_shot</sound>
+          <sound>sound\heavy_lazer_shot</sound>
+        </sounds>
+        <sounds name="swings">
+          <sound>sound\heavy_sword_swing</sound>
+          <sound>sound\Light_sword_swing</sound>
+        </sounds>
+        <sounds name="hits">
+          <sound>sound\heavy_sword_hit</sound>
+          <sound>sound\heavy_bullet_hit</sound>
+          <sound>sound\heavy_lazor_hit</sound>
+          <sound>sound\light_sword_hit</sound>
+          <sound>sound\light_bullet_hit</sound>
+          <sound>sound\light_lazer_hit</sound>
+        </sounds>
+      </sounds>
+      <sounds name="movement">
+        <sound>sound\Booster_start</sound>
+        <sound>sound\Booster_loop</sound>
+        <sound>sound\robot_step</sound>
+        <sound>sound\robot_landing</sound>
+      </sounds>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -53,6 +81,8 @@
           <sprite>sprites\lightgun2</sprite>
           <sprite>sprites\lightsword2</sprite>
           <sprite>sprites\lightsword3</sprite>
+          <sprite>sprites\lightgun1</sprite>
+          <sprite>sprites\sprite138</sprite>
         </sprites>
         <sprites name="heavytorso">
           <sprite>sprites\heavyhead001</sprite>
@@ -211,7 +241,11 @@
         <script>scripts\xMove10.gml</script>
         <script>scripts\xEase10.gml</script>
         <script>scripts\attackSet0.gml</script>
-        <script>scripts\script76.gml</script>
+        <script>scripts\lightGun2script.gml</script>
+        <script>scripts\lightGun1Script.gml</script>
+        <script>scripts\heavyGun2script.gml</script>
+        <script>scripts\heavyGun3Script.gml</script>
+        <script>scripts\cannonScript.gml</script>
       </scripts>
       <scripts name="Easing">
         <script>scripts\x_ease.gml</script>
@@ -549,6 +583,14 @@
           <objects name="Small Swords">
             <objects name="Prototype">
               <object>objects\arm_o</object>
+              <object>objects\light_sword2_upper</object>
+              <object>objects\light_sword3_upper</object>
+              <object>objects\light_sword1_upper</object>
+              <object>objects\heavy_sword2_upper</object>
+              <object>objects\light_sword2</object>
+              <object>objects\light_sword3</object>
+              <object>objects\light_sword1</object>
+              <object>objects\heavy_sword2</object>
               <object>objects\arm_o2</object>
               <object>objects\sword1_trail</object>
             </objects>
@@ -558,8 +600,16 @@
           <objects name="Small Guns">
             <objects name="Prototype">
               <object>objects\proto_gun_o</object>
+              <object>objects\heavy_gun2_upper</object>
+              <object>objects\heavy_gun3_upper</object>
+              <object>objects\light_gun2_upper</object>
+              <object>objects\light_gun1_upper</object>
               <object>objects\proto_gun_o2</object>
               <object>objects\CronosLowerGun</object>
+              <object>objects\heavy_gun2</object>
+              <object>objects\heavy_gun3</object>
+              <object>objects\light_gun2</object>
+              <object>objects\light_gun1</object>
               <object>objects\proto_gun_trail_o</object>
               <object>objects\CronosUpperArm</object>
             </objects>
@@ -569,11 +619,13 @@
           <object>objects\light_head2</object>
           <object>objects\light_lowerleg2</object>
           <object>objects\light_upperleg2</object>
+          <object>objects\light_core2</object>
         </objects>
         <objects name="heavy2">
           <object>objects\heavy_head2</object>
           <object>objects\heavy_lowerleg2</object>
           <object>objects\heavy_upperleg2</object>
+          <object>objects\heavy_core2</object>
         </objects>
         <objects name="heavy3">
           <object>objects\heavy_head3</object>
