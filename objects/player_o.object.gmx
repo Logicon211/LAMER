@@ -369,10 +369,45 @@ if(playerType = 0)
     *****************************/
 }
 
-else if(playerType &gt; 2)
+else if(playerType = 3) //default AI difficulty
 {
     aiCounter = (aiCounter+1) mod 15;
     if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 4) //AI grunt derpy
+{
+    aiCounter = (aiCounter+1) mod 60;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 5) //AI grunt easy
+{
+    aiCounter = (aiCounter+1) mod 30;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 6) //AI Boss 1
+{
+    aiCounter = (aiCounter+1) mod 10;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 7) //AI Boss 2
+{
+    aiCounter = (aiCounter+1) mod 15;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 8) //AI Boss Impossible!!!
+{
+    aiCounter = (aiCounter+1) mod 1;
+    if(aiCounter=0)
     {   stepAI()
     }
 }

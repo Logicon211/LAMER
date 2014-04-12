@@ -38,10 +38,19 @@ globalvar nodePlayerIsAt; //Node player is on when he starts a battle and/or rad
 
 globalvar battleMapPlayerIsAt;
 
+globalvar indicatorNeeded;
+indicatorNeeded = true;
+
 globalvar radText;
 radText = "";
 globalvar radFace;
 radFace = 0;
+
+globalvar numBots;
+numBots = 1;
+
+globalvar botDifficulty;
+botDifficulty = 1;
 
 //To track who might have won an MP game
 globalvar playerWon;
@@ -220,37 +229,37 @@ ds_list_add(HeadInventory, HyperionHelios);
 ds_list_add(HeadInventory, CriusAstraeus);
 ds_list_add(HeadInventory, PheobeLelantos);
 ds_list_add(HeadInventory, CronusH);
-ds_list_add(HeadInventory, HyperionHeliosMkII);
+//ds_list_add(HeadInventory, HyperionHeliosMkII);
 ds_list_add(TorsoInventory, AuraT);
 ds_list_add(TorsoInventory, HyperionEos);
 ds_list_add(TorsoInventory, CriusPallas);
 ds_list_add(TorsoInventory, CoeusLelantos);
 ds_list_add(TorsoInventory, CronusT);
-ds_list_add(TorsoInventory, HyperionEosMkII);
+//ds_list_add(TorsoInventory, HyperionEosMkII);
 ds_list_add(LegsInventory, AuraL);
 ds_list_add(LegsInventory, HyperionSelene);
 ds_list_add(LegsInventory, CriusPerses);
 ds_list_add(LegsInventory, LelantosAura);
 ds_list_add(LegsInventory, CronusL);
-ds_list_add(LegsInventory, HyperionSeleneMkII);
+//ds_list_add(LegsInventory, HyperionSeleneMkII);
 ds_list_add(LArmInventory, ThePointer);
 ds_list_add(RArmInventory, CronusSeismos);
 ds_list_add(RArmInventory, HermesRhipto);
 ds_list_add(RArmInventory, VulcanPistol);
 ds_list_add(RArmInventory, EnyoGat);
 ds_list_add(RArmInventory, ArtemisML);
-ds_list_add(RArmInventory, HephaestusCannon);
-ds_list_add(RArmInventory, HermesMG);
-ds_list_add(RArmInventory, MinervaML);
-ds_list_add(RArmInventory, ApolloPiras);
-ds_list_add(RArmInventory, ErisRhipto);
+//ds_list_add(RArmInventory, HephaestusCannon);
+//ds_list_add(RArmInventory, HermesMG);
+//ds_list_add(RArmInventory, MinervaML);
+//ds_list_add(RArmInventory, ApolloPiras);
+//ds_list_add(RArmInventory, ErisRhipto);
 ds_list_add(LArmInventory, AetherFoil);
 ds_list_add(LArmInventory, AthenaBroadsword);
 ds_list_add(LArmInventory, AresEdge);
 ds_list_add(LArmInventory, ChronosFist);
-ds_list_add(LArmInventory, ZeusArm);
-ds_list_add(LArmInventory, HadesAxe);
-ds_list_add(LArmInventory, GaiaHammer);
+//ds_list_add(LArmInventory, ZeusArm);
+//ds_list_add(LArmInventory, HadesAxe);
+//ds_list_add(LArmInventory, GaiaHammer);
 
 //Add in items to default inventory
 //PLAYER1 INVENTORY

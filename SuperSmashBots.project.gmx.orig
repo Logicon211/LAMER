@@ -13,6 +13,7 @@
     <sound>sound\weeee</sound>
     <sound>sound\NodeNavigationSound</sound>
     <sound>sound\MenuConfirmationSound</sound>
+    <sound>sound\ShieldLoop</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -152,14 +153,16 @@
     </sprites>
     <sprite>sprites\shadow128Sprite</sprite>
     <sprite>sprites\shadowLighterSprite</sprite>
+    <sprite>sprites\ShadowFlip</sprite>
     <sprite>sprites\shadowVertLight</sprite>
-<<<<<<< HEAD
-    <sprite>sprites\fireTown</sprite>
-    <sprite>sprites\fireTownLight</sprite>
-    <sprite>sprites\sprite118</sprite>
-=======
     <sprite>sprites\AnyKeyToGoBackSprite</sprite>
->>>>>>> 63415fc8405b130f991cf38e2187d305721a3fcc
+    <sprite>sprites\sprite118</sprite>
+    <sprite>sprites\playerNumberSprite</sprite>
+    <sprites name="IntroAnimation">
+      <sprite>sprites\fireTown</sprite>
+      <sprite>sprites\fireTownLight</sprite>
+    </sprites>
+    <sprite>sprites\PlayerIndicatorSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -176,6 +179,7 @@
     <background>background\VictoryBackground</background>
     <background>background\fireBG</background>
     <background>background\mapBGlol</background>
+    <background>background\fireTown2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -187,6 +191,7 @@
         <script>scripts\xMove10.gml</script>
         <script>scripts\xEase10.gml</script>
         <script>scripts\attackSet0.gml</script>
+        <script>scripts\script76.gml</script>
       </scripts>
       <scripts name="Easing">
         <script>scripts\x_ease.gml</script>
@@ -272,11 +277,14 @@
     <script>scripts\gotoVictoryRoom.gml</script>
     <script>scripts\script65.gml</script>
     <scripts name="AI">
+      <script>scripts\blockAI.gml</script>
       <script>scripts\initializeAI.gml</script>
       <script>scripts\targetAI.gml</script>
       <script>scripts\stepAI.gml</script>
-      <script>scripts\moveAI.gml</script>
+      <script>scripts\xmoveAI.gml</script>
+      <script>scripts\ymoveAI.gml</script>
       <script>scripts\attackAI.gml</script>
+      <script>scripts\resetcontrolAI.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -298,6 +306,9 @@
     <font>fonts\CampaignFont</font>
     <font>fonts\RadioFont</font>
     <font>fonts\InventoryContentSmall</font>
+    <font>fonts\CaviarDreams</font>
+    <font>fonts\CaviarDreamsBold</font>
+    <font>fonts\CaviarDreamsItalic</font>
   </fonts>
   <objects name="objects">
     <objects name="MultiplayerGUI">
@@ -540,6 +551,7 @@
         <object>objects\booster_trail_small_o</object>
         <object>objects\booster_trail_intense_o</object>
       </objects>
+      <object>objects\bulletParent</object>
       <object>objects\bulletObject</object>
       <object>objects\bulletObject2</object>
       <object>objects\CosmosBullet</object>
@@ -572,6 +584,7 @@
       <object>objects\thruster_middle</object>
       <object>objects\shadow128Object</object>
       <object>objects\ShadowObject2</object>
+      <object>objects\ShadowObject2Flip</object>
       <object>objects\ShadowObject2Rotate</object>
     </objects>
     <objects name="Start Animation Texts">
@@ -600,19 +613,17 @@
     <object>objects\Level_Flloor1</object>
     <object>objects\Level_Floor2</object>
     <object>objects\object174</object>
-<<<<<<< HEAD
     <object>objects\fireTownObject</object>
     <object>objects\menuLOL</object>
-=======
-    <object>objects\shadow128Object</object>
-    <object>objects\ShadowObject2</object>
-    <object>objects\ShadowObject2Rotate</object>
     <object>objects\AnyKeyToReturnObj</object>
->>>>>>> 63415fc8405b130f991cf38e2187d305721a3fcc
+<<<<<<< HEAD
+    <object>objects\anykeySkip</object>
+=======
+    <object>objects\PlayerIndicatorObj</object>
+>>>>>>> 6bfa6884bedf38d8bc1cc6707eca68f7648fde89
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
-    <room>rooms\CampaignInfoRoom</room>
     <room>rooms\MenuRoom</room>
     <room>rooms\OverMap</room>
     <room>rooms\MPMapSelect</room>
@@ -626,11 +637,20 @@
     <room>rooms\Credits1Room</room>
     <room>rooms\Credits2Room</room>
     <room>rooms\Stage1</room>
+    <room>rooms\Stage1_1</room>
     <room>rooms\Stage2</room>
+    <room>rooms\Stage2_1</room>
     <room>rooms\Stage3</room>
+    <room>rooms\Stage3_1</room>
     <room>rooms\Stage4</room>
+    <room>rooms\Stage4_1</room>
     <room>rooms\Stage5</room>
+    <room>rooms\Stage5_1</room>
     <room>rooms\VictoryRoom</room>
+    <room>rooms\CampaignInfoRoom</room>
+    <rooms name="Intro Animation Rooms">
+      <room>rooms\IntroRoom2</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

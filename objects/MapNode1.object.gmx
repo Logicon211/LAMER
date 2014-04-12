@@ -50,6 +50,15 @@ face[1] = EGoonFace2;
 
 battleMap = Stage1;
 
+//Bot Settings on this Map Node
+numberOfBots = 1;
+DifficultyOfBots = 1;
+
+botLoadOut[0] = ProtoHeadObjectItem; //Head
+botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[2] = ThePointer; //Left Arm
+botLoadOut[3] = CronusSeismos; //Right Arm
+botLoadOut[4] = ProtoLegsObjectItem; //Legs
 </string>
           </argument>
         </arguments>
