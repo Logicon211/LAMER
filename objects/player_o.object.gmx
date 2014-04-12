@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1234567</depth>
   <persistent>0</persistent>
-  <parentName>land_parent</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -411,6 +411,44 @@ else if(playerType = 8) //AI Boss Impossible!!!
     {   stepAI()
     }
 }
+
+
+/***************************************************
+    Code for player "collision"
+ ***************************************************/
+
+    if(instance_place(x,y,player_o))
+    {
+        playerO = instance_place(x,y,player_o)
+        speedVar = 0
+        if(x != playerO.x)
+        {
+            speedVar = 1/((x-playerO.x)/1000)
+            if(speedVar &gt; 64)
+            {   speedVar = 64
+            }
+            if(speedVar &lt; -64)
+            {   speedVar = -64
+            }
+            hspeed += speedVar
+        }
+        speedVar = 0
+        if(y != playerO.y)
+        {
+            speedVar = 1/((y-playerO.y)/200)
+            if(speedVar &gt; 64)
+            {   speedVar = 64
+            }
+            if(speedVar &lt; -64)
+            {   speedVar = -64
+            }
+            vspeed += speedVar
+        }
+    }
+    
+/***************************************************
+  END Code for player "collision"
+ ***************************************************/
 </string>
           </argument>
         </arguments>
