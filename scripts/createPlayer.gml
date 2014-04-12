@@ -13,10 +13,15 @@
                 0 - player mode
                 1 - display mode
                 2 - dead mode (explodes upon creation)
-                3 - AI mode easy
-                4 - AI mode medium
-                5 - AI mode hard
-                6 - instant delete
+                3 - AI mode Base Model
+                4 - AI decision every 60 steps
+                5 - AI decision every 30 steps
+                6 - AI decision every 15 steps
+                
+                8 - AI decision every 45 steps
+                9 - AI decision every 30 steps
+                10 - AI decision every 15 steps
+                11 - AI decision every 1 steps
                 
   Input:    objPos[]
     Type:   int[]
