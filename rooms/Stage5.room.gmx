@@ -10,7 +10,28 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>display_reset(8, true);
+
+j=numCPUsSetting;
+show_debug_message("pre-for");
+for(i=numPlayersSetting;i&gt;0;i--)
+{
+    if(j&gt;0)
+    {
+        show_debug_message("makeAI");
+        createPlayer((i-1),botDifficulty,1000+i*400,room_height/2-500);
+        
+    }
+    else
+    {
+        show_debug_message("makePlayer");
+        createPlayer((i-1),0,1000+i*400,room_height/2-500);
+    }
+    j--;
+}
+show_debug_message("post-for");
+
+instance_create(x,y,cameraObject);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>
