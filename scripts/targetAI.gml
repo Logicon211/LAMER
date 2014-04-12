@@ -9,7 +9,7 @@ for(num = 0; num < numPlayers; num++)
 
 for(num = 0; num < numPlayers; num++)
 {
-    if(player[num] != id)
+    if((player[num] != id) && (player[num].playerType == 0))
     {
         smallestDis = 0;
         if(distance_to_object(player[num]) < distance_to_object(currentTarget))
