@@ -39,7 +39,7 @@
       <sprite>sprites\leg_sl</sprite>
       <sprite>sprites\blueglow</sprite>
       <sprites name="Parts">
-        <sprites name="LightTorso">
+        <sprites name="light torso">
           <sprite>sprites\Legs_down001</sprite>
           <sprite>sprites\Legs_up001</sprite>
           <sprite>sprites\torso001</sprite>
@@ -47,6 +47,12 @@
         </sprites>
         <sprites name="weapons">
           <sprite>sprites\heavysword</sprite>
+          <sprite>sprites\heavygun3</sprite>
+          <sprite>sprites\heavygun2</sprite>
+          <sprite>sprites\heavysword2</sprite>
+          <sprite>sprites\lightgun2</sprite>
+          <sprite>sprites\lightsword2</sprite>
+          <sprite>sprites\lightsword3</sprite>
         </sprites>
         <sprites name="heavytorso">
           <sprite>sprites\heavyhead001</sprite>
@@ -56,6 +62,21 @@
         </sprites>
         <sprites name="proto">
           <sprite>sprites\head_s</sprite>
+        </sprites>
+        <sprites name="light2">
+          <sprite>sprites\lighttorse2</sprite>
+          <sprite>sprites\lighthead2</sprite>
+          <sprite>sprites\lightleg2bottom</sprite>
+          <sprite>sprites\lightleg2top</sprite>
+        </sprites>
+        <sprites name="heavy2">
+          <sprite>sprites\heavytorso2</sprite>
+          <sprite>sprites\heavyhead2</sprite>
+          <sprite>sprites\heavyleg2bottom</sprite>
+          <sprite>sprites\heavyleg2top</sprite>
+        </sprites>
+        <sprites name="heavytorso3">
+          <sprite>sprites\heavyhead3</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -285,6 +306,8 @@
       <script>scripts\attackAI.gml</script>
       <script>scripts\resetcontrolAI.gml</script>
     </scripts>
+    <script>scripts\script77.gml</script>
+    <script>scripts\delete_this_script.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -542,6 +565,19 @@
               <object>objects\CronosUpperArm</object>
             </objects>
           </objects>
+        </objects>
+        <objects name="lightset2">
+          <object>objects\light_head2</object>
+          <object>objects\light_lowerleg2</object>
+          <object>objects\light_upperleg2</object>
+        </objects>
+        <objects name="heavy2">
+          <object>objects\heavy_head2</object>
+          <object>objects\heavy_lowerleg2</object>
+          <object>objects\heavy_upperleg2</object>
+        </objects>
+        <objects name="heavy3">
+          <object>objects\heavy_head3</object>
         </objects>
       </objects>
       <objects name="Boosters">
