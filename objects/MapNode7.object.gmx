@@ -36,7 +36,7 @@ isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = true; //check to see if there's radio chat before the fight
+hasRadioText = false; //check to see if there's radio chat before the fight
 
 radioText[0] = "Goon: Oh god, I don't want to do this...";
 radioText[1] = "Player: Then don't! Fight with me instead of against me!";
@@ -52,8 +52,8 @@ face[1] = RGoonFace2;
 battleMap = testRange;
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 2;
+DifficultyOfBots = 5;
 
 botLoadOut[0] = ProtoHeadObjectItem; //Head
 botLoadOut[1] = ProtoTorsoObjectItem; //Torso
