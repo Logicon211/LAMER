@@ -72,7 +72,7 @@
     <instance objName="MapNode16" x="500" y="73" name="inst_93F92661" locked="0" code="" scaleX="1.32652997970581" scaleY="1.25999999046326" colour="4294967295" rotation="0"/>
     <instance objName="MapNode17" x="224" y="203" name="inst_3541F482" locked="0" code="" scaleX="1.42857003211975" scaleY="1.36000001430511" colour="4294967295" rotation="0"/>
     <instance objName="MapNode18" x="481" y="240" name="inst_E9946BE1" locked="0" code="" scaleX="1.5" scaleY="1.48979592323303" colour="4294967295" rotation="0"/>
-    <instance objName="PlayerIndicatorObj" x="396" y="8" name="inst_2EA24608" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="396" y="8" name="inst_2EA24608" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
