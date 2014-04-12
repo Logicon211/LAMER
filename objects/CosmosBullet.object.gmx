@@ -30,6 +30,7 @@
 hspeed = target.image_xscale*32;
 image_xscale = 5;
 image_yscale = 5;
+origPlayer = 0;
 </string>
           </argument>
         </arguments>

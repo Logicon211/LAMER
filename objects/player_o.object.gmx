@@ -368,7 +368,18 @@ if(playerType = 0)
     }
     *****************************/
 }
-
+/*
+            3 - AI mode Base Model (15 steps)
+            4 - AI decision every 60 steps
+            5 - AI decision every 30 steps
+            6 - AI decision every 15 steps
+            
+            7 - AI decision every 45 steps
+            8 - AI decision every 30 steps
+            9 - AI decision every 15 steps
+            10 - AI decision every 1 steps
+*/
+                
 else if(playerType = 3) //default AI difficulty
 {
     aiCounter = (aiCounter+1) mod 15;
@@ -390,26 +401,37 @@ else if(playerType = 5) //AI grunt easy
     {   stepAI()
     }
 }
-else if(playerType = 6) //AI Boss 1
-{
-    aiCounter = (aiCounter+1) mod 10;
-    if(aiCounter=1)
-    {   stepAI()
-    }
-}
-else if(playerType = 7) //AI Boss 2
+else if(playerType = 6)
 {
     aiCounter = (aiCounter+1) mod 15;
     if(aiCounter=1)
     {   stepAI()
     }
 }
-else if(playerType = 8) //AI Boss Impossible!!!
+else if(playerType = 7)
 {
-    aiCounter = (aiCounter+1) mod 1;
-    if(aiCounter=0)
+    aiCounter = (aiCounter+1) mod 45;
+    if(aiCounter=1)
     {   stepAI()
     }
+}
+else if(playerType = 8)
+{
+    aiCounter = (aiCounter+1) mod 30;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 9)
+{
+    aiCounter = (aiCounter+1) mod 15;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 10)
+{
+    stepAI()
 }
 
 
