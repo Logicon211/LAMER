@@ -28,7 +28,7 @@
             <string>name = "Chronos' Fists";
 
 //This is the actual link to the object, so we can create it on start up.
-part = arm_o;
+part = heavy_sword2_upper;
 
 type = 3;
 

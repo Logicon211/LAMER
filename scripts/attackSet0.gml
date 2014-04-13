@@ -9,7 +9,7 @@ i = armA.animationCounter;
 
 if((i mod 15) = 1)
 {
-    shoot = instance_create(armA.x+larmA.sprite_height*image_xscale,armA.y,CosmosBullet);
+    shoot = instance_create(armA.x+larmA.sprite_height*image_xscale,armA.y,bulletObject);
     shoot.hspeed = larmA.image_xscale*32;
     shoot.origPlayer = id;
 }
