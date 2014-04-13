@@ -43,7 +43,7 @@ radioText[0] = "";
 face[0] = 0;
 
 battleMap = testRange;
-mapPreview = MapPreviewTestSprite;
+mapPreview = TestRangePreview;
 </string>
           </argument>
         </arguments>

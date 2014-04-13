@@ -201,6 +201,12 @@
     <sprites name="MapPreviews">
       <sprite>sprites\MapPreviewTestSprite</sprite>
       <sprite>sprites\MapPreviewTestSprite2</sprite>
+      <sprite>sprites\TestRangePreview</sprite>
+      <sprite>sprites\Preview1</sprite>
+      <sprite>sprites\Preview2</sprite>
+      <sprite>sprites\Preview3</sprite>
+      <sprite>sprites\Preview4</sprite>
+      <sprite>sprites\Preview5</sprite>
     </sprites>
     <sprite>sprites\shadow128Sprite</sprite>
     <sprite>sprites\shadowLighterSprite</sprite>
