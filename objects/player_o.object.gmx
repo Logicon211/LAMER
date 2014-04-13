@@ -1272,11 +1272,13 @@ else if(state = string('land'))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(playerType&gt;2)
+            <string>playerNumColor = c_gray;
+
+if(playerType&gt;2)
 {
     draw_sprite_ext(playerNumberSprite,4,x,y-200,1,1,0,c_white,0.75);
 }
-else if(playerType=0 or playerType &gt; 2)
+else if(playerType=0)
 {
     if(playerNum=0)
     {
@@ -1298,10 +1300,6 @@ else if(playerType=0 or playerType &gt; 2)
         playerNumColor=make_color_hsv(150,255,255);
         draw_sprite_ext(playerNumberSprite,playerNum,x,y-200,1,1,0,playerNumColor,0.75);
     }
-}
-if(playerType &gt; 2)
-{
-
 }
 
 
@@ -1333,9 +1331,6 @@ if(playerType != 1) //not display mode
     //outline
     draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,true)
 }
-
-
-
 </string>
           </argument>
         </arguments>

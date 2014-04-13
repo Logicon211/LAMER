@@ -50,7 +50,7 @@ globalvar numBots;
 numBots = 1;
 
 globalvar botDifficulty;
-botDifficulty = 1;
+botDifficulty = 3;
 
 //To track who might have won an MP game
 globalvar playerWon;
