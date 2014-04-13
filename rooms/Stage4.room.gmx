@@ -19,7 +19,14 @@ for(i=numPlayersSetting;i&gt;0;i--)
     if(j&gt;0)
     {
         show_debug_message("makeAI");
-        createPlayer((i-1),3,1000+i*400,room_height/2-500);
+        if(botDifficulty &lt; 3)
+        {
+            createPlayer((i-1),3,1000+i*400,room_height/2-500);
+        }
+        else
+        {
+            createPlayer((i-1),botDifficulty,1000+i*400,room_height/2-500);
+        }
         
     }
     else

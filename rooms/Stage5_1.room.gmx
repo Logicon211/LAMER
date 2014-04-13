@@ -17,7 +17,14 @@ for(i=numPlayersSetting;i&gt;0;i--)
 {
     if(j&gt;0)
     {
-        createPlayer((i-1),3,200+i*300,room_height/2);
+        if(botDifficulty &lt; 3)
+        {
+            createPlayer((i-1),3,200+i*300,room_height/2);
+        }
+        else
+        {
+            createPlayer((i-1),botDifficulty,200+i*300,room_height/2);
+        }
     }
     else
     {
@@ -159,6 +166,7 @@ instance_create(x,y,cameraObject);</code>
     <instance objName="thruster_middle" x="1024" y="352" name="inst_B4E865E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thruster_middle" x="1056" y="352" name="inst_A64F4DF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="startFight" x="192" y="-64" name="inst_15D4DC99" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="anykeySkip" x="160" y="224" name="inst_9E134578" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
