@@ -387,6 +387,9 @@ if(player.state = string('shield'))
     leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
     //leg1.lower_angle = -90*image_xscale;
     //leg2.lower_angle = -30*image_xscale;
+        if(!audio_is_playing(ShieldLoop)){
+    audio_play_sound(ShieldLoop,1,false);
+    }
 }
 
 /***************************************************

@@ -17,22 +17,41 @@
       <sound>sound\ShieldLoop</sound>
       <sounds name="attack_sounds">
         <sounds name="shots">
-          <sound>sound\light_bullet_shot</sound>
-          <sound>sound\heavy_bullet_shot</sound>
           <sound>sound\light_lazor_shot</sound>
+          <sound>sound\light_lazor_shot2</sound>
           <sound>sound\heavy_lazer_shot</sound>
+          <sound>sound\cannon_shot</sound>
+          <sound>sound\gatling_shot</sound>
+          <sound>sound\heavy_lazer_pulse</sound>
         </sounds>
         <sounds name="swings">
           <sound>sound\heavy_sword_swing</sound>
+          <sound>sound\heavy_sword_swing2</sound>
           <sound>sound\Light_sword_swing</sound>
+          <sound>sound\heavy_sword_swing3</sound>
+          <sound>sound\Light_sword_swing2</sound>
+          <sound>sound\Light_sword_swing3</sound>
+          <sound>sound\melee_impact_swing</sound>
         </sounds>
         <sounds name="hits">
           <sound>sound\heavy_sword_hit</sound>
-          <sound>sound\heavy_bullet_hit</sound>
-          <sound>sound\heavy_lazor_hit</sound>
           <sound>sound\light_sword_hit</sound>
-          <sound>sound\light_bullet_hit</sound>
-          <sound>sound\light_lazer_hit</sound>
+          <sound>sound\light_sword_hit2</sound>
+          <sound>sound\light_sword_hit3</sound>
+          <sound>sound\Melee_impact_hit</sound>
+          <sound>sound\shield_hit</sound>
+          <sound>sound\shield_break</sound>
+          <sounds name="projectiles">
+            <sound>sound\light_lazor_hit</sound>
+            <sound>sound\light_lazor_hit3</sound>
+            <sound>sound\heavy_lazor_hit</sound>
+            <sound>sound\heavy_lazer_hit2</sound>
+            <sound>sound\cannon_hit</sound>
+          </sounds>
+        </sounds>
+        <sounds name="moments">
+          <sound>sound\robot_explode</sound>
+          <sound>sound\game_ending_noise</sound>
         </sounds>
       </sounds>
       <sounds name="movement">
@@ -40,6 +59,7 @@
         <sound>sound\Booster_loop</sound>
         <sound>sound\robot_step</sound>
         <sound>sound\robot_landing</sound>
+        <sound>sound\robot_landing2</sound>
       </sounds>
     </sounds>
   </sounds>
@@ -107,6 +127,9 @@
         </sprites>
         <sprites name="heavytorso3">
           <sprite>sprites\heavyhead3</sprite>
+          <sprite>sprites\heavycore3</sprite>
+          <sprite>sprites\heavyleg3bottom</sprite>
+          <sprite>sprites\heavyleg3top</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -630,6 +653,9 @@
         </objects>
         <objects name="heavy3">
           <object>objects\heavy_head3</object>
+          <object>objects\heavy_lowerleg3</object>
+          <object>objects\heavy_upperleg3</object>
+          <object>objects\heavy_core3</object>
         </objects>
       </objects>
       <objects name="Boosters">
@@ -641,6 +667,10 @@
       <object>objects\bulletParent</object>
       <object>objects\bulletObject</object>
       <object>objects\bulletObject2</object>
+      <object>objects\bulletObject3</object>
+      <object>objects\bulletObject4</object>
+      <object>objects\bulletObject5</object>
+      <object>objects\bulletObject6</object>
       <object>objects\CosmosBullet</object>
     </objects>
     <objects name="Color Adjusts">

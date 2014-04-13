@@ -7,7 +7,7 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
+  <bbox_left>5</bbox_left>
   <bbox_right>35</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>70</bbox_bottom>
@@ -17,11 +17,10 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>36</width>
+  <width>46</width>
   <height>71</height>
   <frames>
     <frame index="0">images\lightleg2top_0.png</frame>
     <frame index="1">images\lightleg2top_1.png</frame>
-    <frame index="2">images\lightleg2top_2.png</frame>
   </frames>
 </sprite>

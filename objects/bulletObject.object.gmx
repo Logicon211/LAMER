@@ -66,6 +66,7 @@ if(instance_position(x,y,player_o))
     target = instance_position(x,y,player_o)
     target.health2 -= 100;
     target.hspeed += hspeed/2;
+    audio_play_sound(light_lazor_hit,1,false);
     instance_destroy();
 }
 else if(instance_position(x,y,shield_o))
@@ -73,6 +74,7 @@ else if(instance_position(x,y,shield_o))
     with(instance_position(x,y,shield_o))
     {
         instance_create(x,y,shieldFlash);
+        audio_play_sound(shield_hit,1,false);
     }
     instance_destroy();
 }
