@@ -30,7 +30,7 @@ nodeNumber = 1;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Egypt";
-nodeDescription = "The Pyramids continue to stand strong despite the destruction that's occured. They also make #for a nice colosseum backdrop.";
+nodeDescription = "The Pyramids continue to stand strong despite the destruction that's occured. Minus a few chunks, and with a colosseum nearby.";
 
 isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet

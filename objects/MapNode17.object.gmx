@@ -30,7 +30,7 @@ nodeNumber = 17;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "United States of America";
-nodeDescription = "Where it all started; in the pursuit of the ultimate peace keeping utility, they inadvertently #designed a weapon that would throw the world into chaos. In the end, they did #provide freedom... to those with power.";
+nodeDescription = "Where it all started; in the pursuit of the ultimate peace keeping utility, they inadvertently #designed a weapon that would throw the world into chaos. In the end, they did #provide freedom... to those with power like the Four Devils.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet

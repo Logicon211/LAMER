@@ -30,7 +30,7 @@ nodeNumber = 18;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Super Not-So-Secret Space Elevator";
-nodeDescription = "Humanity's last ditch attempt to leave the ensuing chaos, this space elevator remains unfinished #and only reaches slightly past stratosphere. The top has been modified to be an epic colosseum, where #the true battles are decided.";
+nodeDescription = "Humanity's last ditch attempt to leave the ensuing chaos, this space elevator remains unfinished #and only reaches slightly past stratosphere. The top has been modified to be an epic colosseum, where #the true battles are fought.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -40,7 +40,8 @@ hasRadioText = false; //check to see if there's radio chat before the fight
 
 radioText[0] = "";
 
-face[0] = 0;
+face[0] = PlayerFace;
+face[1] = LoganFace;
 
 battleMap = testRange;
 

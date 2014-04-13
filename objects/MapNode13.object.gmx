@@ -30,7 +30,7 @@ nodeNumber = 13;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Mexico";
-nodeDescription = "Mexico's drug cartels survive to this day, providing entertaining substances to successful #Colossus pilots. However, they hope not for money but that the pilots will end up overdosing #and killing themselves.";
+nodeDescription = "Mexico's drug cartels survive to this day, providing entertaining substances to the Four Devils #and other Colossus pilots. However, this is an unstable safeguard at best.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet

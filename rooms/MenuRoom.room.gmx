@@ -59,6 +59,7 @@
     <instance objName="ShadowObject2Rotate" x="1153" y="0" name="inst_02572F19" locked="0" code="" scaleX="1" scaleY="240" colour="4294967295" rotation="0"/>
     <instance objName="ShadowObject2" x="-32" y="640" name="inst_737C969D" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ShadowObject2Rotate" x="127" y="713" name="inst_E03247D9" locked="0" code="" scaleX="1" scaleY="240" colour="4294967295" rotation="180"/>
+    <instance objName="GameController" x="32" y="32" name="inst_51BE150A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

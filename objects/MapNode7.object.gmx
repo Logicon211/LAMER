@@ -30,7 +30,7 @@ nodeNumber = 7;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "China";
-nodeDescription = "Even China's military numbers couldn't hold back a single Colossus. Now their large numbers are used to #produce Colossus parts en masse.";
+nodeDescription = "Even China's military numbers couldn't hold back a single Devil. Now their large numbers are used to #produce Colossus parts en masse.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet

@@ -33,23 +33,3 @@ else
     controlSet[7] = 0;
     stopped = true;
 }
-
-if(currenTarget.playerType > 6)
-{
-    if(controlSet[8] == 1)
-    {
-        flying = true;
-    }
-
-    if(abs(currentTarget.x - x) < 350)
-    {
-        controlSet[8] = 1;
-    }
-    else
-    {
-        if(!flying)
-        {
-            controlSet[8] = 0;
-        }
-    }
-}

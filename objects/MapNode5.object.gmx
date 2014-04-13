@@ -30,7 +30,7 @@ nodeNumber = 5;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Madagascar";
-nodeDescription = "When the Apocalypse happened, Madagascar did the smart thing: it remained neutral and closed #all borders. However, unlike a plague, there was no stopping the advancement of the Colossi."
+nodeDescription = "When the Four Devils arrived, Madagascar did the smart thing: it remained neutral and closed #all borders. However, unlike a plague, there was no stopping the advancement of the Colossi."
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -38,7 +38,7 @@ hasRun = false; //code to get the initialization to run only once
 
 hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "Maximus Lovelife: So, you've managed to defeat my minions and now you've come to challenge ME?!";
+radioText[0] = "Maximus Lovelife: So, you've managed to defeat my minions and now you've come to challenge ME?! The First Devil?!";
 radioText[1] = "Player: Well, uh, I am standing right here, so...";
 radioText[2] = "Maximus Lovelife: It was a rhetorical question!";
 radioText[3] = "Maximus Lovelife: That aside, are you sure this is what you want to do?";

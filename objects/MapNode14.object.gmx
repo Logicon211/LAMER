@@ -30,7 +30,7 @@ nodeNumber = 14;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Brazil";
-nodeDescription = "Brazil, known mostly for its tourism, was able to avoid the harsher consequences of the Apocalypse. #However, it now caters only to the elite pilots with their events and other services.";
+nodeDescription = "Brazil, known mostly for its tourism, was able to avoid the harsher consequences of the Four Devils. #However, it now caters only to the elite pilots with their events and other services.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet

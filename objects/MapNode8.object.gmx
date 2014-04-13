@@ -30,7 +30,7 @@ nodeNumber = 8;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Germany";
-nodeDescription = "Though it suffered some damage from the Apocalypse, most of Germany remains intact but under the power of #those who use their well made Colossi.";
+nodeDescription = "Though it suffered some damage from the Four Devils, most of Germany remains intact but now they no longer build #cars or other long lasting goods, only Colossus engines.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet

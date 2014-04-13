@@ -15,7 +15,7 @@ else
         case 2:
             attackAI();
         case 3:
-            if(currentTarget.playerType > 6)
+            if(playerType > 6)
             {
                 blockAI();
             }

@@ -20,6 +20,12 @@ if(controlSet[3] == 0)
             controlSet[5] = 1;
             controlSet[8] = 1;
         }
+        /*else if((playerType > 6) && (abs(currentTarget.x - x) > 300))
+        {
+            controlSet[4] = 0;
+            controlSet[5] = 0;
+            controlSet[8] = 1;
+        }*/
         else
         {
             controlSet[4] = 0;

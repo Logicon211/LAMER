@@ -30,7 +30,7 @@ nodeNumber = 9;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "India";
-nodeDescription = "India used most of its natural resources and expanding economic power producing Colossi during the #Apocalypse. It still does now, but for the benifit of those that control it.";
+nodeDescription = "India used most of its natural resources and expanding economic power producing Colossi during the #Four Devils' rampage. It still does now, but for the benifit of those that control it.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet

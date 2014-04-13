@@ -30,7 +30,7 @@ nodeNumber = 12;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Argentina";
-nodeDescription = "For a little while, Argentina and its cities were safe from the Apocalypse with many people #fleeing to its borders. It couldn't last, however, and now the cities are slums where defeated #Colossus pilots are sent to suffer.";
+nodeDescription = "For a little while, Argentina and its cities were safe from the Four Devils with many people #fleeing to its borders. It couldn't last, however, and now the cities are slums where defeated #Colossus pilots are sent to suffer.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
