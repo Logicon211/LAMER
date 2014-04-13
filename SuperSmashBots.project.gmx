@@ -694,6 +694,7 @@
     <object>objects\tutorial_help_shield</object>
     <object>objects\renewRoom</object>
     <object>objects\cameraObject</object>
+    <object>objects\partExplosion</object>
     <object>objects\tutorialBossTrigger</object>
     <object>objects\tutorial_help_turret</object>
     <object>objects\tutorial_help_platform</object>
