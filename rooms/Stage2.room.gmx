@@ -39,7 +39,7 @@ for(i=numPlayersSetting;i&gt;0;i--)
 show_debug_message("post-for");
 
 instance_create(x,y,cameraObject);</code>
-  <enableViews>0</enableViews>
+  <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>
     <isSet>0</isSet>
