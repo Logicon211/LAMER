@@ -9,7 +9,7 @@ i = armA.animationCounter;
 
 if((i mod 25) = 1)
 {
-    shoot = instance_create(armA.x+larmA.sprite_height*image_xscale,armA.y,bulletObject);
+    shoot = instance_create(armA.x+larmA.sprite_height*image_xscale+10,armA.y,bulletObject);
     shoot.hspeed = larmA.image_xscale*32;
     audio_play_sound(light_bullet_shot,1,false);
 }
