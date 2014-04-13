@@ -244,13 +244,17 @@ for(i=0;i&lt;10;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/***************************************************
+            <string>healthMax = playerStats[playerNum,0]
+if(health2&gt;healthMax)
+{   health2 = healthMax
+}
+
+/***************************************************
   INPUT CONTROL
   
   If player....
  ***************************************************/
 //controlSetPrv = controlSet;
-
 
 /***************************************************
  ***************************************************/  
@@ -623,16 +627,21 @@ if(health2 &lt;= 0 or y&gt;=room_height-200)
 {
     if(health2&lt;0){health2=0}
     splodeColor = choose(c_red,c_yellow,c_orange)
-    for(i=0;i&lt;20;i++)
+    effect_create_above(ef_cloud,x,y,2,c_white)
+    /*for(i=0;i&lt;20;i++)
     {
-        effect_create_above(ef_smoke,x+random_range(-50,50),y+random_range(-70,70),300,c_orange);
-        effect_create_above(ef_flare,x+random_range(-50,50),y+random_range(-70,70),300,c_orange);
+        effect_create_above(ef_smoke,x+random_range(-50,50),y+random_range(-70,70),2,c_white);
+        effect_create_above(ef_flare,x+random_range(-50,50),y+random_range(-70,70),2,c_orange);
+        effect_create_above(ef_firework,x+random_range(-50,50),y+random_range(-70,70),1,choose(c_orange,getPlayerColor(playerNum,0)));
     }
     splodeColor = choose(getPlayerColor(playerNum,0),getPlayerColor(playerNum,1),getPlayerColor(playerNum,2))
     for(i=0;i&lt;20;i++)
     {
         //effect_create_above(ef_firework,x+random_range(-30,30),y+random_range(-50,50),100,splodeColor);
-    }
+    }*/
+    //**************
+    instance_create(x,y,partExplosion);
+    //**************
     respawn = instance_create(x,y,renewRoom);
     respawn.pIn = id;
     playerType = 2;
@@ -1263,9 +1272,7 @@ else if(state = string('land'))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(healthSprite,0,view_xview+30+100*playerNum,view_yview+30,health2/10,1,0,getPlayerColor(playerNum,0),1);
-
-if(playerType&gt;2)
+            <string>if(playerType&gt;2)
 {
     draw_sprite_ext(playerNumberSprite,4,x,y-200,1,1,0,c_white,0.75);
 }
@@ -1292,6 +1299,38 @@ else if(playerType=0)
         draw_sprite_ext(playerNumberSprite,playerNum,x,y-200,1,1,0,playerNumColor,0.75);
     }
 }
+
+
+
+/***************************************************
+  Draw Health
+      
+  where x = 0 and y = 0...
+  
+    hudPos[x,0] = left side
+    hudPos[x,1] = right side
+    hudPos[x,2] = right side remaining armor
+    hudPos[y,0] = top
+    hudPos[y,1] = bottom
+  
+ ***************************************************/
+if(playerType != 1) //not display mode
+{
+    x1=view_xview+10*view_wview/1280
+    x2=view_xview+10*view_wview/1280+(health2*view_wview/1280)//fill
+    x3=view_xview+10*view_wview/1280+(healthMax*view_wview/1280)//outline
+    y1=view_yview+10*view_wview/720+(40*(view_wview/720)*playerNum)
+    y2=view_yview+10*view_wview/720+(40*(view_wview/720)*playerNum)+(30*view_wview/720)
+    
+    //fill
+    pnc = playerNumColor
+    pncDark = merge_color(pnc,c_black,0.5)
+    draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
+    //outline
+    draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,true)
+}
+
+
 
 </string>
           </argument>

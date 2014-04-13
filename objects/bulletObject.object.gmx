@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>target = instance_nearest(x,y,player_o);
 move_towards_point(target.x,target.y,0);
+player = target;
+inactive = true;
 </string>
           </argument>
         </arguments>
@@ -49,7 +51,17 @@ move_towards_point(target.x,target.y,0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_position(x,y,player_o))
+            <string>if(inactive)
+{
+    if(player.x&gt;x)
+    {   hspeed = -40;
+    }
+    else
+    {   hspeed = +40;
+    }
+    inactive = false;
+}
+if(instance_position(x,y,player_o))
 {
     target = instance_position(x,y,player_o)
     target.health2 -= 100;
