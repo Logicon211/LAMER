@@ -2,9 +2,7 @@ armA = argument0;
 aNum = argument1;
 armB = argument2;
 bNum = argument3;
-spd = argument4;//number, ie 10, where 1 is slow 10 is fast
-spd = (1/spd)*5;//now spd can be multiplied
-spd = 2.79;
+spd = argument4;//number to be multiplied to all animation speed during melee attack
 larmA = armA.lowerarm;
 larmB = armB.lowerarm;
 
@@ -581,7 +579,7 @@ else if(attackVar = 2)
     else if(i>31*spd)
     {
         larmA.attacking = false;
-        if(i=70*spd)
+        if(i>69*spd)
         {
             //end
             player.state = string('tonorm');
