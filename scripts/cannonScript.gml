@@ -11,6 +11,7 @@ if((i mod 70) = 1)
 {
     shoot = instance_create(armA.x+larmA.sprite_height*image_xscale,armA.y,CosmosBullet);
     shoot.hspeed = larmA.image_xscale*32;
+    shoot.player = id;
     audio_play_sound(heavy_lazer_shot,1,false);
 }
 
