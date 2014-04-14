@@ -96,32 +96,33 @@ else if(hspeed<0)//moving left
                 if down and jump pressed
                     move down 20 past platform and fall
  ***************************************************/
-if(object_get_parent(id)!=player_o){
-if(vspeed >= 0)
-{   if(instance_place(x,y+vspeed,platformParent))
-    {   
-        pForm = instance_place(x,y+vspeed,platformParent);
-        //pForm references the plaform to be landed on (or passed over)
-        if(!instance_place(x,y-20,pForm))
-        {    while(instance_place(x,y+vspeed,pForm))
-            {
-                vspeed -= 1;
+if(sprite_index=player_s)
+{
+    if(vspeed >= 0)
+    {   if(instance_place(x,y+vspeed,platformParent))
+        {   
+            pForm = instance_place(x,y+vspeed,platformParent);
+            //pForm references the plaform to be landed on (or passed over)
+            if(!instance_place(x,y-20,pForm))
+            {    while(instance_place(x,y+vspeed,pForm))
+                {
+                    vspeed -= 1;
+                }
+                y += vspeed;
+                vspeed = 0;
+                airborne = false;
+                if(down_check(playerNum))
+                {/*   if(jump_check(playerNum))
+                    {   */airborne = true;
+                        y+=20+pForm.sprite_height;
+                    //}
+                }
             }
-            y += vspeed;
-            vspeed = 0;
-            airborne = false;
-            if(down_check(playerNum))
-            {/*   if(jump_check(playerNum))
-                {   */airborne = true;
-                    y+=20+pForm.sprite_height;
-                //}
+            else
+            {   airborne = true;
             }
-        }
-        else
-        {   airborne = true;
         }
     }
-}
 }
 
 /***************************************************
