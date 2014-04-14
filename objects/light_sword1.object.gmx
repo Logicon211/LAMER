@@ -31,7 +31,7 @@ player = instance_nearest(x,y,player_o);
 playerNum = player.playerNum;
 oldX = y;
 oldY = x;
-
+swingSpeed = 1.2;
 attacking = false;
 </string>
           </argument>
