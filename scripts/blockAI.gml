@@ -1,11 +1,56 @@
-blockChance = random(1);
-closestProj = instance_nearest(x, y, bulletParent);
+var num, numBullets, bullet, currentBullet;
 
-if(blockChance > 0.75)
+numBullets = instance_number(bulletParent);
+for(num = 0; num < numBullets; num++)
 {
-    if (distance_to_object(closestProj) < 500)
+    bullet[num] = instance_find(bulletParent, num);
+}
+
+if(numBullets > 0)
+{
+    currentBullet = bullet[0];
+}
+else
+{
+    currentBullet = -1;
+}
+
+for(num = 0; num < numBullets; num++)
+{
+    if(bullet[num].origPlayer != id)
     {
-        controlSet[3] = 1;
+        if(bullet[num].y < y + 100 && bullet[num].y > y - 100)
+        {
+            if(bullet[num].x < x and bullet[num].hspeed > 0)
+            {
+                if(abs(bullet[num].x - x) < abs(currentBullet.x - x))
+                {
+                    currentBullet = bullet[num];
+                }
+            }
+            else if(bullet[num].x > x and bullet[num].hspeed < 0)
+            {
+                if(abs(bullet[num].x - x) < abs(currentBullet.x - x))
+                {
+                    currentBullet = bullet[num];
+                }
+            }
+        }
+    }
+}
+
+if(currentBullet.origPlayer != id)
+{
+    if(currentBullet != -1)
+    {
+        if (distance_to_object(currentBullet) < 500)
+        {
+            controlSet[3] = 1;
+        }
+        else
+        {
+            controlSet[3] = 0;
+        }
     }
     else
     {

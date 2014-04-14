@@ -17,14 +17,7 @@ for(i=numPlayersSetting;i&gt;0;i--)
 {
     if(j&gt;0)
     {
-        if(botDifficulty &lt; 3)
-        {
-            createPlayer((i-1),3,200+i*300,room_height/2);
-        }
-        else
-        {
-            createPlayer((i-1),botDifficulty,200+i*300,room_height/2);
-        }
+        createPlayer((i-1),botDifficulty,200+i*300,room_height/2);
     }
     else
     {

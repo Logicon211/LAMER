@@ -28,7 +28,7 @@
             <string>name = "Cronus L";
 
 //This is the actual link to the object, so we can create it on start up.
-part = leg_o;
+part = heavy_upperleg3;
 
 type = 4;
 

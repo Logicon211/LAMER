@@ -30,7 +30,7 @@ nodeNumber = 6;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Russia";
-nodeDescription = "In an attempt to hold off the Apocalypse until they had developed their own Colossus model, #Russia utilized its entire nuclear arsenal. Considering the fact it is an irridiated wasteland #populated by automated resource collection robots now, we can see how that worked out for them.";
+nodeDescription = "In an attempt to hold off the Four Devils until they had developed their own Colossus model, #Russia utilized its entire nuclear arsenal. Considering the fact it is an irridiated wasteland #populated by automated resource collection robots now, we can see how that worked out for them.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,11 +42,11 @@ radioText[0] = "";
 
 face[0] = 0;
 
-battleMap = testRange;
+battleMap = Stage1;
 
 //Bot Settings on this Map Node
 numberOfBots = 1;
-DifficultyOfBots = 1;
+DifficultyOfBots = 5;
 
 botLoadOut[0] = ProtoHeadObjectItem; //Head
 botLoadOut[1] = ProtoTorsoObjectItem; //Torso

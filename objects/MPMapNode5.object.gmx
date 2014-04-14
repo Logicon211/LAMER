@@ -30,8 +30,8 @@
 nodeNumber = 5;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Sixth Map Node";
-nodeDescription = "Some Fluff about the area in the node"
+nodeName = "Colosseum 5";
+nodeDescription = ""
 
 isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet

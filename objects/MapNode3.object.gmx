@@ -30,7 +30,7 @@ nodeNumber = 3;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Congo";
-nodeDescription = "The Congo, with its precious metals hidden away deep in the earth, was also hit hard #by the Apocalypse. All that really remains is a colosseum surrounded by mountains and automated miners.";
+nodeDescription = "The Congo, with its precious metals hidden away deep in the earth, was also hit hard #by the Four Devils. All that really remains is a colosseum surrounded by mountains and automated miners.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -46,8 +46,8 @@ battleMap = Stage3;
 
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 2;
+DifficultyOfBots = 4;
 
 botLoadOut[0] = ProtoHeadObjectItem; //Head
 botLoadOut[1] = ProtoTorsoObjectItem; //Torso

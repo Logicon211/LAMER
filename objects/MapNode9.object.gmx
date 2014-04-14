@@ -30,7 +30,7 @@ nodeNumber = 9;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "India";
-nodeDescription = "India used most of its natural resources and expanding economic power producing Colossi during the #Apocalypse. It still does now, but for the benifit of those that control it.";
+nodeDescription = "India used most of its natural resources and expanding economic power producing Colossi during the #Four Devils' rampage. It still does now, but for the benifit of those that control it.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,12 +42,12 @@ radioText[0] = "";
 
 face[0] = 0;
 
-battleMap = testRange;
+battleMap = Stage4;
 
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 3;
+DifficultyOfBots = 5;
 
 botLoadOut[0] = ProtoHeadObjectItem; //Head
 botLoadOut[1] = ProtoTorsoObjectItem; //Torso

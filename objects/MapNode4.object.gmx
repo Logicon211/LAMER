@@ -30,7 +30,7 @@ nodeNumber = 4;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Sudan";
-nodeDescription = "When the Apocalypse started, oil became a key factor in manufacturing many of the parts for #a Colossus. Sudan, with its colosseum surrounded by pristine oil wells yet flattened cities, shows what #happened to those who had plenty."
+nodeDescription = "With the advent of the Four Devils and the Colossi they used, oil became a key factor in manufacturing many of their parts. Sudan, with its colosseum surrounded by pristine oil wells yet flattened cities, shows what #happened to those who had plenty."
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -46,8 +46,8 @@ battleMap = Stage4;
 
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 2;
+DifficultyOfBots = 4;
 
 botLoadOut[0] = ProtoHeadObjectItem; //Head
 botLoadOut[1] = ProtoTorsoObjectItem; //Torso

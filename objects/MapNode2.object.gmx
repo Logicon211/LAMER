@@ -30,12 +30,12 @@ nodeNumber = 2;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "South America";
-nodeDescription = "Rich in precious gems and metals, South America was one of the first to suffer due to the #Apocalypse. In the bombed out husk of a country, there is a makeshift colloseum.";
+nodeDescription = "Rich in precious gems and metals, South America was one of the first to fall to the Four Devils. In the bombed out husk of a country, there is a makeshift colloseum.";
 isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = true; //check to see if there's radio chat before the fight
+hasRadioText = false; //check to see if there's radio chat before the fight
 
 radioText[0] = "Player: I'm here to challenge you so I can defeat Maximus LoveLife!";
 radioText[1] = "Goon: Why you gotta be so rude?";
@@ -53,7 +53,7 @@ battleMap = Stage2;
 
 //Bot Settings on this Map Node
 numberOfBots = 1;
-DifficultyOfBots = 1;
+DifficultyOfBots = 4;
 
 botLoadOut[0] = ProtoHeadObjectItem; //Head
 botLoadOut[1] = ProtoTorsoObjectItem; //Torso

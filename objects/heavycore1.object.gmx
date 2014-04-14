@@ -235,16 +235,16 @@ arm[2].depth = depth+10*-image_xscale;
 //END arms
 
 //head
-joint = rotation_tracker(x,y,image_angle,x-5,y-35);
+joint = rotation_tracker(x,y,image_angle,x-5,y-40);
 limb_anchor(head,joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END head
 
 //boosters
-joint = rotation_tracker(x,y,image_angle,x-60,y-10);
+joint = rotation_tracker(x,y,image_angle,x-34,y-25);
 limb_anchor(booster[1],joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-57,y+36);
+joint = rotation_tracker(x,y,image_angle,x-37,y-1);
 limb_anchor(booster[2],joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-56,y-45);
+joint = rotation_tracker(x,y,image_angle,x-36,y+25);
 limb_anchor(booster[3],joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END boosters
 
@@ -387,6 +387,9 @@ if(player.state = string('shield'))
     leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
     //leg1.lower_angle = -90*image_xscale;
     //leg2.lower_angle = -30*image_xscale;
+        if(!audio_is_playing(ShieldLoop)){
+    audio_play_sound(ShieldLoop,1,false);
+    }
 }
 
 /***************************************************

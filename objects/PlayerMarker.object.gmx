@@ -198,6 +198,7 @@ if(jump_check_pressed() or attack1_check_pressed())
     //Set number, difficulty, and loadouts of bots
     numBots = MapNodeList[atMapNode].numberOfBots;
     numCPUsSetting = numBots;
+    numPlayersSetting = numBots + 1;
     botDifficulty = MapNodeList[atMapNode].DifficultyOfBots
     
     //BOT PLAYER2 INVENTORY
