@@ -74,9 +74,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(InventoryHeader);
-draw_set_color(c_white)
-draw_text(550, 180, "Player " + string(playerWon+1) + " Wins!");
+            <string>//draw_set_font(InventoryHeader);
+//draw_set_color(c_white)
+//draw_text(550, 180, "Player " + string(playerWon+1) + " Wins!");
 </string>
           </argument>
         </arguments>
