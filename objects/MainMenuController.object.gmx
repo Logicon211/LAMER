@@ -28,8 +28,8 @@
             <string>globalvar menuButtons;
 menuButtons = 0;
 
-globalvar selectedButton;
-selectedButton = 0;
+globalvar selectedMenuButton;
+selectedMenuButton = 0;
 </string>
           </argument>
         </arguments>
@@ -54,7 +54,7 @@ selectedButton = 0;
             <kind>1</kind>
             <string>for(var i=0;i&lt;array_length_1d(menuButtons);i++)
 {
-    if(i != selectedButton)
+    if(i != selectedMenuButton)
     {
         menuButtons[i].state = 0;
     }
@@ -79,10 +79,10 @@ if(right_check_pressed())
 if(up_check_pressed())
 {
     audio_play_sound(MenuNavigationSound,1,false);
-    selectedButton--;
-    if(selectedButton &lt; 0)
+    selectedMenuButton--;
+    if(selectedMenuButton &lt; 0)
     {
-        selectedButton = array_length_1d(menuButtons) - 1;
+        selectedMenuButton = array_length_1d(menuButtons) - 1;
     }
 }
 
@@ -90,10 +90,10 @@ if(up_check_pressed())
 if(down_check_pressed())
 {
     audio_play_sound(MenuNavigationSound,1,false);
-    selectedButton++
-    if(selectedButton &gt;= array_length_1d(menuButtons))
+    selectedMenuButton++
+    if(selectedMenuButton &gt;= array_length_1d(menuButtons))
     {
-        selectedButton = 0;
+        selectedMenuButton = 0;
     }
 }
 
@@ -101,7 +101,7 @@ if(down_check_pressed())
 if(jump_check_pressed())
 {
     audio_play_sound(MenuConfirmationSound,1,false);
-    menuButtons[selectedButton].alarm[1] = true;
+    menuButtons[selectedMenuButton].alarm[1] = true;
 }
 </string>
           </argument>
