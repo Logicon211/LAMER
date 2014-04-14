@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>//Button Press Code
-
+singlePlayer = 1;
 room_goto(OverMap);
+livesSetting = 1;
 </string>
           </argument>
         </arguments>
