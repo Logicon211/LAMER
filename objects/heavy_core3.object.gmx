@@ -235,16 +235,16 @@ arm[2].depth = depth+10*-image_xscale;
 //END arms
 
 //head
-joint = rotation_tracker(x,y,image_angle,x-5,y-15);
+joint = rotation_tracker(x,y,image_angle,x-5,y-20);
 limb_anchor(head,joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END head
 
 //boosters
-joint = rotation_tracker(x,y,image_angle,x-60,y-10);
+joint = rotation_tracker(x,y,image_angle,x-70,y-47);
 limb_anchor(booster[1],joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-57,y+36);
+joint = rotation_tracker(x,y,image_angle,x-73,y-16);
 limb_anchor(booster[2],joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-56,y-45);
+joint = rotation_tracker(x,y,image_angle,x-70,y+27);
 limb_anchor(booster[3],joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END boosters
 
