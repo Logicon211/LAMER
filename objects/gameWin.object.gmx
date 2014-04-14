@@ -81,7 +81,14 @@ else if(activeCounter &gt; 30)
         }
     }
     if(numPlayers &lt; 1)
-    {   room_goto(OverMap);
+    {   if(singlePlayer)
+        {   room_goto(OverMap);
+        }
+        else
+        {
+            winnerBot = instance_nearest(x,y,player_o)
+            gotoVictoryRoom(winnerBot.playerNum)
+        }
     }
 }
 else

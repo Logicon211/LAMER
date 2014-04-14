@@ -28,7 +28,7 @@
             <string>//Button Press Code
 
 //Test button doesn't do anything yet
-room_goto(Credits1Room);
+room_goto(creditsNew);
 </string>
           </argument>
         </arguments>
