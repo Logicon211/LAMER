@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>target = instance_nearest(x,y,player_o);
+            <string>origPlayer = 0;
+target = instance_nearest(x,y,player_o);
 //move_towards_point(target.x,target.y,32);
 hspeed = target.image_xscale*32;
 player = target;

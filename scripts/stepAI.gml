@@ -14,10 +14,10 @@ changedDir = false;
             case 2:
                 attackAI();
             case 3:
-                /*if(playerType > 6)
+                if(playerType > 6)
                 {
                     blockAI();
-                }*/
+                }
             case 4:
                 ymoveAI();
                 xmoveAI();
