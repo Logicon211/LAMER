@@ -96,7 +96,7 @@ else if(hspeed<0)//moving left
                 if down and jump pressed
                     move down 20 past platform and fall
  ***************************************************/
-
+if(object_get_parent(id)!=player_o){
 if(vspeed >= 0)
 {   if(instance_place(x,y+vspeed,platformParent))
     {   
@@ -111,16 +111,17 @@ if(vspeed >= 0)
             vspeed = 0;
             airborne = false;
             if(down_check(playerNum))
-            {   if(jump_check(playerNum))
-                {   airborne = true;
+            {/*   if(jump_check(playerNum))
+                {   */airborne = true;
                     y+=20+pForm.sprite_height;
-                }
+                //}
             }
         }
         else
         {   airborne = true;
         }
     }
+}
 }
 
 /***************************************************
