@@ -70,7 +70,8 @@ else
     oldY = y+vspeed;
     if(attacking)
     {
-        if(instance_place(x,y,player_o))
+        swordHit(100,25,5);
+       /* if(instance_place(x,y,player_o))
         {
             derp = instance_place(x,y,player_o);
             if(derp != player)
@@ -81,7 +82,7 @@ else
                 derp.airborne = true;
                 audio_play_sound(light_sword_hit2,1,false);
             }
-        }
+        }*/
     }
 }
 </string>
