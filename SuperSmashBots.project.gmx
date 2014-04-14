@@ -378,6 +378,7 @@
       <script>scripts\ymoveAI.gml</script>
       <script>scripts\attackAI.gml</script>
       <script>scripts\resetcontrolAI.gml</script>
+      <script>scripts\killAI.gml</script>
     </scripts>
     <script>scripts\script77.gml</script>
     <script>scripts\delete_this_script.gml</script>
