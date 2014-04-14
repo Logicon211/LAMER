@@ -243,6 +243,7 @@
       <sprite>sprites\fireTown</sprite>
       <sprite>sprites\fireTownLight</sprite>
     </sprites>
+    <sprite>sprites\PlayerIndicatorSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -742,6 +743,7 @@
     <object>objects\menuLOL</object>
     <object>objects\AnyKeyToReturnObj</object>
     <object>objects\anykeySkip</object>
+    <object>objects\PlayerIndicatorObj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
