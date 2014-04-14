@@ -72,7 +72,8 @@ else
     {
         if(instance_place(x,y,player_o))
         {
-            derp = instance_place(x,y,player_o);
+            swordHit(150, 30, -30);
+            /*derp = instance_place(x,y,player_o);
             if(derp != player)
             {
                 derp.health2 -= 100;
@@ -80,7 +81,7 @@ else
                 derp.vspeed = 5*image_xscale;
                 derp.airborne = true;
                 audio_play_sound(Melee_impact_hit,1,false);
-            }
+            }*/
         }
     }
 }

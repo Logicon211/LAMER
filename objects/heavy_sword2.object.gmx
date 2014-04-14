@@ -71,7 +71,7 @@ else
     oldY = y+vspeed;
     if(attacking)
     {
-        swordHit(100,25,5);
+        swordHit(250,30,5);
         /***************************************************
         for(i=0; i&lt;instance_number(player_o); i++)
         {
