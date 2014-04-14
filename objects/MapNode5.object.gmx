@@ -39,16 +39,16 @@ hasRun = false; //code to get the initialization to run only once
 hasRadioText = true; //check to see if there's radio chat before the fight
 
 radioText[0] = "Maximus Lovelife: So, you've managed to defeat my minions and now you've come to challenge ME?! The First Devil?!";
-radioText[1] = "Player: Well, uh, I am standing right here, so...";
+radioText[1] = "Hero: Well, uh, I am standing right here, so...";
 radioText[2] = "Maximus Lovelife: It was a rhetorical question!";
 radioText[3] = "Maximus Lovelife: That aside, are you sure this is what you want to do?";
 radioText[4] = "Maximus Lovelife: I could offer you riches beyond your wildest dreams. A life of comfort and relaxation...";
-radioText[5] = "Player: I refuse! I will unite all of Earth under me, and nothing can stop me!";
-radioText[6] = "Player: Your tyranny comes to an end now!";
+radioText[5] = "Hero: I refuse! I will unite all of Earth under me, and nothing can stop me!";
+radioText[6] = "Hero: Your tyranny comes to an end now!";
 radioText[7] = "Maximus Lovelife: No! I won't let you destroy everything I've worked to create!";
 radioText[8] = "Maximus Lovelife: I love my life! I love my life to the max! I won't let you take it from me!";
 
-face[0] = PlayerFace;
+face[0] = LoganFace;
 face[1] = ElliotFace;
 
 battleMap = Stage5;

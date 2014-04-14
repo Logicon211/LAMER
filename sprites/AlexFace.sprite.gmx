@@ -20,6 +20,6 @@
   <width>290</width>
   <height>290</height>
   <frames>
-    <frame index="0">images\PlayerFace_0.png</frame>
+    <frame index="0">images\AlexFace_0.png</frame>
   </frames>
 </sprite>

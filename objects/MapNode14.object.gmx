@@ -50,7 +50,7 @@ radioText[7] = "Player: *sigh*";
 face[0] = PlayerFace;
 face[1] = MGoonFace2;
 
-battleMap = testRange;
+battleMap = Stage4;
 
 //Bot Settings on this Map Node
 numberOfBots = 2;

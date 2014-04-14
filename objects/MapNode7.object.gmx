@@ -49,7 +49,7 @@ radioText[6] = "Player: On second thought, I'll take that offer back...";
 face[0] = PlayerFace;
 face[1] = RGoonFace2;
 
-battleMap = testRange;
+battleMap = Stage2;
 
 //Bot Settings on this Map Node
 numberOfBots = 2;

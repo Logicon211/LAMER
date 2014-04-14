@@ -48,7 +48,7 @@ radioText[5] = "Player: Well, it was worth a try I guess...";
 face[0] = PlayerFace;
 face[1] = MGoonFace1;
 
-battleMap = testRange;
+battleMap = Stage3;
 
 
 //Bot Settings on this Map Node

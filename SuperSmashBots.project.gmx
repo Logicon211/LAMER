@@ -141,6 +141,7 @@
       <sprite>sprites\LoganFace</sprite>
       <sprite>sprites\RaphFace</sprite>
       <sprite>sprites\ElliotFace</sprite>
+      <sprite>sprites\AlexFace</sprite>
       <sprite>sprites\PlayerFace</sprite>
       <sprite>sprites\EGoonFace1</sprite>
       <sprite>sprites\EGoonFace2</sprite>

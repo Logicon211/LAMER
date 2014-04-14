@@ -48,7 +48,7 @@ radioText[5] = "Goon: I can't let him see me fail! AAAAAAAAATTAAAAAAAACK!";
 face[0] = PlayerFace;
 face[1] = RGoonFace1;
 
-battleMap = testRange;
+battleMap = Stage3;
 
 //Bot Settings on this Map Node
 numberOfBots = 2;

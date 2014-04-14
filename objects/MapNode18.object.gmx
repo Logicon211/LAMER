@@ -38,10 +38,16 @@ hasRun = false; //code to get the initialization to run only once
 
 hasRadioText = false; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Supreme King Emperor Overlord of Earth: It is I, the Fourth Devil, the final boss!";
+radioText[1] = "Supreme King Emperor Overlord of Earth: Kneel down before me, and maybe I won't have you suffer a horiffic death IN SPACE.";
+radioText[2] = "Hero: I've defeated all of your comrades; you should be the one running scared and begging for mercy.";
+radioText[3] = "Supreme King Emperor Overlord of Earth: Bah, their power combined doesn't even come close to mine. To me, they were simple henchmen, nothing more.";
+radioText[4] = "Supreme King Emperor Overlord of Earth: Don't you know? Some people call my amazing reflexes cheating! That I'm OP, that I haxorz!";
+radioText[5] = "Supreme King Emperor Overlord of Earth: Are you sure you want to defy me after hearing that?";
+radioText[6] = "Hero: I will defy you! After this battle, all your base will belong to me and I will bring the peace!";
 
-face[0] = PlayerFace;
-face[1] = LoganFace;
+face[0] = LoganFace;
+face[1] = AlexFace;
 
 battleMap = testRange;
 

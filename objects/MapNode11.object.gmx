@@ -39,19 +39,19 @@ hasRun = false; //code to get the initialization to run only once
 hasRadioText = true; //check to see if there's radio chat before the fight
 
 radioText[0] = "Mr. DarkClaw: I knew you were coming. Nothing slips the watch of the Second Devil.";
-radioText[1] = "Player: Uh, nothing?";
+radioText[1] = "Hero: Uh, nothing?";
 radioText[2] = "Mr. DarkClaw: Nothing.";
-radioText[3] = "Player: Yeah, nothing... but like, nothing-nothing?";
+radioText[3] = "Hero: Yeah, nothing... but like, nothing-nothing?";
 radioText[4] = "Mr. DarkClaw: Nothing-nothing.";
-radioText[5] = "Player: Does that mean...?";
+radioText[5] = "Hero: Does that mean...?";
 radioText[6] = "Mr. DarkClaw: Oooooooh yeah. I know. Got the Betamax recording right here with me.";
 radioText[7] = "Mr. DarkClaw: I only use the highest quality equipment for spying on people.";
-radioText[8] = "Player: Fine! I'm going rip that tape out of your cold, dead hands!";
+radioText[8] = "Hero: Fine! I'm going rip that tape out of your cold, dead hands!";
 
-face[0] = PlayerFace;
+face[0] = LoganFace;
 face[1] = RaphFace;
 
-battleMap = testRange;
+battleMap = Stage1;
 
 //Bot Settings on this Map Node
 numberOfBots = 1;
