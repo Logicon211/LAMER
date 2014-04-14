@@ -56,11 +56,11 @@ battleMap = testRange;
 numberOfBots = 1;
 DifficultyOfBots = 10;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
-botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
-botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[0] = CronusH; //Head
+botLoadOut[1] = CoeusLelantos; //Torso
+botLoadOut[2] = AresEdge; //Left Arm
+botLoadOut[3] = EnyoGat; //Right Arm
+botLoadOut[4] = LelantosAura; //Legs
 </string>
           </argument>
         </arguments>

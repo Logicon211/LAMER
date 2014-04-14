@@ -54,11 +54,11 @@ battleMap = Stage1;
 numberOfBots = 1;
 DifficultyOfBots = 4;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
-botLoadOut[2] = ThePointer; //Left Arm
-botLoadOut[3] = CronusSeismos; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[0] = AuraH; //Head
+botLoadOut[1] = AuraT; //Torso
+botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
+botLoadOut[3] = ProtoGunObjectItem; //Right Arm
+botLoadOut[4] = AuraL; //Legs
 </string>
           </argument>
         </arguments>
