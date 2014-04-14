@@ -33,6 +33,7 @@ oldX = y;
 oldY = x;
 swingspeed = 0.8;
 attacking = false;
+image_index = 1;
 </string>
           </argument>
         </arguments>
@@ -70,17 +71,23 @@ else
     oldY = y+vspeed;
     if(attacking)
     {
-        if(instance_place(x,y,player_o))
+        swordHit(100,25,5);
+        /***************************************************
+        for(i=0; i&lt;instance_number(player_o); i++)
         {
-            derp = instance_place(x,y,player_o);
-            if(derp != player)
+            if(instance_place(x,y,instance_find(player_o,i)))
             {
-                derp.health2 -= 100;
-                derp.hspeed = 25*image_xscale;
-                derp.vspeed = 5*image_xscale;
-                derp.airborne = true;
+                derp = instance_find(player_o,i);
+                if(derp != player)
+                {
+                    derp.health2 -= 100;
+                    derp.hspeed = 25*image_xscale;
+                    derp.vspeed = 5*image_xscale;
+                    derp.airborne = true;
+                }
             }
         }
+         ***************************************************/
     }
 }
 </string>

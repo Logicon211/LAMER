@@ -41,7 +41,7 @@ delete = false;
 dominance = 10;
 number = 10;
 
-swingSpeed = 1.5;
+swingSpeed = 6;
 </string>
           </argument>
         </arguments>
