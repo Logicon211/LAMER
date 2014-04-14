@@ -48,6 +48,7 @@ battleMap = Stage3;
 //Bot Settings on this Map Node
 numberOfBots = 2;
 DifficultyOfBots = 4;
+boss = false;
 
 botLoadOut[0] = ProtoHeadObjectItem; //Head
 botLoadOut[1] = ProtoTorsoObjectItem; //Torso
