@@ -87,6 +87,7 @@ if(attackVar = 0)
     {
         larmA.attacking = true;
         //swing sword
+        if(i<=7*spd){swingSound();}
         //position
         sVar = 3*spd;
         yEase10(player.y+10-player.heightAdjust,sVar);
@@ -115,6 +116,7 @@ if(attackVar = 0)
         if(attack1_check_pressed(playerNum))
         {   armA.animationCounter = 21*spd;
             i=armA.animationCounter;
+            swingSound();
         }
         //position
         sVar = 3*spd;
@@ -168,6 +170,7 @@ if(attackVar = 0)
         if(attack1_check_pressed())
         {   armA.animationCounter = 37*spd;
             i=armA.animationCounter;
+            swingSound();
         }
         //position
         sVar = 8*spd;
@@ -287,6 +290,7 @@ else if(attackVar=1)
     {
         larmA.attacking = true;
         //swing sword
+        if(i<=9*spd){swingSound();}
         //position
         sVar = 3*spd;
         yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
@@ -429,6 +433,7 @@ else if(attackVar = 2)
     {
         larmA.attacking = true;
         //swing sword
+        if(i<=11*spd){swingSound();}
         //position
         sVar = 3*spd;
         yEase10(player.y-player.heightAdjust+0*image_yscale,sVar);
@@ -457,6 +462,7 @@ else if(attackVar = 2)
         if(attack1_check_pressed(playerNum))
         {   armA.animationCounter = 32*spd;
             i=armA.animationCounter;
+            swingSound();
         }
         //position
         sVar = 10*spd;
@@ -652,6 +658,7 @@ else if(attackVar=3)
     {
         larmA.attacking = true;
         //swing sword
+        if(i<=7*spd){swingSound();}
         //position
         sVar = 3*spd;
         yEase10(player.y-player.heightAdjust+0*image_yscale,sVar);
@@ -741,6 +748,7 @@ else if(attackVar=4)
     else if(i<18*spd)
     {
         //swing sword
+        if(i<=15*spd){swingSound();}
         //position
         sVar = 3*spd;
         yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);

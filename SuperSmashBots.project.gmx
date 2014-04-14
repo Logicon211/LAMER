@@ -379,6 +379,7 @@
     </scripts>
     <script>scripts\script77.gml</script>
     <script>scripts\delete_this_script.gml</script>
+    <script>scripts\swingSound.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
