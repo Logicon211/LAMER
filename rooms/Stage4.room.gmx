@@ -19,13 +19,13 @@ for(i=numPlayersSetting;i&gt;0;i--)
     if(j&gt;0)
     {
         show_debug_message("makeAI");
-        createPlayer((i-1),botDifficulty,1000+i*400,room_height/2-500);
+        createPlayer((i-1),botDifficulty,1100+i*600,room_height/2-500);
         
     }
     else
     {
         show_debug_message("makePlayer");
-        createPlayer((i-1),0,1000+i*400,room_height/2-500);
+        createPlayer((i-1),0,1100+i*400,room_height/2-500);
     }
     j--;
 }
@@ -52,7 +52,7 @@ instance_create(x,y,cameraObject);</code>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="0" name="stadiumBackgroundOne" x="1470" y="1800" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="stadiumBackground3" x="1470" y="1800" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -319,6 +319,7 @@ instance_create(x,y,cameraObject);</code>
     <instance objName="thruster_left" x="2861" y="2558" name="inst_5D163FE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thrusters_right" x="1869" y="2558" name="inst_E3134776" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="thrusters_right" x="2989" y="2558" name="inst_87726CA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="157" y="166" name="inst_C71721D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

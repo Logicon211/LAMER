@@ -54,6 +54,7 @@ battleMap = Stage2;
 //Bot Settings on this Map Node
 numberOfBots = 1;
 DifficultyOfBots = 4;
+boss = false;
 
 botLoadOut[0] = AuraH; //Head
 botLoadOut[1] = AuraT; //Torso

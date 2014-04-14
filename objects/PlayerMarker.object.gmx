@@ -196,6 +196,7 @@ if(jump_check_pressed() or attack1_check_pressed())
     indicatorNeeded = false;
     
     //Set number, difficulty, and loadouts of bots
+    atBossNode = MapNodeList[atMapNode].boss;
     numBots = MapNodeList[atMapNode].numberOfBots;
     numCPUsSetting = numBots;
     numPlayersSetting = numBots + 1;
@@ -237,7 +238,7 @@ if(jump_check_pressed() or attack1_check_pressed())
         nodePlayerIsAt = playerMarker.atMapNode;
         battleMapPlayerIsAt = MapNodeList[playerMarker.atMapNode].battleMap;
         unlockNodes(MapNodeList[nodePlayerIsAt]);
-        room_goto(battleMapPlayerIsAt)
+        room_goto(ControlsRoom)
     }
 }
 

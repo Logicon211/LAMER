@@ -62,6 +62,9 @@
         <sound>sound\robot_landing2</sound>
       </sounds>
     </sounds>
+    <sound>sound\BattleOfBronchitis</sound>
+    <sound>sound\BrawlsOfSound</sound>
+    <sound>sound\HeroRiff</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -243,6 +246,8 @@
       <sprite>sprites\fireTown</sprite>
       <sprite>sprites\fireTownLight</sprite>
     </sprites>
+    <sprite>sprites\PlayerIndicatorSprite</sprite>
+    <sprite>sprites\OuterRoomSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -260,6 +265,9 @@
     <background>background\fireBG</background>
     <background>background\mapBGlol</background>
     <background>background\fireTown2</background>
+    <background>background\TutorialRoomBackground</background>
+    <background>background\stadiumBackground2</background>
+    <background>background\stadiumBackground3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -347,6 +355,7 @@
     </scripts>
     <scripts name="Player Creation">
       <script>scripts\refreshPlayer.gml</script>
+      <script>scripts\destroyPlayer.gml</script>
       <script>scripts\respawnPlayer.gml</script>
       <script>scripts\createPlayer.gml</script>
       <script>scripts\createPart.gml</script>
@@ -742,6 +751,10 @@
     <object>objects\menuLOL</object>
     <object>objects\AnyKeyToReturnObj</object>
     <object>objects\anykeySkip</object>
+    <object>objects\PlayerIndicatorObj</object>
+    <object>objects\object274</object>
+    <object>objects\TutorialController</object>
+    <object>objects\OuterRoomBlocker</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
@@ -751,6 +764,7 @@
     <room>rooms\testRange</room>
     <room>rooms\Tutorial_room</room>
     <room>rooms\RadioRoom</room>
+    <room>rooms\ControlsRoom</room>
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>

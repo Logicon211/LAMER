@@ -32,7 +32,8 @@
     know how to function, move, and act. It is a
     critical part of the animations and actions.
  ***************************************************/
-health2 = 1000;
+numLives = livesSetting
+health2 = 10000;
 state = string('normal');
 deadCounter = 0;
 boostCounter = 0;
@@ -174,8 +175,8 @@ for(i=boostNums;i&gt;0;i--)
     booster[i] = core.booster[i];
 }
 
-health2 = 1000;
-healthMax = 1000;
+health2 = 10000;
+healthMax = 100000;
 
 /***************************************************
   Height
@@ -192,6 +193,9 @@ heightAdjust = core.heightAdjust;
  
 initializeAI();
 aiCounter = 0;
+
+playerTypeOrig = 0;
+setPlayTypeOrig = true;
 
 for(i=0;i&lt;10;i++)
 {
@@ -244,7 +248,18 @@ for(i=0;i&lt;10;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>healthMax = playerStats[playerNum,0]
+            <string>if(setPlayTypeOrig)
+{
+    playerTypeOrig = playerType;
+    setPlayTypeOrig = false;
+}
+
+if(keyboard_check(ord('K')))
+{   effect_clear();
+}
+
+healthMax = playerStats[playerNum,0]
+weight = playerStats[playerNum,1]
 if(health2&gt;healthMax)
 {   health2 = healthMax
 }
@@ -617,7 +632,7 @@ deadCounter +=1;
  if(deadCounter&gt;0)
  {
     deadCounter = 0;
-    imae_angle = 0;
+    image_angle = 0;
  }
  
 /***************************************************
@@ -625,6 +640,7 @@ deadCounter +=1;
  ***************************************************/
 if(health2 &lt;= 0 or y&gt;=room_height-200)
 {
+    audio_play_sound(robot_explode,1,false)
     if(health2&lt;0){health2=0}
     splodeColor = choose(c_red,c_yellow,c_orange)
     effect_create_above(ef_cloud,x,y,2,c_white)
@@ -1005,11 +1021,28 @@ playerCollision();
   Image Transform
  ***************************************************/
 
+if(!boosting)
+{
+    if(controlSet[7])
+    {
+        image_xscale = 1;
+        core.image_xscale = 1;
+    }
+    if(controlSet[6])
+    {
+        image_xscale = -1;
+        core.image_xscale = -1;
+    }
+}
+
+/*
 if(hspeed!=0)
 {
-    image_xscale = hspeed/abs(hspeed);
+    //image_xscale = hspeed/abs(hspeed);
+    
     if(!boosting){core.image_xscale = image_xscale;}
 }
+*/
 
 /***************************************************
   END Image Transform
@@ -1318,18 +1351,81 @@ else if(playerType=0)
  ***************************************************/
 if(playerType != 1) //not display mode
 {
-    x1=view_xview+10*view_wview/1280
-    x2=view_xview+10*view_wview/1280+(health2*view_wview/1280)//fill
-    x3=view_xview+10*view_wview/1280+(healthMax*view_wview/1280)//outline
-    y1=view_yview+10*view_wview/720+(40*(view_wview/720)*playerNum)
-    y2=view_yview+10*view_wview/720+(40*(view_wview/720)*playerNum)+(30*view_wview/720)
+    x1 = 40*view_wview/1280
+    x2 = 40*view_wview/1280+(health2*view_wview/1280)//fill
+    x3 = 40*view_wview/1280+(healthMax*view_wview/1280)//outline
+    if(playerNum &lt; 2)
+    {
+        y1 = view_yview+10*view_wview/720+(40*(view_wview/720)*0)
+        y2 = view_yview+10*view_wview/720+(40*(view_wview/720)*0)+(10*view_wview/720)
+    }
+    else
+    {
+        y1 = view_yview+10*view_wview/720+(40*(view_wview/720)*1)
+        y2 = view_yview+10*view_wview/720+(40*(view_wview/720)*1)+(10*view_wview/720)
+    }
     
-    //fill
+    x2 = x2/5
+    x3 = x3/5
+
     pnc = playerNumColor
     pncDark = merge_color(pnc,c_black,0.5)
-    draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
+    pncDark2 = merge_color(pnc,c_black,0.4)
     //outline
-    draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,true)
+    //draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,false)
+    //fill
+    //draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
+
+    if(playerNum = 0 or playerNum = 2)
+    {
+        x1 = -x1;
+        x2 = -x2;
+        x3 = -x3;
+        x1 += view_xview+view_wview/2;
+        x2 += view_xview+view_wview/2;
+        x3 += view_xview+view_wview/2;
+        
+        //outline
+        draw_rectangle_color(x1+4*view_wview/720,y1-4*view_wview/1280,x3-4*view_wview/1280,y2+4*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+        draw_circle_color(x1+2*view_wview/1280,y1+17*view_wview/1280,12*view_wview/720,c_dkgray,c_dkgray,false)
+        //fill
+        draw_rectangle_color(x1,y1,x2,y2,pnc,pncDark,pncDark,pnc,false)
+        draw_circle_color(x1+2*view_wview/1280,y1+17*view_wview/1280,10*view_wview/720,pnc,c_dkgray,false)
+        if(numLives&lt;11)
+        {
+            for(i=numLives;i&gt;0;i--)
+            {
+                //outline
+                draw_rectangle_color(x1-i*9*view_wview/720,y2,x1-(i*9*view_wview/720)-9*view_wview/720,y2+8*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
+                //fill
+                draw_rectangle_color(x1-(i*9*view_wview/720)-2*view_wview/720,y2+2*view_wview/720,x1-(i*9*view_wview/720)-7*view_wview/720,y2+6*view_wview/720,pnc,pnc,pnc,pnc,false);
+            }
+        }
+    }
+    if(playerNum = 1 or playerNum = 3)
+    {
+        x1 += view_xview+view_wview/2;
+        x2 += view_xview+view_wview/2;
+        x3 += view_xview+view_wview/2;
+        
+        //outline
+        draw_rectangle_color(x1-4*view_wview/720,y1-4*view_wview/1280,x3+4*view_wview/1280,y2+4*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+        draw_circle_color(x1-2*view_wview/1280,y1+17*view_wview/1280,12*view_wview/720,c_dkgray,c_dkgray,false)
+        //fill
+        draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
+        draw_circle_color(x1-2*view_wview/1280,y1+17*view_wview/1280,10*view_wview/720,pnc,c_dkgray,false)
+
+        if(numLives&lt;11)
+        {
+            for(i=numLives;i&gt;0;i--)
+            {
+                //outline
+                draw_rectangle_color(x1+i*9*view_wview/720,y2,x1+(i*9*view_wview/720)+8*view_wview/720,y2+8*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
+                //fill
+                draw_rectangle_color(x1+(i*9*view_wview/720)+2*view_wview/720,y2+2*view_wview/720,x1+(i*9*view_wview/720)+6*view_wview/720,y2+6*view_wview/720,pnc,pnc,pnc,pnc,false);
+            }
+        }
+    }
 }
 </string>
           </argument>

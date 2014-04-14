@@ -57,6 +57,7 @@ battleMap = Stage5;
 //Bot Settings on this Map Node
 numberOfBots = 1;
 DifficultyOfBots = 7;
+boss = true;
 
 botLoadOut[0] = AuraH; //Head
 botLoadOut[1] = CoeusLelantos; //Torso

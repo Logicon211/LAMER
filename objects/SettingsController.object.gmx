@@ -63,6 +63,8 @@ selectedSettingsButton = 0;
 
 globalvar selectedSettingsRow;
 selectedSettingsRow = 0;
+
+botDifficulty = 3;
 </string>
           </argument>
         </arguments>

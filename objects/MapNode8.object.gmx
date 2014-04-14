@@ -53,6 +53,7 @@ battleMap = Stage3;
 //Bot Settings on this Map Node
 numberOfBots = 2;
 DifficultyOfBots = 5;
+boss = false;
 
 botLoadOut[0] = HyperionHelios; //Head
 botLoadOut[1] = HyperionEos; //Torso

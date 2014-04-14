@@ -58,6 +58,7 @@ battleMap = Stage1;
 //Bot Settings on this Map Node
 numberOfBots = 1;
 DifficultyOfBots = 9;
+boss = true;
 
 botLoadOut[0] = CriusAstraeus; //Head
 botLoadOut[1] = CoeusLelantos; //Torso

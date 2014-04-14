@@ -55,6 +55,7 @@ battleMap = testRange;
 //Bot Settings on this Map Node
 numberOfBots = 1;
 DifficultyOfBots = 10;
+boss = true;
 
 botLoadOut[0] = CronusH; //Head
 botLoadOut[1] = CoeusLelantos; //Torso

@@ -30,6 +30,9 @@ mapController = id;
 
 globalvar MapNodeList;
 
+globalvar atBossNode;
+atBossNode = false;
+
 globalvar playerMarker;
 
 globalvar moveToNode; //globalvar of node we're moving to

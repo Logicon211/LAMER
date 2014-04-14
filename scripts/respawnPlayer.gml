@@ -19,8 +19,8 @@
  ***************************************************/
 
 pIn = argument0;
-pIn.health2 = 1000;
-pIn.playerType = 0;
+pIn.health2 = pIn.healthMax;
+pIn.playerType = pIn.playerTypeOrig;
 
 pIn.x +=1000;
 pIn.y +=1000;
