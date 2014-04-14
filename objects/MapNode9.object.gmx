@@ -50,11 +50,11 @@ numberOfBots = 3;
 DifficultyOfBots = 5;
 boss = false;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[0] = HyperionHelios; //Head
+botLoadOut[1] = HyperionEos; //Torso
 botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
 botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[4] = HyperionSelene; //Legs
 </string>
           </argument>
         </arguments>
