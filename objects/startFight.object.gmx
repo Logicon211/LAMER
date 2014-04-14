@@ -39,6 +39,8 @@ pos2=0;
 str="Fight!!";
 var cstr;
 var cstr2;
+
+instance_create(x,y,gameWin)
 </string>
           </argument>
         </arguments>
