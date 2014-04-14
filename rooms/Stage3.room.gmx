@@ -19,13 +19,13 @@ for(i=numPlayersSetting;i&gt;0;i--)
     if(j&gt;0)
     {
         show_debug_message("makeAI");
-        createPlayer((i-1),botDifficulty,1000+i*700,room_height/2-500);
+        createPlayer((i-1),botDifficulty,500+i*500,room_height/2-500);
         
     }
     else
     {
         show_debug_message("makePlayer");
-        createPlayer((i-1),0,1000+i*700,room_height/2-500);
+        createPlayer((i-1),0,500+i*500,room_height/2-500);
     }
     j--;
 }

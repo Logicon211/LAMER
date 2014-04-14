@@ -63,7 +63,7 @@ radioIndex++;
     else 
     {
         //start fight code
-        room_goto(battleMapPlayerIsAt)
+        room_goto(ControlsRoom)
         //mapController.alarm[10] = true;
     }
 

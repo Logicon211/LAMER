@@ -188,8 +188,8 @@ if(jump_check_pressed() or attack1_check_pressed())
     //Start fight on map node
 
     //DOn't have a way to do it right now, so I guess just go into the game
-    
-    room_goto(MapNodeList[playerMarker.atMapNode].battleMap);
+    battleMapPlayerIsAt = MapNodeList[playerMarker.atMapNode].battleMap
+    room_goto(ControlsRoom);
 }
 
 //BACK BUTTON CHECK
