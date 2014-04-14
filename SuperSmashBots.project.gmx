@@ -266,6 +266,8 @@
     <background>background\mapBGlol</background>
     <background>background\fireTown2</background>
     <background>background\TutorialRoomBackground</background>
+    <background>background\stadiumBackground2</background>
+    <background>background\stadiumBackground3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
