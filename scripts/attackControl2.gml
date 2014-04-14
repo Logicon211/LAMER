@@ -36,3 +36,7 @@ if(armA.number=4)
 {
     heavyGun3Script(armA,aNum)
 }
+if(armA.number=5)
+{
+    lightGun1Script(armA,aNum)
+    }

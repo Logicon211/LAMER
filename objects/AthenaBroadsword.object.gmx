@@ -28,7 +28,7 @@
             <string>name = "Athena's Broadsword";
 
 //This is the actual link to the object, so we can create it on start up.
-part = heavysword_upperrarm;
+part = heavysword_upperarm;
 
 type = 3;
 

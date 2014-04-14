@@ -82,6 +82,7 @@ else
                 derp.hspeed = 25*image_xscale;
                 derp.vspeed = 5*image_xscale;
                 derp.airborne = true;
+                audio_play_sound(light_sword_hit,1,false);
             }
         }
     }

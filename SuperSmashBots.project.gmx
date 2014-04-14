@@ -637,7 +637,7 @@
               <object>objects\sword1_trail</object>
             </objects>
             <object>objects\heavysword_01</object>
-            <object>objects\heavysword_upperrarm</object>
+            <object>objects\heavysword_upperarm</object>
           </objects>
           <objects name="Small Guns">
             <objects name="Prototype">
