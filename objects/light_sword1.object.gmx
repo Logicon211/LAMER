@@ -72,7 +72,7 @@ else
     {
         if(instance_place(x,y,player_o))
         {
-            swordHit(100, 25, 5);
+            swordHit(150, 30, -30);
             /*derp = instance_place(x,y,player_o);
             if(derp != player)
             {

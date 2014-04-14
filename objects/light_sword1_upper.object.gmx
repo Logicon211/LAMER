@@ -38,7 +38,7 @@ lower_angle = 1234;
 delete = false;
 dominance = 10;
 number = 10;
-swingSpeed = 2;
+swingSpeed = 1;
 </string>
           </argument>
         </arguments>
