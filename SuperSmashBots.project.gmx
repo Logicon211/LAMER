@@ -724,6 +724,7 @@
     </objects>
     <objects name="Start Animation Texts">
       <object>objects\startAnimationText</object>
+      <object>objects\creditsDraw</object>
     </objects>
     <object>objects\ShaderTestObject</object>
     <object>objects\ClosedDoor</object>
@@ -740,6 +741,7 @@
     <object>objects\tutorial_help_thrusters</object>
     <object>objects\tutorial_help_attack</object>
     <object>objects\tutorial_help_shield</object>
+    <object>objects\anykeySkip</object>
     <object>objects\renewRoom</object>
     <object>objects\cameraObject</object>
     <object>objects\partExplosion</object>
@@ -752,7 +754,6 @@
     <object>objects\fireTownObject</object>
     <object>objects\menuLOL</object>
     <object>objects\AnyKeyToReturnObj</object>
-    <object>objects\anykeySkip</object>
     <object>objects\PlayerIndicatorObj</object>
     <object>objects\object274</object>
     <object>objects\TutorialController</object>
@@ -786,6 +787,7 @@
     <room>rooms\Stage5_1</room>
     <room>rooms\VictoryRoom</room>
     <room>rooms\CampaignInfoRoom</room>
+    <room>rooms\creditsNew</room>
     <rooms name="Intro Animation Rooms">
       <room>rooms\IntroRoom2</room>
     </rooms>
