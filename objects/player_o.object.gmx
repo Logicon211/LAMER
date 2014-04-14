@@ -629,11 +629,11 @@ deadCounter +=1;
   Fix Death
  ***************************************************/
  
- if(deadCounter&gt;0)
- {
-    deadCounter = 0;
-    image_angle = 0;
- }
+if(deadCounter&gt;0)
+{
+   deadCounter = 0;
+   image_angle = 0;
+}
  
 /***************************************************
   END Fix Death
@@ -915,49 +915,50 @@ if(attack2)
 /***************************************************
   Acceleration
  ***************************************************/
-
-if(state = string('attack'))
+weightVar = weight/3000;
+/*if(state = string('attack'))
 {
     if(target_hspeed=0)
     {
-        if(abs(hspeed) &lt;= 2)
+        if(abs(hspeed) &lt;= 2*weightVar)
         {
             hspeed = 0;
         }
         else
         {
-            hspeed = hspeed/8;
+            hspeed = hspeed/8*weightVar;
         }
         core.x = x;
         
     }
 }
-else if(target_hspeed=0)
+else*/ 
+if(target_hspeed=0)
 {
-    if(abs(hspeed)&lt;=2)
+    if(abs(hspeed)&lt;=2*weightVar)
     {
         hspeed = 0;
     }
     else if(hspeed&gt;0)
     {
-        if(airborne){ hspeed -= 2; }
-        else{ hspeed -= 4; }
+        if(airborne){ hspeed -= 2*weightVar; }
+        else{ hspeed -= 4*weightVar; }
     }
     else if(hspeed&lt;0)
     {
-        if(airborne){ hspeed += 2; }
-        else{ hspeed += 4; }
+        if(airborne){ hspeed += 2*weightVar; }
+        else{ hspeed += 4*weightVar; }
     }    
 }
-else if(target_hspeed&gt;hspeed)
+else if(target_hspeed&gt;hspeed*weightVar)
 {
-    if(airborne){ hspeed += 2; }
-    else{ hspeed += 4; }
+    if(airborne){ hspeed += 2*1/weightVar; }
+    else{ hspeed += 4*1/weightVar; }
 }
-else if(target_hspeed&lt;hspeed)
+else if(target_hspeed&lt;hspeed*weightVar)
 {
-    if(airborne){ hspeed -= 2; }
-    else{ hspeed -= 4; }
+    if(airborne){ hspeed -= 2*1/weightVar; }
+    else{ hspeed -= 4*1/weightVar; }
 }
 
 
@@ -988,7 +989,7 @@ if(instance_place(x,y+1,land_parent))
 else
 {
     airborne = true;
-    vspeed += 2; //*weight/1000
+    vspeed += 2*weightVar; //*weight/1000
 }
 if(vspeed &lt; -32)
 {

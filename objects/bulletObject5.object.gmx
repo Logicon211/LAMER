@@ -64,8 +64,8 @@ inactive = true;
 if(instance_position(x,y,player_o))
 {
     target = instance_position(x,y,player_o)
-    target.health2 -= 100;
-    target.hspeed += hspeed/2;
+    target.health2 -= 220;
+    target.hspeed += hspeed;
     audio_play_sound(heavy_lazer_hit2,1,false);
     instance_destroy();
 }

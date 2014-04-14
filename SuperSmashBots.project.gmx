@@ -381,6 +381,8 @@
     </scripts>
     <script>scripts\script77.gml</script>
     <script>scripts\delete_this_script.gml</script>
+    <script>scripts\swingSound.gml</script>
+    <script>scripts\swordHit.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -635,7 +637,7 @@
               <object>objects\sword1_trail</object>
             </objects>
             <object>objects\heavysword_01</object>
-            <object>objects\heavysword_upperrarm</object>
+            <object>objects\heavysword_upperarm</object>
           </objects>
           <objects name="Small Guns">
             <objects name="Prototype">
@@ -755,6 +757,7 @@
     <object>objects\object274</object>
     <object>objects\TutorialController</object>
     <object>objects\OuterRoomBlocker</object>
+    <object>objects\gameWin</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
