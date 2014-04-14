@@ -31,7 +31,7 @@ player = instance_nearest(x,y,player_o);
 playerNum = player.playerNum;
 oldX = y;
 oldY = x;
-swingspeed = 0.8;
+swingspeed = 0.7;
 attacking = false;
 </string>
           </argument>
@@ -79,6 +79,7 @@ else
                 derp.hspeed = 25*image_xscale;
                 derp.vspeed = 5*image_xscale;
                 derp.airborne = true;
+                audio_play_sound(Melee_impact_hit,1,false);
             }
         }
     }

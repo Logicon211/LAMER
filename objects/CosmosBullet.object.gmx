@@ -68,8 +68,8 @@ player = target;
 if(instance_position(x,y,player_o))
 {
     target = instance_position(x,y,player_o)
-    target.health2 -= 700;
-    target.hspeed += hspeed/2;
+    target.health2 -= 800;
+    target.hspeed += hspeed*1.25;
     audio_play_sound(cannon_hit,1,false);
     instance_destroy();
 }
