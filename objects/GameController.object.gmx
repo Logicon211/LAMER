@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar mapController;
+            <string>globalvar singlePlayer;
+singlePlayer = 0
+
+globalvar mapController;
 mapController = id;
 
 globalvar MapNodeList;

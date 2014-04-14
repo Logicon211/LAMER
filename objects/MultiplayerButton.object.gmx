@@ -29,6 +29,8 @@
 
 //Multiplayer doesn't do anything yet
 room_goto(SettingsRoom);
+
+singlePlayer = 0;
 </string>
           </argument>
         </arguments>

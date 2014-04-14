@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>activeCounter = 0;
+endWin = 1;
 </string>
           </argument>
         </arguments>
@@ -50,15 +51,42 @@
             <kind>1</kind>
             <string>if(activeCounter &gt; 100)
 {   //gotoVictoryRoom
+    if(singlePlayer)
+    {
+        room_goto(OverMap);
+    }
+    else
+    {
+        gotoVictoryRoom(winnerBot.playerNum)
+    }
 }
 else if(activeCounter &gt; 30)
 {   if(instance_number(player_o)&lt;=1)
     {
-        derpyDoo = instance_nearest(x,y,player_o)
-        instance_create(x,y,startWin)
+        winnerBot = instance_nearest(x,y,player_o)
+        if(endWin)
+        {
+            endWin = !endWin
+            instance_create(x,y,startWin)
+        }
+        activeCounter++;
+    }
+    numPlayers = 0;
+    for (i = 0; i &lt; instance_number(player_o); i += 1)
+    {
+        derp = instance_find(player_o,i);
+        if(derp.playerType&lt;3)
+        {   numPlayers++;
+        }
+    }
+    if(numPlayers &lt; 1)
+    {   room_goto(OverMap);
     }
 }
-activeCounter++;
+else
+{
+    activeCounter++;
+}
 </string>
           </argument>
         </arguments>

@@ -70,7 +70,7 @@ else
     oldY = y+vspeed;
     if(attacking)
     {
-        swordHit(100,25,5);
+        swordHit(130,5,5);
        /* if(instance_place(x,y,player_o))
         {
             derp = instance_place(x,y,player_o);

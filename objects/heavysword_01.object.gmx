@@ -73,7 +73,7 @@ else
     oldY = y+vspeed;
     if(attacking)
     {
-        swordHit(100,25,5);
+        swordHit(300,15,5);
         
         /*
         if(instance_place(x,y,player_o))
