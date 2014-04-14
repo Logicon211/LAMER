@@ -57,6 +57,7 @@ endWin = 1;
     }
     else
     {
+        winnerBot = instance_nearest(x,y,player_o)
         gotoVictoryRoom(winnerBot.playerNum)
     }
 }
