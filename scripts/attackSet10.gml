@@ -487,6 +487,7 @@ else if(attackVar = 2)
     else if(i>31*spd and i<40*spd)
     {
         larmA.attacking = true;
+        if(i<=32*spd){swingSound();}
         //raise sword
         //position
         sVar = 6*spd;
@@ -512,6 +513,7 @@ else if(attackVar = 2)
     {
         larmA.attacking = true;
         //swing sword
+        if(i<=41*spd){swingSound();}
         //position
         sVar = 3*spd;
         yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);
@@ -562,6 +564,7 @@ else if(attackVar = 2)
     {
         larmA.attacking = true;
         //swing sword
+        if(i<=49*spd){swingSound();}
         //position
         sVar = 3*spd;
         yEase10(player.y-player.heightAdjust+70*image_yscale,sVar);

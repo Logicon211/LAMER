@@ -107,7 +107,7 @@ cstr[0] = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y-=0.33;
+            <string>y-=0.5;
 
 pos+=0.5;
 
@@ -135,7 +135,7 @@ if(image_alpha&lt;=-1)
 }
 
 draw_set_alpha(alphaVarBlack);
-draw_rectangle(0, 0, room_width, room_height, false);
+//draw_rectangle(0, 0, room_width, room_height, false);
 draw_set_alpha(1);
 
 
