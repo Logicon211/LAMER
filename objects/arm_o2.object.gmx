@@ -75,6 +75,7 @@ else
             derp = instance_place(x,y,player_o);
             if(derp != player)
             {
+                //play sound
                 derp.health2 -= 100;
                 derp.hspeed = 25*image_xscale;
                 derp.vspeed = 5*image_xscale;

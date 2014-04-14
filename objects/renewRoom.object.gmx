@@ -52,19 +52,24 @@ pIn=0;
             <string>derp += 1;
 
 if(derp = 100)
-{   respawnPlayer(pIn);
-    //newGuy.x = room_width/2;
-    //newGuy.y = 400;
-    pIn.health2 = 1000;
-    pIn.x = room_width/2
-    pIn.y = 400;
-    //refreshPlayer(pIn);
+{   
+    pIn.numLives -=1;
+    if(pIn.numLives&gt;0)
+    {
+        respawnPlayer(pIn);
+        //newGuy.x = room_width/2;
+        //newGuy.y = 400;
+        pIn.health2 = pIn.healthMax;
+        pIn.x = room_width/2
+        pIn.y = 400;
+    }
+    else
+    {
+        destroyPlayer(pIn);
+    }
     instance_destroy();
-    /***************************************************
-#################################################################
-      MINUS ONE LIFE &lt;&lt;HERE&lt;&lt;
-#################################################################
-     ***************************************************/
+    
+    
 }
 </string>
           </argument>

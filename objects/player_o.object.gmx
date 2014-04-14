@@ -639,6 +639,7 @@ deadCounter +=1;
  ***************************************************/
 if(health2 &lt;= 0 or y&gt;=room_height-200)
 {
+    audio_play_sound(robot_explode,1,false)
     if(health2&lt;0){health2=0}
     splodeColor = choose(c_red,c_yellow,c_orange)
     effect_create_above(ef_cloud,x,y,2,c_white)
@@ -1019,11 +1020,26 @@ playerCollision();
   Image Transform
  ***************************************************/
 
+if(!boosting)
+{
+    if(controlSet[6])
+    {
+        image_xscale = -1;
+    }
+    if(controlSet[7])
+    {
+        image_xscale = 1;
+    }
+}
+
+/*
 if(hspeed!=0)
 {
-    image_xscale = hspeed/abs(hspeed);
+    //image_xscale = hspeed/abs(hspeed);
+    
     if(!boosting){core.image_xscale = image_xscale;}
 }
+*/
 
 /***************************************************
   END Image Transform
@@ -1351,10 +1367,11 @@ if(playerType != 1) //not display mode
 
     pnc = playerNumColor
     pncDark = merge_color(pnc,c_black,0.5)
+    pncDark2 = merge_color(pnc,c_black,0.4)
     //outline
-//    draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,false)
+    //draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,false)
     //fill
-//    draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
+    //draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
 
     if(playerNum = 0 or playerNum = 2)
     {
@@ -1366,9 +1383,21 @@ if(playerType != 1) //not display mode
         x3 += view_xview+view_wview/2;
         
         //outline
-        draw_rectangle_color(x1,y1,x3,y2,c_dkgray,c_gray,c_gray,c_dkgray,false)
+        draw_rectangle_color(x1+4*view_wview/720,y1-4*view_wview/1280,x3-4*view_wview/1280,y2+4*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+        draw_circle_color(x1+2*view_wview/1280,y1+17*view_wview/1280,12*view_wview/720,c_dkgray,c_dkgray,false)
         //fill
-        draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
+        draw_rectangle_color(x1,y1,x2,y2,pnc,pncDark,pncDark,pnc,false)
+        draw_circle_color(x1+2*view_wview/1280,y1+17*view_wview/1280,10*view_wview/720,pnc,c_dkgray,false)
+        if(numLives&lt;11)
+        {
+            for(i=numLives;i&gt;0;i--)
+            {
+                //outline
+                draw_rectangle_color(x1-i*9*view_wview/720,y2,x1-(i*9*view_wview/720)-9*view_wview/720,y2+8*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
+                //fill
+                draw_rectangle_color(x1-(i*9*view_wview/720)-2*view_wview/720,y2+2*view_wview/720,x1-(i*9*view_wview/720)-7*view_wview/720,y2+6*view_wview/720,pnc,pnc,pnc,pnc,false);
+            }
+        }
     }
     if(playerNum = 1 or playerNum = 3)
     {
@@ -1377,9 +1406,22 @@ if(playerType != 1) //not display mode
         x3 += view_xview+view_wview/2;
         
         //outline
-        draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,false)
+        draw_rectangle_color(x1-4*view_wview/720,y1-4*view_wview/1280,x3+4*view_wview/1280,y2+4*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+        draw_circle_color(x1-2*view_wview/1280,y1+17*view_wview/1280,12*view_wview/720,c_dkgray,c_dkgray,false)
         //fill
         draw_rectangle_color(x1,y1,x2,y2,pncDark,pnc,pnc,pncDark,false)
+        draw_circle_color(x1-2*view_wview/1280,y1+17*view_wview/1280,10*view_wview/720,pnc,c_dkgray,false)
+
+        if(numLives&lt;11)
+        {
+            for(i=numLives;i&gt;0;i--)
+            {
+                //outline
+                draw_rectangle_color(x1+i*9*view_wview/720,y2,x1+(i*9*view_wview/720)+8*view_wview/720,y2+8*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
+                //fill
+                draw_rectangle_color(x1+(i*9*view_wview/720)+2*view_wview/720,y2+2*view_wview/720,x1+(i*9*view_wview/720)+6*view_wview/720,y2+6*view_wview/720,pnc,pnc,pnc,pnc,false);
+            }
+        }
     }
 }
 </string>
