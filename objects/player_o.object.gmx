@@ -259,6 +259,7 @@ if(keyboard_check(ord('K')))
 }
 
 healthMax = playerStats[playerNum,0]
+weight = playerStats[playerNum,1]
 if(health2&gt;healthMax)
 {   health2 = healthMax
 }
@@ -1022,13 +1023,15 @@ playerCollision();
 
 if(!boosting)
 {
-    if(controlSet[6])
-    {
-        image_xscale = -1;
-    }
     if(controlSet[7])
     {
         image_xscale = 1;
+        core.image_xscale = 1;
+    }
+    if(controlSet[6])
+    {
+        image_xscale = -1;
+        core.image_xscale = -1;
     }
 }
 
