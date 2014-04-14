@@ -237,7 +237,7 @@ if(jump_check_pressed() or attack1_check_pressed())
         nodePlayerIsAt = playerMarker.atMapNode;
         battleMapPlayerIsAt = MapNodeList[playerMarker.atMapNode].battleMap;
         unlockNodes(MapNodeList[nodePlayerIsAt]);
-        room_goto(battleMapPlayerIsAt)
+        room_goto(ControlsRoom)
     }
 }
 

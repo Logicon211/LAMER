@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(MapNodeList[playerMarker.atMapNode].mapPreview, 0, 0, 310);
+            <string>draw_sprite(MapNodeList[playerMarker.atMapNode].mapPreview, 0, 0, 280);
 </string>
           </argument>
         </arguments>

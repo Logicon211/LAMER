@@ -261,6 +261,7 @@
     <background>background\fireBG</background>
     <background>background\mapBGlol</background>
     <background>background\fireTown2</background>
+    <background>background\TutorialRoomBackground</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -744,6 +745,8 @@
     <object>objects\AnyKeyToReturnObj</object>
     <object>objects\anykeySkip</object>
     <object>objects\PlayerIndicatorObj</object>
+    <object>objects\object274</object>
+    <object>objects\TutorialController</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
@@ -753,6 +756,7 @@
     <room>rooms\testRange</room>
     <room>rooms\Tutorial_room</room>
     <room>rooms\RadioRoom</room>
+    <room>rooms\ControlsRoom</room>
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
