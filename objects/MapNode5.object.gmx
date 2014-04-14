@@ -59,11 +59,11 @@ numberOfBots = 1;
 DifficultyOfBots = 7;
 boss = true;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
-botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
-botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[0] = AuraH; //Head
+botLoadOut[1] = CoeusLelantos; //Torso
+botLoadOut[2] = ChronosFist; //Left Arm
+botLoadOut[3] = VulcanPistol; //Right Arm
+botLoadOut[4] = AuraL; //Legs
 </string>
           </argument>
         </arguments>
