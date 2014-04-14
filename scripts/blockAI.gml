@@ -9,39 +9,30 @@ for(num = 0; num < numBullets; num++)
 if(numBullets > 0)
 {
     currentBullet = bullet[0];
-}
-else
-{
-    currentBullet = -1;
-}
-if(currentBullet > -1)
-{
-for(num = 0; num < numBullets; num++)
-{
-    if(bullet[num].origPlayer != id)
+    for(num = 1; num < numBullets; num++)
     {
-        if(bullet[num].y < y + 100 && bullet[num].y > y - 100)
+        if(bullet[num].origPlayer != id)
         {
-            if(bullet[num].x < x and bullet[num].hspeed > 0)
+            if(bullet[num].y < y + 100 && bullet[num].y > y - 100)
             {
-                if(abs(bullet[num].x - x) < abs(currentBullet.x - x))
+                if(bullet[num].x < x and bullet[num].hspeed > 0)
                 {
-                    currentBullet = bullet[num];
+                    if(abs(bullet[num].x - x) < abs(currentBullet.x - x))
+                    {
+                        currentBullet = bullet[num];
+                    }
                 }
-            }
-            else if(bullet[num].x > x and bullet[num].hspeed < 0)
-            {
-                if(abs(bullet[num].x - x) < abs(currentBullet.x - x))
+                else if(bullet[num].x > x and bullet[num].hspeed < 0)
                 {
-                    currentBullet = bullet[num];
+                    if(abs(bullet[num].x - x) < abs(currentBullet.x - x))
+                    {
+                        currentBullet = bullet[num];
+                    }
                 }
             }
         }
     }
-}
-}
-if(currentBullet != -1)
-{
+    
     if(currentBullet.origPlayer != id)
     {
         if (distance_to_object(currentBullet) < 500)

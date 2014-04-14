@@ -72,7 +72,15 @@ str[0]="Credits
 #
 #All other sounds provided by Alex Walsh from his personal collection
 #
-#Intro Text: Caitlin Hayes"
+#Intro Text: Caitlin Hayes
+#
+#Tools Used
+#
+#GameMaker: Studio Professional
+#Audacity
+#Paint.NET
+#Adobe Photoshop"
+
 //str[1]="##University of New Brunswick   ";
 //str[2]="###Department of Media Arts and Cultures               ";
 //str[3]="#####and   ";
