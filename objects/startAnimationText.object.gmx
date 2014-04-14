@@ -65,7 +65,8 @@ cstr[5] = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pos+=0.34;
+            <string>draw_set_color(c_white);
+pos+=0.34;
 
 alphaVar = 0;
 for(i=0; i&lt;=5; i++)
@@ -108,11 +109,9 @@ if(image_alpha&lt;=-1)
 }
 
 draw_set_alpha(alphaVarBlack);
-draw_rectangle(0, 0, room_width, room_height, false);
+//draw_rectangle(0, 0, room_width, room_height, false);
 draw_set_alpha(1);
-
-
-
+draw_set_color(c_black);
 </string>
           </argument>
         </arguments>
