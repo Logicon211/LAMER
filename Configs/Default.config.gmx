@@ -61,7 +61,7 @@
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
     <option_android_pocketchange_test_enable>0</option_android_pocketchange_test_enable>
-    <option_android_push_enable>false</option_android_push_enable>
+    <option_android_push_enable>0</option_android_push_enable>
     <option_android_push_id></option_android_push_id>
     <option_android_scale>-1</option_android_scale>
     <option_android_set_device_id></option_android_set_device_id>
@@ -82,7 +82,7 @@
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
-    <option_fullscreen>False</option_fullscreen>
+    <option_fullscreen>True</option_fullscreen>
     <option_gameguid>{A6EC5109-6E7E-4D78-A85A-1A69C5651473}</option_gameguid>
     <option_gameid>366875593</option_gameid>
     <option_haptic_effects>0</option_haptic_effects>
@@ -157,7 +157,7 @@
     <option_ios_orient_portrait>-1</option_ios_orient_portrait>
     <option_ios_orient_portrait_upside_down>-1</option_ios_orient_portrait_upside_down>
     <option_ios_provisioning>&lt; Press refresh to fetch provisioning list from Mac&gt;</option_ios_provisioning>
-    <option_ios_push_enable>false</option_ios_push_enable>
+    <option_ios_push_enable>0</option_ios_push_enable>
     <option_ios_scale>-1</option_ios_scale>
     <option_ios_set_device_id></option_ios_set_device_id>
     <option_ios_splash_png>Configs\Default\ios\splash.png</option_ios_splash_png>
@@ -215,7 +215,7 @@
     <option_scaleprogress>true</option_scaleprogress>
     <option_screenkey>True</option_screenkey>
     <option_screenshotkey>true</option_screenshotkey>
-    <option_shortcircuit>true</option_shortcircuit>
+    <option_shortcircuit>True</option_shortcircuit>
     <option_showcursor>True</option_showcursor>
     <option_showprogress>1</option_showprogress>
     <option_sizeable>False</option_sizeable>
@@ -237,13 +237,13 @@
     <option_tizen_google_tracking_id></option_tizen_google_tracking_id>
     <option_tizen_iap_groupID></option_tizen_iap_groupID>
     <option_tizen_icon>Configs\Default\tizen\icon117.png</option_tizen_icon>
-    <option_tizen_interpolate>true</option_tizen_interpolate>
+    <option_tizen_interpolate>-1</option_tizen_interpolate>
     <option_tizen_major_version>1</option_tizen_major_version>
     <option_tizen_minor_version>0</option_tizen_minor_version>
     <option_tizen_network_urls></option_tizen_network_urls>
     <option_tizen_orientation>0</option_tizen_orientation>
-    <option_tizen_push_enable>false</option_tizen_push_enable>
-    <option_tizen_scaling>1</option_tizen_scaling>
+    <option_tizen_push_enable>0</option_tizen_push_enable>
+    <option_tizen_scaling>0</option_tizen_scaling>
     <option_tizen_splash_png>Configs\Default\tizen\splash.png</option_tizen_splash_png>
     <option_tizen_texture_page>1024</option_tizen_texture_page>
     <option_tizen_usesplash>False</option_tizen_usesplash>
@@ -319,7 +319,7 @@
     <option_winphone_advertising_enable>0</option_winphone_advertising_enable>
     <option_winphone_advertising_key></option_winphone_advertising_key>
     <option_winphone_advertising_testing_enable>0</option_winphone_advertising_testing_enable>
-    <option_winphone_advertising_type></option_winphone_advertising_type>
+    <option_winphone_advertising_type>MS Advertising</option_winphone_advertising_type>
     <option_winphone_author>You</option_winphone_author>
     <option_winphone_build_version>0</option_winphone_build_version>
     <option_winphone_cycle_small_image>Configs\Default\WinPhone\CycleSmall.png</option_winphone_cycle_small_image>
@@ -355,7 +355,7 @@
     <option_winphone_iconic_wide_content_2></option_winphone_iconic_wide_content_2>
     <option_winphone_iconic_wide_content_3></option_winphone_iconic_wide_content_3>
     <option_winphone_iconic_wide_image>Configs\Default\WinPhone\IconicWide.png</option_winphone_iconic_wide_image>
-    <option_winphone_interpolate>true</option_winphone_interpolate>
+    <option_winphone_interpolate>-1</option_winphone_interpolate>
     <option_winphone_landscape_allowed>-1</option_winphone_landscape_allowed>
     <option_winphone_landscape_flipped_allowed>-1</option_winphone_landscape_flipped_allowed>
     <option_winphone_major_version>1</option_winphone_major_version>
