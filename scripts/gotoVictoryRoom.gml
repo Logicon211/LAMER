@@ -1,4 +1,4 @@
 var player = argument0; //0 indexed player number
 
-playerWon = 0;
+playerWon = player;
 room_goto(VictoryRoom);

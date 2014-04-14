@@ -1353,8 +1353,8 @@ else if(playerType=0)
 if(playerType != 1) //not display mode
 {
     x1 = 40*view_wview/1280
-    x2 = 40*view_wview/1280+(health2*view_wview/1280)//fill
-    x3 = 40*view_wview/1280+(healthMax*view_wview/1280)//outline
+    x2 = 40*view_wview/1280+(health2/2*view_wview/1280)//fill
+    x3 = 40*view_wview/1280+(healthMax/2*view_wview/1280)//outline
     if(playerNum &lt; 2)
     {
         y1 = view_yview+10*view_wview/720+(40*(view_wview/720)*0)
