@@ -77,6 +77,7 @@ else
         {
             if(instance_place(x,y,instance_find(player_o,i)))
             {
+<<<<<<< HEAD
                 derp = instance_find(player_o,i);
                 if(derp != player)
                 {
@@ -84,8 +85,14 @@ else
                     derp.hspeed = 25*image_xscale;
                     derp.vspeed = 5*image_xscale;
                     derp.airborne = true;
-                audio_play_sound(Melee_impact_hit,1,false);
                 }
+=======
+                derp.health2 -= 100;
+                derp.hspeed = 25*image_xscale;
+                derp.vspeed = 5*image_xscale;
+                derp.airborne = true;
+                audio_play_sound(Melee_impact_hit,1,false);
+>>>>>>> 4d9dd01538c1dfad51c4eda6d64e636eb48f161b
             }
         }
          ***************************************************/

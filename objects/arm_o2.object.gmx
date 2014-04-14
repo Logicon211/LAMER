@@ -31,8 +31,10 @@ player = instance_nearest(x,y,player_o);
 playerNum = player.playerNum;
 oldX = y;
 oldY = x;
-swingspeed = .6;
+swingspeed = 0.5;
 attacking = false;
+
+swingSpeed = 0.25;
 </string>
           </argument>
         </arguments>
@@ -70,7 +72,8 @@ else
     oldY = y+vspeed;
     if(attacking)
     {
-        if(instance_place(x,y,player_o))
+        swordHit(100, 25, 5);
+        /*if(instance_place(x,y,player_o))
         {
             derp = instance_place(x,y,player_o);
             if(derp != player)
@@ -82,7 +85,7 @@ else
                 derp.airborne = true;
                 audio_play_sound(light_sword_hit,1,false);
             }
-        }
+        }*/
     }
 }
 </string>
