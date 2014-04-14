@@ -30,6 +30,9 @@
     variable = instance_place(x, y, player_o)
     variable.x = room_width/2;
     variable.y = room_height/2;
+    vCore = variable.core;
+    vCore.x = variable.x;
+    vCore.y = variable.y;
 }
 </string>
           </argument>
@@ -48,5 +51,8 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>64,64</point>
+  </PhysicsShapePoints>
 </object>
