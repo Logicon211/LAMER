@@ -28,7 +28,7 @@
             <string>name = "Phoebe Lelantos";
 
 //This is the actual link to the object, so we can create it on start up.
-part = head_o;
+part = heavy_head2;
 
 type = 0;
 

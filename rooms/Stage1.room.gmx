@@ -20,7 +20,6 @@ for(i=numPlayersSetting;i&gt;0;i--)
     {
         show_debug_message("makeAI");
         createPlayer((i-1),botDifficulty,1000+i*700,room_height/2-500);
-        
     }
     else
     {

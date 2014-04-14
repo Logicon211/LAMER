@@ -28,7 +28,7 @@
             <string>name = "Aether's Foil";
 
 //This is the actual link to the object, so we can create it on start up.
-part = arm_o;
+part = light_sword2_upper;
 
 type = 3;
 

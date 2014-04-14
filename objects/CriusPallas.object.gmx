@@ -28,7 +28,7 @@
             <string>name = "Crius Pallas";
 
 //This is the actual link to the object, so we can create it on start up.
-part = core_o;
+part = light_core2;
 
 type = 1;
 

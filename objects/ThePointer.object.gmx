@@ -28,7 +28,7 @@
             <string>name = "The Pointer";
 
 //This is the actual link to the object, so we can create it on start up.
-part = heavysword_upperrarm;
+part = light_sword1_upper;
 
 type = 2;
 

@@ -16,3 +16,23 @@ if(armA.number=0)
 {
     attackSet0(armA,aNum)
 }
+
+if(armA.number=1)
+{
+    cannonScript(armA,aNum)
+}
+
+if(armA.number=2)
+{
+    lightGun2script(armA,aNum)
+}
+
+if(armA.number=3)
+{
+    heavyGun2script(armA,aNum)
+}
+
+if(armA.number=4)
+{
+    heavyGun3Script(armA,aNum)
+}
