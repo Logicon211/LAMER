@@ -439,7 +439,7 @@ else if(attackVar = 2)
     else if(i*0.75<30)
     {
         //OPEN TO SWING SWORD 2
-        effect_create_above(ef_flare,x,y-50-i,40,make_color_hsv(70,255,255));
+        //effect_create_above(ef_flare,x,y-50-i,40,make_color_hsv(70,255,255));
         if(attack1_check_pressed())
         {   armA.animationCounter = 32;
             i=armA.animationCounter;

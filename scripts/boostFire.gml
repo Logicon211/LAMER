@@ -5,19 +5,31 @@ y2 = argument3;
 scale = argument4;
 color = argument5;
 
-pSys = part_system_create();
-pSys2 = part_system_create();
+//if(!part_system_exists(pSys))
+//{
+//    pSys = part_system_create();
+//}
+//if(!part_system_exists(pSys2))
+//{
+//    pSys2 = part_system_create();
+//}
 part_system_depth(pSys,-1000)
 part_system_depth(pSys2,-1100)
 
-ef_boost = part_type_create();
+//if(!part_type_exists(ef_boost))
+//{
+//    ef_boost = part_type_create();
+//}
 part_type_shape(ef_boost,pt_shape_sphere);
 part_type_size(ef_boost,scale/3,scale/2,0,1);
 part_type_color1(ef_boost,color);
 part_type_life(ef_boost,5,5);
 part_type_alpha2(ef_boost,0.5,0);
 
-ef_boost2 = part_type_create();
+//if(!part_type_exists(ef_boost))
+//{
+//    ef_boost2 = part_type_create();
+//}
 part_type_shape(ef_boost2,pt_shape_flare);
 part_type_size(ef_boost2,scale/6,scale/4,0,1);
 part_type_color1(ef_boost2,c_white);

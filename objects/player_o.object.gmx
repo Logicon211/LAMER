@@ -308,7 +308,6 @@ if(boost_check(playerNum))
             controlSet[2] = 1;
         }
     }
-    
 }
 else
 {
@@ -719,7 +718,6 @@ else if(state=string('slideR'))
     //x += 300*boost_power/weight;
     hspeed = 50;
     state=string('tonorm'){}
-    
 }
 else
 {
@@ -756,7 +754,7 @@ else
     //shield released
     else if(!controlSet[3] and controlSetPrv[3])
     {
-        effect_create_above(ef_flare,x,y,100,c_white)
+        //effect_create_above(ef_flare,x,y,100,c_white)
         core.gun_aim = 0;
         with(shield_obj){instance_destroy()}
         state = string('tonorm');
