@@ -133,8 +133,8 @@ for(i=10;i&gt;0;i--)
 oldX = x+hspeed;
 oldY = y+vspeed;
 
-if(dead or wasDead[10]){effect_create_above(ef_flare,(room_width/2)-200+player.playerNum*100,room_height/2,200,c_red)}
-else{effect_create_above(ef_flare,(room_width/2)-200+player.playerNum*100,room_height/2,200,c_green)}
+//if(dead or wasDead[10]){effect_create_above(ef_flare,(room_width/2)-200+player.playerNum*100,room_height/2,200,c_red)}
+//else{effect_create_above(ef_flare,(room_width/2)-200+player.playerNum*100,room_height/2,200,c_green)}
 
 </string>
           </argument>
