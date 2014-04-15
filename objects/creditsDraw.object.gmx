@@ -31,61 +31,61 @@ pos2=0;
 alphaVarBlack = 0;
 
 str[0]="Credits
-#
-#Staff
-#
-#Producer - Mitchell MacLean
-#Designer - Raphael Beaulieu
-#Programmers - Logan Marks, Elliot Coy, Mitchell MacLean, Raphael Beaulieu
-#Artist - Alex Walsh and Elliot Coy
-#
-#Game Art
-#
-#World Map - Mudrpudr (from their Uplink HD mod)
-#All other art created in-house by members of the team
-#
-#Game Music and Sounds
-#
-#Original Compositions:
-#Battle Music - Composed and Performed by Nelson Coy
-#
-#From Newgrounds.com (user submitted content):
-#Main Menu Music - Universe Anthem by Terranation
-#Single Player Menu Music - Universe Anthem (R.B.E.) by Terranation
-#Multiplayer Menu Music - Evermore by Bacon92
-#
-#From Freesound.org (user submitted content):
-#Shield Sounds - Tuned Hyper-Drive Loop by JimiMod
-#Booster Sounds - Rocket Boost Engine Loop by qubodup
-#Heavy Gunshot Sounds -  AK47 shot by pepv
-#Melee Attack Sounds - Sword Swipe8 and Sword Swipe3 by LukeSharples
-#
-#From Flashkit.com (user submitted content):
-#Menu Selection Sounds - Electronic Beep 2 by www.beatsuite.com (www.beatsuit.com) and Blip_1 by Surround Yokota
-#Titan Moving Sounds - metalic bang by Dave Girtsman and slam by sonic-options (www.sonic-options.com)
-#
-#From Grsites.com (large sound archive):
-#Light Laser Shot Sounds
-#Heavy Laser Shot Sounds
-#Light Gunshot Sounds
-#Heavy Gunshot Sounds
-#
-#All other sounds provided by Alex Walsh from his personal collection
-#
-#Intro Text: Caitlin Hayes
-#
-#Tools Used
-#
-#GameMaker: Studio Professional
-#Audacity
-#Paint.NET
-#Adobe Photoshop"
 
-//str[1]="##University of New Brunswick   ";
-//str[2]="###Department of Media Arts and Cultures               ";
-//str[3]="#####and   ";
-//str[4]="######Professor Jeff Mundee's  ";
-//str[5]="#######Game Design II            ";
+Staff
+
+Producer - Mitchell MacLean
+Designer - Raphael Beaulieu
+Programmers - Logan Marks, Elliot Coy, Mitchell MacLean, Raphael Beaulieu
+Artist - Alex Walsh and Elliot Coy
+
+Game Art
+
+World Map - Mudrpudr (from their Uplink HD mod)
+All other art created in-house by members of the team
+
+Game Music and Sounds
+
+Original Compositions:
+Battle Music - Composed and Performed by Nelson Coy
+
+From Newgrounds.com (user submitted content):
+Main Menu Music - Universe Anthem by Terranation
+Single Player Menu Music - Universe Anthem (R.B.E.) by Terranation
+Multiplayer Menu Music - Evermore by Bacon92
+
+From Freesound.org (user submitted content):
+Shield Sounds - Tuned Hyper-Drive Loop by JimiMod
+Booster Sounds - Rocket Boost Engine Loop by qubodup
+Heavy Gunshot Sounds -  AK47 shot by pepv
+Melee Attack Sounds - Sword Swipe8 and Sword Swipe3 by LukeSharples
+
+From Flashkit.com (user submitted content):
+Menu Selection Sounds - Electronic Beep 2 by www.beatsuite.com (www.beatsuit.com) and Blip_1 by Surround Yokota
+Titan Moving Sounds - metalic bang by Dave Girtsman and slam by sonic-options (www.sonic-options.com)
+
+From Grsites.com (large sound archive):
+Light Laser Shot Sounds
+Heavy Laser Shot Sounds
+Light Gunshot Sounds
+Heavy Gunshot Sounds
+
+All other sounds provided by Alex Walsh from his personal collection
+
+Intro Text: Caitlin Hayes
+
+Tools Used
+
+GameMaker: Studio Professional
+Audacity
+Paint.NET
+Adobe Photoshop"
+
+//str[1]="University of New Brunswick   ";
+//str[2]="Department of Media Arts and Cultures               ";
+//str[3]="and   ";
+//str[4]="Professor Jeff Mundee's  ";
+//str[5]="Game Design II            ";
 
 cstr[0] = "";
 //cstr[1] = "";
@@ -117,7 +117,7 @@ cstr[0] = "";
             <kind>1</kind>
             <string>y-=0.5;
 
-pos+=0.5;
+pos+=0.3;
 
 alphaVar = 0;
 alphaVar += string_length(str[0]) + 10;

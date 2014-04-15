@@ -30,12 +30,11 @@ pos2=0;
 
 alphaVarBlack = 0;
 
-str[0]="#In Association With     "
-str[1]="##University of New Brunswick   ";
-str[2]="###Department of Media Arts and Cultures               ";
-str[3]="#####   ";
-str[4]="######Logan Marks,      #Alex Walsh,     #Mitchell MacLean,     #Elliot Coy,     #Raphael Beaulieu,     
-Presents...";
+str[0]="#We will rob…"
+str[1]="##          …your freedom!";
+str[2]="###";
+str[3]="#####";
+str[4]="######";
 
 cstr[0] = "";
 cstr[1] = "";
@@ -65,7 +64,10 @@ cstr[5] = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_white);
+            <string>x+=0.1;
+y+=0.05;
+
+draw_set_color(c_white);
 pos+=0.5;
 
 alphaVar = 0;

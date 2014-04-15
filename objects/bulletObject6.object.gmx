@@ -30,7 +30,7 @@ target = instance_nearest(x,y,player_o);
 move_towards_point(target.x,target.y,0);
 player = target;
 inactive = true;
-
+pnc = player.pnc;
 </string>
           </argument>
         </arguments>
@@ -107,7 +107,8 @@ else if(instance_position(x,y,land_parent))
           <argument>
             <kind>1</kind>
             <string>draw_set_blend_mode(bm_add);
-draw_self();
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,pnc,image_alpha);
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*0.7,image_yscale*0.7,image_angle,c_white,image_alpha);
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>

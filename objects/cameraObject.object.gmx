@@ -59,7 +59,10 @@ for(j=0; j&lt;i; j++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for(i=0; i&lt;instance_number(player_o); i++)
+            <string>if(instance_number(player_o)&gt;0)
+{
+//START
+for(i=0; i&lt;instance_number(player_o); i++)
 {
     players[i] = instance_find(player_o,i);
     if(players[i].health2 &lt;= 0)
@@ -134,6 +137,9 @@ else
 {
     view_wview[0] = 960;
     view_hview[0] = 540;
+}
+
+//END
 }
 </string>
           </argument>

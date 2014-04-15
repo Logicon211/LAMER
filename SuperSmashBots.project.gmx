@@ -248,6 +248,8 @@
     </sprites>
     <sprite>sprites\PlayerIndicatorSprite</sprite>
     <sprite>sprites\OuterRoomSprite</sprite>
+    <sprite>sprites\badGuyShot</sprite>
+    <sprite>sprites\goodGuyShot</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -726,6 +728,7 @@
     </objects>
     <objects name="Start Animation Texts">
       <object>objects\startAnimationText</object>
+      <object>objects\startAnimationText2</object>
       <object>objects\creditsDraw</object>
     </objects>
     <object>objects\ShaderTestObject</object>
@@ -761,6 +764,7 @@
     <object>objects\TutorialController</object>
     <object>objects\OuterRoomBlocker</object>
     <object>objects\gameWin</object>
+    <object>objects\bg1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
@@ -792,6 +796,7 @@
     <room>rooms\creditsNew</room>
     <rooms name="Intro Animation Rooms">
       <room>rooms\IntroRoom2</room>
+      <room>rooms\IntroRoom3</room>
     </rooms>
   </rooms>
   <help>
