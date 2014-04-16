@@ -453,6 +453,25 @@ if(player.state = string('attack'))
         player.state = string("toNorm");
     }
     
+    if(hspeed=0)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -5*image_xscale+image_angle/2, 8);
+        leg2.image_angle = angle_ease(leg2.image_angle, 20*image_xscale+image_angle/2, 8);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
+    else if(player.airborne || player.boosting)
+    {
+        leg1.image_angle = angle_ease(leg1.image_angle, -10+image_angle, 12);
+        leg2.image_angle = angle_ease(leg2.image_angle, 5+image_angle, 12);
+        head.image_angle = angle_ease(head.image_angle, image_angle/2, 8);
+    }
+    else
+    {
+        leg_var = 60*sin(degtorad(1.5*x));
+        leg1.image_angle = angle_ease(leg1.image_angle, leg_var+image_angle/2, 4);
+        leg2.image_angle = angle_ease(leg2.image_angle, -leg_var+image_angle/2, 4);
+        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
+    }
     /***************************************************
     image_angle = angle_ease(image_angle, -20*image_xscale, 4);
     arm[1].image_angle = angle_ease(arm[1].image_angle, player.landCounter*image_xscale*-8, 4);
@@ -513,6 +532,7 @@ if(player.state = string('Attack'))
     if(player.airborne)
     {   vspeed -= 2;
     }
+    
 }
 
 /***************************************************
@@ -535,25 +555,6 @@ if(player.state = string('mobileAttack'))
     }
     else
     {   arm[2].image_angle = abs(image_angle*1.8)*image_xscale;
-    }
-    if(hspeed=0)
-    {
-        leg1.image_angle = angle_ease(leg1.image_angle, -5*image_xscale+image_angle/2, 8);
-        leg2.image_angle = angle_ease(leg2.image_angle, 20*image_xscale+image_angle/2, 8);
-        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
-    }
-    else if(player.airborne || player.boosting)
-    {
-        leg1.image_angle = angle_ease(leg1.image_angle, -10+image_angle, 12);
-        leg2.image_angle = angle_ease(leg2.image_angle, 5+image_angle, 12);
-        head.image_angle = angle_ease(head.image_angle, image_angle/2, 8);
-    }
-    else
-    {
-        leg_var = 60*sin(degtorad(1.5*x));
-        leg1.image_angle = angle_ease(leg1.image_angle, leg_var+image_angle/2, 4);
-        leg2.image_angle = angle_ease(leg2.image_angle, -leg_var+image_angle/2, 4);
-        head.image_angle = angle_ease(head.image_angle, image_angle*1.2, 8);
     }
 }
 
@@ -639,7 +640,7 @@ if(player.state = string('mobileAttack'))
             <kind>1</kind>
             <string>vspeed+=1;
 playerCollision();
-image_angle+=random_range(1,10);
+image_angle+=random_range(1,20);
 effect_create_below(ef_smoke,x,y,1,c_white);
 </string>
           </argument>

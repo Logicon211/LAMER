@@ -1146,7 +1146,7 @@ if(state = string('jump'))
   Normal State
  ***************************************************/
  
-else if(state = string('normal'))
+else if(state = string('normal') or state = string('mobileAttack'))
 {
     core.x = x;
     core.y = y-heightAdjust;

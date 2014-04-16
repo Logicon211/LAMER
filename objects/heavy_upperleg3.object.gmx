@@ -100,9 +100,18 @@ else
     //END Land State
     
     //Normal State 
-    else if(player.state=string('normal'))
+    else if(player.state=string('normal') or player.state = string('mobileAttack'))
     {
-        lower_leg.image_angle = image_angle-15*image_xscale;
+        if(image_angle*image_xscale&gt;0)
+        {
+            lower_leg.image_angle = image_angle-image_angle*0.25;
+        }
+        else
+        {
+            angleVarL = image_angle*3;
+            if(angleVarL*image_xscale&gt;135){angleVarL = 135*image_xscale}
+            lower_leg.image_angle = image_angle*3;
+        }
     }
     //END Normal State 
     

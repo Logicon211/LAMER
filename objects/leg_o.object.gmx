@@ -100,7 +100,7 @@ else
     //END Land State
     
     //Normal State 
-    else if(player.state=string('normal'))
+    else if(player.state=string('normal') or player.state = string('mobileAttack'))
     {
         if(image_angle*image_xscale&gt;0)
         {
