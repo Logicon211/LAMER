@@ -48,6 +48,8 @@ atBossNode = false;
 
 globalvar playerMarker;
 
+globalvar mpPlayerMarker;
+
 globalvar moveToNode; //globalvar of node we're moving to
 
 globalvar nodePlayerIsAt; //Node player is on when he starts a battle and/or radio. This is persistent

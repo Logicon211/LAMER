@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>atMapNode = 0; //where the player marker will be (starts at 0)
 
-playerMarker = id; //pass itself to the globalvar
+mpPlayerMarker = id; //pass itself to the globalvar
 
 self.x = MapNodeList[atMapNode].x;
 self.y = MapNodeList[atMapNode].y;
@@ -93,10 +93,10 @@ if(left_check_pressed())
     {
         show_debug_message("Node found at " + string(nodeToMoveTo))
         moveToNode = nodeToMoveTo;
-        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
-        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
-        playerMarker.direction = dir;
-        playerMarker.speed = 12;
+        mpPlayerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(mpPlayerMarker.x,mpPlayerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        mpPlayerMarker.direction = dir;
+        mpPlayerMarker.speed = 12;
     }
 }
 
@@ -120,10 +120,10 @@ if(right_check_pressed())
     {
         show_debug_message("Node found at " + string(nodeToMoveTo));
         moveToNode = nodeToMoveTo;
-        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
-        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
-        playerMarker.direction = dir;
-        playerMarker.speed = 12;
+        mpPlayerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(mpPlayerMarker.x,mpPlayerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        mpPlayerMarker.direction = dir;
+        mpPlayerMarker.speed = 12;
     }
 }
 
@@ -148,10 +148,10 @@ if(up_check_pressed())
     {
         show_debug_message("Node found at " + string(nodeToMoveTo))
         moveToNode = nodeToMoveTo;
-        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
-        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
-        playerMarker.direction = dir;
-        playerMarker.speed = 12;
+        mpPlayerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(mpPlayerMarker.x,mpPlayerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        mpPlayerMarker.direction = dir;
+        mpPlayerMarker.speed = 12;
     }
 }
 //DOWN
@@ -175,10 +175,10 @@ if(down_check_pressed())
     {
         show_debug_message("Node found at " + string(nodeToMoveTo))
         moveToNode = nodeToMoveTo;
-        playerMarker.atMapNode = nodeToMoveTo.nodeNumber;
-        dir = point_direction(playerMarker.x,playerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
-        playerMarker.direction = dir;
-        playerMarker.speed = 12;
+        mpPlayerMarker.atMapNode = nodeToMoveTo.nodeNumber;
+        dir = point_direction(mpPlayerMarker.x,mpPlayerMarker.y,nodeToMoveTo.x,nodeToMoveTo.y)
+        mpPlayerMarker.direction = dir;
+        mpPlayerMarker.speed = 12;
     }
 }
 
@@ -188,7 +188,7 @@ if(jump_check_pressed() or attack1_check_pressed())
     //Start fight on map node
 
     //DOn't have a way to do it right now, so I guess just go into the game
-    battleMapPlayerIsAt = MapNodeList[playerMarker.atMapNode].battleMap
+    battleMapPlayerIsAt = MapNodeList[mpPlayerMarker.atMapNode].battleMap
     room_goto(ControlsRoom);
 }
 
