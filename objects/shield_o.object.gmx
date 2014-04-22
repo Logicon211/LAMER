@@ -60,7 +60,7 @@ if(scale&lt;1)
 }
 //image_xscale = random_range(0.85,0.9);
 //image_yscale = image_xscale;
-if(player.state!=string("shield"))
+if(player.state!=string("shield") or player.playerType=2)
 {
     instance_destroy();
 }
