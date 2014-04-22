@@ -30,13 +30,13 @@ nodeNumber = 13;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Mexico";
-nodeDescription = "Mexico's drug cartels survive to this day, providing entertaining substances to successful #Colossus pilots. However, they hope not for money but that the pilots will end up overdosing #and killing themselves.";
+nodeDescription = "Mexico's drug cartels survive to this day, providing entertaining substances to the Four Devils #and other Colossus pilots. However, this is an unstable safeguard at best.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = true; //check to see if there's radio chat before the fight
+hasRadioText = false; //check to see if there's radio chat before the fight
 
 radioText[0] = "Goon: Hello. I am automated Colossus pilot 295, programmed to destroy for Dr. Dastardly. How are you today?";
 radioText[1] = "Player: Uhhhhh... good?";
@@ -48,18 +48,19 @@ radioText[5] = "Player: Well, it was worth a try I guess...";
 face[0] = PlayerFace;
 face[1] = MGoonFace1;
 
-battleMap = testRange;
+battleMap = Stage3;
 
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 2;
+DifficultyOfBots = 6;
+boss = false;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[0] = CriusAstraeus; //Head
+botLoadOut[1] = CriusPallas; //Torso
 botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
 botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[4] = CriusPerses; //Legs
 </string>
           </argument>
         </arguments>

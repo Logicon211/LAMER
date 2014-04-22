@@ -55,7 +55,7 @@
     <instance objName="ShadowObject2" x="1344" y="160" name="inst_21BD4E50" locked="0" code="" scaleX="11" scaleY="1.25" colour="4294967295" rotation="180"/>
     <instance objName="ShadowObject2" x="128" y="0" name="inst_51CF6B67" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="-90"/>
     <instance objName="fireTownObject" x="0" y="0" name="inst_56EDC3E0" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="startAnimationText" x="224" y="128" name="inst_52EA0FFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="startAnimationText" x="192" y="64" name="inst_52EA0FFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="anykeySkip" x="-64" y="-32" name="inst_B09499B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

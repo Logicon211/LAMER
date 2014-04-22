@@ -30,8 +30,8 @@
 nodeNumber = 3;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "Fourth Map Node";
-nodeDescription = "Some Fluff about the area in the node"
+nodeName = "Colosseum 3";
+nodeDescription = ""
 
 isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -43,7 +43,7 @@ radioText[0] = "";
 face[0] = 0;
 
 battleMap = Stage3;
-mapPreview = MapPreviewTestSprite;
+mapPreview = Preview3;
 </string>
           </argument>
         </arguments>

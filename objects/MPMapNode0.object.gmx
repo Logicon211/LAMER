@@ -30,8 +30,8 @@
 nodeNumber = 0;
 MapNodeList[nodeNumber] = id;
 
-nodeName = "First Map Node";
-nodeDescription = "Some Fluff about the area in the node"
+nodeName = "Test Range";
+nodeDescription = ""
 
 isLocked = false;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -43,7 +43,7 @@ radioText[0] = "";
 face[0] = 0;
 
 battleMap = testRange;
-mapPreview = MapPreviewTestSprite;
+mapPreview = TestRangePreview;
 </string>
           </argument>
         </arguments>

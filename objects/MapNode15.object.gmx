@@ -42,18 +42,19 @@ radioText[0] = "";
 
 face[0] = 0;
 
-battleMap = testRange;
+battleMap = Stage5;
 
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 3;
+DifficultyOfBots = 6;
+boss = false;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[0] = CriusAstraeus; //Head
+botLoadOut[1] = CriusPallas; //Torso
 botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
 botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[4] = CriusPerses; //Legs
 </string>
           </argument>
         </arguments>

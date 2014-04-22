@@ -31,8 +31,9 @@ player = instance_nearest(x,y,player_o);
 playerNum = player.playerNum;
 oldX = y;
 oldY = x;
-
+swingspeed = 7;
 attacking = false;
+swingSpeed = 7;
 </string>
           </argument>
         </arguments>
@@ -64,12 +65,17 @@ attacking = false;
 }
 else
 {
-    perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale,getPlayerColor(player.playerNum,2));
+    //perfect_trail_angled_color(oldX,oldY,x+hspeed,y+vspeed,head_trail_o,image_angle,image_xscale,getPlayerColor(player.playerNum,2));
+    
+    
     
     oldX = x+hspeed;
     oldY = y+vspeed;
     if(attacking)
     {
+        swordHit(300,15,5);
+        
+        /*
         if(instance_place(x,y,player_o))
         {
             derp = instance_place(x,y,player_o);
@@ -79,8 +85,10 @@ else
                 derp.hspeed = 25*image_xscale;
                 derp.vspeed = 5*image_xscale;
                 derp.airborne = true;
+                effect_create_above(ef_firework,x,y,1,c_blue)
             }
         }
+        */
     }
 }
 </string>

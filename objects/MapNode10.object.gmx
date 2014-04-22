@@ -30,7 +30,7 @@ nodeNumber = 10;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "England";
-nodeDescription = "The sun never sets on the British Empire... that is until the Colossi came into being. Now, its mighty #naval power has been subverted for the production of Colossus so their new leaders can conquer other lands.";
+nodeDescription = "The sun never sets on the British Empire... that is until the Four Devils came into being. Now, its mighty #naval power has been subverted for the production of Colossus so their new leaders can conquer other lands.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -42,17 +42,18 @@ radioText[0] = "";
 
 face[0] = 0;
 
-battleMap = testRange;
+battleMap = Stage5;
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 3;
+DifficultyOfBots = 5;
+boss = false;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[0] = HyperionHelios; //Head
+botLoadOut[1] = HyperionEos; //Torso
 botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
 botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[4] = HyperionSelene; //Legs
 </string>
           </argument>
         </arguments>

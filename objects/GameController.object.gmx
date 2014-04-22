@@ -25,12 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar mapController;
+            <string>globalvar pSys;
+globalvar pSys2;
+globalvar ef_boost;
+globalvar ef_boost2;
+
+pSys = part_system_create();
+pSys2 = part_system_create();
+ef_boost = part_system_create();
+ef_boost2 = part_system_create();
+
+globalvar singlePlayer;
+singlePlayer = 0
+
+globalvar mapController;
 mapController = id;
 
 globalvar MapNodeList;
 
+globalvar atBossNode;
+atBossNode = false;
+
 globalvar playerMarker;
+
+globalvar mpPlayerMarker;
 
 globalvar moveToNode; //globalvar of node we're moving to
 
@@ -50,7 +68,7 @@ globalvar numBots;
 numBots = 1;
 
 globalvar botDifficulty;
-botDifficulty = 1;
+botDifficulty = 3;
 
 //To track who might have won an MP game
 globalvar playerWon;

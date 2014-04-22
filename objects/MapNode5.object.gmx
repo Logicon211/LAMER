@@ -30,7 +30,7 @@ nodeNumber = 5;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Madagascar";
-nodeDescription = "When the Apocalypse happened, Madagascar did the smart thing: it remained neutral and closed #all borders. However, unlike a plague, there was no stopping the advancement of the Colossi."
+nodeDescription = "When the Four Devils arrived, Madagascar did the smart thing: it remained neutral and closed #all borders. However, unlike a plague, there was no stopping the advancement of the Colossi."
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -38,17 +38,17 @@ hasRun = false; //code to get the initialization to run only once
 
 hasRadioText = true; //check to see if there's radio chat before the fight
 
-radioText[0] = "Maximus Lovelife: So, you've managed to defeat my minions and now you've come to challenge ME?!";
-radioText[1] = "Player: Well, uh, I am standing right here, so...";
+radioText[0] = "Maximus Lovelife: So, you've managed to defeat my minions and now you've come to challenge ME?! The First Devil?!";
+radioText[1] = "Hero: Well, uh, I am standing right here, so...";
 radioText[2] = "Maximus Lovelife: It was a rhetorical question!";
 radioText[3] = "Maximus Lovelife: That aside, are you sure this is what you want to do?";
 radioText[4] = "Maximus Lovelife: I could offer you riches beyond your wildest dreams. A life of comfort and relaxation...";
-radioText[5] = "Player: I refuse! I will unite all of Earth under me, and nothing can stop me!";
-radioText[6] = "Player: Your tyranny comes to an end now!";
+radioText[5] = "Hero: I refuse! I will unite all of Earth under me, and nothing can stop me!";
+radioText[6] = "Hero: Your tyranny comes to an end now!";
 radioText[7] = "Maximus Lovelife: No! I won't let you destroy everything I've worked to create!";
 radioText[8] = "Maximus Lovelife: I love my life! I love my life to the max! I won't let you take it from me!";
 
-face[0] = PlayerFace;
+face[0] = LoganFace;
 face[1] = ElliotFace;
 
 battleMap = Stage5;
@@ -56,13 +56,14 @@ battleMap = Stage5;
 
 //Bot Settings on this Map Node
 numberOfBots = 1;
-DifficultyOfBots = 1;
+DifficultyOfBots = 7;
+boss = true;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
-botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
-botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[0] = AuraH; //Head
+botLoadOut[1] = CoeusLelantos; //Torso
+botLoadOut[2] = ChronosFist; //Left Arm
+botLoadOut[3] = VulcanPistol; //Right Arm
+botLoadOut[4] = AuraL; //Legs
 </string>
           </argument>
         </arguments>

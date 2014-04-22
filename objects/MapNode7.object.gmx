@@ -30,13 +30,13 @@ nodeNumber = 7;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "China";
-nodeDescription = "Even China's military numbers couldn't hold back a single Colossus. Now their large numbers are used to #produce Colossus parts en masse.";
+nodeDescription = "Even China's military numbers couldn't hold back a single Devil. Now their large numbers are used to #produce Colossus parts en masse.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = true; //check to see if there's radio chat before the fight
+hasRadioText = false; //check to see if there's radio chat before the fight
 
 radioText[0] = "Goon: Oh god, I don't want to do this...";
 radioText[1] = "Player: Then don't! Fight with me instead of against me!";
@@ -49,17 +49,18 @@ radioText[6] = "Player: On second thought, I'll take that offer back...";
 face[0] = PlayerFace;
 face[1] = RGoonFace2;
 
-battleMap = testRange;
+battleMap = Stage2;
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 2;
+DifficultyOfBots = 5;
+boss = false;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[0] = HyperionHelios; //Head
+botLoadOut[1] = HyperionEos; //Torso
 botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
 botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[4] = HyperionSelene; //Legs
 </string>
           </argument>
         </arguments>

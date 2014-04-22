@@ -28,7 +28,7 @@
             <string>name = "Crius Perses";
 
 //This is the actual link to the object, so we can create it on start up.
-part = leg_o;
+part = light_upperleg2;
 
 type = 4;
 

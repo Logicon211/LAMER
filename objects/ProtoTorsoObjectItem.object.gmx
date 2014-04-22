@@ -36,8 +36,8 @@ type = 1;
 
 cost = 35;
 generation = 1;
-armor = 30;
-weight = 30;
+armor = 1000;
+weight = 750;
 cooling = 60;
 
 //bonuses that not all will have and will probably go hand in hand with the bonus text below it

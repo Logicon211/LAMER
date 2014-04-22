@@ -25,11 +25,45 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>target = instance_nearest(x,y,player_o);
+            <string>origPlayer = 0;
+target = instance_nearest(x,y,player_o);
 //move_towards_point(target.x,target.y,32);
 hspeed = target.image_xscale*32;
 image_xscale = 5;
 image_yscale = 5;
+inactive=true;
+player = target;
+pnc = player.pnc;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>effect_create_above(ef_spark,x,y,2,pnc);
+effect_create_above(ef_spark,x,y,2,pnc);
+effect_create_above(ef_spark,x,y,2,c_white);
+effect_create_above(ef_firework,x,y,2,pnc);
+effect_create_above(ef_firework,x,y,2,pnc);
+effect_create_above(ef_firework,x,y,2,c_white);
+effect_create_above(ef_smoke,x,y,2,pnc);
+effect_create_above(ef_smoke,x,y,2,c_black);
 </string>
           </argument>
         </arguments>
@@ -52,17 +86,29 @@ image_yscale = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_position(x,y,player_o))
+            <string>if(inactive)
+{
+    if(player.x&gt;x)
+    {   hspeed = -40;
+    }
+    else
+    {   hspeed = +40;
+    }
+    inactive = false;
+}
+if(instance_position(x,y,player_o))
 {
     target = instance_position(x,y,player_o)
-    target.health2 -= 700;
-    target.hspeed += hspeed/2;
+    target.health2 -= 800;
+    target.hspeed += hspeed*1.25;
+    audio_play_sound(cannon_hit,1,false);
     instance_destroy();
 }
 else if(instance_position(x,y,shield_o))
 {
     with(instance_position(x,y,shield_o))
     {
+    audio_play_sound(shield_hit,1,false);
         instance_create(x,y,shieldFlash);
     }
     instance_destroy();
@@ -71,6 +117,8 @@ else if(instance_position(x,y,land_parent))
 {
     instance_destroy();
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -94,7 +142,8 @@ else if(instance_position(x,y,land_parent))
           <argument>
             <kind>1</kind>
             <string>draw_set_blend_mode(bm_add);
-draw_self();
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,pnc,image_alpha);
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale*0.7,image_yscale*0.7,image_angle,c_white,image_alpha);
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>

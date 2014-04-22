@@ -13,7 +13,58 @@
     <sound>sound\weeee</sound>
     <sound>sound\NodeNavigationSound</sound>
     <sound>sound\MenuConfirmationSound</sound>
-    <sound>sound\ShieldLoop</sound>
+    <sounds name="SFX">
+      <sound>sound\ShieldLoop</sound>
+      <sounds name="attack_sounds">
+        <sounds name="shots">
+          <sound>sound\light_lazor_shot</sound>
+          <sound>sound\light_lazor_shot2</sound>
+          <sound>sound\heavy_lazer_shot</sound>
+          <sound>sound\cannon_shot</sound>
+          <sound>sound\gatling_shot</sound>
+          <sound>sound\heavy_lazer_pulse</sound>
+        </sounds>
+        <sounds name="swings">
+          <sound>sound\heavy_sword_swing</sound>
+          <sound>sound\heavy_sword_swing2</sound>
+          <sound>sound\Light_sword_swing</sound>
+          <sound>sound\heavy_sword_swing3</sound>
+          <sound>sound\Light_sword_swing2</sound>
+          <sound>sound\Light_sword_swing3</sound>
+          <sound>sound\melee_impact_swing</sound>
+        </sounds>
+        <sounds name="hits">
+          <sound>sound\heavy_sword_hit</sound>
+          <sound>sound\light_sword_hit</sound>
+          <sound>sound\light_sword_hit2</sound>
+          <sound>sound\light_sword_hit3</sound>
+          <sound>sound\Melee_impact_hit</sound>
+          <sound>sound\shield_hit</sound>
+          <sound>sound\shield_break</sound>
+          <sounds name="projectiles">
+            <sound>sound\light_lazor_hit</sound>
+            <sound>sound\light_lazor_hit3</sound>
+            <sound>sound\heavy_lazor_hit</sound>
+            <sound>sound\heavy_lazer_hit2</sound>
+            <sound>sound\cannon_hit</sound>
+          </sounds>
+        </sounds>
+        <sounds name="moments">
+          <sound>sound\robot_explode</sound>
+          <sound>sound\game_ending_noise</sound>
+        </sounds>
+      </sounds>
+      <sounds name="movement">
+        <sound>sound\Booster_start</sound>
+        <sound>sound\Booster_loop</sound>
+        <sound>sound\robot_step</sound>
+        <sound>sound\robot_landing</sound>
+        <sound>sound\robot_landing2</sound>
+      </sounds>
+    </sounds>
+    <sound>sound\BattleOfBronchitis</sound>
+    <sound>sound\BrawlsOfSound</sound>
+    <sound>sound\HeroRiff</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\BossMapNodeSprite</sprite>
@@ -39,7 +90,7 @@
       <sprite>sprites\leg_sl</sprite>
       <sprite>sprites\blueglow</sprite>
       <sprites name="Parts">
-        <sprites name="LightTorso">
+        <sprites name="light torso">
           <sprite>sprites\Legs_down001</sprite>
           <sprite>sprites\Legs_up001</sprite>
           <sprite>sprites\torso001</sprite>
@@ -47,6 +98,14 @@
         </sprites>
         <sprites name="weapons">
           <sprite>sprites\heavysword</sprite>
+          <sprite>sprites\heavygun3</sprite>
+          <sprite>sprites\heavygun2</sprite>
+          <sprite>sprites\heavysword2</sprite>
+          <sprite>sprites\lightgun2</sprite>
+          <sprite>sprites\lightsword2</sprite>
+          <sprite>sprites\lightsword3</sprite>
+          <sprite>sprites\lightgun1</sprite>
+          <sprite>sprites\sprite138</sprite>
         </sprites>
         <sprites name="heavytorso">
           <sprite>sprites\heavyhead001</sprite>
@@ -56,6 +115,24 @@
         </sprites>
         <sprites name="proto">
           <sprite>sprites\head_s</sprite>
+        </sprites>
+        <sprites name="light2">
+          <sprite>sprites\lighttorse2</sprite>
+          <sprite>sprites\lighthead2</sprite>
+          <sprite>sprites\lightleg2bottom</sprite>
+          <sprite>sprites\lightleg2top</sprite>
+        </sprites>
+        <sprites name="heavy2">
+          <sprite>sprites\heavytorso2</sprite>
+          <sprite>sprites\heavyhead2</sprite>
+          <sprite>sprites\heavyleg2bottom</sprite>
+          <sprite>sprites\heavyleg2top</sprite>
+        </sprites>
+        <sprites name="heavytorso3">
+          <sprite>sprites\heavyhead3</sprite>
+          <sprite>sprites\heavycore3</sprite>
+          <sprite>sprites\heavyleg3bottom</sprite>
+          <sprite>sprites\heavyleg3top</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -67,6 +144,7 @@
       <sprite>sprites\LoganFace</sprite>
       <sprite>sprites\RaphFace</sprite>
       <sprite>sprites\ElliotFace</sprite>
+      <sprite>sprites\AlexFace</sprite>
       <sprite>sprites\PlayerFace</sprite>
       <sprite>sprites\EGoonFace1</sprite>
       <sprite>sprites\EGoonFace2</sprite>
@@ -150,6 +228,12 @@
     <sprites name="MapPreviews">
       <sprite>sprites\MapPreviewTestSprite</sprite>
       <sprite>sprites\MapPreviewTestSprite2</sprite>
+      <sprite>sprites\TestRangePreview</sprite>
+      <sprite>sprites\Preview1</sprite>
+      <sprite>sprites\Preview2</sprite>
+      <sprite>sprites\Preview3</sprite>
+      <sprite>sprites\Preview4</sprite>
+      <sprite>sprites\Preview5</sprite>
     </sprites>
     <sprite>sprites\shadow128Sprite</sprite>
     <sprite>sprites\shadowLighterSprite</sprite>
@@ -162,6 +246,10 @@
       <sprite>sprites\fireTown</sprite>
       <sprite>sprites\fireTownLight</sprite>
     </sprites>
+    <sprite>sprites\PlayerIndicatorSprite</sprite>
+    <sprite>sprites\OuterRoomSprite</sprite>
+    <sprite>sprites\badGuyShot</sprite>
+    <sprite>sprites\goodGuyShot</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\MapBackground</background>
@@ -179,6 +267,10 @@
     <background>background\fireBG</background>
     <background>background\mapBGlol</background>
     <background>background\fireTown2</background>
+    <background>background\TutorialRoomBackground</background>
+    <background>background\stadiumBackground2</background>
+    <background>background\stadiumBackground3</background>
+    <background>background\controls3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -190,7 +282,11 @@
         <script>scripts\xMove10.gml</script>
         <script>scripts\xEase10.gml</script>
         <script>scripts\attackSet0.gml</script>
-        <script>scripts\script76.gml</script>
+        <script>scripts\lightGun2script.gml</script>
+        <script>scripts\lightGun1Script.gml</script>
+        <script>scripts\heavyGun2script.gml</script>
+        <script>scripts\heavyGun3Script.gml</script>
+        <script>scripts\cannonScript.gml</script>
       </scripts>
       <scripts name="Easing">
         <script>scripts\x_ease.gml</script>
@@ -262,6 +358,7 @@
     </scripts>
     <scripts name="Player Creation">
       <script>scripts\refreshPlayer.gml</script>
+      <script>scripts\destroyPlayer.gml</script>
       <script>scripts\respawnPlayer.gml</script>
       <script>scripts\createPlayer.gml</script>
       <script>scripts\createPart.gml</script>
@@ -284,7 +381,13 @@
       <script>scripts\ymoveAI.gml</script>
       <script>scripts\attackAI.gml</script>
       <script>scripts\resetcontrolAI.gml</script>
+      <script>scripts\killAI.gml</script>
     </scripts>
+    <script>scripts\script77.gml</script>
+    <script>scripts\delete_this_script.gml</script>
+    <script>scripts\swingSound.gml</script>
+    <script>scripts\swordHit.gml</script>
+    <script>scripts\positionPlayer.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaderBloom.shader</shader>
@@ -488,6 +591,7 @@
       <object>objects\PlayerMarker</object>
       <object>objects\MPPlayerMarker</object>
       <object>objects\MapUIBar</object>
+      <object>objects\MPMapUIBar</object>
       <object>objects\MapCamera</object>
       <object>objects\LevelSelectObjectText</object>
     </objects>
@@ -527,21 +631,55 @@
           <objects name="Small Swords">
             <objects name="Prototype">
               <object>objects\arm_o</object>
+              <object>objects\light_sword2_upper</object>
+              <object>objects\light_sword3_upper</object>
+              <object>objects\light_sword1_upper</object>
+              <object>objects\heavy_sword2_upper</object>
+              <object>objects\light_sword2</object>
+              <object>objects\light_sword3</object>
+              <object>objects\light_sword1</object>
+              <object>objects\heavy_sword2</object>
               <object>objects\arm_o2</object>
               <object>objects\sword1_trail</object>
             </objects>
             <object>objects\heavysword_01</object>
-            <object>objects\heavysword_upperrarm</object>
+            <object>objects\heavysword_upperarm</object>
           </objects>
           <objects name="Small Guns">
             <objects name="Prototype">
               <object>objects\proto_gun_o</object>
+              <object>objects\heavy_gun2_upper</object>
+              <object>objects\heavy_gun3_upper</object>
+              <object>objects\light_gun2_upper</object>
+              <object>objects\light_gun1_upper</object>
               <object>objects\proto_gun_o2</object>
               <object>objects\CronosLowerGun</object>
+              <object>objects\heavy_gun2</object>
+              <object>objects\heavy_gun3</object>
+              <object>objects\light_gun2</object>
+              <object>objects\light_gun1</object>
               <object>objects\proto_gun_trail_o</object>
               <object>objects\CronosUpperArm</object>
             </objects>
           </objects>
+        </objects>
+        <objects name="lightset2">
+          <object>objects\light_head2</object>
+          <object>objects\light_lowerleg2</object>
+          <object>objects\light_upperleg2</object>
+          <object>objects\light_core2</object>
+        </objects>
+        <objects name="heavy2">
+          <object>objects\heavy_head2</object>
+          <object>objects\heavy_lowerleg2</object>
+          <object>objects\heavy_upperleg2</object>
+          <object>objects\heavy_core2</object>
+        </objects>
+        <objects name="heavy3">
+          <object>objects\heavy_head3</object>
+          <object>objects\heavy_lowerleg3</object>
+          <object>objects\heavy_upperleg3</object>
+          <object>objects\heavy_core3</object>
         </objects>
       </objects>
       <objects name="Boosters">
@@ -553,6 +691,10 @@
       <object>objects\bulletParent</object>
       <object>objects\bulletObject</object>
       <object>objects\bulletObject2</object>
+      <object>objects\bulletObject3</object>
+      <object>objects\bulletObject4</object>
+      <object>objects\bulletObject5</object>
+      <object>objects\bulletObject6</object>
       <object>objects\CosmosBullet</object>
     </objects>
     <objects name="Color Adjusts">
@@ -588,6 +730,8 @@
     </objects>
     <objects name="Start Animation Texts">
       <object>objects\startAnimationText</object>
+      <object>objects\startAnimationText2</object>
+      <object>objects\creditsDraw</object>
     </objects>
     <object>objects\ShaderTestObject</object>
     <object>objects\ClosedDoor</object>
@@ -604,8 +748,10 @@
     <object>objects\tutorial_help_thrusters</object>
     <object>objects\tutorial_help_attack</object>
     <object>objects\tutorial_help_shield</object>
+    <object>objects\anykeySkip</object>
     <object>objects\renewRoom</object>
     <object>objects\cameraObject</object>
+    <object>objects\partExplosion</object>
     <object>objects\tutorialBossTrigger</object>
     <object>objects\tutorial_help_turret</object>
     <object>objects\tutorial_help_platform</object>
@@ -615,7 +761,12 @@
     <object>objects\fireTownObject</object>
     <object>objects\menuLOL</object>
     <object>objects\AnyKeyToReturnObj</object>
-    <object>objects\anykeySkip</object>
+    <object>objects\PlayerIndicatorObj</object>
+    <object>objects\object274</object>
+    <object>objects\TutorialController</object>
+    <object>objects\OuterRoomBlocker</object>
+    <object>objects\gameWin</object>
+    <object>objects\bg1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\IntroRoom1</room>
@@ -625,6 +776,7 @@
     <room>rooms\testRange</room>
     <room>rooms\Tutorial_room</room>
     <room>rooms\RadioRoom</room>
+    <room>rooms\ControlsRoom</room>
     <room>rooms\InventoryRoom</room>
     <room>rooms\SettingsRoom</room>
     <room>rooms\MultiplayerLoadoutRoom</room>
@@ -643,8 +795,10 @@
     <room>rooms\Stage5_1</room>
     <room>rooms\VictoryRoom</room>
     <room>rooms\CampaignInfoRoom</room>
+    <room>rooms\creditsNew</room>
     <rooms name="Intro Animation Rooms">
       <room>rooms\IntroRoom2</room>
+      <room>rooms\IntroRoom3</room>
     </rooms>
   </rooms>
   <help>

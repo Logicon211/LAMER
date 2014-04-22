@@ -28,6 +28,7 @@
             <string>//Button Press Code
 
 //Multiplayer doesn't do anything yet
+singlePlayer = 0;
 room_goto(SettingsRoom);
 </string>
           </argument>

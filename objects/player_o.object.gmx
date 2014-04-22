@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1234567</depth>
   <persistent>0</persistent>
-  <parentName>land_parent</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,7 +32,9 @@
     know how to function, move, and act. It is a
     critical part of the animations and actions.
  ***************************************************/
-health2 = 1000;
+pnc2 = 0;
+numLives = livesSetting
+health2 = 10000;
 state = string('normal');
 deadCounter = 0;
 boostCounter = 0;
@@ -174,8 +176,8 @@ for(i=boostNums;i&gt;0;i--)
     booster[i] = core.booster[i];
 }
 
-health2 = 1000;
-healthMax = 1000;
+health2 = 10000;
+healthMax = 100000;
 
 /***************************************************
   Height
@@ -193,11 +195,16 @@ heightAdjust = core.heightAdjust;
 initializeAI();
 aiCounter = 0;
 
+playerTypeOrig = 0;
+setPlayTypeOrig = true;
+
 for(i=0;i&lt;10;i++)
 {
     controlSet[i] = 0;
     controlSetPrv[i] = 0;
 }
+
+pnc = getPlayerColor(playerNum,2)
 </string>
           </argument>
         </arguments>
@@ -244,13 +251,28 @@ for(i=0;i&lt;10;i++)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/***************************************************
+            <string>if(setPlayTypeOrig)
+{
+    playerTypeOrig = playerType;
+    setPlayTypeOrig = false;
+}
+
+if(keyboard_check(ord('K')))
+{   effect_clear();
+}
+
+healthMax = playerStats[playerNum,0]
+weight = playerStats[playerNum,1]
+if(health2&gt;healthMax)
+{   health2 = healthMax
+}
+
+/***************************************************
   INPUT CONTROL
   
   If player....
  ***************************************************/
 //controlSetPrv = controlSet;
-
 
 /***************************************************
  ***************************************************/  
@@ -289,7 +311,6 @@ if(boost_check(playerNum))
             controlSet[2] = 1;
         }
     }
-    
 }
 else
 {
@@ -368,10 +389,21 @@ if(playerType = 0)
     }
     *****************************/
 }
-
+/*
+            3 - AI mode Base Model (15 steps)
+            4 - AI decision every 60 steps
+            5 - AI decision every 30 steps
+            6 - AI decision every 15 steps
+            
+            7 - AI decision every 45 steps
+            8 - AI decision every 30 steps
+            9 - AI decision every 15 steps
+            10 - AI decision every 1 steps
+*/
+                
 else if(playerType = 3) //default AI difficulty
 {
-    aiCounter = (aiCounter+1) mod 15;
+    aiCounter = (aiCounter+1) mod 25;
     if(aiCounter=1)
     {   stepAI()
     }
@@ -390,27 +422,79 @@ else if(playerType = 5) //AI grunt easy
     {   stepAI()
     }
 }
-else if(playerType = 6) //AI Boss 1
-{
-    aiCounter = (aiCounter+1) mod 10;
-    if(aiCounter=1)
-    {   stepAI()
-    }
-}
-else if(playerType = 7) //AI Boss 2
+else if(playerType = 6)
 {
     aiCounter = (aiCounter+1) mod 15;
     if(aiCounter=1)
     {   stepAI()
     }
 }
-else if(playerType = 8) //AI Boss Impossible!!!
+else if(playerType = 7)
 {
-    aiCounter = (aiCounter+1) mod 1;
-    if(aiCounter=0)
+    aiCounter = (aiCounter+1) mod 45;
+    if(aiCounter=1)
     {   stepAI()
     }
 }
+else if(playerType = 8)
+{
+    aiCounter = (aiCounter+1) mod 30;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 9)
+{
+    aiCounter = (aiCounter+1) mod 15;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+else if(playerType = 10)
+{
+    aiCounter = (aiCounter+1) mod 3;
+    if(aiCounter=1)
+    {   stepAI()
+    }
+}
+
+
+/***************************************************
+    Code for player "collision"
+ ***************************************************/
+
+    if(instance_place(x,y,player_o))
+    {
+        playerO = instance_place(x,y,player_o)
+        speedVar = 0
+        if(x != playerO.x)
+        {
+            speedVar = 1/((x-playerO.x)/1000)
+            if(speedVar &gt; 64)
+            {   speedVar = 64
+            }
+            if(speedVar &lt; -64)
+            {   speedVar = -64
+            }
+            hspeed += speedVar
+        }
+        speedVar = 0
+        if(y != playerO.y)
+        {
+            speedVar = 1/((y-playerO.y)/200)
+            if(speedVar &gt; 64)
+            {   speedVar = 64
+            }
+            if(speedVar &lt; -64)
+            {   speedVar = -64
+            }
+            vspeed += speedVar
+        }
+    }
+    
+/***************************************************
+  END Code for player "collision"
+ ***************************************************/
 </string>
           </argument>
         </arguments>
@@ -550,29 +634,35 @@ deadCounter +=1;
   Fix Death
  ***************************************************/
  
- if(deadCounter&gt;0)
- {
-    deadCounter = 0;
-    imae_angle = 0;
- }
+if(deadCounter&gt;0)
+{
+   deadCounter = 0;
+   image_angle = 0;
+}
  
 /***************************************************
   END Fix Death
  ***************************************************/
 if(health2 &lt;= 0 or y&gt;=room_height-200)
 {
+    audio_play_sound(robot_explode,1,false)
     if(health2&lt;0){health2=0}
     splodeColor = choose(c_red,c_yellow,c_orange)
-    for(i=0;i&lt;20;i++)
+    effect_create_above(ef_cloud,x,y,2,c_white)
+    /*for(i=0;i&lt;20;i++)
     {
-        effect_create_above(ef_smoke,x+random_range(-50,50),y+random_range(-70,70),300,c_orange);
-        effect_create_above(ef_flare,x+random_range(-50,50),y+random_range(-70,70),300,c_orange);
+        effect_create_above(ef_smoke,x+random_range(-50,50),y+random_range(-70,70),2,c_white);
+        effect_create_above(ef_flare,x+random_range(-50,50),y+random_range(-70,70),2,c_orange);
+        effect_create_above(ef_firework,x+random_range(-50,50),y+random_range(-70,70),1,choose(c_orange,getPlayerColor(playerNum,0)));
     }
     splodeColor = choose(getPlayerColor(playerNum,0),getPlayerColor(playerNum,1),getPlayerColor(playerNum,2))
     for(i=0;i&lt;20;i++)
     {
         //effect_create_above(ef_firework,x+random_range(-30,30),y+random_range(-50,50),100,splodeColor);
-    }
+    }*/
+    //**************
+    instance_create(x,y,partExplosion);
+    //**************
     respawn = instance_create(x,y,renewRoom);
     respawn.pIn = id;
     playerType = 2;
@@ -634,7 +724,6 @@ else if(state=string('slideR'))
     //x += 300*boost_power/weight;
     hspeed = 50;
     state=string('tonorm'){}
-    
 }
 else
 {
@@ -671,7 +760,7 @@ else
     //shield released
     else if(!controlSet[3] and controlSetPrv[3])
     {
-        effect_create_above(ef_flare,x,y,100,c_white)
+        //effect_create_above(ef_flare,x,y,100,c_white)
         core.gun_aim = 0;
         with(shield_obj){instance_destroy()}
         state = string('tonorm');
@@ -830,49 +919,50 @@ if(attack2)
 /***************************************************
   Acceleration
  ***************************************************/
-
-if(state = string('attack'))
+weightVar = weight/3000;
+/*if(state = string('attack'))
 {
     if(target_hspeed=0)
     {
-        if(abs(hspeed) &lt;= 2)
+        if(abs(hspeed) &lt;= 2*weightVar)
         {
             hspeed = 0;
         }
         else
         {
-            hspeed = hspeed/8;
+            hspeed = hspeed/8*weightVar;
         }
         core.x = x;
         
     }
 }
-else if(target_hspeed=0)
+else*/ 
+if(target_hspeed=0)
 {
-    if(abs(hspeed)&lt;=2)
+    if(abs(hspeed)&lt;=2*weightVar)
     {
         hspeed = 0;
     }
     else if(hspeed&gt;0)
     {
-        if(airborne){ hspeed -= 2; }
-        else{ hspeed -= 4; }
+        if(airborne){ hspeed -= 2*weightVar; }
+        else{ hspeed -= 4*weightVar; }
     }
     else if(hspeed&lt;0)
     {
-        if(airborne){ hspeed += 2; }
-        else{ hspeed += 4; }
+        if(airborne){ hspeed += 2*weightVar; }
+        else{ hspeed += 4*weightVar; }
     }    
 }
-else if(target_hspeed&gt;hspeed)
+else if(target_hspeed&gt;hspeed*weightVar)
 {
-    if(airborne){ hspeed += 2; }
-    else{ hspeed += 4; }
+    if(airborne){ hspeed += 2*1/weightVar; }
+    else{ hspeed += 4*1/weightVar; }
 }
-else if(target_hspeed&lt;hspeed)
+else if(target_hspeed&lt;hspeed*weightVar)
 {
-    if(airborne){ hspeed -= 2; }
-    else{ hspeed -= 4; }
+    if(airborne){ hspeed -= 2*1/weightVar; }
+    else{ hspeed -= 4*1/weightVar; }
 }
 
 
@@ -903,7 +993,7 @@ if(instance_place(x,y+1,land_parent))
 else
 {
     airborne = true;
-    vspeed += 2; //*weight/1000
+    vspeed += 2*weightVar; //*weight/1000
 }
 if(vspeed &lt; -32)
 {
@@ -936,11 +1026,28 @@ playerCollision();
   Image Transform
  ***************************************************/
 
+if(!boosting)
+{
+    if(controlSet[7])
+    {
+        image_xscale = 1;
+        core.image_xscale = 1;
+    }
+    if(controlSet[6])
+    {
+        image_xscale = -1;
+        core.image_xscale = -1;
+    }
+}
+
+/*
 if(hspeed!=0)
 {
-    image_xscale = hspeed/abs(hspeed);
+    //image_xscale = hspeed/abs(hspeed);
+    
     if(!boosting){core.image_xscale = image_xscale;}
 }
+*/
 
 /***************************************************
   END Image Transform
@@ -1039,7 +1146,7 @@ if(state = string('jump'))
   Normal State
  ***************************************************/
  
-else if(state = string('normal'))
+else if(state = string('normal') or state = string('mobileAttack'))
 {
     core.x = x;
     core.y = y-heightAdjust;
@@ -1203,7 +1310,7 @@ else if(state = string('land'))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(healthSprite,0,view_xview+30+100*playerNum,view_yview+30,health2/10,1,0,getPlayerColor(playerNum,0),1);
+            <string>playerNumColor = c_gray;
 
 if(playerType&gt;2)
 {
@@ -1233,6 +1340,98 @@ else if(playerType=0)
     }
 }
 
+
+
+/***************************************************
+  Draw Health
+      
+  where x = 0 and y = 0...
+  
+    hudPos[x,0] = left side
+    hudPos[x,1] = right side
+    hudPos[x,2] = right side remaining armor
+    hudPos[y,0] = top
+    hudPos[y,1] = bottom
+  
+ ***************************************************/
+if(playerType != 1) //not display mode
+{
+    x1 = 40*view_wview/1280
+    x2 = 40*view_wview/1280+(health2/2*view_wview/1280)//fill
+    x3 = 40*view_wview/1280+(healthMax/2*view_wview/1280)//outline
+    if(playerNum &lt; 2)
+    {
+        y1 = view_yview+10*view_wview/720+(40*(view_wview/720)*0)
+        y2 = view_yview+10*view_wview/720+(40*(view_wview/720)*0)+(10*view_wview/720)
+    }
+    else
+    {
+        y1 = view_yview+10*view_wview/720+(40*(view_wview/720)*1)
+        y2 = view_yview+10*view_wview/720+(40*(view_wview/720)*1)+(10*view_wview/720)
+    }
+    
+    x2 = x2/5
+    x3 = x3/5
+
+    pnc2 = playerNumColor
+    pnc2Dark = merge_color(pnc2,c_black,0.5)
+    pnc2Dark2 = merge_color(pnc2,c_black,0.4)
+    //outline
+    //draw_rectangle_color(x1,y1,x3,y2,c_white,c_ltgray,c_white,c_ltgray,false)
+    //fill
+    //draw_rectangle_color(x1,y1,x2,y2,pnc2Dark,pnc2,pnc2,pnc2Dark,false)
+
+    if(playerNum = 0 or playerNum = 2)
+    {
+        x1 = -x1;
+        x2 = -x2;
+        x3 = -x3;
+        x1 += view_xview+view_wview/2;
+        x2 += view_xview+view_wview/2;
+        x3 += view_xview+view_wview/2;
+        
+        //outline
+        draw_rectangle_color(x1+4*view_wview/720,y1-4*view_wview/1280,x3-4*view_wview/1280,y2+4*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+        draw_circle_color(x1+2*view_wview/1280,y1+17*view_wview/1280,12*view_wview/720,c_dkgray,c_dkgray,false)
+        //fill
+        draw_rectangle_color(x1,y1,x2,y2,pnc2,pnc2Dark,pnc2Dark,pnc2,false)
+        draw_circle_color(x1+2*view_wview/1280,y1+17*view_wview/1280,10*view_wview/720,pnc2,c_dkgray,false)
+        if(numLives&lt;11)
+        {
+            for(i=numLives;i&gt;0;i--)
+            {
+                //outline
+                draw_rectangle_color(x1-i*9*view_wview/720,y2,x1-(i*9*view_wview/720)-9*view_wview/720,y2+8*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
+                //fill
+                draw_rectangle_color(x1-(i*9*view_wview/720)-2*view_wview/720,y2+2*view_wview/720,x1-(i*9*view_wview/720)-7*view_wview/720,y2+6*view_wview/720,pnc2,pnc2,pnc2,pnc2,false);
+            }
+        }
+    }
+    if(playerNum = 1 or playerNum = 3)
+    {
+        x1 += view_xview+view_wview/2;
+        x2 += view_xview+view_wview/2;
+        x3 += view_xview+view_wview/2;
+        
+        //outline
+        draw_rectangle_color(x1-4*view_wview/720,y1-4*view_wview/1280,x3+4*view_wview/1280,y2+4*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+        draw_circle_color(x1-2*view_wview/1280,y1+17*view_wview/1280,12*view_wview/720,c_dkgray,c_dkgray,false)
+        //fill
+        draw_rectangle_color(x1,y1,x2,y2,pnc2Dark,pnc2,pnc2,pnc2Dark,false)
+        draw_circle_color(x1-2*view_wview/1280,y1+17*view_wview/1280,10*view_wview/720,pnc2,c_dkgray,false)
+
+        if(numLives&lt;11)
+        {
+            for(i=numLives;i&gt;0;i--)
+            {
+                //outline
+                draw_rectangle_color(x1+i*9*view_wview/720,y2,x1+(i*9*view_wview/720)+8*view_wview/720,y2+8*view_wview/720,c_dkgray,c_dkgray,c_dkgray,c_dkgray,false);
+                //fill
+                draw_rectangle_color(x1+(i*9*view_wview/720)+2*view_wview/720,y2+2*view_wview/720,x1+(i*9*view_wview/720)+6*view_wview/720,y2+6*view_wview/720,pnc2,pnc2,pnc2,pnc2,false);
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

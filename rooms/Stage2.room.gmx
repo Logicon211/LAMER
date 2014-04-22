@@ -3,8 +3,8 @@
   <caption></caption>
   <width>3000</width>
   <height>2500</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>128</vsnap>
+  <hsnap>128</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -19,20 +19,20 @@ for(i=numPlayersSetting;i&gt;0;i--)
     if(j&gt;0)
     {
         show_debug_message("makeAI");
-        createPlayer((i-1),3,1000+i*700,room_height/2-500);
+        createPlayer((i-1),botDifficulty,500+i*500,room_height/2-500);
         
     }
     else
     {
         show_debug_message("makePlayer");
-        createPlayer((i-1),0,1000+i*700,room_height/2-500);
+        createPlayer((i-1),0,500+i*500,room_height/2-500);
     }
     j--;
 }
 show_debug_message("post-for");
 
 instance_create(x,y,cameraObject);</code>
-  <enableViews>0</enableViews>
+  <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>
     <isSet>0</isSet>
@@ -52,7 +52,7 @@ instance_create(x,y,cameraObject);</code>
   </makerSettings>
   <backgrounds>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="0" name="stadiumBackgroundOne" x="500" y="850" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="stadiumBackground2" x="500" y="850" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -61,7 +61,7 @@ instance_create(x,y,cameraObject);</code>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="cameraObject" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="1900" vborder="1900" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -203,28 +203,28 @@ instance_create(x,y,cameraObject);</code>
     <instance objName="land_tutorial_walls" x="2944" y="1824" name="inst_06F49505" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="land_tutorial_walls" x="2944" y="1888" name="inst_CC69E4DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="startFight" x="224" y="-128" name="inst_AF6B1BEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="864" y="1728" name="inst_F457869C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="896" y="1728" name="inst_2063423B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="928" y="1728" name="inst_BADF31F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="960" y="1728" name="inst_7F2DD60E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="992" y="1728" name="inst_83B10AA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1024" y="1728" name="inst_49A4B323" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1056" y="1728" name="inst_00C54B19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1088" y="1728" name="inst_6C4AD058" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1120" y="1728" name="inst_B0D2502F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="2112" y="1728" name="inst_1BD0513F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Platform1_rightedge" x="2144" y="1728" name="inst_2E64D3CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Platform1_rightedge" x="1152" y="1728" name="inst_B424DA25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Platform1_leftedge" x="832" y="1728" name="inst_3E0284D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Platform1_leftedge" x="1824" y="1728" name="inst_64B52CE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1856" y="1728" name="inst_E0C12924" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1888" y="1728" name="inst_08023868" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1920" y="1728" name="inst_4AB43EE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1952" y="1728" name="inst_26F9909D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="1984" y="1728" name="inst_D24927C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="2048" y="1728" name="inst_2B5BF5A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="2016" y="1728" name="inst_53C841A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="platform1" x="2080" y="1728" name="inst_ACCE957D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="864" y="1696" name="inst_F457869C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="896" y="1696" name="inst_2063423B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="928" y="1696" name="inst_BADF31F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="960" y="1696" name="inst_7F2DD60E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="992" y="1696" name="inst_83B10AA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1024" y="1696" name="inst_49A4B323" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1056" y="1696" name="inst_00C54B19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1088" y="1696" name="inst_6C4AD058" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1120" y="1696" name="inst_B0D2502F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="2112" y="1696" name="inst_1BD0513F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_rightedge" x="2144" y="1696" name="inst_2E64D3CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_rightedge" x="1152" y="1696" name="inst_B424DA25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_leftedge" x="832" y="1696" name="inst_3E0284D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Platform1_leftedge" x="1824" y="1696" name="inst_64B52CE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1856" y="1696" name="inst_E0C12924" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1888" y="1696" name="inst_08023868" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1920" y="1696" name="inst_4AB43EE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1952" y="1696" name="inst_26F9909D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="1984" y="1696" name="inst_D24927C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="2048" y="1696" name="inst_2B5BF5A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="2016" y="1696" name="inst_53C841A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="platform1" x="2080" y="1696" name="inst_ACCE957D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platform1" x="512" y="1472" name="inst_7FE38D32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platform1" x="640" y="1472" name="inst_6A3D21B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="platform1" x="672" y="1472" name="inst_74571298" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -291,6 +291,103 @@ instance_create(x,y,cameraObject);</code>
     <instance objName="platform1" x="1472" y="1024" name="inst_EC89D8AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Platform1_leftedge" x="1408" y="1024" name="inst_8F9FC186" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Platform1_rightedge" x="1568" y="1024" name="inst_6EF2B212" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="0" name="inst_7EAD98AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="128" name="inst_45029257" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="256" name="inst_409B23F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="384" name="inst_FB46F36D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="512" name="inst_3ED04B48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="640" name="inst_E52E56C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="768" name="inst_14DDA19F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="896" name="inst_18266A5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1024" name="inst_AEECF97A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1152" name="inst_7C33D86E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1280" name="inst_6BDB332B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1408" name="inst_99F18BCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1536" name="inst_78949D6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1664" name="inst_DB0ADF00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1792" name="inst_5195B4F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="1920" name="inst_68903EC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="2048" name="inst_1240FCA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="2176" name="inst_3B308F75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-256" y="2176" name="inst_E20574F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-128" y="2176" name="inst_D464C250" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="0" y="2176" name="inst_5CAF39B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="128" y="2176" name="inst_09EF1CD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="256" y="2176" name="inst_83BC6168" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="384" y="2176" name="inst_BEF07311" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="512" y="2176" name="inst_01E3CDF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="640" y="2176" name="inst_24177978" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="768" y="2176" name="inst_F9BE1736" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="896" y="2176" name="inst_4B83E2F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1024" y="2176" name="inst_D2B8FB42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1152" y="2176" name="inst_E9EBE9A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1280" y="2176" name="inst_C8EF48E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1408" y="2176" name="inst_790E86F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1536" y="2176" name="inst_C956C7C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1664" y="2176" name="inst_118BC86C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1792" y="2176" name="inst_88649AAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1920" y="2176" name="inst_5F0A067B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2048" y="2304" name="inst_51A25F18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2176" y="2304" name="inst_AD907AA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2304" y="2304" name="inst_4EFDFA34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2432" y="2304" name="inst_3FE3AB84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2560" y="2304" name="inst_FC16F843" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2688" y="2304" name="inst_B697B2A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2688" y="2176" name="inst_1E66C89A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2816" y="2176" name="inst_3E8467A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2944" y="2176" name="inst_5156DF38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3072" y="2176" name="inst_D7059CD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="2176" name="inst_2E355F35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="2048" name="inst_24014B8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1920" name="inst_62751294" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1792" name="inst_A1DFA5B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1664" name="inst_4FE942A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1536" name="inst_6F0C7FAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1408" name="inst_66915543" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1280" name="inst_7BFA2C96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1152" name="inst_B255DA71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="1024" name="inst_CE90CC86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="896" name="inst_B58399F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="768" name="inst_4B6B372D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="640" name="inst_CBAF2443" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="512" name="inst_AA7535D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="384" name="inst_EB49E2E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="256" name="inst_872BB2A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="128" name="inst_4037888B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="0" name="inst_0A168741" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3200" y="-128" name="inst_29A92030" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="3072" y="-128" name="inst_36939CA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2944" y="-128" name="inst_358AE821" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2816" y="-128" name="inst_EB534DEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2688" y="-128" name="inst_89B7F19D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2560" y="-128" name="inst_2185E68C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2432" y="-128" name="inst_522D9B87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2304" y="-128" name="inst_37D70769" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2176" y="-128" name="inst_A26BB58F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="384" y="-128" name="inst_8DD10897" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="512" y="-128" name="inst_24D0D7D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="768" y="-128" name="inst_CBA376B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-256" y="-128" name="inst_27908545" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-256" y="-128" name="inst_5D0C5846" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1664" y="-128" name="inst_3D6BF4BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-384" y="-128" name="inst_21584DB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-128" y="-128" name="inst_96933C20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="640" y="-128" name="inst_7F398CE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="2048" y="-128" name="inst_2A0693B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1920" y="-128" name="inst_B7EADFA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1792" y="-128" name="inst_2817F6CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1664" y="-128" name="inst_E0FF7705" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1536" y="-128" name="inst_1266542A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1408" y="-128" name="inst_9712A8AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1280" y="-128" name="inst_9A490EF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1152" y="-128" name="inst_23630DAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="1024" y="-128" name="inst_3C1DA31A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="896" y="-128" name="inst_0F089906" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="768" y="-128" name="inst_79B866B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="128" y="-128" name="inst_35628EAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="0" y="-128" name="inst_962C6E64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="-128" y="-128" name="inst_B3CE3FB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="OuterRoomBlocker" x="256" y="-128" name="inst_526EA7D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

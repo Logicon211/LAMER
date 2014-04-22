@@ -30,7 +30,7 @@ nodeNumber = 18;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Super Not-So-Secret Space Elevator";
-nodeDescription = "Humanity's last ditch attempt to leave the ensuing chaos, this space elevator remains unfinished #and only reaches slightly past stratosphere. The top has been modified to be an epic colosseum, where #the true battles are decided.";
+nodeDescription = "Humanity's last ditch attempt to leave the ensuing chaos, this space elevator remains unfinished #and only reaches slightly past stratosphere. The top has been modified to be an epic colosseum, where #the true battles are fought.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -38,22 +38,30 @@ hasRun = false; //code to get the initialization to run only once
 
 hasRadioText = false; //check to see if there's radio chat before the fight
 
-radioText[0] = "";
+radioText[0] = "Supreme King Emperor Overlord of Earth: It is I, the Fourth Devil, the final boss!";
+radioText[1] = "Supreme King Emperor Overlord of Earth: Kneel down before me, and maybe I won't have you suffer a horiffic death IN SPACE.";
+radioText[2] = "Hero: I've defeated all of your comrades; you should be the one running scared and begging for mercy.";
+radioText[3] = "Supreme King Emperor Overlord of Earth: Bah, their power combined doesn't even come close to mine. To me, they were simple henchmen, nothing more.";
+radioText[4] = "Supreme King Emperor Overlord of Earth: Don't you know? Some people call my amazing reflexes cheating! That I'm OP, that I haxorz!";
+radioText[5] = "Supreme King Emperor Overlord of Earth: Are you sure you want to defy me after hearing that?";
+radioText[6] = "Hero: I will defy you! After this battle, all your base will belong to me and I will bring the peace!";
 
-face[0] = 0;
+face[0] = LoganFace;
+face[1] = AlexFace;
 
 battleMap = testRange;
 
 
 //Bot Settings on this Map Node
 numberOfBots = 1;
-DifficultyOfBots = 1;
+DifficultyOfBots = 10;
+boss = true;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
-botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
-botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[0] = CronusH; //Head
+botLoadOut[1] = CoeusLelantos; //Torso
+botLoadOut[2] = AresEdge; //Left Arm
+botLoadOut[3] = EnyoGat; //Right Arm
+botLoadOut[4] = LelantosAura; //Legs
 </string>
           </argument>
         </arguments>

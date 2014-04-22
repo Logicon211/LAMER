@@ -30,13 +30,13 @@ nodeNumber = 8;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Germany";
-nodeDescription = "Though it suffered some damage from the Apocalypse, most of Germany remains intact but under the power of #those who use their well made Colossi.";
+nodeDescription = "Though it suffered some damage from the Four Devils, most of Germany remains intact but now they no longer build #cars or other long lasting goods, only Colossus engines.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
 hasRun = false; //code to get the initialization to run only once
 
-hasRadioText = true; //check to see if there's radio chat before the fight
+hasRadioText = false; //check to see if there's radio chat before the fight
 
 radioText[0] = "Goon: He's watching... I know he's here, somewhere, watching!";
 radioText[1] = "Player: Who now?";
@@ -48,17 +48,18 @@ radioText[5] = "Goon: I can't let him see me fail! AAAAAAAAATTAAAAAAAACK!";
 face[0] = PlayerFace;
 face[1] = RGoonFace1;
 
-battleMap = testRange;
+battleMap = Stage3;
 
 //Bot Settings on this Map Node
-numberOfBots = 1;
-DifficultyOfBots = 1;
+numberOfBots = 2;
+DifficultyOfBots = 5;
+boss = false;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
+botLoadOut[0] = HyperionHelios; //Head
+botLoadOut[1] = HyperionEos; //Torso
 botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
 botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[4] = HyperionSelene; //Legs
 </string>
           </argument>
         </arguments>

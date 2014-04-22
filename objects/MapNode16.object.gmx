@@ -30,7 +30,7 @@ nodeNumber = 16;
 MapNodeList[nodeNumber] = id;
 
 nodeName = "Greenland";
-nodeDescription = "A former safe haven from the Apocalypse due to its uselessness and cold, with global warming it is #now a base for the most elite of the elite pilots. This is the closest that one can get to civilization as #it was once known, minus all the Colossi everywhere.";
+nodeDescription = "A former safe haven from the Four Devils due to its uselessness and cold, with global warming it is #now a base for the most elite of the elite pilots. This is the closest that one can get to civilization as #it was once known, minus all the Colossi everywhere.";
 
 isLocked = true;
 hasCompleted = false;//check to see if player has done this mapnode yet
@@ -39,31 +39,32 @@ hasRun = false; //code to get the initialization to run only once
 hasRadioText = true; //check to see if there's radio chat before the fight
 
 radioText[0] = "Dr. Dastardly: It WORKS! HAHAHAHAHA! And they laughed at me back at university. Maybe it was because of the tutu though...";
-radioText[1] = "Dr. Dastardly: Oh well. Their corpses will be put to good use in my experiments.";
-radioText[2] = "Player: Auuuugh, my eyes! I... I can't see!";
+radioText[1] = "Dr. Dastardly: Oh well. Their corpses will be put to good use in the experiments of the Third Devil, moi!";
+radioText[2] = "Hero: Auuuugh, my eyes! I... I can't see!";
 radioText[3] = "Dr. Dastardly: Have you been blinded... by my BRILLIANCE?!";
-radioText[4] = "Player: Bare... head... too... shiny... must... avert... gaze...";
+radioText[4] = "Hero: Bare... head... too... shiny... must... avert... gaze...";
 radioText[5] = "Dr. Dastardly: You dare mock my lack of hair follicles?! I'll just have to take yours and implant it on my head then!";
 radioText[6] = "Dr. Dastardly: And I'll do it using my greatest creation: I call it Super-Future, version 8999!";
-radioText[7] = "Player: So... you're telling me it's not over 9000? It's not even equal to 9000? I can probably take it! Let's go!";
-radioText[8] = "Player: On a side note, isn't that a terrible name for a Colossus? Why not, like, a game subtitle?";
+radioText[7] = "Hero: So... you're telling me it's not over 9000? It's not even equal to 9000? I can probably take it! Let's go!";
+radioText[8] = "Hero: On a side note, isn't that a terrible name for a Colossus? It sounds more like a game subtitle.";
 radioText[9] = "Hey, I'm a mad scientist, not some shmansy-fancy art major! Cut me some slack!";
 
-face[0] = PlayerFace;
+face[0] = LoganFace;
 face[1] = MitchFace;
 
-battleMap = testRange;
+battleMap = Stage1;
 
 
 //Bot Settings on this Map Node
 numberOfBots = 1;
-DifficultyOfBots = 1;
+DifficultyOfBots = 9;
+boss = true;
 
-botLoadOut[0] = ProtoHeadObjectItem; //Head
-botLoadOut[1] = ProtoTorsoObjectItem; //Torso
-botLoadOut[2] = ProtoSwordObjectItem; //Left Arm
-botLoadOut[3] = ProtoGunObjectItem; //Right Arm
-botLoadOut[4] = ProtoLegsObjectItem; //Legs
+botLoadOut[0] = CriusAstraeus; //Head
+botLoadOut[1] = CoeusLelantos; //Torso
+botLoadOut[2] = AthenaBroadsword; //Left Arm
+botLoadOut[3] = CronusSeismos; //Right Arm
+botLoadOut[4] = CronusL; //Legs
 </string>
           </argument>
         </arguments>

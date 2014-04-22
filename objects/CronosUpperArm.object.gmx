@@ -39,7 +39,7 @@ lower_angle = 1234;
 delete = false;
 
 dominance = 0;
-number = 0;
+number = 1;
 
 
 </string>

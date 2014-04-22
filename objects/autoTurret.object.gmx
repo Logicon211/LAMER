@@ -30,7 +30,7 @@ ATcounter = 0;
 active = false;
 xLock = x;
 yLock = y;
-
+pnc = c_red;
 roomEnd = 60;
 </string>
           </argument>

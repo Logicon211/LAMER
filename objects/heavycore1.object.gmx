@@ -235,16 +235,16 @@ arm[2].depth = depth+10*-image_xscale;
 //END arms
 
 //head
-joint = rotation_tracker(x,y,image_angle,x-5,y-35);
+joint = rotation_tracker(x,y,image_angle,x-5,y-50);
 limb_anchor(head,joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END head
 
 //boosters
-joint = rotation_tracker(x,y,image_angle,x-60,y-10);
+joint = rotation_tracker(x,y,image_angle,x-70,y-30);
 limb_anchor(booster[1],joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-57,y+36);
+joint = rotation_tracker(x,y,image_angle,x-75,y+4);
 limb_anchor(booster[2],joint[0],joint[1],hspeed,vspeed,image_xscale);
-joint = rotation_tracker(x,y,image_angle,x-56,y-45);
+joint = rotation_tracker(x,y,image_angle,x-72,y+42);
 limb_anchor(booster[3],joint[0],joint[1],hspeed,vspeed,image_xscale);
 //END boosters
 
@@ -277,7 +277,7 @@ limb_anchor(booster[3],joint[0],joint[1],hspeed,vspeed,image_xscale);
   
   --------------------------------------
   !!TORSO POSITIONING MUST BE DICTATED!!
-  ------!!BY THE PLAYER OBBJECT!!-------
+  ------!!BY THE PLAYER OBJECT!!-------
   --------------------------------------
   
   By handling the positioning code for the torso
@@ -387,6 +387,9 @@ if(player.state = string('shield'))
     leg2.image_angle = angle_ease(leg2.image_angle, 80*image_xscale, 4);
     //leg1.lower_angle = -90*image_xscale;
     //leg2.lower_angle = -30*image_xscale;
+        if(!audio_is_playing(ShieldLoop)){
+    audio_play_sound(ShieldLoop,1,false);
+    }
 }
 
 /***************************************************
@@ -506,7 +509,10 @@ if(player.state = string('slideR'))
 
 if(player.state = string('Attack'))
 {
-    attackControl2(arm[1],1,arm[2],2);
+    attackControl2(arm[1],1,arm[2],2,arm[1].swingSpeed);
+    if(player.airborne)
+    {   vspeed -= 2;
+    }
 }
 
 /***************************************************
@@ -519,13 +525,13 @@ if(player.state = string('Attack'))
 if(player.state = string('mobileAttack'))
 {
     if(player.attack1)
-    {   attackControl2(arm[1],1,arm[2],2);
+    {   attackControl2(arm[1],1,arm[2],2,arm[1].swingSpeed);
     }
     else 
     {   arm[1].image_angle = image_angle*2.2;
     }
     if(player.attack2)
-    {   attackControl2(arm[2],2,arm[1],1);
+    {   attackControl2(arm[2],2,arm[1],1,arm[1].swingSpeed);
     }
     else
     {   arm[2].image_angle = abs(image_angle*1.8)*image_xscale;

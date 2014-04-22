@@ -38,6 +38,7 @@ lower_angle = 1234;
 delete = false;
 dominance = 10;
 number = 10;
+swingSpeed = 1;
 </string>
           </argument>
         </arguments>
@@ -87,7 +88,7 @@ else
     //END Attacking Local State
     
     //Normal State
-    else if(player.state=string('normal'))
+    else if(player.state=string('normal') or player.state = string('mobileAttack'))
     {
         if(abs(image_angle) &gt; 30)
         {

@@ -7,7 +7,7 @@
   <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code></code>
@@ -52,14 +52,14 @@
   <instances>
     <instance objName="MainMenuController" x="32" y="96" name="inst_2E5CF102" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MusicController" x="32" y="160" name="inst_5AC6DE32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="GameController" x="32" y="32" name="inst_FC11C64A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="menuLOL" x="640" y="192" name="inst_1088723A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="CampaignButton" x="576" y="352" name="inst_E47C0265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="MultiplayerButton" x="576" y="448" name="inst_49095DF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="TestButton" x="576" y="544" name="inst_BFE2D5C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ShadowObject2Rotate" x="1153" y="0" name="inst_02572F19" locked="0" code="" scaleX="1" scaleY="240" colour="4294967295" rotation="0"/>
     <instance objName="ShadowObject2" x="-32" y="640" name="inst_737C969D" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="ShadowObject2Rotate" x="127" y="713" name="inst_E03247D9" locked="0" code="" scaleX="1" scaleY="240" colour="4294967295" rotation="180"/>
-    <instance objName="menuLOL" x="640" y="192" name="inst_1088723A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="GameController" x="32" y="32" name="inst_51BE150A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
